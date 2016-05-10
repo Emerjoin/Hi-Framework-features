@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processor name="com.yayee.processor.YayeeProcessor" />
+        <processorPath useClasspath="true">
+          <entry name="$PROJECT_DIR$/../YayeeAnnotationsProcessor/out/artifacts/YayeeAnnotationsProcessor_jar/YayeeAnnotationsProcessor.jar" />
+        </processorPath>
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="false">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <processor name="com.yayee.annotations.Processor" />
+        <processorPath useClasspath="true">
+          <entry name="$PROJECT_DIR$" />
+        </processorPath>
+        <module name="Yayee" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Yayee" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

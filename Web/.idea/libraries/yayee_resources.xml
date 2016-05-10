@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="yayee-resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../YayeeResources/out/artifacts/yayee_resources_jar/yayee-resources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
