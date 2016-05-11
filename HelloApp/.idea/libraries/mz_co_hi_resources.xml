@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mz.co.hi.resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Resources/out/artifacts/jar/mz.co.hi.resources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

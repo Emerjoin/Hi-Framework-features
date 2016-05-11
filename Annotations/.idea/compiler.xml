@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="Hi Annotations Processor" />
         <module name="YayeeAnnotationsProcessor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Hi Annotations Processor" target="1.5" />
       <module name="YayeeAnnotationsProcessor" target="1.5" />
     </bytecodeTargetLevel>
   </component>

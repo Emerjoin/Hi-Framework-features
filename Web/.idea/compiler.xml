@@ -27,11 +27,12 @@
         <processorPath useClasspath="true">
           <entry name="$PROJECT_DIR$" />
         </processorPath>
+        <module name="Hi Framework core" />
         <module name="Yayee" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Yayee" target="1.8" />
+      <module name="Hi Framework core" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="yayee-annotations">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../YayeeAnnotationsProcessor/out/artifacts/YayeeAnnotations/yayee-annotations.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

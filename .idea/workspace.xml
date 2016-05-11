@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b186441b-9454-4f98-936e-6a65a7f1e75c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Yayee Framework.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/web/i18n/en.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/contents.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/css/simple-sidebar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/js/jquery.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/.idea/artifacts/YayeeAnnotationsProcessor_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/.idea/libraries/yayee_core.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/YayeeAnnotationsProcessor.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/out/artifacts/YayeeAnnotations/yayee-annotations.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/src/main/java/com/yayee/annotations/Processor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/.idea/artifacts/yayee_resources_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/YayeeResources.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/out/artifacts/yayee_resources_jar/yayee-resources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/src/main/java/META-INF/resources/yayee-config.xsd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/src/main/java/META-INF/resources/yayee.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/src/main/java/com/yayee/resources/ResourcesProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/target/classes/com/yayee/resources/ResourcesProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/artifacts/yayee_core.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__asm_asm_3_3_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_enterprise_cdi_api_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_websocket_javax_websocket_client_api_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/yayee_annotations.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/yayee_resources.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/Yayee.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/out/artifacts/yayee_core/yayee-core.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Cache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/ClassLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Dispatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/FilesCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Helper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/HtmlDispatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/RequestContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/RequestException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Values.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/YeeException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/Frontier.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/KeepFrontierCalls.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/MultipleCalls.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/SingleCall.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/app/AppContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/AppConfigurations.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/CachedWebrootDirectory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/ConfigLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/Tunnings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/FrontierInvocationFailedException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/FrontierInvoker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/InvalidFrontierParamException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/MapConversionException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/MissingFrontierParamException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/Scripter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/BeansCrawler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/Blank.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/FrontierClass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/FrontierMethod.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/MethodParam.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/Controller.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/ConversionFailedException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/FrontEnd.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/HTMLizer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/MalMarkedTemplateException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/MissingResourcesLibException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/MvcException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/NoSuchTemplateException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/NoSuchViewException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/TemplateException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/Notification.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/NotificationConversionException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/RoomsAssigner.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/UserGroups.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/UsersInformer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/WebSocket.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/Assets.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/ErrorHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/Frontiers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/HandleRequests.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/MVC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/ReqHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/ReqMatchException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/Yayee.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/users/Sessions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/users/UDetailsProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/validation/Assert.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/validation/ValidationException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/test/java/test/com/web/yayee/validation/AssertTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/test/java/test/com/web/yayee/validation/MyEnum.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Cache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/ClassLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Dispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/FilesCache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Helper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/HtmlDispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/RequestContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/RequestException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Values.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/YeeException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/Frontier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/KeepFrontierCalls.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/MultipleCalls.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/SingleCall$AbortPolicy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/SingleCall$Detection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/SingleCall.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/app/AppContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/AppConfigurations.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/CachedWebrootDirectory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/ConfigLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/Tunnings.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/FrontierInvocationFailedException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/FrontierInvoker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/InvalidFrontierParamException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/MapConversionException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/MissingFrontierParamException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/Scripter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/BeansCrawler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/Blank.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/FrontierClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/FrontierMethod.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/MethodParam.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/ConversionFailedException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/FrontEnd.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/HTMLizer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/MalMarkedTemplateException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/MissingResourcesLibException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/MvcException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/NoSuchTemplateException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/NoSuchViewException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/TemplateException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/Notification.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/NotificationConversionException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/RoomsAssigner.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/UserGroups.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/UsersInformer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/WebSocket.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/Assets.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/ErrorHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/Frontiers.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/HandleRequests.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/MVC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/ReqHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/ReqMatchException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/Yayee.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/users/Sessions.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/users/UDetailsProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/validation/Assert.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/validation/ValidationException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/test-classes/test/com/web/yayee/validation/AssertTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/test-classes/test/com/web/yayee/validation/MyEnum.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/compiler.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/misc.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/modules.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/compiler.xml" afterPath="$PROJECT_DIR$/Resources/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/misc.xml" afterPath="$PROJECT_DIR$/Resources/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/modules.xml" afterPath="$PROJECT_DIR$/Resources/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Resources/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/.name" afterPath="$PROJECT_DIR$/Web/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/compiler.xml" afterPath="$PROJECT_DIR$/Web/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/modules.xml" afterPath="$PROJECT_DIR$/Web/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Web/.idea/workspace.xml" />
+    </list>
+    <ignored path="Yayee Framework.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Yayee Framework" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="contents.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9869848">
+              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/guide/index.html" />
+        <option value="$PROJECT_DIR$/guide/contents.txt" />
+        <option value="$PROJECT_DIR$/guide/v.0.9/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/guide/v.0.9/contents.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="822" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yayee Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yayee Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yayee Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Annotations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yayee Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Annotations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Annotations" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/guide/v.0.9" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/guide" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Yayee Framework/guide/v.0.9/index.html">
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Yayee Framework" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b186441b-9454-4f98-936e-6a65a7f1e75c" name="Default" comment="" />
+      <created>1462889522376</created>
+      <option name="number" value="Default" />
+      <updated>1462889522376</updated>
+      <workItem from="1462889526171" duration="7974000" />
+      <workItem from="1462910206811" duration="850000" />
+      <workItem from="1462923065573" duration="1502000" />
+      <workItem from="1462961002382" duration="531000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="10857000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="822" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33013698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85812354">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17162472">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9869848">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
