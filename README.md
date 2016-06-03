@@ -1,2 +1,2 @@
-# Yayee-Framework
+# Hi-Framework
 Angular JS + MVC for Java EE
