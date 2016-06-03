@@ -27,10 +27,15 @@ import java.util.*;
 @WebServlet(urlPatterns = "/*",name = "HiServlet",loadOnStartup = 1)
 public class DispatcherServlet extends HttpServlet {
 
-    public static String yayeeLibScript = null;
-    public static String yayeeLoaderScript = null;
+    public static String hiTestsScript = "";
+    public static String hiLibScript = null;
+    public static String hiScript = null;
     public static String genericFrontierScript = null;
-    public static String javascriptInitScript="";
+    public static String javascriptConfigScript ="";
+    public static String frontiersScript ="";
+    public static String angularJsScript ="";
+
+    protected static  String DEPLOY_ID="";
 
     private HashMap<String,String> matchedUrls = new HashMap();
 
@@ -52,9 +57,29 @@ public class DispatcherServlet extends HttpServlet {
 
                 InputStream inputStream = res.openStream();
                 String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                yayeeLibScript = scriptContent;
+                hiLibScript = scriptContent;
 
             }
+
+
+            res = this.getServletContext().getResource("/hi-tests.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                hiTestsScript = scriptContent;
+
+            }
+
+            res = this.getServletContext().getResource("/angular.min.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                angularJsScript = scriptContent;
+
+            }
+
 
 
         }catch (Exception ex){
@@ -77,7 +102,7 @@ public class DispatcherServlet extends HttpServlet {
 
                 InputStream inputStream = res.openStream();
                 String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                yayeeLoaderScript = scriptContent;
+                hiScript = scriptContent;
 
 
             }
@@ -122,14 +147,14 @@ public class DispatcherServlet extends HttpServlet {
         try {
 
 
-            URL res = this.getServletContext().getResource("/init.js");
+            URL res = this.getServletContext().getResource("/run.js");
             if(res!=null){
 
-                System.out.println("Reading javascript init code file...");
+                System.out.println("Reading javascript configurations code file...");
 
                 InputStream inputStream = res.openStream();
                 String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                javascriptInitScript = scriptContent;
+                javascriptConfigScript = scriptContent;
 
             }
 
@@ -180,8 +205,7 @@ public class DispatcherServlet extends HttpServlet {
 
                 Frontiers.addFrontier(beanClass);
                 String frontier_script = scripter.generate(beanClass);
-                yayeeLibScript+="\n"+frontier_script;
-
+                frontiersScript +="\n"+frontier_script;
 
             }
 
@@ -207,9 +231,13 @@ public class DispatcherServlet extends HttpServlet {
             ReqHandler.register(CDI.current().select(Assets.class).get(),Assets.class);
             ReqHandler.register(CDI.current().select(HiEcmaScript5.class).get(),HiEcmaScript5.class);
             ReqHandler.register(CDI.current().select(Frontiers.class).get(),Frontiers.class);
+            ReqHandler.register(CDI.current().select(Tests.class).get(),Tests.class);
+            ReqHandler.register(CDI.current().select(TestFiles.class).get(),TestFiles.class);
             HiEcmaScript5.prepareTemplates(this.getServletContext());
 
         }
+
+        DEPLOY_ID = String.valueOf(new Date().getTime());
 
     }
 
@@ -258,6 +286,7 @@ public class DispatcherServlet extends HttpServlet {
         //String url = getURL(request);
         String routeURL = getRouteURL(request);
 
+
         routeURL = filterRouteURL(routeURL,response);
         if(routeURL==null){
 
@@ -265,8 +294,12 @@ public class DispatcherServlet extends HttpServlet {
 
         }
 
-        RequestContext requestContext = new RequestContext(request,response,this.getServletContext(),routeURL);
-        requestContext.setSession(session);
+        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
+        requestContext.setRouteUrl(routeURL);
+        requestContext.setResponse(response);
+
+        //RequestContext requestContext = new RequestContext(request,response,this.getServletContext(),routeURL);
+        //requestContext.setSession(session);
 
         //Sessions.handleUserDetails(request.getRemoteUser());
 

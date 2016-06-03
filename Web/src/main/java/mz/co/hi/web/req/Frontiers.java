@@ -1,15 +1,14 @@
 package mz.co.hi.web.req;
 
 import com.google.gson.*;
+import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.app.AppContext;
-import mz.co.hi.web.frontier.MapConversionException;
-import mz.co.hi.web.frontier.FrontierInvoker;
-import mz.co.hi.web.frontier.InvalidFrontierParamException;
-import mz.co.hi.web.frontier.MissingFrontierParamException;
+import mz.co.hi.web.AppContext;
+import mz.co.hi.web.frontier.*;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
+import mz.co.hi.web.mvc.HTMLizer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -22,15 +21,22 @@ import java.util.Scanner;
 /**
  * Created by Mario Junior.
  */
-//@HandleRequests(regexp = "com.yayee.javascript.bean.invocation\\/[A-Za-z0-9]{5,}", supportPostMethod = true)
-@HandleRequests(regexp = "com.yayee.frontiers.bean.invocation\\/[A-Za-z0-9.]{5,}", supportPostMethod = true)
+
+@HandleRequests(regexp = "mz.co.hi.web.frontiers.bean.invocation\\/[A-Za-z0-9.]{5,}", supportPostMethod = true)
 @ApplicationScoped
 public class Frontiers extends ReqHandler {
 
     private static Map<String,FrontierClass> frontiersMap = new HashMap();
 
+    public static final String INVOKED_CLASS_HEADER="Invoked-Class";
+    public static final String INVOKED_METHOD_HEADER="Invoked-Method";
+
     @Inject
     private AppContext appContext;
+
+
+    @Inject
+    private FrontEnd frontEnd;
 
     public static void addFrontier(FrontierClass frontierClass){
 
@@ -120,8 +126,8 @@ public class Frontiers extends ReqHandler {
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
 
-        String invokedClass = requestContext.getRequest().getHeader("Invoked-Class");
-        String invokedMethod = requestContext.getRequest().getHeader("Invoked-Method");
+        String invokedClass = requestContext.getRequest().getHeader(INVOKED_CLASS_HEADER);
+        String invokedMethod = requestContext.getRequest().getHeader(INVOKED_METHOD_HEADER);
 
         if(invokedClass==null||invokedMethod==null){
 
@@ -137,6 +143,9 @@ public class Frontiers extends ReqHandler {
                 return false;
 
             }
+
+
+
 
             FrontierMethod frontierMethod = frontierClass.getMethod(invokedMethod);
             Map params = matchParams(invokedClass,frontierMethod, requestContext);
@@ -154,6 +163,21 @@ public class Frontiers extends ReqHandler {
 
                     Object returnedObject = frontierInvoker.getReturnedObject();
                     map.put("result",returnedObject);
+
+                    if(frontEnd.gotLaterInvocations()) {
+
+                        map.put(HTMLizer.JS_INVOCABLES_KEY, frontEnd.getLaterInvocations());
+
+                    }
+
+                    if(frontEnd.wasTemplateDataSet()){
+
+                        map.put(HTMLizer.TEMPLATE_DATA_KEY,frontEnd.getTemplateData());
+
+                    }
+
+
+
 
                     String resp = gson.toJson(map);
                     requestContext.getResponse().setContentType("text/json;charset=UTF8");

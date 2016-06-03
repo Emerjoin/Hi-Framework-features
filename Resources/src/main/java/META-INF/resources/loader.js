@@ -4,10 +4,11 @@
 /**
  * Load scripts and then load the Yapiys script
  */
-function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnition,templateImages,pushUpdates,css){
+function ajaxLoad(onstart, onerror, syncscripts, scripts, plugins, beforeIgnition, templateImages, pushUpdates, css){
 
     //Load started
-    onstart();
+    if(typeof onstart=="function")
+        onstart();
 
     if(!Array.isArray(syncscripts)){
 
@@ -156,7 +157,9 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
             element.onload = finished ;
             element.onerror = function(){
 
-                onerror(this.src);
+                if(typeof onerror=="function")
+                    onerror(this.src);
+
                 return;
 
             };
@@ -194,17 +197,16 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
         }
 
 
-        //Boot UP the Yapiys Application
-
+        /*
         angular.element(document).ready(function() {
 
 
-            angular.bootstrap(document, ["yapiys"]);
+            angular.bootstrap(document, ["hi"]);
 
 
 
 
-        });
+        });*/
 
         $ignition();
 
@@ -213,11 +215,11 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
 
 
 
-    var loadYapiys_script = function(){
+    var load_hi_script = function(){
 
 
         var element = document.createElement("script");
-        element.src = 'yayee-script.js';
+        element.src = 'hi-es5.js';
 
         //When finish loading yapiys script
         element.onload = function(){
@@ -226,7 +228,7 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
             //_place_init_code_here
 
             //Load the yapiys plugin
-            load_yapiys_plugins();
+            load_hi_plugins();
 
 
         };
@@ -243,7 +245,7 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
 
 
     //Finished loading all other scripts, load yapiys script and then load plugins
-    var load_yapiys_plugins = function(){
+    var load_hi_plugins = function(){
 
 
         if(!Array.isArray(plugins)){
@@ -319,6 +321,7 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
                     element.onload = finished;
                     element.onerror=function(){
 
+                        if(typeof onerror=="function")
                         onerror(this.src);
                         return;
 
@@ -341,7 +344,7 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
 
         if(scripts.length==0){
 
-            loadYapiys_script();
+            load_hi_script();
             return;
 
 
@@ -364,7 +367,7 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
                 if(scripts_done_loading.length==scripts.length){
 
                     //Load the yapiys javascript
-                    loadYapiys_script();
+                    load_hi_script();
 
                 }
 
@@ -374,6 +377,7 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
             element.onload = finished;
             element.onerror = function(){
 
+                if(typeof onerror=="function")
                 onerror(this.src);
                 return;
 
@@ -435,7 +439,12 @@ function prepareYapiys(onstart,onerror,syncscripts,scripts,plugins,beforeIgnitio
 
 
 
-    pushUpdates(10);
+    if(typeof pushUpdates=="function"){
+
+        pushUpdates(10);
+
+    }
+
 
     //Loads all the sync scripts
     sync_scripts_next();

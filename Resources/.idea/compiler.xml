@@ -27,8 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Hi Framework Resources" target="1.5" />
-      <module name="YayeeResources" target="1.5" />
+      <module name="Hi Framework Resources" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

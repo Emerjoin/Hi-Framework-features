@@ -26,24 +26,25 @@ public class ConfigLoader {
 
     public static void load(ServletContext servletContext) throws ServletException{
 
-
-
         Document document = loadDocument(servletContext);
         Element docElement = document.getDocumentElement();
 
-        //Template and MVC Configurations
-        Element mvcElement = (Element) docElement.getElementsByTagName("mvc").item(0);
 
-        Element controllersPackageElement = (Element) mvcElement.getElementsByTagName("controllers-package").item(0);
-        Element viewsDirectoryElement =(Element) mvcElement.getElementsByTagName("views-directory").item(0);
-        Element welcomeUrlElement =(Element) mvcElement.getElementsByTagName("welcome-url").item(0);
+        //Template and MVC Configurations
+        Element webElement = (Element) docElement.getElementsByTagName("web").item(0);
+
+        Element controllersPackageElement = (Element) webElement.getElementsByTagName("controllers-package").item(0);
+        Element viewsDirectoryElement =(Element) webElement.getElementsByTagName("views-directory").item(0);
+        Element welcomeUrlElement =(Element) webElement.getElementsByTagName("welcome-url").item(0);
+
+
 
         String controllersPackage = controllersPackageElement.getTextContent();
         String viewsDirectory = viewsDirectoryElement.getTextContent();
         String wecomeUrl = welcomeUrlElement.getTextContent();
 
 
-        Element templateElement = (Element) docElement.getElementsByTagName("templates").item(0);
+        Element templateElement = (Element) webElement.getElementsByTagName("templates").item(0);
         NodeList templatesList = templateElement.getElementsByTagName("template");
 
         String[] templates = new String[templatesList.getLength()];
@@ -56,6 +57,30 @@ public class ConfigLoader {
 
         AppConfigurations appConfigurations = new AppConfigurations(controllersPackage,viewsDirectory,templates);
         appConfigurations.setWelcomeUrl(wecomeUrl);
+
+
+        NodeList deploymentModeNodeList = docElement.getElementsByTagName("deployment-mode");
+        if(deploymentModeNodeList.getLength()>0){
+
+
+            String deploymentModevalue = deploymentModeNodeList.item(0).getTextContent();
+            if(deploymentModevalue.equals("PRODUCTION"))
+                appConfigurations.setDeploymentMode(AppConfigurations.DeploymentMode.PRODUCTION);
+
+
+
+        }
+
+
+
+        NodeList defaultLangNode = docElement.getElementsByTagName("default-lang");
+        if(defaultLangNode.getLength()>0){
+
+            Element defaultLangElement = (Element) defaultLangNode.item(0);
+            appConfigurations.setDefaultLanguage(defaultLangElement.getTextContent());
+
+
+        }
 
 
         //Users setting
@@ -197,13 +222,116 @@ public class ConfigLoader {
 
 
         readTunningConfigs(docElement,appConfigurations);
+        readTestConfigs(docElement,appConfigurations);
         AppConfigurations.set(appConfigurations);
+
+    }
+
+
+
+    private static void readTestConfigs(Element docElement, AppConfigurations appConfigurations){
+
+        NodeList testsNodeList = docElement.getElementsByTagName("tests");
+        if(testsNodeList.getLength()<1)
+            return;
+
+
+        Element testsElement = (Element) testsNodeList.item(0);
+        NodeList testNodes = testsElement.getElementsByTagName("script");
+
+        if(testNodes.getLength()<1)
+            return;
+
+        for(int i=0;i<testNodes.getLength();i++){
+
+            Element element = (Element) testNodes.item(i);
+            appConfigurations.getTestFiles().put(element.getTextContent(),true);
+
+        }
+
+
+
+    }
+
+
+    private static void readStaticFoldersCachingConfigs(Element staticFoldersCachingElement, AppConfigurations appConfigurations){
+
+        NodeList foldersHttpCacheList = staticFoldersCachingElement.getElementsByTagName("enabled");
+
+        if(foldersHttpCacheList.getLength()==0)
+            return;
+
+
+        for(int i=0; i<foldersHttpCacheList.getLength();i++){
+
+            Element folderHttpCache = (Element) foldersHttpCacheList.item(i);
+            int age = Integer.parseInt(folderHttpCache.getAttribute("age"));
+            String ageUnit = folderHttpCache.getAttribute("age-unit");
+            String folderName = folderHttpCache.getAttribute("folder-name");
+
+
+            long hour_milliseconds = 3600000;
+            long day_milliseconds = hour_milliseconds*24;
+            long week_milliseconds = day_milliseconds*7;
+            long month_milliseconds = week_milliseconds*4;
+            long year_milliseconds = month_milliseconds*12;
+
+
+
+            long millis_times_factor = 0;
+
+            switch (ageUnit){
+
+                case "HOURS":   millis_times_factor = hour_milliseconds;
+                    break;
+
+                case "DAYS":    millis_times_factor = day_milliseconds;
+                    break;
+
+                case "WEEKS":   millis_times_factor = week_milliseconds;
+                    break;
+
+
+                case  "MONTHS": millis_times_factor = month_milliseconds;
+                    break;
+
+                case  "YEARS" : millis_times_factor = year_milliseconds;
+                    break;
+
+                default: millis_times_factor = 0;
+
+            }
+
+            long cache_time = millis_times_factor*age;
+            if(cache_time==0)
+                continue;
+
+            appConfigurations.getTunnings().setCachedDirectory(folderName,cache_time);
+
+
+        }
+
+    }
+
+    private static void readSmartTunningConfigs(Element smartAssetsCachingElement, AppConfigurations appConfigurations){
+
+        NodeList smartCachedNodeList =  smartAssetsCachingElement.getElementsByTagName("enabled");
+        if(smartCachedNodeList.getLength()==0)
+            return;
+
+        for(int i=0;i<smartCachedNodeList.getLength();i++){
+
+            Element element = (Element) smartCachedNodeList.item(i);
+            String assetURI = element.getTextContent();
+            appConfigurations.getTunnings().enableSmartCaching(assetURI);
+
+        }
 
     }
 
     private static void readTunningConfigs(Element docElement, AppConfigurations appConfigurations){
 
-        NodeList tunningConfigNodeList = docElement.getElementsByTagName("tunning");
+        NodeList tunningConfigNodeList = docElement.getElementsByTagName("web-tunning");
         if(tunningConfigNodeList.getLength()>0){
 
             Element tunningElement = (Element) tunningConfigNodeList.item(0);
@@ -218,68 +346,22 @@ public class ConfigLoader {
                 return;
 
 
-            NodeList foldersHttpCacheList = webrootElement.getElementsByTagName("folder-http-cache");
-            if(foldersHttpCacheList.getLength()==0)
-                return;
+            NodeList staticFoldersCachingNodesList = webrootElement.getElementsByTagName("folders-fixed-caching");
 
+            if(staticFoldersCachingNodesList.getLength()>0){
 
-            for(int i=0; i<foldersHttpCacheList.getLength();i++){
-
-                Element folderHttpCache = (Element) foldersHttpCacheList.item(i);
-                int age = Integer.parseInt(folderHttpCache.getAttribute("age"));
-                String ageUnit = folderHttpCache.getAttribute("age-unit");
-                String folderName = folderHttpCache.getAttribute("folder-name");
-
-
-                long hour_milliseconds = 3600000;
-                long day_milliseconds = hour_milliseconds*24;
-                long week_milliseconds = day_milliseconds*7;
-                long month_milliseconds = week_milliseconds*4;
-                long year_milliseconds = month_milliseconds*12;
-
-
-
-                long millis_times_factor = 0;
-
-                switch (ageUnit){
-
-                    case "HOURS":   millis_times_factor = hour_milliseconds;
-                                    break;
-
-                    case "DAYS":    millis_times_factor = day_milliseconds;
-                                    break;
-
-                    case "WEEKS":   millis_times_factor = week_milliseconds;
-                                    break;
-
-
-                    case  "MONTHS": millis_times_factor = month_milliseconds;
-                                    break;
-
-                    case  "YEARS" : millis_times_factor = year_milliseconds;
-                                    break;
-
-                    default: millis_times_factor = 0;
-
-                }
-
-                long cache_time = millis_times_factor*age;
-                if(cache_time==0)
-                    continue;
-
-
-                CachedWebrootDirectory cached = new CachedWebrootDirectory();
-                cached.name = folderName;
-                cached.time = cache_time;
-                appConfigurations.getTunnings().getCachedWebrootDirectoryList().add(cached);
-
+                Element staticFoldersCachingElement = (Element) staticFoldersCachingNodesList.item(0);
+                readStaticFoldersCachingConfigs(staticFoldersCachingElement,appConfigurations);
 
             }
 
+            NodeList smartAssetsCachingNodesList = webrootElement.getElementsByTagName("assets-smart-caching");
+            if(smartAssetsCachingNodesList.getLength()>0){
 
+                Element smartAssetsCachingElement = (Element) smartAssetsCachingNodesList.item(0);
+                readSmartTunningConfigs(smartAssetsCachingElement,appConfigurations);
 
-
-
+            }
 
 
         }

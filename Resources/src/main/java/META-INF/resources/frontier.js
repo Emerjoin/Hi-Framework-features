@@ -35,7 +35,7 @@
 
     }
 
-    var promisse = new FrontierPromisse();
+    var promisse = new Hi.$features.frontiers.Promisse();
 
     var $req = $.ajax({
 
@@ -47,6 +47,35 @@
 
         success : function(data){
 
+            if(data.hasOwnProperty("$invoke")){
+
+                var cmdInvocations = data["$invoke"];
+                for(var cmdName in cmdInvocations){
+
+                    var cmdParams = cmdInvocations[cmdName];
+                    Hi.$ui.js.commands.run(cmdName,cmdParams);
+
+
+                }
+
+            }
+
+            if(data.hasOwnProperty("$root")){
+
+                if(typeof __!="undefined"){
+
+                    for(var key in data.$root){
+
+                        __[key] = data.$root[key];
+
+                    }
+
+                    __.$apply();
+
+                }
+
+            }
+
             promisse.onReturn(data.result);
 
         },
@@ -56,15 +85,18 @@
             //Request aborted
             if(errText=="abort"){
 
+                //TODO: Handle the abort: do not invoke the always callback
                 return;
 
             }else if(errText=="timeout"){
 
                 //TODO: Handle the timeout
+                //TODO: Issue an http error: 3006 (Timeout)
+                httpError = 3006;
 
             }
 
-            promisse.onCatch(err);
+            promisse.onCatch(httpError);
 
         },
 

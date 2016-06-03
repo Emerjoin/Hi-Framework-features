@@ -30,7 +30,7 @@ public class Scripter {
 
     private String generateUrl(String beanName, String method){
 
-        return "com.yayee.frontiers.bean.invocation/w487487284722487";
+        return "mz.co.hi.web.frontiers.bean.invocation/w487487284722487";
 
     }
 

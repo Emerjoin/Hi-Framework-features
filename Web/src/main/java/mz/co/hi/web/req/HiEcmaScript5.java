@@ -1,5 +1,6 @@
 package mz.co.hi.web.req;
 
+import mz.co.hi.web.AppContext;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
@@ -7,6 +8,7 @@ import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.mvc.NoSuchTemplateException;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -14,17 +16,20 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Mario Junior.
  */
-@HandleRequests(regexp = "(hi-[A-Za-z_0-9.]+[.][A-Za-z]{1,10}|[A-Z-a-z_]+\\/hi-[A-Za-z_0-9.]+[.][A-Za-z]{1,10})\\w+")
+@HandleRequests(regexp = "(hi-[A-Za-z_0-9.-]+[.][A-Za-z]{1,10}|[A-Z-a-z_]+\\/hi-[A-Za-z_0-9.-]+[.][A-Za-z]{1,10})\\w+")
 @ApplicationScoped
 public class HiEcmaScript5 extends ReqHandler {
 
     private RequestContext requestContext = null;
     private static Map<String,String> templateControllers = new HashMap<String, String>();
 
+    @Inject
+    private AppContext appContext;
 
     public static void prepareTemplates(ServletContext context) throws ServletException{
 
@@ -33,7 +38,6 @@ public class HiEcmaScript5 extends ReqHandler {
         for(String template : appConfigurations.getTemplates()) {
 
             try {
-
 
                 URL templateHTML = context.getResource("/" + template + ".html");
                 URL templateController = context.getResource("/" + template + ".js");
@@ -103,26 +107,118 @@ public class HiEcmaScript5 extends ReqHandler {
 
         }
 
-        if(requestURL.equals("hi-es5.js")){
+        String ecmascript5File = "hi-es5.js";
+        if(AppConfigurations.get().getDeploymentMode()!= AppConfigurations.DeploymentMode.DEVELOPMENT)
+            ecmascript5File = "hi-es5"+appContext.getAssetVersionToken()+".js";
+
+
+        if(requestURL.equals(ecmascript5File)) {
+
+            requestContext.getResponse().setHeader("Content-Type", "text/javascript");
+
+            if(AppConfigurations.get().getDeploymentMode()!= AppConfigurations.DeploymentMode.DEVELOPMENT)
+                AppConfigurations.get().getTunnings().emmitSmartCachingHeaders(requestContext);
+            else
+                requestContext.getResponse().setHeader("Cache-Control", "no-cache");
+
+
+
+            String replaceble = "//{{config}}";
+            String hiJs = getHiJs(requestContext);
+            String hiJsReplaced = hiJs.replace(replaceble, DispatcherServlet.javascriptConfigScript);
+            Helper.echo(hiJsReplaced + templateContent, requestContext);
+
+
+        }else if(requestURL.equals("hi-angular.js")){
 
             requestContext.getResponse().setHeader("Content-Type","text/javascript");
-            requestContext.getResponse().setHeader("Pragma","");
-            requestContext.getResponse().setHeader("Cache-Control","public, max-age=31536000");
-            Helper.echo(DispatcherServlet.javascriptInitScript+getYapiysJs(requestContext)+templateContent, requestContext);
+            Helper.echo(DispatcherServlet.angularJsScript,requestContext);
+
+
+        }else if(requestURL.equals("hi-es5-tests.js")){
+
+            requestContext.getResponse().setHeader("Content-Type","text/javascript");
+
+            String replaceble = "//{{config}}";
+            String hiJs = DispatcherServlet.hiLibScript;
+            String hiForTests = hiJs+DispatcherServlet.hiTestsScript;
+
+
+            URL runResource = requestContext.getServletContext().getResource("/webroot/tests/run.js");
+            if(runResource!=null){
+
+                String runScript = Helper.readTextStreamToEnd(runResource.openStream(),null);
+                hiForTests=hiForTests.replace(replaceble,runScript);
+
+            }
+
+
+            Set<String> testFiles = AppConfigurations.get().getTestFiles().keySet();
+            for(String testFile: testFiles){
+
+                String testToken = "Test.js";
+                String viewController = "/"+testFile.replace(testToken,".js");
+                String viewToken = "/views/";
+                String jsToken = ".js";
+
+                String prepend = "";
+                String append = "";
+
+                URL resource = requestContext.getServletContext().getResource(viewController);
+                if(resource!=null){
+
+
+
+                    String m = viewController.replace(viewToken,"").replace(jsToken,"");
+                    int firstIndex = m.indexOf('/');
+                    int lastIndex = m.lastIndexOf('/');
+
+                    if(firstIndex==lastIndex){
+
+
+                        String controller = m.substring(0,firstIndex);
+                        String action = m.substring(firstIndex+1,m.length());
+
+                        String setControllerinfo = "\nHi.$nav.setNextControllerInfo(\""+controller+"\",\""+action+"\");";
+                        String setLoadedController = "\nHi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
+
+
+                        prepend = setControllerinfo;
+                        append =  setLoadedController;
+
+                    }
+
+
+                    String viewControllerContent = Helper.readTextStreamToEnd(resource.openStream(),null);
+                    hiForTests=hiForTests+prepend+"\n"+viewControllerContent+append;
+
+                }
+
+
+            }
+
+
+            Helper.echo(hiForTests,requestContext);
+
+        }else{
+
+            return false;
 
         }
+
+
         return true;
 
 
     }
 
-    private static String getYapiysJs(RequestContext requestContext){
+    private static String getHiJs(RequestContext requestContext){
 
         String content = null;
 
-        if(DispatcherServlet.yayeeLibScript !=null){
+        if(DispatcherServlet.hiLibScript !=null){
 
-            content = DispatcherServlet.yayeeLibScript;
+            content = DispatcherServlet.angularJsScript+DispatcherServlet.hiLibScript+DispatcherServlet.frontiersScript;
 
         }else
 

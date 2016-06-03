@@ -3,9 +3,10 @@ package mz.co.hi.web.config;
 import mz.co.hi.web.notification.RoomsAssigner;
 import mz.co.hi.web.users.UDetailsProvider;
 
-import javax.inject.Singleton;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Mario Junior.
@@ -20,6 +21,31 @@ public class AppConfigurations {
     private UDetailsProvider uDetailsProvider;
     private List<String> frontiers = new ArrayList<>();
     private Tunnings tunnings = new Tunnings();
+    private Map<String,Boolean> testFiles = new HashMap<>();
+    private String defaultLanguage = "default";
+
+    private List<String> smartCachingExtensions = new ArrayList<>();
+
+    private DeploymentMode deploymentMode = DeploymentMode.DEVELOPMENT;
+
+    public static enum DeploymentMode {
+
+        DEVELOPMENT, PRODUCTION
+
+    }
+
+    private AppConfigurations(){
+
+        smartCachingExtensions.add("css");
+        smartCachingExtensions.add("js");
+
+    }
+
+    public List<String> getSmartCachingExtensions(){
+
+        return smartCachingExtensions;
+
+    }
 
     private static AppConfigurations appConfigurations = null;
 
@@ -114,5 +140,32 @@ public class AppConfigurations {
 
     public void setTunnings(Tunnings tunnings) {
         this.tunnings = tunnings;
+    }
+
+
+    public Map<String, Boolean> getTestFiles() {
+        return testFiles;
+    }
+
+    public void setTestFiles(Map<String, Boolean> testFiles) {
+        this.testFiles = testFiles;
+    }
+
+    public String getDefaultLanguage() {
+        return defaultLanguage;
+    }
+
+    public void setDefaultLanguage(String defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+    }
+
+    public void setDeploymentMode(DeploymentMode mode){
+
+        this.deploymentMode = mode;
+
+    }
+
+    public DeploymentMode getDeploymentMode() {
+        return deploymentMode;
     }
 }

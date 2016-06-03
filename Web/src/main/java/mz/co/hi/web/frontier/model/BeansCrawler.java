@@ -105,23 +105,11 @@ public class BeansCrawler {
 
                 Constructor beanConstructor = beanClass.getConstructor(null);
 
-                Object beanInstance = null;
-
-                try {
-
-                    beanInstance = CDI.current().select(beanClass).get();
-
-                }catch (Exception ex){
-
-                    beanInstance = beanConstructor.newInstance();
-
-
-                }
 
 
 
 
-                FrontierClass bean = new FrontierClass(beanClassName.toString(),simpleName,beanInstance);
+                FrontierClass bean = new FrontierClass(beanClassName.toString(),simpleName);
                 Method[] beanMethods = beanClass.getMethods();
 
                 for (Method method : beanMethods) {
@@ -171,7 +159,7 @@ public class BeansCrawler {
             beanClasses = new FrontierClass[beanClassList.size()];
             beanClassList.toArray(beanClasses);
 
-        }catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException ex){
+        }catch (NoSuchMethodException ex){
 
             throw new ServletException("Error during Frontier configuration process.",ex);
 

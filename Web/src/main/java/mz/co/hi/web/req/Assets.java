@@ -2,9 +2,10 @@ package mz.co.hi.web.req;
 
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.CachedWebrootDirectory;
+import mz.co.hi.web.config.Tunnings;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,17 +24,26 @@ public class Assets extends ReqHandler {
 
 
     private RequestContext requestContext = null;
-    private HashMap<String,Long> cachingDefs = new HashMap<>();
+    private HashMap<String,Long> staticCachingDefs = new HashMap<>();
+    private HashMap<String,Boolean> smartCachedAssets = new HashMap<>();
     private HashMap<String,Long> cachingStatus = new HashMap<>();
+
+    @Inject
+    private mz.co.hi.web.AppContext appContext;
 
     public Assets(){
 
-        List<CachedWebrootDirectory> list = AppConfigurations.get().getTunnings().getCachedWebrootDirectoryList();
+        List<Tunnings.CachedWebrootDirectory> list = AppConfigurations.get().getTunnings().getCachedWebrootDirectoryList();
+        List<String> allSmartCached = AppConfigurations.get().getTunnings().getSmartCachedAssets();
+
         if(list.size()==0)
             return;
 
-        for(CachedWebrootDirectory cachedWebrootDirectory: list)
-            cachingDefs.put(cachedWebrootDirectory.name,cachedWebrootDirectory.time);
+        for(Tunnings.CachedWebrootDirectory cachedWebrootDirectory: list)
+            staticCachingDefs.put(cachedWebrootDirectory.name,cachedWebrootDirectory.time);
+
+        for(String smartCached : allSmartCached)
+            smartCachedAssets.put(smartCached,true);
 
 
 
@@ -77,8 +87,8 @@ public class Assets extends ReqHandler {
 
         long period = 0;
 
-        if(cachingDefs.containsKey(folderName))
-            period = cachingDefs.get(folderName);
+        if(staticCachingDefs.containsKey(folderName))
+            period = staticCachingDefs.get(folderName);
 
         setCachePeriod(url,period);
         return period;
@@ -107,29 +117,20 @@ public class Assets extends ReqHandler {
 
     }
 
+    private void avoidCaching(RequestContext requestContext){
+
+        requestContext.getResponse().setHeader("Cache-Control", "no-cache");
+
+    }
+
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
 
         this.requestContext = requestContext;
         String assetUrl = requestContext.getRequest().getRequestURI().replace(requestContext.getRequest().getContextPath()+"/","");
 
-        int indexAsstesSlash = assetUrl.indexOf("webroot/");
+        int indexAsstesSlash = assetUrl.lastIndexOf("webroot/");
         assetUrl = assetUrl.substring(indexAsstesSlash,assetUrl.length());
 
-        URL assetURL = requestContext.getServletContext().getResource("/"+assetUrl);
-        if(assetURL==null){
-
-            //TODO: Do something about
-            return false;
-
-        }
-
-        String mime = getMime2(assetUrl);
-
-        if(mime==null){
-
-            return false;
-
-        }
 
 
         InputStream fileStream = null;
@@ -138,17 +139,70 @@ public class Assets extends ReqHandler {
         try {
 
 
-            long period = getCachePeriod(assetUrl);
+            caching: {
 
-            //First time checking if file is cached
-            if(period==-1)
-                period = getCacheFirstTime(assetUrl);
 
-            //Cache the file
-            if(period>0){
+                if(AppConfigurations.get().getDeploymentMode()== AppConfigurations.DeploymentMode.DEVELOPMENT) {
 
-                requestContext.getResponse().setHeader("Pragma","");
-                requestContext.getResponse().setHeader("Cache-Control","public, max-age="+period);
+                    avoidCaching(requestContext);
+                    break caching;
+
+                }
+
+
+                Tunnings tunnings = AppConfigurations.get().getTunnings();
+
+                if(tunnings.isASmartCachedURL(assetUrl)) {
+                    assetUrl = tunnings.getCleanAssetURL(assetUrl);
+
+                    String assetCacheablePath = assetUrl.substring(assetUrl.indexOf('/')+1,assetUrl.length());
+
+                    if(smartCachedAssets.containsKey(assetCacheablePath)){
+
+                        tunnings.emmitSmartCachingHeaders(requestContext);
+                        break caching;
+
+                    }
+
+                }
+
+
+
+
+                long period = getCachePeriod(assetUrl);
+
+                //First time checking if file is cached
+                if (period == -1)
+                    period = getCacheFirstTime(assetUrl);
+
+
+                //Cache the file
+                if (period > 0) {
+
+                    requestContext.getResponse().setHeader("Pragma", "");
+                    requestContext.getResponse().setHeader("Cache-Control", "public, max-age=" + period);
+
+                }else{
+
+                    avoidCaching(requestContext);
+
+                }
+
+            }
+
+            URL assetURL = requestContext.getServletContext().getResource("/"+assetUrl);
+            if(assetURL==null){
+
+                //TODO: Do something about
+                return false;
+
+            }
+
+            String mime = getMime2(assetUrl);
+
+            if(mime==null){
+
+                return false;
 
             }
 
@@ -157,7 +211,8 @@ public class Assets extends ReqHandler {
             outputStream = requestContext.getOutputStream();
             requestContext.getResponse().setHeader("Content-Type", mime);
 
-
+            int fileSize = fileStream.available();
+            requestContext.getResponse().setHeader("Content-Length", String.valueOf(fileSize));
 
             while (fileStream.available() > 0) {
 
@@ -180,6 +235,7 @@ public class Assets extends ReqHandler {
 
             }
 
+
         }catch (Exception ex){
 
             requestContext.getResponse().sendError(500);
@@ -196,6 +252,7 @@ public class Assets extends ReqHandler {
         return org.clapper.util.misc.MIMETypeUtil.MIMETypeForFileName(filename);
 
     }
+
 
 
 }

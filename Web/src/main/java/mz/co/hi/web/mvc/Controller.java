@@ -1,9 +1,11 @@
 package mz.co.hi.web.mvc;
 
+import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
 
+import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObjectBuilder;
@@ -18,16 +20,17 @@ import java.util.Map;
  */
 public class Controller implements Serializable {
 
-    private FrontEnd frontEnd = null;
+
     public static final String VIEW_DATA_KEY ="dataJson";
-    private RequestContext requestContext;
+    //private RequestContext requestContext;
 
     @Inject
     private HTMLizer htmLizer;
 
+
     public Controller(){
 
-        this.frontEnd = new FrontEnd();
+
 
     }
 
@@ -38,6 +41,7 @@ public class Controller implements Serializable {
 
     }
 
+    /*
     public void setRequestContext(RequestContext requestContext){
 
         this.requestContext = requestContext;
@@ -46,7 +50,7 @@ public class Controller implements Serializable {
 
     public RequestContext getRequestContext() {
         return requestContext;
-    }
+    }*/
 
     public void redirect(String url){
 
@@ -54,11 +58,6 @@ public class Controller implements Serializable {
 
     }
 
-    public FrontEnd getFrontEnd(){
-
-        return frontEnd;
-
-    }
 
     public void callView() throws MvcException{
 
@@ -71,12 +70,14 @@ public class Controller implements Serializable {
 
 
         AppConfigurations config = AppConfigurations.get();
+        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
 
         String actionName = requestContext.getData().get("action").toString();
         String controllerName = requestContext.getData().get("controller").toString();
         String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".html";
         String viewJsfile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".js";
 
+        FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
 
         if(values==null){
 
@@ -85,12 +86,9 @@ public class Controller implements Serializable {
         }
 
 
-        Map templateData = this.getFrontEnd().getTemplateData();
+        if(frontEnd.wasTemplateDataSet()){
 
-
-        if(templateData.size()>0){
-
-            values.put("$root",templateData);
+            values.put("$root",frontEnd.getTemplateData());
 
         }
 
@@ -99,7 +97,7 @@ public class Controller implements Serializable {
         //Do not need to load the view file
         if(requestContext.getData().containsKey("ignore_view")){
 
-            htmLizer.setRequestContext(requestContext);
+            //htmLizer.setRequestContext(requestContext);
             htmLizer.process(this,true);
             return;
 
@@ -141,7 +139,7 @@ public class Controller implements Serializable {
                 try {
 
                     InputStream viewJsInputStream = viewJsResource.openStream();
-                    String viewJsContent = requestContext.readToEnd(viewJsInputStream);
+                    String viewJsContent = Helper.readTextStreamToEnd(viewJsInputStream,null);
                     requestContext.getData().put("view_js", viewJsContent);
 
                 } catch (Exception ex) {
@@ -167,7 +165,7 @@ public class Controller implements Serializable {
             try {
 
                 InputStream viewInputStream = viewResource.openStream();
-                String viewContent = Helper.readTextStreamToEnd(viewInputStream, requestContext);
+                String viewContent = Helper.readTextStreamToEnd(viewInputStream, null);
                 requestContext.getData().put("view_content",viewContent);
 
 

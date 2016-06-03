@@ -4,6 +4,7 @@
     <root id="archive" name="mz.co.hi.web.annotations.processor.jar">
       <element id="module-output" name="Hi Annotations Processor" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/javapoet/1.5.1/javapoet-1.5.1.jar" path-in-jar="/" />
+      <element id="directory" name="META-INF" />
     </root>
   </artifact>
 </component>

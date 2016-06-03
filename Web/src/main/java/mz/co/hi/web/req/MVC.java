@@ -3,8 +3,7 @@ package mz.co.hi.web.req;
 
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.ClassLoader;
-import mz.co.hi.web.app.AppContext;
-import mz.co.hi.web.mvc.Controller;
+import mz.co.hi.web.AppContext;
 import mz.co.hi.web.mvc.HTMLizer;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -53,6 +52,7 @@ public class MVC extends ReqHandler{
 
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
         this.requestContext = requestContext;
+
 
         String mvcUrl = requestContext.getRouteUrl();
         int indexSlash = mvcUrl.indexOf('/');
@@ -137,51 +137,19 @@ public class MVC extends ReqHandler{
 
                 //TODO: Consider that CDI wont be present sometimes
 
-                Object bean = CDI.current().select(controller).get();
+                instance = CDI.current().select(controller).get();
 
 
-                if(bean==null){
-
-                    //TODO: Fire a warning
-                    instance = controller.newInstance();
-
-                }else{
-
-
-                    instance = bean;
-
-
-                }
 
             }catch (Exception ex){
 
-                //TODO: Fire an Exception: Controller instance obtention failed
-                ex.printStackTrace(System.out);
-
-                instance = controller.newInstance();
+                throw new ServletException("Injection of controller <"+controller.getCanonicalName()+"> failed",ex);
 
             }
 
 
 
-            Method setRequestContextMethod = null;
 
-            try {
-
-
-                setRequestContextMethod = Controller.class.getDeclaredMethod("setRequestContext",RequestContext.class);
-                setRequestContextMethod.invoke(instance,requestContext);
-
-
-            }catch (Exception ex){
-
-                ex.printStackTrace(System.err);
-
-
-            }
-
-            //Controller controllerInstance = (Controller) instance;
-            //controllerInstance.setRequestContext(requestContext);
 
 
             if(withParams)
@@ -197,14 +165,9 @@ public class MVC extends ReqHandler{
 
         }catch (InvocationTargetException e2) {
 
-                e2.printStackTrace();
-                throw new ServletException("Exception thrown while invoking action <"+action+"> on controller <"+controller.getCanonicalName()+">",e2);
+            e2.printStackTrace();
+            throw new ServletException("Exception thrown while invoking action <" + action + "> on controller <" + controller.getCanonicalName() + ">", e2);
 
-
-        }catch (InstantiationException ex){
-
-            ex.printStackTrace();
-            throw new ServletException("Could not instantiate the Controller <"+controller.getCanonicalName()+">",ex);
 
         }catch (IllegalAccessException e3){
 

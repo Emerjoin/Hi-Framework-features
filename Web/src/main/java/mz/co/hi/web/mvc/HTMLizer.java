@@ -2,12 +2,13 @@ package mz.co.hi.web.mvc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.sun.deploy.appcontext.*;
+import mz.co.hi.web.*;
+import mz.co.hi.web.AppContext;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.Helper;
-import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.users.Sessions;
 
+import javax.enterprise.inject.spi.CDI;
 import javax.json.Json;
 import javax.json.JsonObject;
 import java.io.InputStream;
@@ -21,8 +22,14 @@ import java.util.Map;
 public class HTMLizer {
 
     private static HTMLizer instance = null;
-    private static final String PREPARE_NEXT_VIEW = "Hi.Internal.prepareNextViewContext(false,context_vars,null,true);";
-    private static final String VIEW_NG = "<div id='app-view' ng-controller=\"view_controller\"></div>";
+    private static final String PREPARE_NEXT_VIEW = "Hi.$ui.js.createViewScope(vpath,context_vars,viewToLoad.html,false,false,false,false);";
+    private static final String RUN_APP = "Hi.$angular.run();";
+    private static final String BOOSTRAP_ANGULAR = "angular.bootstrap(document, [\"hi\"]);";
+    //private static final String VIEW_NG = "<div id='app-view' ng-controller=\"view_controller\"></div>";
+    private static final String VIEW_NG = "<div id='app-view'></div>";
+
+    public static final String JS_INVOCABLES_KEY = "$invoke";
+    public static final String TEMPLATE_DATA_KEY = "$root";
 
     private GsonBuilder gsonBuilder = null;
 
@@ -32,12 +39,7 @@ public class HTMLizer {
 
     }
 
-    public static HTMLizer getInstance(RequestContext requestContext){
 
-
-        return new HTMLizer(requestContext);
-
-    }
 
     public static HTMLizer getInstance(){
 
@@ -48,15 +50,12 @@ public class HTMLizer {
 
     private RequestContext requestContext = null;
 
-    private HTMLizer(RequestContext requestContext){
 
+
+    public HTMLizer(){
+
+        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
         this.requestContext = requestContext;
-
-    }
-
-    private HTMLizer(){
-
-
 
     }
 
@@ -96,7 +95,7 @@ public class HTMLizer {
 
         try {
 
-            templateFileContent = Helper.readTextStreamToEnd(templateURL.openStream(), requestContext);
+            templateFileContent = Helper.readTextStreamToEnd(templateURL.openStream(), null);
 
         }catch (Exception ex){
 
@@ -137,6 +136,8 @@ public class HTMLizer {
 
         }
 
+
+        templateFileContent = AppConfigurations.get().getTunnings().applySmartCaching(templateFileContent);
         return templateFileContent;
 
 
@@ -219,14 +220,17 @@ public class HTMLizer {
 
     private String getInitSnnipet(){
 
-        return getNextClosureInformation()+getNextViewPath()+getViewJs()+getControllerSetter();
+        //return getNextClosureInformation()+getNextViewPath()+getViewJs()+getControllerSetter();
+        return getNextClosureInformation()+getViewJs()+getControllerSetter();
 
     }
+
 
     private String getLoaderJavascript(FrontEnd frontEnd){
 
         StringBuilder scriptBuilder = new StringBuilder();
-        scriptBuilder.append(" var AppLang = '"+frontEnd.getLanguage()+"';");
+        scriptBuilder.append(" var appLang = "+ frontEnd.getLangDictionary()+";");
+        scriptBuilder.append(" var appLangName = '"+ frontEnd.getLanguage()+"';");
         scriptBuilder.append("if(typeof loadApp==\"function\"){");
         scriptBuilder.append("if (window.addEventListener)");
         scriptBuilder.append(" window.addEventListener(\"load\", loadApp, false);");
@@ -237,8 +241,8 @@ public class HTMLizer {
         scriptBuilder.append("if(typeof $ignition==\"function\"){");
         scriptBuilder.append(getInitSnnipet());//New code
         scriptBuilder.append("angular.element(document).ready(function() {");
+        //scriptBuilder.append("angular.bootstrap(document, [\"hi\"]);");
         scriptBuilder.append("$ignition();");
-        scriptBuilder.append("angular.bootstrap(document, [\"hi\"]);");
         scriptBuilder.append("});}}");
         return scriptBuilder.toString();
 
@@ -250,14 +254,14 @@ public class HTMLizer {
         CharSequence http = "http://";
         CharSequence https = "https://";
 
+        AppContext appContext = CDI.current().select(AppContext.class).get();
+
         JsonObject app = Json.createObjectBuilder()
                 .add("base_url", requestContext.getBaseURL())
                 .add("simple_base_url", requestContext.getBaseURL().replace(http,"").replace(https,""))
-                .add("context",false)
-                .add("hmvc",false)
-                .add("midleURL",false)
-                .add("entrance_route","")
-                .add("under_development",false).build();
+                .add("deployId",appContext.getDeployId())
+                .add("deployMode",appContext.getDeployMode().toString())
+                .build();
 
         return app;
 
@@ -268,7 +272,7 @@ public class HTMLizer {
 
         String controller = requestContext.getData().get("controller").toString();
         String action = requestContext.getData().get("action").toString();
-        String functionInvocation = "Hi.Internal.setNextClosureInformation(false,\""+controller+"\",\""+action+"\");";
+        String functionInvocation = "Hi.$nav.setNextControllerInfo(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
 
@@ -278,7 +282,8 @@ public class HTMLizer {
 
         String controller = requestContext.getData().get("controller").toString();
         String action = requestContext.getData().get("action").toString();
-        String functionInvocation = "Hi.Internal.setNextViewPath(false,\""+controller+"\",\""+action+"\");";
+        //String functionInvocation = "Hi.Internal.setNextViewPath(false,\""+controller+"\",\""+action+"\");";
+        String functionInvocation = "var vpath = Hi.$nav.getViewPath(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
 
@@ -288,7 +293,7 @@ public class HTMLizer {
 
         String controller = requestContext.getData().get("controller").toString();
         String action = requestContext.getData().get("action").toString();
-        String functionInvocation = "Hi.setLoadedController(\""+controller+"\",\""+action+"\");";
+        String functionInvocation = "Hi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
     }
@@ -298,7 +303,7 @@ public class HTMLizer {
 
         if(!requestContext.getData().containsKey("view_js")){
 
-            return "Hi.UI.js({})";
+            return "Hi.view(function(_){})";
 
         }
 
@@ -323,12 +328,12 @@ public class HTMLizer {
 
 
         //Get the action to perform from the FrontEnd
-        FrontEnd frontEnd = controller.getFrontEnd();
+        FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
 
 
         //Get the template
         String template = fetchTemplate(frontEnd);
-        String loadedJSContent= DispatcherServlet.yayeeLoaderScript;
+        String loadedJSContent= DispatcherServlet.hiScript;
 
 
         Map viewData = (Map) requestContext.getData().get(Controller.VIEW_DATA_KEY);
@@ -341,11 +346,27 @@ public class HTMLizer {
 
             viewHTML = requestContext.getData().get("view_content").toString();
 
+            if(viewHTML!=null)
+                viewHTML = AppConfigurations.get().getTunnings().applySmartCaching(viewHTML);
+
         }
 
 
         /* AJAX REQUEST */
         if(requestContext.hasAjaxHeader()) {
+
+
+            //Client-side invocations
+            Map<String,Map> actions = frontEnd.getLaterInvocations();
+
+            //Not Empty
+            if(!actions.isEmpty()){
+
+                viewData.put(JS_INVOCABLES_KEY,actions);
+
+            }
+
+
 
             Map route = new HashMap();
             route.put("controller", requestContext.getData().get("controller").toString());
@@ -386,12 +407,15 @@ public class HTMLizer {
 
 
 
-        if(controller.getRequestContext().isUserLogged()){
+
+
+        if(requestContext.isUserLogged()){
 
             //Can only fetch data for logged user
 
-            if(!viewData.containsKey("$root")){
+            if(!viewData.containsKey(TEMPLATE_DATA_KEY)){
 
+                //TODO: Re-check this
                 viewData.put("$root", new HashMap<>());
 
             }
@@ -404,11 +428,11 @@ public class HTMLizer {
 
 
                 $templateDataMap.put("$user", AppConfigurations.get().getUserDetailsProvider().
-                        getDetails(controller.getRequestContext().getUsername()));
+                        getDetails(requestContext.getUsername()));
 
             }
 
-            Sessions.handleUserDetails(controller.getRequestContext().getUsername());
+            Sessions.handleUserDetails(requestContext.getUsername());
             viewData.put("$root",$templateDataMap);
 
 
@@ -460,11 +484,12 @@ public class HTMLizer {
 
         String appVariable = makeJavascript(javascriptVar("App",getAppData().toString()));
         String contextVarsVariable = makeJavascript(javascriptVar("context_vars",viewDataStr));
-        String ignitionScript = makeJavascript(makeFunction("$ignition",PREPARE_NEXT_VIEW));
+        String startupScript = makeJavascript(makeFunction("$startup",getNextViewPath()+PREPARE_NEXT_VIEW));
+        String ignitionScript = makeJavascript(makeFunction("$ignition",RUN_APP+BOOSTRAP_ANGULAR));
         String viewToLoadVariable = makeJavascript(javascriptVar("viewToLoad",gson.toJson(html)));
 
 
-        String allJson = appVariable+contextVarsVariable+viewToLoadVariable+ignitionScript;
+        String allJson = appVariable+contextVarsVariable+viewToLoadVariable+startupScript+ignitionScript;
 
 
         allJson+="\n"+VIEW_NG;
@@ -483,7 +508,6 @@ public class HTMLizer {
 
     private void filter(String result){
 
-
         result="<h1>Changed</h1>";
 
     }
@@ -491,9 +515,15 @@ public class HTMLizer {
 
     private void sendToClient(String result){
 
-
+        requestContext.getResponse().setHeader("Cache-Control", "no-cache");
         requestContext.getResponse().setContentType("text/html;charset=UTF8");
         Helper.echo(result, requestContext);
+
+    }
+
+    private void applySmartCaching(String markup){
+
+
 
     }
 

@@ -42,11 +42,12 @@ public class FrontierInvoker {
 
         }
 
-        Object result = null;
+
+        Object refreshedObj = frontier.getObject();
 
         try {
 
-            returnedObject = method.getMethod().invoke(frontier.getObject(), invocationParams);
+            returnedObject = method.getMethod().invoke(refreshedObj, invocationParams);
 
         }catch (Exception ex){
 

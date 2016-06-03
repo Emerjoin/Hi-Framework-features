@@ -3,26 +3,56 @@ package mz.co.hi.web;
 
 import mz.co.hi.web.users.Sessions;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class RequestContext {
 
+@RequestScoped
+public class RequestContext implements Serializable {
+
+
+    @Inject
     private HttpServletRequest request = null;
+
     private HttpServletResponse response = null;
+
+
+    @Inject
     private ServletContext servletContext = null;
+
     private Map<String,Object> data = new HashMap<String, Object>();
     private String url = null;
     private String routeUrl;
+
+
+    @Inject
     private HttpSession httpSession = null;
+
+
     private OutputStream outputStream = null;
+
+    /*
+    private boolean requestHandlerAttached = false;
+
+
+    public boolean isRequestHandlerAttached() {
+        return requestHandlerAttached;
+    }
+
+    public void dettachRequestHandler() {
+        this.requestHandlerAttached = false;
+    }*/
 
     public String getUsername(){
 
@@ -69,6 +99,7 @@ public class RequestContext {
 
     }
 
+    /*
     public RequestContext(HttpServletRequest request, HttpServletResponse response, ServletContext context, String routeUrl){
 
         this.request = request;
@@ -76,6 +107,25 @@ public class RequestContext {
         this.url = request.getRequestURI();
         this.servletContext = context;
         this.routeUrl = routeUrl;
+    }*/
+
+    public RequestContext(){
+
+
+
+    }
+
+
+    @PostConstruct
+    private void getReady(){
+
+        this.url = request.getRequestURI();
+
+    }
+
+    protected void setRouteUrl(String r){
+
+        this.routeUrl = r;
 
     }
 
@@ -83,9 +133,6 @@ public class RequestContext {
         return httpSession;
     }
 
-    public void setSession(HttpSession httpSession) {
-        this.httpSession = httpSession;
-    }
 
     public String getUrl() {
         return url;
@@ -101,9 +148,6 @@ public class RequestContext {
         this.url = url;
     }
 
-    protected void setServletContext(ServletContext context){
-        servletContext = context;
-    }
 
     public ServletContext getServletContext(){
 
@@ -111,11 +155,7 @@ public class RequestContext {
 
     }
 
-    protected void setRequest(HttpServletRequest request){
 
-        this.request = request;
-
-    }
 
     protected  void setResponse(HttpServletResponse response){
 

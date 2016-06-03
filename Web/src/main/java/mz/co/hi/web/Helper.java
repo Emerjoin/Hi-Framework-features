@@ -1,5 +1,6 @@
 package mz.co.hi.web;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -28,6 +29,15 @@ public class Helper {
             while (scanner.hasNextLine()) {
 
                 text +=scanner.nextLine()+"\n";
+
+            }
+
+
+            if(requestContext!=null){
+
+                HttpServletResponse response = requestContext.getResponse();
+                response.setContentType("charset=UTF8");
+                requestContext.echo(text);
 
             }
 

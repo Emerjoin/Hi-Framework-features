@@ -91,7 +91,7 @@ public class Processor extends AbstractProcessor {
                     .addMethod(constructor)
                     .build();
 
-            JavaFile javaFile = JavaFile.builder("com.yayee.generated", javascriptBeansInitializer)
+            JavaFile javaFile = JavaFile.builder("mz.co.hi.web.generated", javascriptBeansInitializer)
                     .build();
 
             javaFile.writeTo(writer);

@@ -1,5 +1,6 @@
 package mz.co.hi.web.frontier.model;
 
+import javax.enterprise.inject.spi.CDI;
 import java.util.HashMap;
 
 /**
@@ -12,11 +13,11 @@ public class FrontierClass {
     private String simpleName;
     private Object object;
 
-    public FrontierClass(String clazz,String simpleName, Object object){
+    public FrontierClass(String clazz,String simpleName){
 
         this.className = clazz;
         this.simpleName = simpleName;
-        this.object = object;
+        //this.object = object;
 
     }
 
@@ -48,9 +49,23 @@ public class FrontierClass {
 
     }
 
+
     public Object getObject() {
-        return object;
+
+        try {
+
+            return CDI.current().select(Class.forName(className)).get();
+
+
+        }catch (Exception ex){
+
+            return null;
+
+        }
     }
+
+
+
 
     public FrontierMethod[] getMethods(){
 

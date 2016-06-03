@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mz.co.hi.web.annotations.processor">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

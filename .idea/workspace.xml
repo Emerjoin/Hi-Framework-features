@@ -2,199 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b186441b-9454-4f98-936e-6a65a7f1e75c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Yayee Framework.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloApp/web/i18n/en.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/contents.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/css/simple-sidebar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guide/v.0.9/js/jquery.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/.idea/artifacts/YayeeAnnotationsProcessor_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/.idea/libraries/yayee_core.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/YayeeAnnotationsProcessor.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/out/artifacts/YayeeAnnotations/yayee-annotations.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Annotations/src/main/java/com/yayee/annotations/Processor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/.idea/artifacts/yayee_resources_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/YayeeResources.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/out/artifacts/yayee_resources_jar/yayee-resources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/src/main/java/META-INF/resources/yayee-config.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/src/main/java/META-INF/resources/yayee.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/src/main/java/com/yayee/resources/ResourcesProvider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/target/classes/com/yayee/resources/ResourcesProvider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/artifacts/yayee_core.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__asm_asm_3_3_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_enterprise_cdi_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__javax_websocket_javax_websocket_client_api_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/yayee_annotations.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/.idea/libraries/yayee_resources.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/Yayee.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/out/artifacts/yayee_core/yayee-core.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Cache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/ClassLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Dispatcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/FilesCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Helper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/HtmlDispatcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/RequestContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/RequestException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/Values.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/YeeException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/Frontier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/KeepFrontierCalls.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/MultipleCalls.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/annotations/SingleCall.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/app/AppContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/AppConfigurations.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/CachedWebrootDirectory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/ConfigLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/config/Tunnings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/FrontierInvocationFailedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/FrontierInvoker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/InvalidFrontierParamException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/MapConversionException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/MissingFrontierParamException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/Scripter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/BeansCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/Blank.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/FrontierClass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/FrontierMethod.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/frontier/model/MethodParam.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/ConversionFailedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/FrontEnd.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/HTMLizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/MalMarkedTemplateException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/MissingResourcesLibException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/MvcException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/NoSuchTemplateException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/NoSuchViewException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/mvc/TemplateException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/Notification.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/NotificationConversionException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/RoomsAssigner.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/UserGroups.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/UsersInformer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/notification/WebSocket.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/Assets.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/ErrorHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/Frontiers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/HandleRequests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/MVC.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/ReqHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/ReqMatchException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/req/Yayee.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/users/Sessions.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/users/UDetailsProvider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/validation/Assert.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/main/java/com/web/yayee/validation/ValidationException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/test/java/test/com/web/yayee/validation/AssertTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/src/test/java/test/com/web/yayee/validation/MyEnum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Cache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/ClassLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Dispatcher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/FilesCache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Helper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/HtmlDispatcher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/RequestContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/RequestException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/Values.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/YeeException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/Frontier.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/KeepFrontierCalls.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/MultipleCalls.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/SingleCall$AbortPolicy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/SingleCall$Detection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/annotations/SingleCall.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/app/AppContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/AppConfigurations.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/CachedWebrootDirectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/ConfigLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/config/Tunnings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/FrontierInvocationFailedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/FrontierInvoker.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/InvalidFrontierParamException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/MapConversionException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/MissingFrontierParamException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/Scripter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/BeansCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/Blank.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/FrontierClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/FrontierMethod.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/frontier/model/MethodParam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/ConversionFailedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/FrontEnd.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/HTMLizer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/MalMarkedTemplateException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/MissingResourcesLibException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/MvcException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/NoSuchTemplateException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/NoSuchViewException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/mvc/TemplateException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/Notification.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/NotificationConversionException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/RoomsAssigner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/UserGroups.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/UsersInformer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/notification/WebSocket.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/Assets.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/ErrorHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/Frontiers.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/HandleRequests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/MVC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/ReqHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/ReqMatchException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/req/Yayee.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/users/Sessions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/users/UDetailsProvider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/validation/Assert.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/classes/com/web/yayee/validation/ValidationException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/test-classes/test/com/web/yayee/validation/AssertTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/target/test-classes/test/com/web/yayee/validation/MyEnum.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/compiler.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/misc.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/modules.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Annotations/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/compiler.xml" afterPath="$PROJECT_DIR$/Resources/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/misc.xml" afterPath="$PROJECT_DIR$/Resources/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/modules.xml" afterPath="$PROJECT_DIR$/Resources/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/AttributeConstraints.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/DataFetchSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/FetchParams.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JDBCSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JPAFetchSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/MysqlJDBCSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/Web/out/artifacts/jar/mz.co.hi.web.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HelloApp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/HelloApp/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HelloApp/web/views/greetings/hi.js" afterPath="$PROJECT_DIR$/HelloApp/web/views/greetings/hi.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Resources/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/.name" afterPath="$PROJECT_DIR$/Web/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/compiler.xml" afterPath="$PROJECT_DIR$/Web/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/modules.xml" afterPath="$PROJECT_DIR$/Web/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Web/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guide/v.0.9/contents.txt" afterPath="$PROJECT_DIR$/guide/v.0.9/contents.txt" />
     </list>
     <ignored path="Yayee Framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -219,8 +40,8 @@
       <file leaf-file-name="contents.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9869848">
-              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.0498915">
+              <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -281,9 +102,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,44 +130,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Annotations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yayee Framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hi Framework" />
+              <option name="myItemId" value="guide" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Annotations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jar" />
+              <option name="myItemId" value="v.0.9" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Annotations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
@@ -809,12 +608,13 @@
       <workItem from="1462889526171" duration="7974000" />
       <workItem from="1462910206811" duration="850000" />
       <workItem from="1462923065573" duration="1502000" />
-      <workItem from="1462961002382" duration="531000" />
+      <workItem from="1462961002382" duration="2483000" />
+      <workItem from="1463000371741" duration="116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10857000" />
+    <option name="totallyTimeSpent" value="12925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -865,6 +665,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -924,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/guide/v.0.9/contents.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9869848">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.0498915">
+          <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
           <folding />
         </state>
       </provider>

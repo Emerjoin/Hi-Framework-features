@@ -21,6 +21,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <processor name="mz.co.hi.web.annotations.processor.Processor" />
         <processorPath useClasspath="true" />
         <module name="HelloApp" />
       </profile>
