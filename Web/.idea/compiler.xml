@@ -32,7 +32,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Hi Framework core" target="1.8" />
+      <module name="Hi Framework core" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

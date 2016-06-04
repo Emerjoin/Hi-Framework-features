@@ -1,7 +1,9 @@
 package mz.co.hi.web;
 
 
+import com.yahoo.platform.yui.compressor.JavaScriptCompressor;
 import mz.co.hi.web.users.Sessions;
+import net_alchim31_maven_yuicompressor.YuiCompressorMojo;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
