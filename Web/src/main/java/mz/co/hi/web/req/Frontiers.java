@@ -2,8 +2,10 @@ package mz.co.hi.web.req;
 
 import com.google.gson.*;
 import mz.co.hi.web.FrontEnd;
+import mz.co.hi.web.Helper;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.AppContext;
+import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.frontier.*;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
@@ -13,6 +15,7 @@ import mz.co.hi.web.mvc.HTMLizer;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +25,7 @@ import java.util.Scanner;
  * Created by Mario Junior.
  */
 
-@HandleRequests(regexp = "mz.co.hi.web.frontiers.bean.invocation\\/[A-Za-z0-9.]{5,}", supportPostMethod = true)
+@HandleRequests(regexp = "f.m.call/[$_A-Za-z0-9]+/[$_A-Za-z0-9]+", supportPostMethod = true)
 @ApplicationScoped
 public class Frontiers extends ReqHandler {
 
@@ -38,11 +41,16 @@ public class Frontiers extends ReqHandler {
     @Inject
     private FrontEnd frontEnd;
 
+
     public static void addFrontier(FrontierClass frontierClass){
 
-        frontiersMap.put(frontierClass.getSimpleName(),frontierClass);
+        if(AppConfigurations.get().getDeploymentMode()== AppConfigurations.DeploymentMode.DEVELOPMENT)
+            frontiersMap.put(frontierClass.getSimpleName(),frontierClass);
+        else
+            frontiersMap.put(Helper.md5(frontierClass.getSimpleName()),frontierClass);
 
     }
+
 
     public static boolean frontierExists(String name){
 
@@ -123,11 +131,37 @@ public class Frontiers extends ReqHandler {
 
     }
 
+
+    private String[] getFrontierPair(RequestContext context){
+
+        String route = context.getRouteUrl();
+
+        int firstSlashIndex = route.indexOf('/');
+        int lastSlashIndex = route.lastIndexOf('/');
+
+        String className = route.substring(firstSlashIndex+1,lastSlashIndex);
+        String methodName = route.substring(lastSlashIndex+1,route.length());
+
+        return new String[]{className,methodName};
+
+    }
+
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
 
+        /*
         String invokedClass = requestContext.getRequest().getHeader(INVOKED_CLASS_HEADER);
         String invokedMethod = requestContext.getRequest().getHeader(INVOKED_METHOD_HEADER);
+        */
+
+        String[] frontierPair = getFrontierPair(requestContext);
+
+        String invokedClass = frontierPair[0];
+        String invokedMethod = frontierPair[1];
+
+        System.out.println("fclass: "+invokedClass);
+        System.out.println("fmethod: "+invokedMethod);
+
 
         if(invokedClass==null||invokedMethod==null){
 

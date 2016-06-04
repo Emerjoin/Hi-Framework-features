@@ -1,5 +1,8 @@
 package mz.co.hi.web.frontier.model;
 
+import mz.co.hi.web.Helper;
+import mz.co.hi.web.config.AppConfigurations;
+
 import javax.enterprise.inject.spi.CDI;
 import java.util.HashMap;
 
@@ -9,6 +12,8 @@ import java.util.HashMap;
 public class FrontierClass {
 
     private HashMap<String,FrontierMethod> methodsMap = new HashMap();
+    private HashMap<String,FrontierMethod> hashedMethodsMap = new HashMap();
+
     private String className;
     private String simpleName;
     private Object object;
@@ -41,11 +46,12 @@ public class FrontierClass {
 
         return methodsMap.containsKey(name);
 
+
     }
 
     public FrontierMethod getMethod(String name){
 
-        return methodsMap.get(name);
+            return methodsMap.get(name);
 
     }
 
@@ -72,6 +78,7 @@ public class FrontierClass {
         FrontierMethod methods[] = new FrontierMethod[methodsMap.size()];
         methodsMap.values().toArray(methods);
         return methods;
+
 
     }
 }

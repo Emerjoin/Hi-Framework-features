@@ -7,122 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/.idea/libraries/mz_co_hi_web_annotations_processor.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Resources/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-tests.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/view-example.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/AttributeConstraints.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/DataFetchSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/FetchParams.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JDBCSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JPAFetchSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/sources/MysqlJDBCSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/TestFiles.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/HelloApp.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/classes/hello/controllers/Greetings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/hi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/cdi-api-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/gson-2.6.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/guava-13.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/javautil-3.1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/javax.el-api-3.0.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/javax.interceptor-api-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/javax.servlet-api-3.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/javax.websocket-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/jboss-annotations-api_1.2_spec-1.0.0.Alpha1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/jboss-classfilewriter-1.0.4.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/jboss-el-api_3.0_spec-1.0.0.Alpha1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/jboss-interceptors-api_1.2_spec-1.0.0.Alpha3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/jboss-logging-3.1.3.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/mz.co.hi.resources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/mz.co.hi.web.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/weld-api-2.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/weld-core-2.1.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/weld-core-impl-2.1.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/weld-core-jsf-2.1.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/weld-spi-2.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/views/greetings/hi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/views/greetings/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/webroot/js/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/controllers/Greetings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/target/classes/hello/controllers/Greetings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/i18n/en.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/js/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/CachedWebrootDirectory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/FrontEnd.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/app/AppContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/CachedWebrootDirectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/FrontEnd.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/app/AppContext.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" afterPath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/annotations/processor/Processor.class" afterPath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/annotations/processor/Processor.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/clean-hi.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/out/artifacts/jar/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/../Resources/out/artifacts/jar/mz.co.hi.resources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/target/classes/mz/co/hi/resources/EmptyClass.class" afterPath="$PROJECT_DIR$/../Resources/target/classes/mz/co/hi/resources/EmptyClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/Helper.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/Helper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/RequestContext.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/RequestContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/ConfigLoader.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/ConfigLoader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/Tunnings.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/Tunnings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/Scripter.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/Scripter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/Controller.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/HTMLizer.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/HTMLizer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/Assets.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/Assets.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/Frontiers.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/Frontiers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/HiEcmaScript5.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/HiEcmaScript5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/MVC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/annotations/processor/Processor.java" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/annotations/processor/Processor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../HelloApp/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../HelloApp/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/Hi Framework Resources.iml" afterPath="$PROJECT_DIR$/../Resources/Hi Framework Resources.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/angular.min.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/angular.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/loader.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../guide/v.0.9/contents.txt" afterPath="$PROJECT_DIR$/../guide/v.0.9/contents.txt" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -153,55 +56,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HTMLizer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java">
+      <file leaf-file-name="Frontiers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="516" column="0" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="72" selection-end-column="19" />
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9900285">
-              <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HiEcmaScript5.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
+      <file leaf-file-name="MVC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="84" />
+              <caret line="56" column="50" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java">
+      <file leaf-file-name="Scripter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62222224">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrontierClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
+              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -211,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -225,16 +134,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -253,13 +152,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-              <folding>
-                <element signature="e#3096#3097#0" expanded="true" />
-                <element signature="e#3127#3128#0" expanded="true" />
-                <element signature="e#3752#3753#0" expanded="true" />
-                <element signature="e#3789#3790#0" expanded="true" />
-              </folding>
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -271,8 +165,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -287,8 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HtmlHiServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HtmlFileServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmasript.java" />
         <option value="$PROJECT_DIR$/src/test/java/test/com/web/yayee/validation/AssertTest.java" />
@@ -305,8 +197,6 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/DataFetchSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/demo.html" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/TestFiles.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" />
@@ -318,26 +208,30 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontierContextImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierContextImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/FrontEnd.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ControllerContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEndContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContextBackup.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontiersContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/SessionFrontiersContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
       </list>
     </option>
   </component>
@@ -1265,7 +1159,7 @@
       <workItem from="1464614859450" duration="7970000" />
       <workItem from="1464681022027" duration="45861000" />
       <workItem from="1464900475149" duration="187000" />
-      <workItem from="1464940094677" duration="492000" />
+      <workItem from="1464940094677" duration="7484000" />
     </task>
     <servers />
   </component>
@@ -1299,7 +1193,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="465359000" />
+    <option name="totallyTimeSpent" value="472351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1316,6 +1210,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51643836" sideWeight="0.48640916" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
@@ -1323,24 +1218,23 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65890414" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.49427754" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24892704" sideWeight="0.67469877" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.3253012" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51643836" sideWeight="0.48640916" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65890414" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
@@ -1366,19 +1260,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1529,13 +1417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/HtmlFileServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53418803">
@@ -1611,52 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding>
-            <element signature="e#2389#2390#0" expanded="false" />
-            <element signature="e#2423#2424#0" expanded="false" />
-            <element signature="e#2454#2455#0" expanded="false" />
-            <element signature="e#2480#2481#0" expanded="false" />
-            <element signature="e#2589#2590#0" expanded="false" />
-            <element signature="e#2619#2620#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.555555">
@@ -1685,18 +1520,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="516" column="0" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9900285">
+        <state vertical-scroll-proportion="0.0">
           <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1705,7 +1538,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="84" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1713,6 +1548,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1720,7 +1583,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1735,32 +1598,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-          <folding>
-            <element signature="e#3096#3097#0" expanded="true" />
-            <element signature="e#3127#3128#0" expanded="true" />
-            <element signature="e#3752#3753#0" expanded="true" />
-            <element signature="e#3789#3790#0" expanded="true" />
-          </folding>
+          <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62222224">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

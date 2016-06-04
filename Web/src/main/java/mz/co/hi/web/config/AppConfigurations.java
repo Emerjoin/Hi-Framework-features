@@ -70,6 +70,14 @@ public class AppConfigurations {
 
     }
 
+
+    public boolean underDevelopment(){
+
+        return deploymentMode==DeploymentMode.DEVELOPMENT;
+
+    }
+
+
     public String getControllersPackageName() {
         return controllersPackageName;
     }

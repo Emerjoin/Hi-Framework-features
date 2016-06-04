@@ -41,7 +41,7 @@
 
         method:"POST",
         url : $functionUrl,
-        headers : $headers,
+        //headers : $headers,
         data: JSON.stringify(params),
         dataType:"json",
 

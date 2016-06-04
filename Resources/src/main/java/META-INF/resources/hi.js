@@ -979,11 +979,60 @@ Hi.$ui.html.prepareView = function(route_name_or_object){
 
 
 
+Hi.$ui.html.cache.getStorageKey = function(){
+
+    return "_hi_views_"+App.base_url;
+
+};
+
+Hi.$ui.html.cache.updateCache = function(cache){
+
+    if(typeof localStorage!="undefined"&&typeof cache=="object"){
+
+        localStorage[Hi.$ui.html.cache.getStorageKey()] = JSON.stringify(cache);
+
+    }
+
+};
+
+Hi.$ui.html.cache.getCache = function(){
+
+    var theCache = {};
+
+    if(typeof localStorage!="undefined"){
+
+        var key = Hi.$ui.html.cache.getStorageKey();
+
+        if(localStorage.hasOwnProperty(key)){
+
+            try {
+
+                theCache = JSON.parse(localStorage[key]);
+
+            }catch (err){
+
+                Hi.$log.warn("There was an error when trying to parse views cache JSON");
+
+            }
+
+        }
+
+    }
+
+    return theCache;
+
+};
+
+
+
+
 //Limpa a cache
 Hi.$ui.html.cache.destroy = function(){
 
-    if(sessionStorage){
-        sessionStorage.clear();
+    if(typeof localStorage!="undefined"){
+
+        Hi.$ui.html.cache.updateCache({});
+
     }
 
 };
@@ -992,151 +1041,64 @@ Hi.$ui.html.cache.destroy = function(){
 //Coloca uma view na cache
 Hi.$ui.html.cache.storeView = function(path,markup){
 
-    try {
 
-        //Session storage disponivel
-        if (sessionStorage && Hi.$ui.html.cache.on) {
-
-            var toStore = $("<div>");
-            toStore.html(markup);
-
-            $(toStore).find(".hi").remove();
-
-            var html = $(toStore).html();
-
-            sessionStorage.setItem(path, html);
-
-            Hi.$ui.html.cache.log(path);
-
-        }
-
-    }catch(err){
+    if(!Hi.$ui.html.cache.on){
 
         return false;
 
     }
 
 
+    var toStore = $("<div>");
+    toStore.html(markup);
+    $(toStore).find(".hi").remove();
+    var html = $(toStore).html();
+
+    var cache = Hi.$ui.html.cache.getCache();
+    cache[Hi.$ui.html.cache.normalizePath(path)] = html;
+    Hi.$ui.html.cache.updateCache(cache);
+
+    Hi.$log.info("Caching view of path <"+path+">");
+
+
 };
 
-Hi.$ui.html.cache.log = function(path){
 
-    try {
+Hi.$ui.html.cache.normalizePath = function(path){
 
-        if (sessionStorage) {
+    var qIndex = path.indexOf('?');
 
-            var regs = JSON.parse(sessionStorage['hi_cache_regs']);
-            if (!Array.isArray(regs)) {
+    if(qIndex!=-1){
 
-                regs = new Array();
-
-            }
-
-            if (regs.indexOf(path) == -1) {
-                regs.push(path);
-            }
-
-            sessionStorage['hi_cache_regs'] = JSON.stringify(regs);
-
-        }
-
-    }catch(err){
-
-
-        return false;
+        return path.substr(0,qIndex);
 
     }
 
-};
-
-
-Hi.$ui.html.cache.cleanup = function(){
-
-    try {
-
-        if (sessionStorage) {
-
-            var regs = sessionStorage['hi_cache_regs'];
-
-            if (regs) {
-
-                regs = JSON.parse(regs);
-
-                for (var index in regs) {
-
-                    if (index !== 'removeVal') {
-
-                        var path = regs[index];
-
-
-                        if (sessionStorage[path]) {
-
-                            delete sessionStorage[path];
-
-                        }
-
-
-                    }
-
-
-                }
-
-
-                sessionStorage['hi_cache_regs'] = JSON.stringify(new Array());
-
-            }
-
-
-        }
-
-    }catch(err){
-
-        return false;
-
-    }
+    return path;
 
 };
-
 
 //Verifica se a cache contem uma determinada view
 Hi.$ui.html.cache.stores = function(path){
 
-    //Session storage disponivel
-    if(sessionStorage&&Hi.$ui.html.cache.on){
-
-        if(sessionStorage.getItem(path)){
-
-            Hi.$log.info('View '+path+' found in the cache');
-            return true;
-
-        }else{
 
 
-            Hi.$log.info('View '+path+' NOT found in the cache');
+    if(!Hi.$ui.html.cache.on){
 
-            return false;
-
-        }
-
-    }else{
-
-        Hi.$log.info('Cache is disabled');
+        return false;
 
     }
 
+    var cache = Hi.$ui.html.cache.getCache();
+    return cache.hasOwnProperty(Hi.$ui.html.cache.normalizePath(path));
 
 };
 
 //Obtem uma view da cahe
 Hi.$ui.html.cache.fetch = function(path){
 
-    //Session storage disponivel
-    if(sessionStorage&&Hi.$ui.html.cache.on){
-
-        return sessionStorage.getItem(path);
-
-    }
-
+    var cache = Hi.$ui.html.cache.getCache();
+    return cache[Hi.$ui.html.cache.normalizePath(path)];
 
 
 };

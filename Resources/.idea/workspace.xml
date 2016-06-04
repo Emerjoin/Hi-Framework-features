@@ -5,583 +5,27 @@
       <artifact name="jar" />
     </artifacts-to-build>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/META-INF/resources/clean-hi.js" description="Hi.Internal.prepareNextViewContext" line="574" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/fontawesome-webfontd41d.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/glyphicons-halflings-regulard41d.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/1YwB1sO8YE1Lyjf12WNiUA.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/EsvMC5un3kjyUhB9ZEPPwg.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/GtRkRNTnri0g82CjKnEB0Q.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/H2DMvhDLycM56KNuAtbJYA.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/UyBMtLsHKBKXelqf4x7VRQ.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/dPJ5r9gl3kK6ijoeP1IRsvY6323mHUZFJMgTvxaG2iE.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/eFRpvGLEW31oiexbYNx7Y_esZW2xOQ-xsNqO47m55DA.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/se7en.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/se7en.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/se7en.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/se7end41d.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/ajax_loader_gray.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/alpha.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/avatar-female.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/avatar-female.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/avatar-female2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/avatar-male.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/avatar-male2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/chat-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/chat-left@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/chat-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/chat-right@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/checkmark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/checkmark@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/fancybox_overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/footer_lodyas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/hue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/icon-search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/icon-search@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image-iso9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/image7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/img-coast.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/info-data-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/info-data-sprite@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/login-blurry-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/logo-login@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/logoWhite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/marketing.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/nature1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/nature2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/nature3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/nature4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/profile_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/saturation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/se7en-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/se7en-logo@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/select2-spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/select2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/select2x2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/sn-logo@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/social-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/viewImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/images/warning-gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/drp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/fonts/materialdesignicons-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/fonts/materialdesignicons-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/fonts/materialdesignicons-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/fonts/materialdesignicons-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/angular.min.js.gzip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jasmine-2.4.1/jasmine_favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/.idea/libraries/mz_co_hi_web_annotations_processor.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/src/main/java/dumbo/controllers/Teams.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/frontiers/Frontier1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/i18n/pt.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/run.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hiTest.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/views/teams/overview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/views/teams/overview.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/lato/lato.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/font/se7en.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/animatedModal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/application.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/bootstrap-colorpicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/bootstrap-datepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/bootstrap-fileupload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/bootstrap-switch.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/bootstrap-timepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/datatable-editable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/date.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/daterange-picker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/excanvas.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/fitvids.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/gcal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/isotope_extras.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery-1.10.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.bootstrap.wizard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.easy-pie-chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.fancybox.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.inputmask.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.isotope.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.mousewheel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.sparkline.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.validate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.vmap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.vmap.sampledata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery.vmap.world.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/masonry.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/modernizr.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/morris.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/raphael.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/respond.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/select2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/selectivizr-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/skycons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/styleswitcher.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/summernote.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/typeahead.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/wysiwyg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/daterangepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/daterangepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/daterangepicker.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/moment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/package.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/website/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/website/website.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/daterangepicker/website/website.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/css/materialdesignicons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/css/materialdesignicons.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/css/materialdesignicons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/css/materialdesignicons.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/libs/mdi/fonts/materialdesignicons-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/animate.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/bootstrap-switch.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/color/gray.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/color/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/color/magenta.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/color/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/colorpicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/datatables.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/daterange-picker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/fullcalendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/isotope.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/jquery.fancybox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/morris.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/pygments.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/se7en-font.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/select2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/summernote.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/timepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/typeahead.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/stylesheets/wizard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/angular-loader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/angular-loader.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/angular-loader.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-loader/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/angular-mocks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/ngAnimateMock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/ngMock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/ngMockE2E.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-mocks/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/angular-route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/angular-route.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/angular-route.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular-route/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/angular-csp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/angular.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/angular/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/dist/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/bs-commonjs-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/bs-lessdoc-parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/bs-raw-files-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/configBridge.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/grunt/sauce_browsers.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/.jscsrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/affix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/popover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/scrollspy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/js/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/.csscomb.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/.csslintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/badges.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/bootstrap.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/breadcrumbs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/button-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/close.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/code.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/component-animations.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/dropdowns.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/glyphicons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/input-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/jumbotron.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/media.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/background-variant.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/border-radius.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/center-block.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/clearfix.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/gradients.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/grid-framework.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/hide-text.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/image.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/nav-divider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/nav-vertical-align.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/opacity.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/progress-bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/reset-filter.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/reset-text.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/resize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/responsive-visibility.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/size.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/tab-focus.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/table-row.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/text-emphasis.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/text-overflow.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/mixins/vendor-prefixes.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/modals.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/navbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/navs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/normalize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/pager.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/popovers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/print.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/progress-bars.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/responsive-embed.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/responsive-utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/scaffolding.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/tables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/theme.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/thumbnails.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/tooltip.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/type.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/less/wells.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/nuget/MyGet.ps1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/nuget/bootstrap.less.nuspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/nuget/bootstrap.nuspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/package.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/bootstrap/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/AUTHORS.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/dist/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/dist/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/dist/jquery.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/dist/jquery.slim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/dist/jquery.slim.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/dist/jquery.slim.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/sizzle/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/sizzle/dist/sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/sizzle/dist/sizzle.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/sizzle/dist/sizzle.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/jsonp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/load.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/parseJSON.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/parseXML.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/var/location.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/var/nonce.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/var/rquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/ajax/xhr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/attributes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/attributes/attr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/attributes/classes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/attributes/prop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/attributes/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/attributes/val.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/callbacks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/DOMEval.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/access.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/parseHTML.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/ready.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/core/var/rsingleTag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/addGetHookIf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/adjustCSS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/curCSS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/defaultDisplay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/hiddenVisibleSelectors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/showHide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/var/cssExpand.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/var/getStyles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/var/isHidden.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/var/rmargin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/var/rnumnonpx.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/css/var/swap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data/Data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data/accepts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data/var/acceptData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data/var/dataPriv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/data/var/dataUser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/deferred.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/deferred/exceptionHook.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/deprecated.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/dimensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/effects.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/effects/Tween.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/effects/animatedSelector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/effects/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/event.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/event/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/event/alias.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/event/focusin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/event/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/event/trigger.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/exports/amd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/exports/global.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/intro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/_evalUrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/buildFragment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/createSafeFragment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/getAll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/setGlobalEval.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/var/nodeNames.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/var/rcheckableType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/var/rleadingWhitespace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/var/rscriptType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/var/rtagName.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/manipulation/wrapMap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/offset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/outro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/queue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/queue/delay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/selector-native.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/selector-sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/selector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/serialize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/traversing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/traversing/findFilter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/traversing/var/dir.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/traversing/var/rneedsContext.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/traversing/var/siblings.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/arr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/class2type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/concat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/deletedIds.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/document.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/documentElement.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/hasOwn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/indexOf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/pnum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/push.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/rcssNum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/rnotwhite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/slice.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/var/toString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/jquery/src/wrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/sweet-alert/sweetalert-dev.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/sweet-alert/sweetalert.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/bower_components/sweet-alert/sweetalert.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jasmine-2.4.1/boot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jasmine-2.4.1/console.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jasmine-2.4.1/jasmine-html.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jasmine-2.4.1/jasmine.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jasmine-2.4.1/jasmine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/jsmockito-1.0.4-minified.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda-themeless.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda-themeless.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda.jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/ladda.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/spin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/ladda/spin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/sweetalert/sweetalert-dev.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/sweetalert/sweetalert.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/lib/sweetalert/sweetalert.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/ng/customs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/view-example.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/AttributeConstraints.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/DataFetchSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/FetchParams.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JDBCSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JPAFetchSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/MysqlJDBCSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/TestFiles.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/classes/hello/controllers/Greetings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/webroot/js/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HelloApp/target/classes/hello/controllers/Greetings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/CachedWebrootDirectory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/FrontEnd.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/app/AppContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/CachedWebrootDirectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/FrontEnd.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/controllers/Greetings.java" afterPath="$PROJECT_DIR$/../HelloApp/src/main/java/dumbo/controllers/Greetings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/js/jquery-1.11.2.min.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/assets/javascripts/jquery-1.11.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../Web/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/app/AppContext.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/AppContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" afterPath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/annotations/processor/Processor.class" afterPath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/annotations/processor/Processor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/mz.co.hi.resources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/lib/mz.co.hi.web.jar" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/clean-hi.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/resources/EmptyClass.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/resources/EmptyClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Helper.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Helper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestContext.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/ConfigLoader.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/ConfigLoader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/Tunnings.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/Tunnings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/Scripter.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/Scripter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/Controller.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/HTMLizer.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/HTMLizer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Assets.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Assets.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Frontiers.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Frontiers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/HiEcmaScript5.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/HiEcmaScript5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/annotations/processor/Processor.java" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/annotations/processor/Processor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../HelloApp/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../HelloApp/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/HelloApp.iml" afterPath="$PROJECT_DIR$/../HelloApp/HelloApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/hi.xml" afterPath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/WEB-INF/hi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/index.html" afterPath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/views/greetings/hi.html" afterPath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/views/greetings/hi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/views/greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/out/artifacts/HelloApp/views/greetings/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" afterPath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/i18n/en.json" afterPath="$PROJECT_DIR$/../HelloApp/web/i18n/en.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/index.html" afterPath="$PROJECT_DIR$/../HelloApp/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.html" afterPath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hi Framework Resources.iml" afterPath="$PROJECT_DIR$/Hi Framework Resources.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/angular.min.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/angular.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/loader.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Web/.idea/artifacts/jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/pom.xml" afterPath="$PROJECT_DIR$/../Web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Helper.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestContext.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/ConfigLoader.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/Tunnings.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/Tunnings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/Scripter.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../guide/v.0.9/contents.txt" afterPath="$PROJECT_DIR$/../guide/v.0.9/contents.txt" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -608,8 +52,8 @@
       <file leaf-file-name="hi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="826" column="45" selection-start-line="826" selection-start-column="45" selection-end-line="826" selection-end-column="45" />
+            <state vertical-scroll-proportion="-11.666667">
+              <caret line="1053" column="36" selection-start-line="1053" selection-start-column="36" selection-end-line="1053" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -617,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frontier.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="frontier.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.740741">
-              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.44444445">
+              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -649,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hi-config.xsd" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hi-config.xsd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6313364">
+            <state vertical-scroll-proportion="-19.208334">
               <caret line="133" column="115" selection-start-line="133" selection-start-column="115" selection-end-line="133" selection-end-column="115" />
               <folding />
             </state>
@@ -707,9 +151,9 @@
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/loader.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
-        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
       </list>
     </option>
   </component>
@@ -760,7 +204,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -913,8 +359,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1449,11 +893,12 @@
       <workItem from="1464611972453" duration="519000" />
       <workItem from="1464703519728" duration="6576000" />
       <workItem from="1464790642564" duration="9484000" />
+      <workItem from="1464955952923" duration="5351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262851000" />
+    <option name="totallyTimeSpent" value="268202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1830,16 +1275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/clean-hi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8">
-          <caret line="2113" column="31" selection-start-line="2113" selection-start-column="17" selection-end-line="2113" selection-end-column="31" />
-          <folding>
-            <element signature="e#23631#24383#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/angular.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1858,16 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="826" column="45" selection-start-line="826" selection-start-column="45" selection-end-line="826" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1876,18 +1301,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.740741">
-          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+        <state vertical-scroll-proportion="-19.208334">
+          <caret line="133" column="115" selection-start-line="133" selection-start-column="115" selection-end-line="133" selection-end-column="115" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6313364">
-          <caret line="133" column="115" selection-start-line="133" selection-start-column="115" selection-end-line="133" selection-end-column="115" />
+        <state vertical-scroll-proportion="-11.666667">
+          <caret line="1053" column="36" selection-start-line="1053" selection-start-column="36" selection-end-line="1053" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44444445">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
           <folding />
         </state>
       </provider>

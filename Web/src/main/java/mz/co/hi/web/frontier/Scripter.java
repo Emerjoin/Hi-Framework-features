@@ -1,8 +1,10 @@
 package mz.co.hi.web.frontier;
 
 import mz.co.hi.web.DispatcherServlet;
+import mz.co.hi.web.Helper;
 import mz.co.hi.web.annotations.MultipleCalls;
 import mz.co.hi.web.annotations.SingleCall;
+import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
@@ -22,15 +24,17 @@ public class Scripter {
     }
 
 
+    /*
     private String generateHeaders(String frontierName, String method){
+
 
         return "{\"Invoked-Class\":\""+frontierName+"\",\"Invoked-Method\":\""+method+"\"}";
 
-    }
+    }*/
 
     private String generateUrl(String beanName, String method){
 
-        return "mz.co.hi.web.frontiers.bean.invocation/w487487284722487";
+        return "f.m.call/"+beanName+"/"+method;
 
     }
 
@@ -146,9 +150,11 @@ public class Scripter {
 
         StringBuilder mirror = new StringBuilder();
         mirror.append("function "+signature+"{");
+        mirror.append("console.log(\" My caller is\");");
+        mirror.append("console.log("+beanName+"."+method.getName()+".caller.prototype);");
         mirror.append(data);
         mirror.append("var $functionUrl=App.base_url+\""+generateUrl(beanName,method.getName())+"\";");
-        mirror.append("var $headers="+generateHeaders(beanName,method.getName())+";");
+        //mirror.append("var $headers="+generateHeaders(beanName,method.getName())+";");
         mirror.append(DispatcherServlet.genericFrontierScript);
         mirror.append("};");
 
