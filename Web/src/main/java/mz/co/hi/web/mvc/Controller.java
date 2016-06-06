@@ -76,6 +76,7 @@ public class Controller implements Serializable {
         String controllerName = requestContext.getData().get("controller").toString();
         String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".html";
         String viewJsfile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".js";
+        String viewJsMinifiedfile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".min.js";
 
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
 
@@ -97,7 +98,6 @@ public class Controller implements Serializable {
         //Do not need to load the view file
         if(requestContext.getData().containsKey("ignore_view")){
 
-            //htmLizer.setRequestContext(requestContext);
             htmLizer.process(this,true);
             return;
 
@@ -123,11 +123,32 @@ public class Controller implements Serializable {
 
         try{
 
-            viewJsResource   = requestContext.getServletContext().getResource(viewJsfile);
+
+
+            if(AppConfigurations.get().underDevelopment())
+
+                viewJsResource   = requestContext.getServletContext().getResource(viewJsfile);
+
+            else{
+
+                //Try the minfied file
+                viewJsResource = requestContext.getServletContext().getResource(viewJsMinifiedfile);
+
+                if(viewJsResource==null){
+
+                    viewJsResource   = requestContext.getServletContext().getResource(viewJsfile);
+
+                }
+
+
+            }
+
+
 
         }catch (Exception ex){
 
-
+            //TODO: Do something about it
+            ex.printStackTrace();
 
         }
 
@@ -144,6 +165,7 @@ public class Controller implements Serializable {
 
                 } catch (Exception ex) {
 
+                    //TODO: Do something about it
                     ex.printStackTrace();
 
                 }
@@ -171,7 +193,7 @@ public class Controller implements Serializable {
 
             }catch (Exception ex){
 
-                //TODO: Throw exception
+                //TODO: Do something about it
                 ex.printStackTrace();
 
             }

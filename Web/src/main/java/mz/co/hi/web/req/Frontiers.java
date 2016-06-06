@@ -44,13 +44,9 @@ public class Frontiers extends ReqHandler {
 
     public static void addFrontier(FrontierClass frontierClass){
 
-        if(AppConfigurations.get().getDeploymentMode()== AppConfigurations.DeploymentMode.DEVELOPMENT)
-            frontiersMap.put(frontierClass.getSimpleName(),frontierClass);
-        else
-            frontiersMap.put(Helper.md5(frontierClass.getSimpleName()),frontierClass);
+        frontiersMap.put(frontierClass.getSimpleName(),frontierClass);
 
     }
-
 
     public static boolean frontierExists(String name){
 
@@ -63,7 +59,6 @@ public class Frontiers extends ReqHandler {
         return frontiersMap.get(name);
 
     }
-
 
 
     private Map matchParams(String frontier,FrontierMethod frontierMethod, RequestContext requestContext) throws MissingFrontierParamException, InvalidFrontierParamException {
@@ -159,8 +154,6 @@ public class Frontiers extends ReqHandler {
         String invokedClass = frontierPair[0];
         String invokedMethod = frontierPair[1];
 
-        System.out.println("fclass: "+invokedClass);
-        System.out.println("fmethod: "+invokedMethod);
 
 
         if(invokedClass==null||invokedMethod==null){

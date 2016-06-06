@@ -11,6 +11,7 @@ import mz.co.hi.web.users.Sessions;
 import javax.enterprise.inject.spi.CDI;
 import javax.json.Json;
 import javax.json.JsonObject;
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
@@ -292,6 +293,7 @@ public class HTMLizer {
     private String getControllerSetter(){
 
         String controller = requestContext.getData().get("controller").toString();
+
         String action = requestContext.getData().get("action").toString();
         String functionInvocation = "Hi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
@@ -307,7 +309,10 @@ public class HTMLizer {
 
         }
 
-        return requestContext.getData().get("view_js").toString();
+
+        String view = requestContext.getData().get("view_js").toString();
+
+        return view;
 
     }
 
