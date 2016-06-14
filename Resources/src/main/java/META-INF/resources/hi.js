@@ -824,6 +824,7 @@ Hi.$angular.run = function(){
         Hi.$angular.$compile = $compile;
 
         __=$rootScope;
+        __.$startedUp = false;
 
         for(var propName in Hi.$ui.js.root){
 
@@ -1167,8 +1168,11 @@ Hi.$ui.js.setViewController= function(controllerName, actionName, controller){
 
 Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,receptor,$embedScope,embedOptions){
 
+    context_variables.$route = {controller:viewPath.controller,action:viewPath.action};
+
     //Get the view controller
     var controller = Hi.$ui.js.getViewController(viewPath.controller,viewPath.action);
+
     if(typeof controller=="undefined"){
 
         throw new Error("No controller defined. Cant prepare context");
@@ -1202,6 +1206,17 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
 
     }else{
+
+        if(!__.$startedUp&&__.hasOwnProperty("$startup")){
+
+            if(typeof __.$startup=="function"){
+
+                __.$startedUp = true;
+                __.$startup.call(__,{controller:viewPath.controller,action:viewPath.action});
+
+            }
+
+        }
 
         //Create a new scope from $rootScope;
         viewScope = __.$new(true);
