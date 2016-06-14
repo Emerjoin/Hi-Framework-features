@@ -133,7 +133,8 @@ public class FrontEnd {
 
     public boolean isFrontierRequest(){
 
-        return httpServletRequest.getHeader(Frontiers.INVOKED_CLASS_HEADER)!=null;
+        return httpServletRequest.getRequestURL().indexOf("f.m.call")!=-1;
+        //return httpServletRequest.getHeader(Frontiers.INVOKED_CLASS_HEADER)!=null;
 
     }
 

@@ -31,10 +31,7 @@ import java.util.Scanner;
 public class Frontiers extends ReqHandler {
 
     private static Map<String,FrontierClass> frontiersMap = new HashMap();
-
-    public static final String INVOKED_CLASS_HEADER="Invoked-Class";
-    public static final String INVOKED_METHOD_HEADER="Invoked-Method";
-
+    
     @Inject
     private AppContext appContext;
 
@@ -148,11 +145,6 @@ public class Frontiers extends ReqHandler {
 
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
-
-        /*
-        String invokedClass = requestContext.getRequest().getHeader(INVOKED_CLASS_HEADER);
-        String invokedMethod = requestContext.getRequest().getHeader(INVOKED_METHOD_HEADER);
-        */
 
         String[] frontierPair = getFrontierPair(requestContext);
 

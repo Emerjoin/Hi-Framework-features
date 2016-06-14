@@ -7,128 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Annotations/target/classes/com/yayee/annotations/Processor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/annotations/processor/Processor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontieroff.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-old.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/view-example.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Cache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/FilesCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/AttributeConstraints.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/DataFetchSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/FetchParams.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/demo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JDBCSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/JPAFetchSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/components/data/hifetch/sources/MysqlJDBCSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/notification/Notification.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/notification/NotificationConversionException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/notification/RoomsAssigner.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/notification/UserGroups.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/notification/UsersInformer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/notification/WebSocket.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Cache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/ClassLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/FilesCache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/HiException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/annotations/Frontier.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/annotations/KeepFrontierCalls.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/annotations/MultipleCalls.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/annotations/SingleCall$AbortPolicy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/annotations/SingleCall$Detection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/annotations/SingleCall.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/AttributeConstraints.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/DataFetchSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/FetchParams.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/sources/JDBCSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/sources/JPAFetchSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/components/data/hifetch/sources/MysqlJDBCSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvocationFailedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/InvalidFrontierParamException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/MapConversionException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/MissingFrontierParamException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/ConversionFailedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/MalMarkedTemplateException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/MissingResourcesLibException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/MvcException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/NoSuchTemplateException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/NoSuchViewException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/TemplateException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/notification/Notification.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/notification/NotificationConversionException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/notification/RoomsAssigner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/notification/UserGroups.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/notification/UsersInformer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/notification/WebSocket.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/annotations/processor/Processor.java" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/meta/Processor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/ClassLoader.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/HiException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/HiException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/annotations/Frontier.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/Frontier.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/annotations/KeepFrontierCalls.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/KeepFrontierCalls.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/annotations/MultipleCalls.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/MultipleCalls.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/annotations/SingleCall.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/SingleCall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvocationFailedException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/InvalidFrontierParamException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/MapConversionException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/MapConversionException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/MissingFrontierParamException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/ConversionFailedException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/ConversionFailedException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/MalMarkedTemplateException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/MissingResourcesLibException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/MvcException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MvcException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/NoSuchTemplateException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/NoSuchViewException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/TemplateException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/TemplateException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" afterPath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestContext.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/ConfigLoader.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/ConfigLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/Scripter.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/Scripter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/Controller.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/HTMLizer.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/HTMLizer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Frontiers.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Frontiers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/HiEcmaScript5.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/HiEcmaScript5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ReqMatchException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ReqMatchException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/TestFiles.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/TestFiles.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Tests.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Tests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/users/Sessions.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/users/Sessions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/validation/ValidationException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/validation/ValidationException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/greetings/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestContext.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/ConfigLoader.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/Scripter.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/FrontEnd.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/FrontEnd.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqMatchException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqMatchException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/TestFiles.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/TestFiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/users/Sessions.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/users/Sessions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/validation/ValidationException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/validation/ValidationException.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,8 +45,8 @@
       <file leaf-file-name="frontier.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53333336">
-              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.51111114">
+              <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -974,12 +854,12 @@
       <workItem from="1464790642564" duration="9484000" />
       <workItem from="1464955952923" duration="5948000" />
       <workItem from="1465201519824" duration="3438000" />
-      <workItem from="1465817625416" duration="17774000" />
+      <workItem from="1465817625416" duration="18071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290011000" />
+    <option name="totallyTimeSpent" value="290308000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1321,8 +1201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53333336">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.51111114">
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
           <folding />
         </state>
       </provider>
