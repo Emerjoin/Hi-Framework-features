@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/frontiers/Frontier1.java" afterPath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/frontiers/Frontier1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/index.js" afterPath="$PROJECT_DIR$/../HelloApp/web/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" />
     </list>
     <ignored path="Yayee.iws" />

@@ -1999,7 +1999,7 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
 
         //Efectua a requisicao GET
-        $.ajax({
+        var request = $.ajax({
 
             url:route_url,
             headers : server_directives,
@@ -2010,9 +2010,15 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
 
             },
-            error: function(){
+            error: function(jqXHR ,textStatus,errorThrown){
 
-                //TODO: Handle
+                if(__.hasOwnProperty("$onRedirectError")){
+
+
+                    if(typeof __.$onRedirectError=="function")
+                        __.$onRedirectError.call(__,route,jqXHR.status,request);
+
+                }
 
             }});
 
@@ -2168,122 +2174,19 @@ Hi.$nav.toSlashes = function(route){
  */
 
 Hi.$frontiers = {};
-
-/*
-Hi.$frontiers.InvocationPromise = function(){
-
-    //public functions
-
-    this.update = function(obj,prop){
-
-        this.updateHandler = {object:obj,property:prop};
-        return this;
-
-    };
-
-    this.u = this.update;
-
-    this.state = function(obj,prop){
-
-        this.stateHandler = {object:obj,property:prop};
-        return this;
-
-    };
-
-    this.s = this.state;
-
-    this.timeout = function(callback){
-
-        this.timeoutHandler = callback;
-        return this;
-
-    };
-
-    this.t = this.timeout;
-
-    this.forbidden = function(callback){
-
-        this.accessForbiddenHandler = callback;
-        return this;
-
-    };
-
-    this.f = this.forbidden;
-
-
-    this.catch = function(callback){
-
-        this.exceptionHandler = callback;
-        return this;
-
-    };
-
-    this.c = this.catch;
-
-    this.offline = function(callback){
-
-        this.offlineHandler = callback;
-        return this;
-
-    };
-
-    this.o = this.offline;
-
-    //internal methods
-
-    this.$fireUpdate = function(data){
-
-
-
-    };
-
-    this.$updateState = function(){
-
-
-
-    };
-
-    this.$fireTimeout = function(){
-
-
-
-    };
-
-    this.$fireTimeout = function(){
-
-
-
-    };
-
-    this.$fireOffline = function(){
-
-
-
-    };
-
-    this.$fireException = function(){
-
-
-
-    };
-
-
-
-};*/
-
 Hi.$frontiers.Promisse = function(){
 
     var setTo = {obj:false,prop:false,callback:false};
-    var loadingTo = {obj:false,prop:false,callback:false};
     var forbiddenCallback = undefined;
     var timeoutCallback = undefined;
     var offlineCallback = undefined;
     var interruptedCallback = undefined;
     var overequestCallback = undefined;
     var catchCallback = undefined;
+    var finallyCallback = undefined;
+
     var request = undefined;
 
-    var finallyCallback = undefined;
 
     var getGlobalHandler = function(name){
 
@@ -2628,92 +2531,12 @@ Hi.$frontiers.Promisse = function(){
 
 };
 
-/*
-
-Hi.$frontiers.Promisse = function(){
-
-    this.return = function(callback){
-
-        this.returnCallback = callback;
-        return this;
-
-    };
-
-    this.catch = function(callback){
-
-        this.catchCallback = callback;
-        return this;
-
-    };
-
-    this.always = function(callback){
-
-        this.alwaysCallback = callback;
-        return this;
-
-    };
-
-    this.onReturn = function(data){
-
-        if(typeof this.returnCallback!="undefined"){
-
-            this.returnCallback.call(this,data);
-
-        }
-
-    };
-
-    this.onCatch = function(error){
-
-
-        if(typeof this.catchCallback!="undefined"){
-
-
-            this.catchCallback.call(this,error);
-
-        }
-
-    };
-
-
-    this.onAlways = function(){
-
-
-        if(typeof this.alwaysCallback!="undefined"){
-
-
-            this.alwaysCallback.call(this);
-
-        }
-
-
-    };
-
-
-    this.setSuccess = function(data){
-
-        this.onReturn(data);
-        this.onAlways();
-
-    };
-
-
-    this.setFail = function(error){
-
-        this.onCatch(error);
-        this.onAlways();
-
-    };
-
-};*/
-
 
 /**
  * -----------
  * Public API
  * -----------
  */
-
 
 Hi.rootTemplate = function(properties){
 
