@@ -76,8 +76,8 @@ public class Controller implements Serializable {
         AppConfigurations config = AppConfigurations.get();
         RequestContext requestContext = CDI.current().select(RequestContext.class).get();
 
-        String actionName = requestContext.getData().get("action").toString();
-        String controllerName = requestContext.getData().get("controller").toString();
+        String actionName = requestContext.getData().get("actionU").toString();
+        String controllerName = requestContext.getData().get("controllerU").toString();
         String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".html";
         String viewJsfile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".js";
         String viewJsMinifiedfile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".min.js";

@@ -272,8 +272,8 @@ public class HTMLizer {
 
     private String getNextClosureInformation(){
 
-        String controller = requestContext.getData().get("controller").toString();
-        String action = requestContext.getData().get("action").toString();
+        String controller = requestContext.getData().get("controllerU").toString();
+        String action = requestContext.getData().get("actionU").toString();
         String functionInvocation = "Hi.$nav.setNextControllerInfo(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
@@ -282,8 +282,8 @@ public class HTMLizer {
 
     private String getNextViewPath(){
 
-        String controller = requestContext.getData().get("controller").toString();
-        String action = requestContext.getData().get("action").toString();
+        String controller = requestContext.getData().get("controllerU").toString();
+        String action = requestContext.getData().get("actionU").toString();
         //String functionInvocation = "Hi.Internal.setNextViewPath(false,\""+controller+"\",\""+action+"\");";
         String functionInvocation = "var vpath = Hi.$nav.getViewPath(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
@@ -293,9 +293,9 @@ public class HTMLizer {
 
     private String getControllerSetter(){
 
-        String controller = requestContext.getData().get("controller").toString();
+        String controller = requestContext.getData().get("controllerU").toString();
 
-        String action = requestContext.getData().get("action").toString();
+        String action = requestContext.getData().get("actionU").toString();
         String functionInvocation = "Hi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
@@ -375,8 +375,8 @@ public class HTMLizer {
 
 
             Map route = new HashMap();
-            route.put("controller", requestContext.getData().get("controller").toString());
-            route.put("action", requestContext.getData().get("action").toString());
+            route.put("controller", requestContext.getData().get("controllerU").toString());
+            route.put("action", requestContext.getData().get("actionU").toString());
 
 
             Map map = new HashMap();
@@ -402,7 +402,6 @@ public class HTMLizer {
 
             }
 
-            //requestContext.getResponse().setHeader("Content-type","text/json");
             requestContext.getResponse().setContentType("text/json;charset=UTF8");
             requestContext.echo(resultResponse);
 

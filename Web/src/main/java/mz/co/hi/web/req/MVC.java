@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-@HandleRequests(regexp = "[a-zA-Z]{2,}\\/[a-zA-Z_]{2,}")
+@HandleRequests(regexp = "[a-zA-Z-]{2,}\\/[a-zA-Z-]{2,}")
 @ApplicationScoped
 public class MVC extends ReqHandler{
 
@@ -57,8 +57,14 @@ public class MVC extends ReqHandler{
 
         String mvcUrl = requestContext.getRouteUrl();
         int indexSlash = mvcUrl.indexOf('/');
+
         String controller = mvcUrl.substring(0,indexSlash);
+        requestContext.getData().put("controllerU",controller);
+        controller = controller.replace("-","");
+
         String action = mvcUrl.substring(indexSlash+1,mvcUrl.length());
+        requestContext.getData().put("actionU",action);
+        action = action.replace("-","_");
 
         Class controllerClass= ClassLoader.getInstance().findController(controller);
         if(controllerClass==null){

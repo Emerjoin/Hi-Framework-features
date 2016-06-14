@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Created by Mario Junior.
  */
-@HandleRequests(regexp = "(webroot[A-Za-z0-9_\\/.-]+[.][A-Za-z]{1,10}|[A-Za-z_\\/]+\\/webroot[A-Za-z0-9_\\/.-]+[.][A-Za-z]{1,10})\\w+")
+@HandleRequests(regexp = "(webroot[A-Za-z0-9_\\/.-]+[.][A-Za-z]{1,10}|[A-Za-z_\\/-]+\\/webroot[A-Za-z0-9_\\/.-]+[.][A-Za-z]{1,10})\\w+")
 @ApplicationScoped
 public class Assets extends ReqHandler {
 

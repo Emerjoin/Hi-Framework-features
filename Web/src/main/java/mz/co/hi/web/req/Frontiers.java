@@ -31,7 +31,7 @@ import java.util.Scanner;
 public class Frontiers extends ReqHandler {
 
     private static Map<String,FrontierClass> frontiersMap = new HashMap();
-    
+
     @Inject
     private AppContext appContext;
 

@@ -7,8 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,21 +45,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MVC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
+      <file leaf-file-name="HTMLizer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="134" column="49" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="49" />
+              <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Frontiers.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14957266">
+              <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MVC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Frontiers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25641027">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -63,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="136" column="10" selection-start-line="136" selection-start-column="10" selection-end-line="136" selection-end-column="10" />
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,18 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HiCDI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiCDI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Scripter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,26 +140,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BeansCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoCDIScopeException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -185,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContextBackup.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontiersContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/SessionFrontiersContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
@@ -196,18 +199,15 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/js/Minifier.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Minifier.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/JSMinifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/users/Sessions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/HiSmartException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiCDI.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" />
@@ -215,6 +215,10 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
       </list>
     </option>
   </component>
@@ -380,6 +384,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="req" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1148,7 +1182,7 @@
       <workItem from="1464900475149" duration="187000" />
       <workItem from="1464940094677" duration="14192000" />
       <workItem from="1465197041970" duration="3267000" />
-      <workItem from="1465816532788" duration="10000000" />
+      <workItem from="1465816532788" duration="12085000" />
     </task>
     <servers />
   </component>
@@ -1182,7 +1216,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="492326000" />
+    <option name="totallyTimeSpent" value="494411000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1397,16 +1431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1441,14 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1471,14 +1487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="438" column="0" selection-start-line="438" selection-start-column="0" selection-end-line="438" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1539,14 +1547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="49" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1612,15 +1612,47 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="10" selection-start-line="136" selection-start-column="10" selection-end-line="136" selection-end-column="10" />
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25641027">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14957266">
+          <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
           <folding />
         </state>
       </provider>
