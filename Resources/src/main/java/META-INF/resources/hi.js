@@ -1312,7 +1312,15 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
         }
 
+        if(__.hasOwnProperty("$onPostLoad")){
 
+            if(typeof __.$onPostLoad=="function"){
+
+                __.$onPostLoad.call(__,viewScope.$route,viewScope);
+
+            }
+
+        }
 
 
     });

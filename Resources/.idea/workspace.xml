@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/index.js" afterPath="$PROJECT_DIR$/../HelloApp/web/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
     </list>
     <ignored path="YayeeResources.iws" />
@@ -35,8 +37,8 @@
       <file leaf-file-name="hi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44444445">
-              <caret line="1252" column="0" selection-start-line="1252" selection-start-column="0" selection-end-line="1252" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.75555557">
+              <caret line="1317" column="0" selection-start-line="1317" selection-start-column="0" selection-end-line="1317" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -855,12 +857,12 @@
       <workItem from="1464955952923" duration="5948000" />
       <workItem from="1465201519824" duration="3438000" />
       <workItem from="1465817625416" duration="18322000" />
-      <workItem from="1465908166062" duration="8794000" />
+      <workItem from="1465908166062" duration="9118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299353000" />
+    <option name="totallyTimeSpent" value="299677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1234,8 +1236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44444445">
-          <caret line="1252" column="0" selection-start-line="1252" selection-start-column="0" selection-end-line="1252" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.75555557">
+          <caret line="1317" column="0" selection-start-line="1317" selection-start-column="0" selection-end-line="1317" selection-end-column="0" />
           <folding />
         </state>
       </provider>
