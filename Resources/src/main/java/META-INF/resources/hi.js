@@ -1232,6 +1232,9 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     //Apply context variables
     Hi.$ui.js.setScopeProps(viewScope,context_variables);
 
+
+    //PreLoad on view
+
     if(viewScope.hasOwnProperty('$preLoad')){
 
         var newMarkup = viewScope.$preLoad.call(viewScope,markup);
@@ -1242,6 +1245,24 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         }
 
     }
+
+    //PreLoad on template
+    if(__.hasOwnProperty("$onPreLoad")){
+
+        if(typeof __.$onPreLoad=="function") {
+
+            var newMarkup = __.$onPreLoad.call(__,viewScope.$route, viewScope, markup);
+            if (typeof newMarkup != "undefined") {
+
+                markup = newMarkup;
+
+            }
+
+        }
+
+    }
+
+
 
     var compileFn = Hi.$angular.$compile(markup);
     var compiledElement = compileFn(viewScope);
