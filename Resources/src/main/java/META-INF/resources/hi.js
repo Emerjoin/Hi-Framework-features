@@ -2281,14 +2281,46 @@ Hi.$frontiers.Promisse = function(){
     var interruptedCallback = undefined;
     var overequestCallback = undefined;
     var catchCallback = undefined;
+    var request = undefined;
 
     var finallyCallback = undefined;
 
+    var getGlobalHandler = function(name){
+
+        if(__.hasOwnProperty("$frontiers")) {
+
+            if (__.$frontiers.hasOwnProperty(name))
+                return __.$frontiers[name];
+
+        }
+
+        return undefined;
+
+    };
+
+    var getGlobalHandlers = function(){
+
+        if(__.hasOwnProperty("$frontiers")) {
+
+            return __.$frontiers;
+
+        }
+
+        return undefined;
+
+    };
+
+    this._setRequest = function(req){
+
+        request = req;
+
+    };
 
     this._setResult = function(data){
 
         if(typeof setTo.callback=="function")
             setTo.callback.call(this,data);
+
 
 
         this._setRequestFinished();
@@ -2298,16 +2330,39 @@ Hi.$frontiers.Promisse = function(){
     this._setRequestFinished = function(){
 
         if(typeof finallyCallback=="function")
+
             finallyCallback.call(this);
+
+        else{
+
+            var handler = getGlobalHandler("finally");
+
+            if(typeof handler!="undefined") {
+
+                handler.call(getGlobalHandlers(),this);
+
+            }
+
+        }
 
     };
 
-    this._setHttpError = function(code,exception){
+    this._setHttpError = function(code){
 
 
         if(typeof catchCallback=="function"){
 
             catchCallback.call(this,code);
+
+        }else{
+
+            var handler = getGlobalHandler("catch");
+
+            if(typeof handler!="undefined") {
+
+                handler.call(getGlobalHandlers(),this,code);
+
+            }
 
         }
 
@@ -2317,109 +2372,159 @@ Hi.$frontiers.Promisse = function(){
 
     this._setTimedOut = function(){
 
-        if(typeof timeoutCallback=="function"){
+        var gTimeoutHandler = getGlobalHandler("timeout");
+        var gErrorHandler = getGlobalHandler("catch");
 
-
+        if(typeof timeoutCallback=="function") {
 
             timeoutCallback.call(this);
 
-            this._setRequestFinished();
+        }else if(gTimeoutHandler=="function"){
 
-        }else{
+            gTimeoutHandler.call(getGlobalHandlers(),this);
+
+        }else if(typeof catchCallback=="function"){
 
             this._setHttpError(408);
 
+        }else if(typeof gErrorHandler=="function"){
+
+            gErrorHandler.call(getGlobalHandlers(),this,408);
+
         }
+
+        this._setRequestFinished();
 
     };
 
     this._setOffline = function(){
 
+        var gOfflineHandler = getGlobalHandler("offline");
+        var gErrorHandler = getGlobalHandler("catch");
 
-        if(typeof offlineCallback=="function"){
-
+        if(typeof offlineCallback=="function") {
 
             offlineCallback.call(this);
 
-            this._setRequestFinished();
+        }else if(typeof gOfflineHandler=="function"){
 
+            gOfflineHandler.call(getGlobalHandlers(),this);
 
-        }else{
+        }else if(typeof catchCallback=="function"){
 
             this._setHttpError(0);
 
+        }else if(typeof gErrorHandler=="function"){
+
+            gErrorHandler.call(getGlobalHandlers(),this,0);
+
         }
+
+        this._setRequestFinished();
 
     };
 
     this._setForbidden = function(){
 
-        if(typeof forbiddenCallback=="function"){
+        var gForbiddenHandler = getGlobalHandler("forbidden");
+        var gErrorHandler = getGlobalHandler("catch");
 
+        if(typeof forbiddenCallback=="function") {
 
             forbiddenCallback.call(this);
-            this._setRequestFinished();
 
+        }else if(typeof gForbiddenHandler=="function"){
 
-        }else{
+            gForbiddenHandler.call(getGlobalHandlers(),this);
+
+        }else if(typeof catchCallback=="function"){
 
             this._setHttpError(403);
 
+        }else if(typeof gErrorHandler=="function"){
+
+            gErrorHandler.call(getGlobalHandlers(),403);
+
         }
+
+        this._setRequestFinished();
 
     };
 
     this._setInterruped = function(){
 
-        if(typeof interruptedCallback=="function"){
+        var gInterruptedHandler = getGlobalHandler("interrupted");
+        var gErrorHandler = getGlobalHandler("catch");
 
+        if(typeof interruptedCallback=="function") {
 
             interruptedCallback.call(this);
-            this._setRequestFinished();
 
-        }else{
+        }else if(typeof gInterruptedHandler=="function"){
+
+            gInterruptedHandler.call(getGlobalHandlers(),this);
+
+        }else if(typeof catchCallback=="function"){
 
             this._setHttpError(421);
 
+        }else if(typeof gErrorHandler=="function"){
+
+            gErrorHandler.call(getGlobalHandlers(),this,421);
+
         }
+
+        this._setRequestFinished();
 
     };
 
     this._setOverRequest = function(){
 
-        if(typeof overequestCallback=="function"){
 
+        var gOverequestHandler = getGlobalHandler("overrequest");
+        var gErrorHandler = getGlobalHandler("catch");
+
+        if(typeof overequestCallback=="function") {
 
             overequestCallback.call(this);
-            this._setRequestFinished();
 
-        }else{
+        }else if(typeof gOverequestHandler=="function") {
+
+            gOverequestHandler.call(getGlobalHandlers(), this);
+
+        }else if(typeof catchCallback=="function"){
 
             this._setHttpError(429);
 
+        }else if(typeof gErrorHandler=="function"){
+
+            catchCallback.call(getGlobalHandlers(),this,429);
         }
+
+        this._setRequestFinished();
 
 
     };
 
     this._setException = function(type){
 
+        var gErrorHandler = getGlobalHandler("catch");
 
-        if(typeof catchCallback=="function"){
+        if(typeof catchCallback=="function") {
 
+            catchCallback.call(this, type);
 
-            catchCallback.call(this,type);
-            this._setRequestFinished();
+        }else if(typeof gErrorHandler=="function") {
 
-        }else{
-
-            this._setHttpError(500);
+            gErrorHandler.call(getGlobalHandlers(), this, type);
 
         }
 
+        this._setRequestFinished();
+
     };
 
-    //--
+    //--public interface
 
 
     this.try = function(obj) {
@@ -2512,6 +2617,12 @@ Hi.$frontiers.Promisse = function(){
 
         catchCallback = callback;
         return this;
+
+    };
+
+    this.getRequest = function(){
+
+        return request;
 
     };
 

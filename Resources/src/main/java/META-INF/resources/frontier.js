@@ -110,21 +110,6 @@
             }
 
 
-            switch(jqXml.status){
-
-                case 403: promisse._setForbidden(); break;
-
-                case 408: promisse._setTimedOut(); break;
-
-                case 421: promisse._setInterruped(); break;
-
-                case 429: promisse._setOverRequest(); break;
-
-                default : promisse._setException(500);
-
-            }
-
-
             //Request aborted
             if(errText=="abort"){
 
@@ -136,7 +121,21 @@
 
             }else{
 
-                //promisse._setHttpError(500);
+                switch(jqXml.status){
+
+                    case 403: promisse._setForbidden(); break;
+
+                    case 408: promisse._setTimedOut(); break;
+
+                    case 421: promisse._setInterruped(); break;
+
+                    case 429: promisse._setOverRequest(); break;
+
+                    case   0: promisse._setOffline(); break;
+
+                    default : promisse._setException(500); break;
+
+                }
 
             }
 
@@ -153,6 +152,9 @@
         //,timeout: 0 TODO: Set the timeout according to Maximum expected call duration
 
     });
+
+    promisse._setRequest($req);
+
     $req.$params = JSON.stringify(params);
 
     $fiis[_$fmut] = $req;

@@ -7,12 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/src/main/java/dumbo/controllers/Greetings.java" afterPath="$PROJECT_DIR$/../HelloApp/src/main/java/dumbo/controllers/Greetings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/index.js" afterPath="$PROJECT_DIR$/../HelloApp/web/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,21 +35,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hi.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
-              <caret line="2313" column="35" selection-start-line="2313" selection-start-column="35" selection-end-line="2313" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.14957266">
+              <caret line="2289" column="29" selection-start-line="2289" selection-start-column="29" selection-end-line="2289" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frontier.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="frontier.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51111114">
-              <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="133" column="60" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -115,8 +114,8 @@
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
-        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
+        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
       </list>
     </option>
   </component>
@@ -167,9 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,6 +318,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -859,11 +858,12 @@
       <workItem from="1464955952923" duration="5948000" />
       <workItem from="1465201519824" duration="3438000" />
       <workItem from="1465817625416" duration="18322000" />
+      <workItem from="1465908166062" duration="5179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290559000" />
+    <option name="totallyTimeSpent" value="295738000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -875,7 +875,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="822" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="822" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -925,6 +925,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2313" column="35" selection-start-line="2313" selection-start-column="35" selection-end-line="2313" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="300" column="37" selection-start-line="300" selection-start-column="35" selection-end-line="300" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1195,18 +1227,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="2313" column="35" selection-start-line="2313" selection-start-column="35" selection-end-line="2313" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="60" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51111114">
-          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.14957266">
+          <caret line="2289" column="29" selection-start-line="2289" selection-start-column="29" selection-end-line="2289" selection-end-column="29" />
           <folding />
         </state>
       </provider>

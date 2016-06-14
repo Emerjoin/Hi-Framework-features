@@ -7,14 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/frontiers/Frontier1.java" afterPath="$PROJECT_DIR$/../HelloApp/src/main/java/hello/frontiers/Frontier1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/index.js" afterPath="$PROJECT_DIR$/../HelloApp/web/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1182,7 +1179,7 @@
       <workItem from="1464900475149" duration="187000" />
       <workItem from="1464940094677" duration="14192000" />
       <workItem from="1465197041970" duration="3267000" />
-      <workItem from="1465816532788" duration="12085000" />
+      <workItem from="1465816532788" duration="12350000" />
     </task>
     <servers />
   </component>
@@ -1216,7 +1213,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494411000" />
+    <option name="totallyTimeSpent" value="494676000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
