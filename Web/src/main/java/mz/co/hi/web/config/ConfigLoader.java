@@ -1,7 +1,6 @@
 package mz.co.hi.web.config;
 
 import com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory;
-import mz.co.hi.web.notification.RoomsAssigner;
 import mz.co.hi.web.users.UDetailsProvider;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -89,7 +88,7 @@ public class ConfigLoader {
 
             //Details provider
             Element usersConfigElement = (Element) usersConfigNodeList.item(0);
-            NodeList userDetailsProviderList = usersConfigElement.getElementsByTagName("user-details-provider-class");
+            NodeList userDetailsProviderList = usersConfigElement.getElementsByTagName("details-provider-class");
             if(userDetailsProviderList.getLength()>0) {
 
 
@@ -145,54 +144,6 @@ public class ConfigLoader {
 
                 }
 
-
-
-
-                //Rooms assigner
-                NodeList userRoomsAssignerList = usersConfigElement.getElementsByTagName("rooms-assigner-class");
-                if (userRoomsAssignerList.getLength() > 0) {
-
-
-                    Element roomsAssigner = (Element) userRoomsAssignerList.item(0);
-
-                    if (roomsAssigner.getTextContent().trim().equals("")) {
-
-                        throw new ServletException("Empty Room assigner class name supplied.");
-
-                    }
-
-                    String roomsAssignerClassName = roomsAssigner.getTextContent();
-                    Class roomsAssignerClass = null;
-
-                    try {
-
-                        roomsAssignerClass = Class.forName(roomsAssignerClassName);
-
-                    } catch (ClassNotFoundException ex) {
-
-                        throw new ServletException("Rooms assigner class could not be found", ex);
-
-                    }
-
-                    if (roomsAssignerClass.asSubclass(RoomsAssigner.class) == null)
-
-                        throw new ServletException("The provided Room assigner does not extend the base Room assigner class");
-
-
-                    try {
-
-                        Object roomAssigner = roomsAssignerClass.newInstance();
-                        RoomsAssigner assigner = (RoomsAssigner) roomAssigner;
-                        appConfigurations.setRoomsAssigner(assigner);
-
-                    } catch (Exception ex) {
-
-                        throw new ServletException("Room assigner instantiation failed", ex);
-
-                    }
-
-
-                }
 
             }
 

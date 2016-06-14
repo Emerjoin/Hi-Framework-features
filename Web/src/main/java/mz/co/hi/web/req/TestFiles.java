@@ -1,7 +1,5 @@
 package mz.co.hi.web.req;
 
-import mz.co.hi.web.Helper;
-import mz.co.hi.web.HiException;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.config.AppConfigurations;
 
@@ -9,9 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
-import java.util.Arrays;
 
 /**
  * Created by Mario Junior.

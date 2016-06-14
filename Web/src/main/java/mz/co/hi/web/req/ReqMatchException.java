@@ -1,6 +1,6 @@
 package mz.co.hi.web.req;
 
-import mz.co.hi.web.HiException;
+import mz.co.hi.web.exceptions.HiException;
 
 /**
  * Created by Mario Junior.

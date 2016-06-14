@@ -5,10 +5,11 @@ import mz.co.hi.web.config.ConfigLoader;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.BeansCrawler;
-import mz.co.hi.web.mvc.MissingResourcesLibException;
+import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
 
 import javax.enterprise.inject.spi.CDI;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -117,6 +118,7 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void readGenericFrontier() throws MissingResourcesLibException {
+
 
         try {
 

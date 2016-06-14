@@ -1,6 +1,7 @@
 package mz.co.hi.web.frontier;
 
 import mz.co.hi.web.RequestContext;
+import mz.co.hi.web.frontier.exceptions.FrontierInvocationFailedException;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
@@ -28,7 +29,7 @@ public class FrontierInvoker {
 
     }
 
-    public boolean invoke() throws FrontierInvocationFailedException {
+    public boolean invoke() throws Exception {
 
         MethodParam methodParams[] = method.getParams();
         Object[] invocationParams = new Object[params.size()];
@@ -44,16 +45,8 @@ public class FrontierInvoker {
 
 
         Object refreshedObj = frontier.getObject();
+        returnedObject = method.getMethod().invoke(refreshedObj, invocationParams);
 
-        try {
-
-            returnedObject = method.getMethod().invoke(refreshedObj, invocationParams);
-
-        }catch (Exception ex){
-
-            throw new FrontierInvocationFailedException(frontier.getClassName(),method.getName(),ex);
-
-        }
 
         return true;
     }

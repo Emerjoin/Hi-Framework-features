@@ -1,8 +1,6 @@
 package mz.co.hi.web.users;
 
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.notification.RoomsAssigner;
-import mz.co.hi.web.notification.UserGroups;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,24 +10,7 @@ import java.util.Map;
  */
 public class Sessions {
 
-    private static RoomsAssigner roomsAssigner = null;
-
     private static final String U_DETAILS = "user_details";
-
-    public static void setRoomsAssigner(RoomsAssigner roomsAssigner){
-
-        Sessions.roomsAssigner = roomsAssigner;
-
-    }
-
-
-
-    public static RoomsAssigner getRoomsAssigner() {
-
-        return roomsAssigner;
-
-    }
-
 
 
     public static Map getUserDetails(String remoteUser){
@@ -47,41 +28,5 @@ public class Sessions {
 
     }
 
-    public static void handleUserDetails(String remoteUser){
 
-
-        if(remoteUser!=null){
-
-
-                if(AppConfigurations.get().getUserDetailsProvider() !=null){
-
-                    Map details = AppConfigurations.get().getUserDetailsProvider().getDetails(remoteUser);
-
-                    if(details==null){
-
-                        details = new HashMap();
-
-                    }
-
-                    UserGroups.clearMembership(remoteUser);
-
-                    if(roomsAssigner !=null){
-
-                        String[] groups = roomsAssigner.getNotificationGroupsFor(remoteUser,details);
-
-                        if(groups!=null){
-
-                            if(groups.length>0)
-                                UserGroups.setMembership(remoteUser,groups);
-
-
-                        }
-
-                    }
-
-                }
-
-        }
-
-    }
 }

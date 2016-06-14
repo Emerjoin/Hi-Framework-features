@@ -1,10 +1,8 @@
 package mz.co.hi.web.frontier;
 
 import mz.co.hi.web.DispatcherServlet;
-import mz.co.hi.web.Helper;
-import mz.co.hi.web.annotations.MultipleCalls;
-import mz.co.hi.web.annotations.SingleCall;
-import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.meta.MultipleCalls;
+import mz.co.hi.web.meta.SingleCall;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
@@ -23,14 +21,6 @@ public class Scripter {
 
     }
 
-
-    /*
-    private String generateHeaders(String frontierName, String method){
-
-
-        return "{\"Invoked-Class\":\""+frontierName+"\",\"Invoked-Method\":\""+method+"\"}";
-
-    }*/
 
     private String generateUrl(String beanName, String method){
 

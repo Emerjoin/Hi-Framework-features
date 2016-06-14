@@ -1,4 +1,8 @@
 
+
+    var promisse = new Hi.$frontiers.Promisse();
+
+
     if($fiis.hasOwnProperty(_$fmut)){
 
         if(_$si){
@@ -10,7 +14,7 @@
                     $fiis[_$fmut].abort();
 
                 }else
-                    return;
+                    return new Hi.$frontiers.Promisse();
 
 
             }else{
@@ -21,9 +25,10 @@
                     if(_$abpon){
 
                         $fiis[_$fmut].abort();
+                        pretendContinuation();
 
                     }else
-                        return;
+                        return new Hi.$frontiers.Promisse();
 
 
 
@@ -35,7 +40,7 @@
 
     }
 
-    var promisse = new Hi.$features.frontiers.Promisse();
+
 
     var $req = $.ajax({
 
@@ -76,53 +81,72 @@
 
             }
 
-            promisse.onReturn(data.result);
+            promisse._setResult(data.result);
 
         },
 
         error : function(jqXml, errText,httpError){
 
+            var errorText = jqXml.responseText;
+            var exceptionType = undefined;
+
+
+            try{
+
+
+                var responseJSON = JSON.parse(errorText);
+                if(responseJSON.hasOwnProperty("$exception")){
+
+                    exceptionType = responseJSON["$exception"];
+                    promisse._setException(exceptionType);
+                    return;
+
+                }
+
+            }catch(err){
+
+
+
+            }
+
+
+            switch(jqXml.status){
+
+                case 403: promisse._setForbidden(); break;
+
+                case 408: promisse._setTimedOut(); break;
+
+                case 421: promisse._setInterruped(); break;
+
+                case 429: promisse._setOverRequest(); break;
+
+                default : promisse._setException(500);
+
+            }
+
+
             //Request aborted
             if(errText=="abort"){
 
-                //TODO: Handle the abort: do not invoke the always callback
                 return;
 
             }else if(errText=="timeout"){
 
-                //TODO: Handle the timeout
-                //TODO: Issue an http error: 3006 (Timeout)
-                httpError = 3006;
+                promisse._setTimedOut();
+
+            }else{
+
+                //promisse._setHttpError(500);
 
             }
 
-            promisse.onCatch(httpError);
 
         },
 
         complete: function(){
 
             delete $fiis[_$fmut];
-            promisse.onAlways();
 
-
-        },
-        statusCode : {
-
-
-
-            500: function () {
-
-                promisse.onCatch(500);
-
-            },
-
-            403: function(){
-
-                promisse.onCatch(403);
-                //TODO: Call the global handler for access denied
-
-            }
 
         }
 

@@ -1,14 +1,13 @@
 package mz.co.hi.web.frontier.model;
 
 
-import mz.co.hi.web.annotations.Frontier;
+import mz.co.hi.web.HiCDI;
+import mz.co.hi.web.meta.Frontier;
 import mz.co.hi.web.config.AppConfigurations;
 
-import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
@@ -78,8 +77,9 @@ public class BeansCrawler {
                     beanClass = Class.forName(beanClassName.toString());
                     simpleName = beanClass.getSimpleName();
 
+                    HiCDI.shouldHaveCDIScope(beanClass);
 
-                    System.out.println(simpleName);
+
                     Annotation annotation = beanClass.getAnnotation(Frontier.class);
 
                     if(annotation!=null){
@@ -104,9 +104,6 @@ public class BeansCrawler {
 
 
                 Constructor beanConstructor = beanClass.getConstructor(null);
-
-
-
 
 
                 FrontierClass bean = new FrontierClass(beanClassName.toString(),simpleName);

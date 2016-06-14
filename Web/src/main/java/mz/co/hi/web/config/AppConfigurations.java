@@ -1,6 +1,5 @@
 package mz.co.hi.web.config;
 
-import mz.co.hi.web.notification.RoomsAssigner;
 import mz.co.hi.web.users.UDetailsProvider;
 
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ public class AppConfigurations {
     private String viewsDirectory;
     private String welcomeUrl;
     private String templates[];
-    private RoomsAssigner roomsAssigner;
     private UDetailsProvider uDetailsProvider;
     private List<String> frontiers = new ArrayList<>();
     private Tunnings tunnings = new Tunnings();
@@ -114,13 +112,6 @@ public class AppConfigurations {
     }
 
 
-    public RoomsAssigner getRoomsAssigner() {
-        return roomsAssigner;
-    }
-
-    public void setRoomsAssigner(RoomsAssigner roomsAssigner) {
-        this.roomsAssigner = roomsAssigner;
-    }
 
     public UDetailsProvider getUserDetailsProvider() {
         return uDetailsProvider;

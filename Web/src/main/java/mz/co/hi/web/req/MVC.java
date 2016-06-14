@@ -1,8 +1,9 @@
 package mz.co.hi.web.req;
 
 
+import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.ClassLoader;
+import mz.co.hi.web.mvc.ClassLoader;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.mvc.HTMLizer;
 
@@ -130,6 +131,8 @@ public class MVC extends ReqHandler{
             actionMethod.setAccessible(true);
 
             Object instance = null;
+
+            HiCDI.shouldHaveCDIScope(controller);
 
 
             try {

@@ -1,7 +1,7 @@
 package mz.co.hi.web.req;
 
 import mz.co.hi.web.Helper;
-import mz.co.hi.web.HiException;
+import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.config.AppConfigurations;
 

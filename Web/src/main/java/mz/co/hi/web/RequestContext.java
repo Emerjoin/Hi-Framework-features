@@ -17,16 +17,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
 @RequestScoped
 public class RequestContext implements Serializable {
-
 
     @Inject
     private HttpServletRequest request = null;
 
     private HttpServletResponse response = null;
-
 
     @Inject
     private ServletContext servletContext = null;
@@ -35,24 +32,11 @@ public class RequestContext implements Serializable {
     private String url = null;
     private String routeUrl;
 
-
     @Inject
     private HttpSession httpSession = null;
 
-
     private OutputStream outputStream = null;
 
-    /*
-    private boolean requestHandlerAttached = false;
-
-
-    public boolean isRequestHandlerAttached() {
-        return requestHandlerAttached;
-    }
-
-    public void dettachRequestHandler() {
-        this.requestHandlerAttached = false;
-    }*/
 
     public String getUsername(){
 
@@ -61,6 +45,8 @@ public class RequestContext implements Serializable {
     }
 
     public boolean isUserLogged(){
+
+        System.out.println(~'g');
 
         return request.getRemoteUser()!=null;
 

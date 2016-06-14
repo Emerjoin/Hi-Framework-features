@@ -2,11 +2,12 @@ package mz.co.hi.web.req;
 
 import com.google.gson.*;
 import mz.co.hi.web.FrontEnd;
-import mz.co.hi.web.Helper;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.AppContext;
-import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.frontier.*;
+import mz.co.hi.web.frontier.exceptions.InvalidFrontierParamException;
+import mz.co.hi.web.frontier.exceptions.MapConversionException;
+import mz.co.hi.web.frontier.exceptions.MissingFrontierParamException;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
@@ -14,8 +15,8 @@ import mz.co.hi.web.mvc.HTMLizer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +41,10 @@ public class Frontiers extends ReqHandler {
 
     @Inject
     private FrontEnd frontEnd;
+
+
+    @Inject
+    private ServletContext servletContext;
 
 
     public static void addFrontier(FrontierClass frontierClass){
@@ -173,12 +178,40 @@ public class Frontiers extends ReqHandler {
 
 
 
-
             FrontierMethod frontierMethod = frontierClass.getMethod(invokedMethod);
             Map params = matchParams(invokedClass,frontierMethod, requestContext);
 
             FrontierInvoker frontierInvoker = new FrontierInvoker(requestContext,frontierClass,frontierMethod,params);
-            boolean invoked_successfully = frontierInvoker.invoke();
+
+            boolean invoked_successfully = false;
+
+
+            try {
+
+                invoked_successfully = frontierInvoker.invoke();
+
+            }catch (Exception ex){
+
+                servletContext.log("An error occurred during frontier method invocation <"+invokedClass+"."+invokedMethod+">",ex);//Log the error;
+
+                Gson gson = appContext.getGsonBuilder().create();
+                Map map = new HashMap<>();
+
+                Map exception = new HashMap<>();
+                exception.put("type",ex.getCause().getClass().getSimpleName());
+                map.put("$exception",exception);
+
+                String resp = gson.toJson(map);
+                requestContext.getResponse().setStatus(500);
+                requestContext.getResponse().setContentType("text/json;charset=UTF8");
+                requestContext.echo(resp);
+
+                return true;
+
+            }
+
+
+
             if(invoked_successfully){
 
                 try {
@@ -202,8 +235,6 @@ public class Frontiers extends ReqHandler {
                         map.put(HTMLizer.TEMPLATE_DATA_KEY,frontEnd.getTemplateData());
 
                     }
-
-
 
 
                     String resp = gson.toJson(map);

@@ -2,16 +2,17 @@ package mz.co.hi.web.mvc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sun.deploy.appcontext.*;
 import mz.co.hi.web.*;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.users.Sessions;
+import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
+import mz.co.hi.web.mvc.exceptions.MalMarkedTemplateException;
+import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
+import mz.co.hi.web.mvc.exceptions.TemplateException;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.json.Json;
 import javax.json.JsonObject;
-import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
@@ -68,7 +69,7 @@ public class HTMLizer {
     }
 
 
-    private String fetchTemplate(FrontEnd frontEnd) throws TemplateException{
+    private String fetchTemplate(FrontEnd frontEnd) throws TemplateException {
 
         String templateName = frontEnd.getTemplate();
 
@@ -437,7 +438,6 @@ public class HTMLizer {
 
             }
 
-            Sessions.handleUserDetails(requestContext.getUsername());
             viewData.put("$root",$templateDataMap);
 
 

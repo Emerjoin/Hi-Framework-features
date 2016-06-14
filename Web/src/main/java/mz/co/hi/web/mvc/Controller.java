@@ -4,6 +4,10 @@ import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
+import mz.co.hi.web.mvc.exceptions.MvcException;
+import mz.co.hi.web.mvc.exceptions.NoSuchViewException;
+import mz.co.hi.web.mvc.exceptions.TemplateException;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
@@ -59,7 +63,7 @@ public class Controller implements Serializable {
     }
 
 
-    public void callView() throws MvcException{
+    public void callView() throws MvcException {
 
         this.callView(null);
 

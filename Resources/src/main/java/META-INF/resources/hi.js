@@ -1,10 +1,3 @@
-/*
- *    Websocket auto-reconnect Library
- */
-
-!function(a,b){"function"==typeof define&&define.amd?define([],b):"undefined"!=typeof module&&module.exports?module.exports=b():a.ReconnectingWebSocket=b()}(this,function(){function a(b,c,d){function l(a,b){var c=document.createEvent("CustomEvent");return c.initCustomEvent(a,!1,!1,b),c}var e={debug:!1,automaticOpen:!0,reconnectInterval:1e3,maxReconnectInterval:3e4,reconnectDecay:1.5,timeoutInterval:2e3};d||(d={});for(var f in e)this[f]="undefined"!=typeof d[f]?d[f]:e[f];this.url=b,this.reconnectAttempts=0,this.readyState=WebSocket.CONNECTING,this.protocol=null;var h,g=this,i=!1,j=!1,k=document.createElement("div");k.addEventListener("open",function(a){g.onopen(a)}),k.addEventListener("close",function(a){g.onclose(a)}),k.addEventListener("connecting",function(a){g.onconnecting(a)}),k.addEventListener("message",function(a){g.onmessage(a)}),k.addEventListener("error",function(a){g.onerror(a)}),this.addEventListener=k.addEventListener.bind(k),this.removeEventListener=k.removeEventListener.bind(k),this.dispatchEvent=k.dispatchEvent.bind(k),this.open=function(b){h=new WebSocket(g.url,c||[]),b||k.dispatchEvent(l("connecting")),(g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","attempt-connect",g.url);var d=h,e=setTimeout(function(){(g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","connection-timeout",g.url),j=!0,d.close(),j=!1},g.timeoutInterval);h.onopen=function(){clearTimeout(e),(g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","onopen",g.url),g.protocol=h.protocol,g.readyState=WebSocket.OPEN,g.reconnectAttempts=0;var d=l("open");d.isReconnect=b,b=!1,k.dispatchEvent(d)},h.onclose=function(c){if(clearTimeout(e),h=null,i)g.readyState=WebSocket.CLOSED,k.dispatchEvent(l("close"));else{g.readyState=WebSocket.CONNECTING;var d=l("connecting");d.code=c.code,d.reason=c.reason,d.wasClean=c.wasClean,k.dispatchEvent(d),b||j||((g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","onclose",g.url),k.dispatchEvent(l("close")));var e=g.reconnectInterval*Math.pow(g.reconnectDecay,g.reconnectAttempts);setTimeout(function(){g.reconnectAttempts++,g.open(!0)},e>g.maxReconnectInterval?g.maxReconnectInterval:e)}},h.onmessage=function(b){(g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","onmessage",g.url,b.data);var c=l("message");c.data=b.data,k.dispatchEvent(c)},h.onerror=function(b){(g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","onerror",g.url,b),k.dispatchEvent(l("error"))}},1==this.automaticOpen&&this.open(!1),this.send=function(b){if(h)return(g.debug||a.debugAll)&&console.debug("ReconnectingWebSocket","send",g.url,b),h.send(b);throw"INVALID_STATE_ERR : Pausing to reconnect websocket"},this.close=function(a,b){"undefined"==typeof a&&(a=1e3),i=!0,h&&h.close(a,b)},this.refresh=function(){h&&h.close()}}return a.prototype.onopen=function(){},a.prototype.onclose=function(){},a.prototype.onconnecting=function(){},a.prototype.onmessage=function(){},a.prototype.onerror=function(){},a.debugAll=!1,a.CONNECTING=WebSocket.CONNECTING,a.OPEN=WebSocket.OPEN,a.CLOSING=WebSocket.CLOSING,a.CLOSED=WebSocket.CLOSED,a});
-
-
 
 /**
  * Hi Framework Library
@@ -32,9 +25,6 @@ Hi.$config = {};
 Hi.$config.nav = {};
 Hi.$config.nav.changeLocation = true;
 
-Hi.$config.features = {};
-Hi.$config.features.notifications = {};
-Hi.$config.features.notifications.enabled = true;
 
 /**
  * Configurations related to what the user sees
@@ -76,10 +66,6 @@ Hi.$nav = {};
  */
 Hi.$util = {};
 
-Hi.$features = {};
-Hi.$features.frontiers = {};
-Hi.$features.notifications = {};
-
 
 /**
  *
@@ -116,7 +102,7 @@ Hi.$test.fakeFrontierPromise = function(){
 
         this.fail = function(error,timeout){
 
-            var promisse =  new Hi.$features.frontiers.Promisse();
+            var promisse =  new Hi.$frontiers.Promisse();
             promisse.catch = function(callback){
 
                 promisse.catchCallback = callback;
@@ -154,7 +140,7 @@ Hi.$test.fakeFrontierPromise = function(){
 
         this.return = function(data,timeout){
 
-            var promisse =  new Hi.$features.frontiers.Promisse();
+            var promisse =  new Hi.$frontiers.Promisse();
             promisse.return = function(callback){
 
                 promisse.returnCallback = callback;
@@ -834,9 +820,6 @@ Hi.$angular.run = function(){
         Hi.setLanguage(appLang);
 
         Hi.$angular.$injector =  angular.injector(modulesInjected);
-
-        if(Hi.$config.features.notifications.enabled)
-            Hi.$features.notifications.init();
 
         Hi.$angular.$compile = $compile;
 
@@ -2181,137 +2164,362 @@ Hi.$nav.toSlashes = function(route){
 
 
 /**
- * FEATURES - NOTIFICATIONS
+ * FRONTIERS
  */
-Hi.$features.notifications = {};
-Hi.$features.notifications.init = function(){
+
+Hi.$frontiers = {};
+
+/*
+Hi.$frontiers.InvocationPromise = function(){
+
+    //public functions
+
+    this.update = function(obj,prop){
+
+        this.updateHandler = {object:obj,property:prop};
+        return this;
+
+    };
+
+    this.u = this.update;
+
+    this.state = function(obj,prop){
+
+        this.stateHandler = {object:obj,property:prop};
+        return this;
+
+    };
+
+    this.s = this.state;
+
+    this.timeout = function(callback){
+
+        this.timeoutHandler = callback;
+        return this;
+
+    };
+
+    this.t = this.timeout;
+
+    this.forbidden = function(callback){
+
+        this.accessForbiddenHandler = callback;
+        return this;
+
+    };
+
+    this.f = this.forbidden;
 
 
-    var websocketUrl = "ws://"+App.simple_base_url+"push-web-socket-end-point";
-    var socket = new ReconnectingWebSocket(websocketUrl);
+    this.catch = function(callback){
 
-    socket.onerror = function(){
+        this.exceptionHandler = callback;
+        return this;
 
-        //console.error("Web socket failed");
-        //TODO: call a method from viw and from template
-        if(__.hasOwnProperty("$disconnected")){
+    };
 
-            __.$disconnected.call(__);
+    this.c = this.catch;
+
+    this.offline = function(callback){
+
+        this.offlineHandler = callback;
+        return this;
+
+    };
+
+    this.o = this.offline;
+
+    //internal methods
+
+    this.$fireUpdate = function(data){
+
+
+
+    };
+
+    this.$updateState = function(){
+
+
+
+    };
+
+    this.$fireTimeout = function(){
+
+
+
+    };
+
+    this.$fireTimeout = function(){
+
+
+
+    };
+
+    this.$fireOffline = function(){
+
+
+
+    };
+
+    this.$fireException = function(){
+
+
+
+    };
+
+
+
+};*/
+
+Hi.$frontiers.Promisse = function(){
+
+    var setTo = {obj:false,prop:false,callback:false};
+    var loadingTo = {obj:false,prop:false,callback:false};
+    var forbiddenCallback = undefined;
+    var timeoutCallback = undefined;
+    var offlineCallback = undefined;
+    var interruptedCallback = undefined;
+    var overequestCallback = undefined;
+    var catchCallback = undefined;
+
+    var finallyCallback = undefined;
+
+
+    this._setResult = function(data){
+
+        if(typeof setTo.callback=="function")
+            setTo.callback.call(this,data);
+
+
+        this._setRequestFinished();
+
+    };
+
+    this._setRequestFinished = function(){
+
+        if(typeof finallyCallback=="function")
+            finallyCallback.call(this);
+
+    };
+
+    this._setHttpError = function(code,exception){
+
+
+        if(typeof catchCallback=="function"){
+
+            catchCallback.call(this,code);
+
+        }
+
+        this._setRequestFinished();
+
+    };
+
+    this._setTimedOut = function(){
+
+        if(typeof timeoutCallback=="function"){
+
+
+
+            timeoutCallback.call(this);
+
+            this._setRequestFinished();
+
+        }else{
+
+            this._setHttpError(408);
 
         }
 
     };
 
-    socket.onopen = function(){
+    this._setOffline = function(){
 
-        //console.log("Web socket opened");
 
+        if(typeof offlineCallback=="function"){
+
+
+            offlineCallback.call(this);
+
+            this._setRequestFinished();
+
+
+        }else{
+
+            this._setHttpError(0);
+
+        }
 
     };
 
-    socket.onmessage = function(event){
+    this._setForbidden = function(){
 
-        var received = event.data;
-
-        if(typeof received=="undefined")
-            return;
+        if(typeof forbiddenCallback=="function"){
 
 
-        try{
+            forbiddenCallback.call(this);
+            this._setRequestFinished();
 
 
-            var receivedMessage = JSON.parse(received);
-            if(receivedMessage.hasOwnProperty("error")){
+        }else{
 
-                socket.close();
-                return;
+            this._setHttpError(403);
 
-            }
+        }
 
+    };
 
-            if(receivedMessage.hasOwnProperty("success")){
+    this._setInterruped = function(){
 
-                //TODO: call a method from viw and from template
-
-
-                if(__.hasOwnProperty("$connected")){
-
-                    __.$connected.call(__);
-
-                }
-
-                return;
-
-            }
+        if(typeof interruptedCallback=="function"){
 
 
-            if(receivedMessage.hasOwnProperty("type")&&receivedMessage.hasOwnProperty("envelope")){
+            interruptedCallback.call(this);
+            this._setRequestFinished();
 
-                var envelope = receivedMessage["envelope"];
-                var type = receivedMessage["type"];
+        }else{
 
-                var handlerName = type;
+            this._setHttpError(421);
 
-                var notificationToken = "$onNotification";
+        }
 
-                if(_.hasOwnProperty(notificationToken)){
+    };
 
-                    if(_[notificationToken].hasOwnProperty(handlerName)){
+    this._setOverRequest = function(){
 
-                        _[notificationToken][handlerName].call(_,envelope);
-                        return;
-
-                    }
-
-                }else{
+        if(typeof overequestCallback=="function"){
 
 
-                    if(__.hasOwnProperty(notificationToken)){
+            overequestCallback.call(this);
+            this._setRequestFinished();
 
-                        if(__[notificationToken].hasOwnProperty(handlerName)){
+        }else{
 
-                            __[notificationToken][handlerName].call(__,envelope);
-                            return;
-                        }
-
-
-                    }
-
-                }
-
-
-                console.warn("No handler found for notification <"+type+">")
-
-
-
-            }else{
-
-                console.warn("Received a missformatted notification message ->");
-                console.warn(received);
-
-            }
-
-        }catch(err)
-        {
-
-            console.warn("Could not parse received notification message : "+received);
+            this._setHttpError(429);
 
         }
 
 
+    };
 
+    this._setException = function(type){
+
+
+        if(typeof catchCallback=="function"){
+
+
+            catchCallback.call(this,type);
+            this._setRequestFinished();
+
+        }else{
+
+            this._setHttpError(500);
+
+        }
 
     };
 
+    //--
+
+
+    this.try = function(obj) {
+
+
+        if(typeof obj=="function"){
+
+            setTo.callback = obj;
+
+        }else{
+
+            throw new Error("Wrong parameters");
+
+        }
+
+        return this;
+
+    };
+
+    this.finally = function(obj){
+
+        if(typeof obj=="function"){
+
+            finallyCallback = obj;
+
+        }else{
+
+            throw new Error("Wrong parameters");
+
+        }
+
+        return this;
+
+    };
+
+    this.forbidden = function(callback){
+
+        if(typeof callback!="function")
+            throw new Error("Wrong parameters");
+
+        forbiddenCallback = callback;
+        return this;
+
+    };
+
+    this.timeout = function(callback){
+
+        if(typeof callback!="function")
+            throw new Error("Wrong parameters");
+
+        timeoutCallback = callback;
+        return this;
+
+    };
+
+    this.offline = function(callback){
+
+        if(typeof callback!="function")
+            throw new Error("Wrong parameters");
+
+        offlineCallback = callback;
+        return this;
+
+    };
+
+    this.interrupted = function(callback){
+
+        if(typeof callback!="function")
+            throw new Error("Wrong parameters");
+
+        interruptedCallback = callback;
+        return this;
+
+    };
+
+    this.overrequest = function(callback){
+
+        if(typeof callback!="function")
+            throw new Error("Wrong parameters");
+
+        overequestCallback = callback;
+        return this;
+
+    };
+
+    this.catch = function(callback){
+
+        if(typeof callback!="function")
+            throw new Error("Wrong parameters");
+
+        catchCallback = callback;
+        return this;
+
+    };
 
 };
 
+/*
 
-/**
- * FEATURES - FRONTIERS
- */
-
-Hi.$features.frontiers.Promisse = function(){
+Hi.$frontiers.Promisse = function(){
 
     this.return = function(callback){
 
@@ -2386,7 +2594,7 @@ Hi.$features.frontiers.Promisse = function(){
 
     };
 
-};
+};*/
 
 
 /**

@@ -5,7 +5,7 @@ import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.DispatcherServlet;
-import mz.co.hi.web.mvc.NoSuchTemplateException;
+import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
