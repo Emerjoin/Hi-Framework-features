@@ -833,6 +833,16 @@ Hi.$angular.run = function(){
         }
 
 
+        if(__.hasOwnProperty("$init")){
+
+            if(typeof __.$init=="function"){
+
+                __.$init.call(__);
+
+            }
+
+        }
+
         if(typeof appRun=="function"){
 
             Hi.$angular.$injector.invoke(appRun);
@@ -1996,7 +2006,6 @@ Hi.$nav.requestData = function(route,callback,server_directives){
             request_params = server_directives;
 
         }
-
 
         //Efectua a requisicao GET
         var request = $.ajax({
