@@ -1221,6 +1221,7 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         //Create a new scope from $rootScope;
         viewScope = __.$new(true);
 
+
     }
 
 
@@ -1298,33 +1299,102 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     }
 
 
-
-    $("#view_content").html("");
-    $("#view_content").append(compiledElement);
-    Hi.$ui.js.ajaxLoader.hide();
-
-    viewScope.$apply(function(){
+    var closePromise = {};
+    closePromise.proceed = function(){
 
 
-        if(typeof viewScope.$postLoad!="undefined"){
 
-            viewScope.$postLoad.call(viewScope);
+        //Tell the the template that the view was closed
+        if(__.hasOwnProperty("$onClose")&&__.hasOwnProperty("$activeView")){
 
-        }
+            if(typeof __.$onClose=="function"){
 
-        if(__.hasOwnProperty("$onPostLoad")){
-
-            if(typeof __.$onPostLoad=="function"){
-
-                __.$onPostLoad.call(__,viewScope.$route,viewScope);
+                __.$onClose.call(__,__.$activeView.$route);
 
             }
 
         }
 
+        //Tell the template that there is another active view
+        __.$activeView = viewScope;
 
-    });
 
+        $("#view_content").html("");
+        $("#view_content").append(compiledElement);
+        Hi.$ui.js.ajaxLoader.hide();
+
+        viewScope.$apply(function(){
+
+
+            if(typeof viewScope.$postLoad!="undefined"){
+
+                viewScope.$postLoad.call(viewScope);
+
+            }
+
+            if(__.hasOwnProperty("$onPostLoad")){
+
+                if(typeof __.$onPostLoad=="function"){
+
+                    __.$onPostLoad.call(__,viewScope.$route,viewScope);
+
+                }
+
+            }
+
+
+        });
+
+
+    };
+
+
+    //Close the active view first
+    if(__.hasOwnProperty("activeView")){
+
+        if(typeof __.activeView=="object"){
+
+            //is close prevent active?
+            if(__.activeView.hasOwnProperty("$preventClose")&&__.activeView.hasOwnProperty("$close")){
+
+
+                if(__.activeView.$preventClose){
+
+                    __.activeView.$close.call(__.activeView,closePromise);
+
+                }else{
+
+                    closePromise.proceed();
+
+                }
+
+
+            }else{
+
+
+                if(typeof __.activeView.$close=="function"){
+
+                    //Call the close handler on the view
+                    __.activeView.$close.call(__.activeView);
+
+                    closePromise.proceed();
+
+                }
+
+            }
+
+
+        }else{
+
+            throw new Error("Invalid active view object");
+
+        }
+
+    }else{
+
+        closePromise.proceed();
+
+    }
 
 
 };
