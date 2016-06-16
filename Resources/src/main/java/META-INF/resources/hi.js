@@ -1168,7 +1168,7 @@ Hi.$ui.js.setViewController= function(controllerName, actionName, controller){
 
 Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,receptor,$embedScope,embedOptions){
 
-    context_variables.$route = {controller:viewPath.controller,action:viewPath.action};
+    //context_variables.$route = {controller:viewPath.controller,action:viewPath.action};
 
     //Get the view controller
     var controller = Hi.$ui.js.getViewController(viewPath.controller,viewPath.action);
@@ -1268,7 +1268,17 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     var compileFn = Hi.$angular.$compile(markup);
     var compiledElement = compileFn(viewScope);
 
+    var changePath = function(){
+
+        var path  = Hi.$nav.getURL(context_variables.$route);
+        var routeIndex = Hi.$nav.setActivePath(path);
+        Hi.$nav.setLocation(path,JSON.stringify({index:routeIndex}));
+
+    };
+
     if(receptor){
+
+
 
 
 
@@ -1288,20 +1298,46 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         receptor.markup = markup;
 
 
+
         if(typeof viewScope.$postLoad!="undefined"){
 
             viewScope.$postLoad.call(viewScope);
 
         }
 
+
+
+        //Change the Path
+
+        var setPageLocation = Hi.$config.nav.changeLocation;
+
+        if(typeof embedOptions!="undefined"){
+
+            if(embedOptions.silentUrl){
+
+                setPageLocation = false;
+
+            }
+
+        }
+
+
+        if(setPageLocation){
+
+           changePath();
+
+        }
+
+
         return receptor;
 
     }
 
 
+
+
     var closePromise = {};
     closePromise.proceed = function(){
-
 
 
         //Tell the the template that the view was closed
@@ -1315,6 +1351,9 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
         }
 
+        var isRedirect = __.hasOwnProperty("$activeView");
+
+
         //Tell the template that there is another active view
         __.$activeView = viewScope;
 
@@ -1322,6 +1361,16 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         $("#view_content").html("");
         $("#view_content").append(compiledElement);
         Hi.$ui.js.ajaxLoader.hide();
+
+
+        //Change the path
+        var setPageLocation = Hi.$config.nav.changeLocation;
+
+        if(setPageLocation&&isRedirect){
+
+            changePath();
+
+        }
 
         viewScope.$apply(function(){
 
@@ -1343,6 +1392,16 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
             }
 
 
+            if(__.hasOwnProperty("$onRedirectFinish")&&isRedirect){
+
+                if(typeof __.$onRedirectFinish=="function"){
+
+                    __.$onRedirectFinish.call(__);
+
+                }
+
+            }
+
         });
 
 
@@ -1350,17 +1409,17 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
 
     //Close the active view first
-    if(__.hasOwnProperty("activeView")){
+    if(__.hasOwnProperty("$activeView")){
 
-        if(typeof __.activeView=="object"){
+        if(typeof __.$activeView=="object"){
 
             //is close prevent active?
-            if(__.activeView.hasOwnProperty("$preventClose")&&__.activeView.hasOwnProperty("$close")){
+            if(__.$activeView.hasOwnProperty("$preventClose")&&__.$activeView.hasOwnProperty("$close")){
 
 
-                if(__.activeView.$preventClose){
+                if(__.$activeView.$preventClose){
 
-                    __.activeView.$close.call(__.activeView,closePromise);
+                    __.$activeView.$close.call(__.$activeView,closePromise);
 
                 }else{
 
@@ -1372,10 +1431,10 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
             }else{
 
 
-                if(typeof __.activeView.$close=="function"){
+                if(typeof __.$activeView.$close=="function"){
 
                     //Call the close handler on the view
-                    __.activeView.$close.call(__.activeView);
+                    __.$activeView.$close.call(__.$activeView);
 
                     closePromise.proceed();
 
@@ -1847,13 +1906,27 @@ Hi.$nav.getPreviousPath = function(url){
 //Direcciona o usuario para uma rota
 Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$embedScope,embedOptions){
 
-
     //Hi.$nav.last = {name:route_name_or_object,params:params};
     Hi.$nav.last = {name:route_name_or_object};
 
     var route_object = Hi.$nav.resolveRoute(route_name_or_object);
 
     route_object = JSON.parse(JSON.stringify(route_object));
+
+    if(!embed){
+
+        if(__.hasOwnProperty("$onRedirectStart")){
+
+            if(typeof __.$onRedirectStart=="function"){
+
+                __.$onRedirectStart.call(__);
+
+            }
+
+        }
+
+    }
+
 
     //Objecto de rota invalido
     if(!route_object){
@@ -1968,32 +2041,7 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
             //Hi.Internal.setNextViewPath(module_name,controller,action); OLD
             var viewPath =  Hi.$nav.getViewPath(controller,action);//New
 
-            var setPageLocation = Hi.$config.nav.changeLocation;
-
-
-            if(embed){
-
-                if(typeof embedOptions!="undefined"){
-
-
-                    if(embedOptions.silentUrl){
-
-                        setPageLocation = false;
-
-                    }
-
-                }
-
-            }
-
-
-            if(setPageLocation){
-
-                var routeIndex = Hi.$nav.setActivePath(path);
-                Hi.$nav.setLocation(path,JSON.stringify({index:routeIndex}));
-
-            }
-
+            context_variables.$route = route_object;
             var generated = Hi.$ui.js.createViewScope(viewPath,context_variables,markup,embed,false,$embedScope,embedOptions);
 
             if(embed){
@@ -2140,6 +2188,17 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
                     if(typeof __.$onRedirectError=="function")
                         __.$onRedirectError.call(__,route,jqXHR.status,request);
+
+                }
+
+
+                if(__.hasOwnProperty("$onRedirectFinish")){
+
+                    if(typeof __.$onRedirectFinish=="function"){
+
+                        __.$onRedirectFinish.call(__);
+
+                    }
 
                 }
 
