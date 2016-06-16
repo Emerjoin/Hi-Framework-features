@@ -74,19 +74,19 @@ Hi.$util = {};
 Hi.$log = {};
 Hi.$log.info = function(text){
 
-    console.info(text);
+    //console.info(text);
 
 };
 
 Hi.$log.warn = function(text){
 
-    console.warn(text);
+    //console.warn(text);
 
 };
 
 Hi.$log.error = function(text){
 
-    console.error(text);
+    //console.error(text);
 
 };
 
@@ -861,7 +861,7 @@ Hi.$angular.run = function(){
 
             $startup();
 
-        },50);
+        },5);
 
     });
 
@@ -1168,7 +1168,7 @@ Hi.$ui.js.setViewController= function(controllerName, actionName, controller){
 
 Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,receptor,$embedScope,embedOptions){
 
-    //context_variables.$route = {controller:viewPath.controller,action:viewPath.action};
+
 
     //Get the view controller
     var controller = Hi.$ui.js.getViewController(viewPath.controller,viewPath.action);
@@ -1238,12 +1238,14 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     if(viewScope.hasOwnProperty('$preLoad')){
 
+
         var newMarkup = viewScope.$preLoad.call(viewScope,markup);
         if(typeof newMarkup!="undefined"){
 
             markup = newMarkup;
 
         }
+
 
     }
 
@@ -1338,6 +1340,7 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     var closePromise = {};
     closePromise.proceed = function(){
+
 
 
         //Tell the the template that the view was closed
@@ -1435,6 +1438,10 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
                     //Call the close handler on the view
                     __.$activeView.$close.call(__.$activeView);
+
+                    closePromise.proceed();
+
+                }else{
 
                     closePromise.proceed();
 
@@ -2107,7 +2114,7 @@ Hi.$nav.getURL= function(route,covw) {
             route_url = route_url+"?"+get_params;
         }
 
-        Hi.$log.info('URL with getParams : '+route_url);
+
 
     }
 
@@ -2125,8 +2132,13 @@ Hi.$nav.setLocation = function (location,route){
     Hi.$nav.currentPage=location;
     Hi.$nav.currentRoute = route;
 
-    if(!Hi.$nav.isGoingBack)
+
+
+    if(!Hi.$nav.isGoingBack){
+
         window.history.pushState(route,Hi.$ui.html.getTitle()+Math.random(),location);
+
+    }
     else
         Hi.$nav.isGoingBack = false;
 
@@ -2779,6 +2791,7 @@ Array.prototype.removeVal = function(el){
 
 window.onpopstate = function(param){
 
+
     var the_base_url = App.base_url;//The base URL
 
     var the_requested_url = window.location.toString(); //The requested URL
@@ -2789,18 +2802,14 @@ window.onpopstate = function(param){
         if(param.state){
 
             var destination = the_requested_url.replace(App.base_url,"");
-            console.log("sate found for <"+destination+">");
+            //console.log("state found for <"+destination+">");
             Hi.$nav.routeBack(destination);
-
-        }else{
-
-            console.log("state not found for <"+the_requested_url+">");
 
         }
 
     }else{
 
-        console.log("base url is different  : "+the_requested_url);
+        //base url is different
 
     }
 

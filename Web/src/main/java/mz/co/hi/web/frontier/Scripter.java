@@ -140,8 +140,6 @@ public class Scripter {
 
         StringBuilder mirror = new StringBuilder();
         mirror.append("function "+signature+"{");
-        mirror.append("console.log(\" My caller is\");");
-        mirror.append("console.log("+beanName+"."+method.getName()+".caller.prototype);");
         mirror.append(data);
         mirror.append("var $functionUrl=App.base_url+\""+generateUrl(beanName,method.getName())+"\";");
         //mirror.append("var $headers="+generateHeaders(beanName,method.getName())+";");
