@@ -116,7 +116,7 @@ public class HiEcmaScript5 extends ReqHandler {
 
             requestContext.getResponse().setHeader("Content-Type", "text/javascript");
 
-            if(AppConfigurations.get().getDeploymentMode()!= AppConfigurations.DeploymentMode.DEVELOPMENT)
+            if(!AppConfigurations.get().underDevelopment())
                 AppConfigurations.get().getTunnings().emmitSmartCachingHeaders(requestContext);
             else
                 requestContext.getResponse().setHeader("Cache-Control", "no-cache");
@@ -126,7 +126,7 @@ public class HiEcmaScript5 extends ReqHandler {
             String replaceble = "//{{config}}";
             String hiJs = getHiJs(requestContext);
             String hiJsReplaced = hiJs.replace(replaceble, DispatcherServlet.javascriptConfigScript);
-            Helper.echo(hiJsReplaced + templateContent, requestContext);
+            Helper.echo(hiJsReplaced + templateContent + DispatcherServlet.componentsScript, requestContext);
 
 
         }else if(requestURL.equals("hi-angular.js")){

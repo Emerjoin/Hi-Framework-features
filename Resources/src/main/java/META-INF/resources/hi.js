@@ -1591,6 +1591,19 @@ Hi.$ui.js.lang.getItem = function(key,default_value){
 Hi.$ui.js.root = {};
 
 
+/**
+ * Register a Web UI Component
+ */
+
+Hi.$ui.js.component = function(name, directive){
+
+    Hi.$angular.directives[name] = directive;
+
+};
+
+
+
+
 
 /**
  * - - - - - - - -

@@ -2,11 +2,19 @@ package mz.co.hi.web;
 
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.ConfigLoader;
+import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.BeansCrawler;
+import mz.co.hi.web.meta.Frontier;
+import mz.co.hi.web.meta.WebComponent;
 import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
+import org.reflections.Reflections;
+import org.reflections.scanners.TypeAnnotationsScanner;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
+import org.reflections.util.FilterBuilder;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletContext;
@@ -19,7 +27,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.*;
 
 /**
@@ -35,6 +45,7 @@ public class DispatcherServlet extends HttpServlet {
     public static String javascriptConfigScript ="";
     public static String frontiersScript ="";
     public static String angularJsScript ="";
+    public static String componentsScript="";
 
     protected static  String DEPLOY_ID="";
 
@@ -257,6 +268,69 @@ public class DispatcherServlet extends HttpServlet {
 
     }
 
+
+    private void findControllers(){
+
+        //TODO: Implement
+
+    }
+
+    private void findFrontiers(){
+
+        //TODO: Implement
+
+    }
+
+    private void findAndLoadComponents() throws ServletException{
+
+
+        org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
+                .addClassLoader(this.getClass().getClassLoader())
+                .setScanners(new TypeAnnotationsScanner())
+                .setUrls(ClasspathHelper.forPackage("mz.co.hi.web.component"))
+        );
+
+        Set<Class<?>> classes = reflections.getTypesAnnotatedWith(WebComponent.class);
+        for(Class<?> componentClass : classes){
+
+            String scriptName = componentClass.getSimpleName().toLowerCase();
+            String minifiedScriptName = componentClass.getSimpleName().toLowerCase()+".min";
+
+            URL componentScript =  null;
+
+            try {
+
+                if (AppConfigurations.get().underDevelopment())
+                    componentScript = getServletContext().getResource("/" + scriptName + ".js");
+                else
+                    componentScript = getServletContext().getResource("/" + minifiedScriptName + ".js");
+
+            }catch (MalformedURLException ex){
+
+                throw new HiException("Invalid component name : "+componentClass.getSimpleName(),ex);
+
+            }
+
+            if(componentScript==null)
+                continue;
+
+            try {
+
+                componentsScript+=Helper.readTextStreamToEnd(componentScript.openStream(), null);
+                getServletContext().log(componentClass.getSimpleName()+" Web component loaded");
+
+            }catch (Exception ex){
+
+                throw new HiException("Could not read component script : "+componentClass.getSimpleName(),ex);
+
+            }
+
+
+        }
+
+
+
+    }
 
     private String filterRouteURL(String routeURL,HttpServletResponse response) throws IOException {
 
