@@ -236,6 +236,7 @@ public class DispatcherServlet extends HttpServlet {
         readLoaderScript();
         readGenericFrontier();
         generateFrontiers();
+        findAndLoadComponents();
 
 
         if(AppConfigurations.get()!=null){
