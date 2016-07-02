@@ -12,23 +12,22 @@ import java.util.Map;
 /**
  * @author Mário Júnior
  */
-@ConfigSection(tags = "frontiers")
+@ConfigSection(tags = "frontier-packages")
 public class FrontiersConfig implements Configurator {
 
 
     @Override
     public void doConfig(AppConfigurations configs, Map<String, Element> elements, Element document) throws BadConfigException {
 
-        Element frontiersElement = elements.get("frontiers");
-        NodeList allFrontiersNodeList = frontiersElement.getElementsByTagName("frontier");
+        Element frontiersElement = elements.get("frontier-packages");
+        NodeList allFrontiersNodeList = frontiersElement.getElementsByTagName("package");
 
         if(allFrontiersNodeList.getLength()>0){
 
             for(int i=0;i<allFrontiersNodeList.getLength();i++){
 
                 Element frontierElement = (Element) allFrontiersNodeList.item(i);
-                configs.getFrontiers().add(frontierElement.getTextContent());
-
+                configs.getFrontierPackages().add(frontierElement.getTextContent());
 
             }
 

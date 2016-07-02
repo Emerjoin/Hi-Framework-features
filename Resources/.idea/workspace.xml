@@ -7,227 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/BadConfigException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/BadConfiguratorException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/Bootstrap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/Configurator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/TestsConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/UsersConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/WebTunningConfig.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/ConfigLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/ConfigLoader.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" afterPath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/meta/Processor.class" afterPath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/meta/Processor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/artifacts/ComponentDemo_jar/ComponentDemo.jar" afterPath="$PROJECT_DIR$/../HiList/out/artifacts/ComponentDemo_jar/ComponentDemo.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/artifacts/jar/HiList.jar" afterPath="$PROJECT_DIR$/../HiList/out/artifacts/jar/HiList.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/production/ComponentDemo/mz/co/hi/web/component/Component1.class" afterPath="$PROJECT_DIR$/../HiList/out/production/ComponentDemo/mz/co/hi/web/component/Component1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/production/HiList/mz/co/hi/web/component/HiList.class" afterPath="$PROJECT_DIR$/../HiList/out/production/HiList/mz/co/hi/web/component/HiList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.resources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/resources/EmptyClass.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/resources/EmptyClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/FastInoset.jar" afterPath="$PROJECT_DIR$/../Web/lib/FastInoset.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/gmbal-api-only.jar" afterPath="$PROJECT_DIR$/../Web/lib/gmbal-api-only.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/javax.annotation.jar" afterPath="$PROJECT_DIR$/../Web/lib/javax.annotation.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/javax.json.jar" afterPath="$PROJECT_DIR$/../Web/lib/javax.json.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jaxb-api.jar" afterPath="$PROJECT_DIR$/../Web/lib/jaxb-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jaxb-impl.jar" afterPath="$PROJECT_DIR$/../Web/lib/jaxb-impl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jaxb-xjc.jar" afterPath="$PROJECT_DIR$/../Web/lib/jaxb-xjc.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jaxws-api.jar" afterPath="$PROJECT_DIR$/../Web/lib/jaxws-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jaxws-rt.jar" afterPath="$PROJECT_DIR$/../Web/lib/jaxws-rt.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jaxws-tools.jar" afterPath="$PROJECT_DIR$/../Web/lib/jaxws-tools.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/jsr181-api.jar" afterPath="$PROJECT_DIR$/../Web/lib/jsr181-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/mail.jar" afterPath="$PROJECT_DIR$/../Web/lib/mail.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/management-api.jar" afterPath="$PROJECT_DIR$/../Web/lib/management-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/mimepull.jar" afterPath="$PROJECT_DIR$/../Web/lib/mimepull.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/policy.jar" afterPath="$PROJECT_DIR$/../Web/lib/policy.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/saaj-api.jar" afterPath="$PROJECT_DIR$/../Web/lib/saaj-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/saaj-impl.jar" afterPath="$PROJECT_DIR$/../Web/lib/saaj-impl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/stax-ex.jar" afterPath="$PROJECT_DIR$/../Web/lib/stax-ex.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/stax2-api.jar" afterPath="$PROJECT_DIR$/../Web/lib/stax2-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/streambuffer.jar" afterPath="$PROJECT_DIR$/../Web/lib/streambuffer.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/lib/woodstox-core-asl.jar" afterPath="$PROJECT_DIR$/../Web/lib/woodstox-core-asl.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Helper.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Helper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/HiCDI.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/HiCDI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestContext.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/RequestContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Values.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/Values.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/Tunnings.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/Tunnings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/HiException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/HiException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/NoCDIScopeException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/NoCDIScopeException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/TutorialException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/TutorialException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/MapConversionException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/MapConversionException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/FrontierMethod.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/FrontierMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/MethodParam.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/MethodParam.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/Frontier.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/Frontier.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/KeepFrontierCalls.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/KeepFrontierCalls.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/MultipleCalls.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/MultipleCalls.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/SingleCall$AbortPolicy.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/SingleCall$AbortPolicy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/SingleCall$Detection.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/SingleCall$Detection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/SingleCall.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/SingleCall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/WebComponent.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/meta/WebComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/ConversionFailedException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/ConversionFailedException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/MvcException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/MvcException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchViewException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchViewException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/TemplateException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/exceptions/TemplateException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ErrorHandler.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ErrorHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Frontiers.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Frontiers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/HandleRequests.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/HandleRequests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ReqHandler.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ReqHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ReqMatchException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/ReqMatchException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/users/UDetailsProvider.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/users/UDetailsProvider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/validation/Assert.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/validation/Assert.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/validation/ValidationException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/validation/ValidationException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/test-classes/test/mz/co/hi/web/validation/AssertTest.class" afterPath="$PROJECT_DIR$/../Web/target/test-classes/test/mz/co/hi/web/validation/AssertTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/test-classes/test/mz/co/hi/web/validation/MyEnum.class" afterPath="$PROJECT_DIR$/../Web/target/test-classes/test/mz/co/hi/web/validation/MyEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/.name" afterPath="$PROJECT_DIR$/../Annotations/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/description.html" afterPath="$PROJECT_DIR$/../Annotations/.idea/description.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/libraries/Maven__com_squareup_javapoet_1_5_1.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/libraries/Maven__com_squareup_javapoet_1_5_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/libraries/mz_co_hi_web.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/libraries/mz_co_hi_web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/modules.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/project-template.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/project-template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/Hi Annotations Processor.iml" afterPath="$PROJECT_DIR$/../Annotations/Hi Annotations Processor.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../Annotations/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/META-INF/pom.xml" afterPath="$PROJECT_DIR$/../Annotations/META-INF/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/META-INF/services/javax.annotation.processing.Processor" afterPath="$PROJECT_DIR$/../Annotations/META-INF/services/javax.annotation.processing.Processor" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/pom.xml" afterPath="$PROJECT_DIR$/../Annotations/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/META-INF/pom.xml" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/META-INF/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/meta/Processor.java" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/meta/Processor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/HiList.iml" afterPath="$PROJECT_DIR$/../HiList/HiList.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../HiList/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.js" afterPath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.min.js" afterPath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/src/mz/co/hi/web/component/HiList.java" afterPath="$PROJECT_DIR$/../HiList/src/mz/co/hi/web/component/HiList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="$PROJECT_DIR$/.idea/description.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="$PROJECT_DIR$/.idea/project-template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/sections/FrontiersConfig.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/sections/FrontiersConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hi Framework Resources.iml" afterPath="$PROJECT_DIR$/Hi Framework Resources.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/angular.min.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/angular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/loader.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/.name" afterPath="$PROJECT_DIR$/../Web/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Web/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Web/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../Web/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../Web/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_3_3_.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_3_3_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_enterprise_cdi_api_1_2.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_enterprise_cdi_api_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_websocket_javax_websocket_client_api_1_1.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_websocket_javax_websocket_client_api_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/javax_json_processing_1_0.xml" afterPath="$PROJECT_DIR$/../Web/.idea/libraries/javax_json_processing_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Web/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/modules.xml" afterPath="$PROJECT_DIR$/../Web/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/../Web/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../Web/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/Hi Framework core.iml" afterPath="$PROJECT_DIR$/../Web/Hi Framework core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/pom.xml" afterPath="$PROJECT_DIR$/../Web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../Web/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/AppContext.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/AppContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/FrontEnd.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/FrontEnd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Helper.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/HiCDI.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/HiCDI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/HtmlFileServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/HtmlFileServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestContext.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/RequestContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Values.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/Values.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/Tunnings.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/Tunnings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/HiException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/HiException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/Scripter.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/MapConversionException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/MapConversionException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/Blank.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/Blank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/FrontierMethod.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/FrontierMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/MethodParam.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/MethodParam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/Frontier.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/Frontier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/KeepFrontierCalls.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/KeepFrontierCalls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/MultipleCalls.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/MultipleCalls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/SingleCall.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/SingleCall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/WebComponent.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/WebComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/ConversionFailedException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/ConversionFailedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MvcException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/MvcException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/TemplateException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/exceptions/TemplateException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ErrorHandler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ErrorHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HandleRequests.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HandleRequests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqHandler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqMatchException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqMatchException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/TestFiles.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/TestFiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/users/Sessions.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/users/Sessions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/users/UDetailsProvider.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/users/UDetailsProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/validation/Assert.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/validation/Assert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/validation/ValidationException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/validation/ValidationException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/test/java/test/mz/co/hi/web/validation/AssertTest.java" afterPath="$PROJECT_DIR$/../Web/src/test/java/test/mz/co/hi/web/validation/AssertTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/test/java/test/mz/co/hi/web/validation/MyEnum.java" afterPath="$PROJECT_DIR$/../Web/src/test/java/test/mz/co/hi/web/validation/MyEnum.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1071,12 +859,12 @@
       <workItem from="1466068376414" duration="5569000" />
       <workItem from="1466155146169" duration="866000" />
       <workItem from="1466185826752" duration="1155000" />
-      <workItem from="1467471653317" duration="1594000" />
+      <workItem from="1467471653317" duration="1953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321097000" />
+    <option name="totallyTimeSpent" value="321456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

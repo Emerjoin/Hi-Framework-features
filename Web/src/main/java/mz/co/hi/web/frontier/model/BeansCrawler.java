@@ -56,21 +56,19 @@ public class BeansCrawler {
 
     }
 
-    public FrontierClass[] crawl(List beansList) throws ServletException{
+    public FrontierClass[] crawl(List<Class> beansList) throws ServletException{
 
         FrontierClass[] beanClasses =  null;
 
         try {
 
             List<FrontierClass> beanClassList = new ArrayList<FrontierClass>();
-            beansList.addAll(AppConfigurations.get().getFrontiers());
 
             String simpleName = "";
 
-            for (Object beanClassName : beansList) {
+            for (Class beanClass : beansList) {
 
-
-                Class beanClass = null;
+                String beanClassName = beanClass.getCanonicalName();
 
                 try {
 

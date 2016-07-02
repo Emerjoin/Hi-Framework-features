@@ -179,35 +179,28 @@ public class DispatcherServlet extends HttpServlet {
 
     }
 
+
+
     private void generateFrontiers() throws ServletException {
 
             List beansList = new ArrayList();
 
-            try {
+            this.getServletContext().log("Looking for frontiers...");
 
-                Class initializerclass = Class.forName("mz.co.hi.web.generated.FrontiersInitializer");
-                Constructor constructor = initializerclass.getDeclaredConstructor(List.class);
-                constructor.newInstance(beansList);
-
-            }catch (Exception ex){
-
-
-
-            }
-
-
-            //TODO: Find frontiers everywhere using Reflections
-            System.out.println("Looking for frontiers...");
-
-            org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
                     .addClassLoader(this.getClass().getClassLoader())
-                    .setScanners(new TypeAnnotationsScanner())
-                    //.setUrls(ClasspathHelper.forPackage("mz.co.hi.web.component"))
-            );
+                    .setScanners(new TypeAnnotationsScanner());
 
+            for(String pkg : AppConfigurations.get().getFrontierPackages())
+                configurationBuilder.addUrls(ClasspathHelper.forPackage(pkg));
+
+            org.reflections.Reflections reflections = new Reflections(configurationBuilder);
             Set<Class<?>> frontierClasses  = reflections.getTypesAnnotatedWith(Frontier.class);
             this.getServletContext().log("Frontier classes found using reflections : "+frontierClasses.size());
 
+
+            for(Class clazz : frontierClasses)
+                beansList.add(clazz);
 
 
 
