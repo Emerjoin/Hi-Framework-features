@@ -32,6 +32,20 @@
         </xsd:sequence>
     </xsd:complexType>
 
+
+    <xsd:simpleType name="frontierPackageType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="4"></xsd:minLength>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="frontierPackagesType">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="package" type="hi:frontierPackageType"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
     <xsd:simpleType name="textType">
         <xsd:restriction base="xsd:string">
             <xsd:minLength value="3"></xsd:minLength>
@@ -134,6 +148,7 @@
             <xsd:element type="hi:webType" name="web" minOccurs="1" nillable="false" maxOccurs="1"></xsd:element>
             <xsd:element type="hi:usersType" name="users" minOccurs="0" maxOccurs="1" nillable="false"></xsd:element>
             <xsd:element type="hi:frontiersType" name="frontiers" nillable="false" maxOccurs="1" minOccurs="0"></xsd:element>
+            <xsd:element type="hi:frontierPackagesType" name="frontier-packages" nillable="false" maxOccurs="1" minOccurs="0"></xsd:element>
             <xsd:element type="hi:tunningType" name="web-tunning" nillable="false" minOccurs="0" maxOccurs="1"></xsd:element>
             <xsd:element type="hi:testsType" name="tests" nillable="false" minOccurs="0" maxOccurs="1"></xsd:element>
         </xsd:all>

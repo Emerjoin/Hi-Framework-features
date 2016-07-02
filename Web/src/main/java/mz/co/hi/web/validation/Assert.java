@@ -164,7 +164,7 @@ public class Assert {
 
         Object[] constants = en.getEnumConstants();
 
-        HashMap<String,Boolean> map = new HashMap<>();
+        HashMap<String,Boolean> map = new HashMap();
         for(Object co: constants ){
 
             map.put(co.toString(),true);

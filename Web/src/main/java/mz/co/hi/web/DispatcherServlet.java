@@ -1,7 +1,8 @@
 package mz.co.hi.web;
 
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.ConfigLoader;
+import mz.co.hi.web.config.Bootstrap;
+import mz.co.hi.web.config.ConfigSection;
 import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
@@ -14,10 +15,8 @@ import org.reflections.Reflections;
 import org.reflections.scanners.TypeAnnotationsScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
-import org.reflections.util.FilterBuilder;
 
 import javax.enterprise.inject.spi.CDI;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +28,6 @@ import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.*;
 
 /**
@@ -198,7 +196,20 @@ public class DispatcherServlet extends HttpServlet {
             }
 
 
+            //TODO: Find frontiers everywhere using Reflections
             System.out.println("Looking for frontiers...");
+
+            org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
+                    .addClassLoader(this.getClass().getClassLoader())
+                    .setScanners(new TypeAnnotationsScanner())
+                    //.setUrls(ClasspathHelper.forPackage("mz.co.hi.web.component"))
+            );
+
+            Set<Class<?>> frontierClasses  = reflections.getTypesAnnotatedWith(Frontier.class);
+            this.getServletContext().log("Frontier classes found using reflections : "+frontierClasses.size());
+
+
+
 
             FrontierClass[] beanClasses = BeansCrawler.getInstance().crawl(beansList);
 
@@ -208,7 +219,6 @@ public class DispatcherServlet extends HttpServlet {
                 return;
 
             }
-
 
 
             System.out.println("Generating client-side code for frontiers...");
@@ -229,7 +239,16 @@ public class DispatcherServlet extends HttpServlet {
     public void init() throws ServletException{
         super.init();
 
-        ConfigLoader.load(this.getServletContext());
+        org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
+                .addClassLoader(this.getClass().getClassLoader())
+                .setScanners(new TypeAnnotationsScanner())
+                .setUrls(ClasspathHelper.forPackage("mz.co.hi.web.config.sections"))
+        );
+
+        Set<Class<?>> configuratorsClasses  = reflections.getTypesAnnotatedWith(ConfigSection.class);
+
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap.load(this.getServletContext(),configuratorsClasses);
 
         readLibScript();
         readJavascriptInit();
@@ -283,7 +302,6 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void findAndLoadComponents() throws ServletException{
-
 
         org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
                 .addClassLoader(this.getClass().getClassLoader())
@@ -339,7 +357,6 @@ public class DispatcherServlet extends HttpServlet {
         if(routeURL.trim().length()==0){
 
             response.sendRedirect(AppConfigurations.get().getWelcomeUrl());
-            //return AppConfigurations.get().getWelcomeUrl();
             return null;
 
         }
@@ -374,11 +391,6 @@ public class DispatcherServlet extends HttpServlet {
         RequestContext requestContext = CDI.current().select(RequestContext.class).get();
         requestContext.setRouteUrl(routeURL);
         requestContext.setResponse(response);
-
-        //RequestContext requestContext = new RequestContext(request,response,this.getServletContext(),routeURL);
-        //requestContext.setSession(session);
-
-        //Sessions.handleUserDetails(request.getRemoteUser());
 
         boolean handled = false;
 

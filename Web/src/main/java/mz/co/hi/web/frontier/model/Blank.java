@@ -1,7 +1,7 @@
 package mz.co.hi.web.frontier.model;
 
 /**
- * Created by Mario Junior.
+ * @author Mário Júnior
  */
 public class Blank {
 

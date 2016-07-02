@@ -18,6 +18,7 @@ public class AppConfigurations {
     private String templates[];
     private UDetailsProvider uDetailsProvider;
     private List<String> frontiers = new ArrayList<>();
+    private List<String> frontierPackages = new ArrayList<>();
     private Tunnings tunnings = new Tunnings();
     private Map<String,Boolean> testFiles = new HashMap<>();
     private String defaultLanguage = "default";
@@ -55,18 +56,12 @@ public class AppConfigurations {
 
     public static AppConfigurations get(){
 
+        if(appConfigurations==null)
+            appConfigurations = new AppConfigurations();
         return appConfigurations;
 
     }
 
-
-    public AppConfigurations(String controllersPackageName, String viewsDirectory, String[] templates){
-
-        this.controllersPackageName = controllersPackageName;
-        this.viewsDirectory = viewsDirectory;
-        this.templates = templates;
-
-    }
 
 
     public boolean underDevelopment(){
@@ -162,6 +157,14 @@ public class AppConfigurations {
 
         this.deploymentMode = mode;
 
+    }
+
+    public List<String> getFrontierPackages() {
+        return frontierPackages;
+    }
+
+    public void setFrontierPackages(List<String> frontierPackages) {
+        this.frontierPackages = frontierPackages;
     }
 
     public DeploymentMode getDeploymentMode() {

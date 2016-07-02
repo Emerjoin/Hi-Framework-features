@@ -92,7 +92,6 @@ public class Tunnings {
 
         requestContext.getResponse().setHeader("Pragma", "");
         requestContext.getResponse().setHeader("Cache-Control", "public, max-age=31536000");
-        //requestContext.getResponse().setHeader("Expires", "Sun, 17-Jan-2038 19:14:07 GMT");
 
     }
 

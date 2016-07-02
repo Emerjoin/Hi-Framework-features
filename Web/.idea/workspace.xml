@@ -7,9 +7,227 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/BadConfigException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/BadConfiguratorException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Bootstrap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Configurator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/TestsConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/UsersConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebTunningConfig.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/ConfigLoader.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" afterPath="$PROJECT_DIR$/../Annotations/out/artifacts/jar/mz.co.hi.web.annotations.processor.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/meta/Processor.class" afterPath="$PROJECT_DIR$/../Annotations/target/classes/mz/co/hi/web/meta/Processor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/artifacts/ComponentDemo_jar/ComponentDemo.jar" afterPath="$PROJECT_DIR$/../HiList/out/artifacts/ComponentDemo_jar/ComponentDemo.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/artifacts/jar/HiList.jar" afterPath="$PROJECT_DIR$/../HiList/out/artifacts/jar/HiList.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/production/ComponentDemo/mz/co/hi/web/component/Component1.class" afterPath="$PROJECT_DIR$/../HiList/out/production/ComponentDemo/mz/co/hi/web/component/Component1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/out/production/HiList/mz/co/hi/web/component/HiList.class" afterPath="$PROJECT_DIR$/../HiList/out/production/HiList/mz/co/hi/web/component/HiList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/out/artifacts/jar/mz.co.hi.resources.jar" afterPath="$PROJECT_DIR$/../Resources/out/artifacts/jar/mz.co.hi.resources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/target/classes/mz/co/hi/resources/EmptyClass.class" afterPath="$PROJECT_DIR$/../Resources/target/classes/mz/co/hi/resources/EmptyClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/FastInoset.jar" afterPath="$PROJECT_DIR$/lib/FastInoset.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/gmbal-api-only.jar" afterPath="$PROJECT_DIR$/lib/gmbal-api-only.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/javax.annotation.jar" afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/javax.json.jar" afterPath="$PROJECT_DIR$/lib/javax.json.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jaxb-api.jar" afterPath="$PROJECT_DIR$/lib/jaxb-api.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jaxb-impl.jar" afterPath="$PROJECT_DIR$/lib/jaxb-impl.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jaxb-xjc.jar" afterPath="$PROJECT_DIR$/lib/jaxb-xjc.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jaxws-api.jar" afterPath="$PROJECT_DIR$/lib/jaxws-api.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jaxws-rt.jar" afterPath="$PROJECT_DIR$/lib/jaxws-rt.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jaxws-tools.jar" afterPath="$PROJECT_DIR$/lib/jaxws-tools.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jsr181-api.jar" afterPath="$PROJECT_DIR$/lib/jsr181-api.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mail.jar" afterPath="$PROJECT_DIR$/lib/mail.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/management-api.jar" afterPath="$PROJECT_DIR$/lib/management-api.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mimepull.jar" afterPath="$PROJECT_DIR$/lib/mimepull.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/policy.jar" afterPath="$PROJECT_DIR$/lib/policy.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/saaj-api.jar" afterPath="$PROJECT_DIR$/lib/saaj-api.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/saaj-impl.jar" afterPath="$PROJECT_DIR$/lib/saaj-impl.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/stax-ex.jar" afterPath="$PROJECT_DIR$/lib/stax-ex.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/stax2-api.jar" afterPath="$PROJECT_DIR$/lib/stax2-api.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/streambuffer.jar" afterPath="$PROJECT_DIR$/lib/streambuffer.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/woodstox-core-asl.jar" afterPath="$PROJECT_DIR$/lib/woodstox-core-asl.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/Helper.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/Helper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/HiCDI.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/HiCDI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/RequestContext.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/RequestContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/Values.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/Values.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/Tunnings.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/Tunnings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/exceptions/HiException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/exceptions/HiException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/exceptions/NoCDIScopeException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/exceptions/NoCDIScopeException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/exceptions/TutorialException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/exceptions/TutorialException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/FrontierInvoker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/MapConversionException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/MapConversionException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/FrontierClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/FrontierMethod.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/FrontierMethod.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/MethodParam.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/MethodParam.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/Frontier.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/Frontier.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/KeepFrontierCalls.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/KeepFrontierCalls.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/MultipleCalls.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/MultipleCalls.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/SingleCall$AbortPolicy.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/SingleCall$AbortPolicy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/SingleCall$Detection.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/SingleCall$Detection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/SingleCall.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/SingleCall.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/WebComponent.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/meta/WebComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/ConversionFailedException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/ConversionFailedException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/MvcException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/MvcException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchViewException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/NoSuchViewException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/TemplateException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/exceptions/TemplateException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/ErrorHandler.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/ErrorHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/Frontiers.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/Frontiers.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/HandleRequests.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/HandleRequests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/MVC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/ReqHandler.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/ReqHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/ReqMatchException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/req/ReqMatchException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/users/UDetailsProvider.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/users/UDetailsProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/validation/Assert.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/validation/Assert.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/validation/ValidationException.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/validation/ValidationException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/test/mz/co/hi/web/validation/AssertTest.class" afterPath="$PROJECT_DIR$/target/test-classes/test/mz/co/hi/web/validation/AssertTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/test/mz/co/hi/web/validation/MyEnum.class" afterPath="$PROJECT_DIR$/target/test-classes/test/mz/co/hi/web/validation/MyEnum.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/.name" afterPath="$PROJECT_DIR$/../Annotations/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/artifacts/jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/description.html" afterPath="$PROJECT_DIR$/../Annotations/.idea/description.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/libraries/Maven__com_squareup_javapoet_1_5_1.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/libraries/Maven__com_squareup_javapoet_1_5_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/libraries/mz_co_hi_web.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/libraries/mz_co_hi_web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/modules.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/project-template.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/project-template.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Annotations/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/Hi Annotations Processor.iml" afterPath="$PROJECT_DIR$/../Annotations/Hi Annotations Processor.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../Annotations/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/META-INF/pom.xml" afterPath="$PROJECT_DIR$/../Annotations/META-INF/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/META-INF/services/javax.annotation.processing.Processor" afterPath="$PROJECT_DIR$/../Annotations/META-INF/services/javax.annotation.processing.Processor" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/pom.xml" afterPath="$PROJECT_DIR$/../Annotations/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/META-INF/pom.xml" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/META-INF/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/meta/Processor.java" afterPath="$PROJECT_DIR$/../Annotations/src/main/java/mz/co/hi/web/meta/Processor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/HiList.iml" afterPath="$PROJECT_DIR$/../HiList/HiList.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../HiList/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.js" afterPath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.min.js" afterPath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HiList/src/mz/co/hi/web/component/HiList.java" afterPath="$PROJECT_DIR$/../HiList/src/mz/co/hi/web/component/HiList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/.name" afterPath="$PROJECT_DIR$/../Resources/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/artifacts/jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/description.html" afterPath="$PROJECT_DIR$/../Resources/.idea/description.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/modules.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/project-template.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/project-template.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/Hi Framework Resources.iml" afterPath="$PROJECT_DIR$/../Resources/Hi Framework Resources.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/pom.xml" afterPath="$PROJECT_DIR$/../Resources/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/angular.min.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/loader.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/mz/co/hi/resources/EmptyClass.java" afterPath="$PROJECT_DIR$/../Resources/src/main/java/mz/co/hi/resources/EmptyClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_1_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_client_api_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_client_api_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/javax_json_processing_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/javax_json_processing_1_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hi Framework core.iml" afterPath="$PROJECT_DIR$/Hi Framework core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiCDI.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiCDI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HtmlFileServlet.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HtmlFileServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Values.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Values.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/HiException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/HiException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/FrontierInvocationFailedException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/InvalidFrontierParamException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/MapConversionException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/MapConversionException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/exceptions/MissingFrontierParamException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/Blank.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/Blank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierMethod.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/MethodParam.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/MethodParam.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/Frontier.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/Frontier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/KeepFrontierCalls.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/KeepFrontierCalls.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/MultipleCalls.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/MultipleCalls.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/SingleCall.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/SingleCall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/ConversionFailedException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/ConversionFailedException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/MalMarkedTemplateException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/MissingResourcesLibException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/MvcException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/MvcException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchTemplateException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/TemplateException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/TemplateException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ErrorHandler.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ErrorHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Frontiers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HandleRequests.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HandleRequests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ReqHandler.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ReqHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ReqMatchException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ReqMatchException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/TestFiles.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/TestFiles.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/users/Sessions.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/users/Sessions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/users/UDetailsProvider.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/users/UDetailsProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/Assert.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/Assert.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/ValidationException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/ValidationException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/test/mz/co/hi/web/validation/AssertTest.java" afterPath="$PROJECT_DIR$/src/test/java/test/mz/co/hi/web/validation/AssertTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/test/mz/co/hi/web/validation/MyEnum.java" afterPath="$PROJECT_DIR$/src/test/java/test/mz/co/hi/web/validation/MyEnum.java" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,89 +258,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
+      <file leaf-file-name="AppConfigurations.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+            <state vertical-scroll-proportion="-18.333334">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#3474#3475#0" expanded="true" />
+                <element signature="e#3513#3514#0" expanded="true" />
+                <element signature="e#3583#3584#0" expanded="true" />
+                <element signature="e#3639#3640#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrontEnd.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java">
+      <file leaf-file-name="Bootstrap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Bootstrap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1660#1661#0" expanded="false" />
-                <element signature="e#1691#1692#0" expanded="false" />
-                <element signature="e#2939#2940#0" expanded="false" />
-                <element signature="e#2978#2979#0" expanded="false" />
-                <element signature="e#3014#3015#0" expanded="false" />
-                <element signature="e#3049#3050#0" expanded="false" />
-                <element signature="e#3102#3103#0" expanded="false" />
-                <element signature="e#3150#3151#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java">
+      <file leaf-file-name="BeansCrawler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrontierInvoker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scripter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="88" selection-start-line="144" selection-start-column="88" selection-end-line="144" selection-end-column="88" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="21" selection-start-line="57" selection-start-column="6" selection-end-line="62" selection-end-column="21" />
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assert.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/Assert.java">
+      <file leaf-file-name="Blank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/Blank.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="166" column="50" selection-start-line="166" selection-start-column="50" selection-end-line="166" selection-end-column="50" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -131,29 +308,21 @@
       <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44444445">
-              <caret line="238" column="32" selection-start-line="238" selection-start-column="32" selection-end-line="238" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.3696498">
+              <caret line="247" column="101" selection-start-line="247" selection-start-column="101" selection-end-line="247" selection-end-column="101" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HiEcmaScript5.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
+      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,6 +335,7 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -181,28 +351,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/FetchFrontier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/DataFetchSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/demo.html" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/components/data/hifetch/frontier/HiFetchFrontier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/TestFiles.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Contextable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/FrontEndFrontier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContextV2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontierContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontierContextImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierContextImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/FrontEnd.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ControllerContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEndContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContextBackup.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontiersContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/SessionFrontiersContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/js/Options.java" />
@@ -211,9 +364,7 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Minifier.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/JSMinifier.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/users/Sessions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/HiSmartException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" />
@@ -231,6 +382,25 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/Assert.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Misconfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Section.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Configurator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/BadConfigException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/UsersSection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebSection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersSection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/TestsConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebTunningConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/UsersConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/BadConfiguratorException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigSection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Bootstrap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/Blank.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
       </list>
     </option>
@@ -260,9 +430,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="8" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="822" />
+    <option name="width" value="1431" />
+    <option name="height" value="868" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -289,6 +460,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -298,10 +470,6 @@
               <option name="myItemId" value="Hi Framework Core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -397,7 +565,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="req" />
+              <option name="myItemId" value="frontier" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,7 +595,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mvc" />
+              <option name="myItemId" value="frontier" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,7 +629,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="meta" />
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sections" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -485,7 +691,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -498,7 +703,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4862069" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/META-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
@@ -1135,6 +1340,10 @@
       <workItem from="1466009902789" duration="503000" />
       <workItem from="1466068329591" duration="8443000" />
       <workItem from="1466154459710" duration="2213000" />
+      <workItem from="1466745495137" duration="887000" />
+      <workItem from="1466973452550" duration="596000" />
+      <workItem from="1467010087503" duration="23000" />
+      <workItem from="1467470250333" duration="9046000" />
     </task>
     <servers />
   </component>
@@ -1168,7 +1377,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="505835000" />
+    <option name="totallyTimeSpent" value="516387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1180,12 +1389,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="822" extended-state="0" />
+    <frame x="8" y="23" width="1431" height="868" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51369864" sideWeight="0.48640916" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51314145" sideWeight="0.48640916" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
@@ -1193,23 +1402,23 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65890414" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.49427754" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24892704" sideWeight="0.67469877" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2501747" sideWeight="0.67469877" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.3253012" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65890414" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
@@ -1235,96 +1444,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/Frontier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/KeepFrontierCalls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/ReqHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/mz/co/hi/web/validation/MyEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1409,13 +1528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/FrontierClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1434,20 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.555555">
-          <caret line="131" column="35" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1486,13 +1584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiCDI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1511,9 +1602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1521,9 +1609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1531,9 +1616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1549,9 +1631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1559,17 +1639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1660#1661#0" expanded="false" />
-            <element signature="e#1691#1692#0" expanded="false" />
-            <element signature="e#2939#2940#0" expanded="false" />
-            <element signature="e#2978#2979#0" expanded="false" />
-            <element signature="e#3014#3015#0" expanded="false" />
-            <element signature="e#3049#3050#0" expanded="false" />
-            <element signature="e#3102#3103#0" expanded="false" />
-            <element signature="e#3150#3151#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1593,6 +1663,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45783132">
+          <caret line="62" column="21" selection-start-line="57" selection-start-column="6" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1603,42 +1701,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="21" selection-start-line="57" selection-start-column="6" selection-end-line="62" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="166" column="50" selection-start-line="166" selection-start-column="50" selection-end-line="166" selection-end-column="50" />
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Configurator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.38910505">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/src.zip!/org/w3c/dom/Element.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4085603">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4474708">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/BadConfiguratorException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3307393">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigSection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27237353">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.333334">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#3513#3514#0" expanded="true" />
+            <element signature="e#3583#3584#0" expanded="true" />
+            <element signature="e#3639#3640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/BadConfigException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13618676">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebTunningConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38910505">
+          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/TestsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58365756">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31128404">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/UsersConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2723736">
+          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Bootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/Blank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44444445">
-          <caret line="238" column="32" selection-start-line="238" selection-start-column="32" selection-end-line="238" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.3696498">
+          <caret line="247" column="101" selection-start-line="247" selection-start-column="101" selection-end-line="247" selection-end-column="101" />
           <folding />
         </state>
       </provider>
@@ -1650,9 +1868,9 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="artifact" />
-              <type id="javaee-facet-resources" />
               <type id="jpa-descriptors" />
+              <type id="javaee-facet-resources" />
+              <type id="artifact" />
               <type id="library" />
             </show-content>
           </artifact-editor>
@@ -1692,7 +1910,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>JDK 1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
