@@ -23,6 +23,8 @@ public class AppConfigurations {
     private Map<String,Boolean> testFiles = new HashMap<>();
     private String defaultLanguage = "default";
 
+    private Map<String,String> testedViews = new HashMap<>();
+
     private List<String> smartCachingExtensions = new ArrayList<>();
 
     private DeploymentMode deploymentMode = DeploymentMode.DEVELOPMENT;
@@ -39,6 +41,11 @@ public class AppConfigurations {
         smartCachingExtensions.add("js");
 
     }
+
+    public Map<String,String> getTestedViews() {
+        return testedViews;
+    }
+
 
     public List<String> getSmartCachingExtensions(){
 

@@ -49,11 +49,11 @@ public class Tests extends ReqHandler {
 
         for(String testFile : testFilesSET){
 
-            scriptTags.append("<script src =\"$test/"+testFile+"\"></script>\n");
+            scriptTags.append("<script src =\"test/"+testFile+"\"></script>\n");
 
         }
 
-        String bootstrapSnipet = "<script>Hi.$angular.run();</script><script>angular.bootstrap($(document),['hi']);</script>\n";
+        String bootstrapSnipet = "<script>Hi.$angular.run();</script>\n<script>angular.bootstrap($(document),['hi']);</script>\n";
         String appendedScript = hi_test_js+bootstrapSnipet+scriptTags;
 
         testsHtmlContent = testsHtmlContent.replace(bodyClose,appendedScript+bodyClose+"\n");

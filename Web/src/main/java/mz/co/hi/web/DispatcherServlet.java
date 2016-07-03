@@ -8,10 +8,12 @@ import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.BeansCrawler;
 import mz.co.hi.web.meta.Frontier;
+import mz.co.hi.web.meta.Tested;
 import mz.co.hi.web.meta.WebComponent;
 import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
 import org.reflections.Reflections;
+import org.reflections.scanners.MethodAnnotationsScanner;
 import org.reflections.scanners.TypeAnnotationsScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
@@ -26,6 +28,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -249,6 +252,7 @@ public class DispatcherServlet extends HttpServlet {
         readGenericFrontier();
         generateFrontiers();
         findAndLoadComponents();
+        findTestedActions();
 
 
         if(AppConfigurations.get()!=null){
@@ -278,6 +282,72 @@ public class DispatcherServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         doHandle(request,response,false);
+
+    }
+
+
+    private String getURLController(String clazz){
+
+        char[] alphabet = new char[]{'A','B','C','D','E','F','G','H','I','J',
+                'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
+        StringBuilder alphabetStr = new StringBuilder();
+        alphabetStr.append(alphabet);
+
+        char[] controllerChars = clazz.toCharArray();
+
+        StringBuilder urlController = new StringBuilder();
+        urlController.append(controllerChars[0]);
+
+
+        for(int i=1;i<controllerChars.length;i++){
+
+            StringBuilder stringBuilder = new StringBuilder();
+            char character = controllerChars[i];
+            stringBuilder.append(character);
+
+            //It is a capital character
+            if(alphabetStr.indexOf(stringBuilder.toString())!=-1)
+                urlController.append('-');
+
+
+            urlController.append(character);
+
+        }
+
+        return urlController.toString();
+
+
+    }
+
+    private void findTestedActions(){
+
+        ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
+                .addClassLoader(this.getClass().getClassLoader())
+                .setScanners(new MethodAnnotationsScanner());
+            configurationBuilder.addUrls(ClasspathHelper.forPackage(AppConfigurations.get().getControllersPackageName()));
+
+        org.reflections.Reflections reflections = new Reflections(configurationBuilder);
+        Set<Method> methodsAnnotatedWith  = reflections.getMethodsAnnotatedWith(Tested.class);
+
+
+        for(Method method :methodsAnnotatedWith){
+
+            String methodName = method.getName();
+            Class<?> controllerClazz =  method.getDeclaringClass();
+            String controllerUrlName = getURLController(controllerClazz.getSimpleName());
+
+            String testedViewPath = "/views/"+controllerUrlName+"/"+methodName+".js";
+            AppConfigurations.get().getTestedViews().put(testedViewPath,controllerUrlName+"/"+methodName);
+
+            String viewTestPath1 = "/webroot/tests/views/"+controllerUrlName+"/"+methodName+"Test.js";
+
+            AppConfigurations.get().getTestFiles().put(viewTestPath1,true);
+
+        }
+
+
+
 
     }
 

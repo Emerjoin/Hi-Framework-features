@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -153,54 +154,37 @@ public class HiEcmaScript5 extends ReqHandler {
             }
 
 
-            Set<String> testFiles = AppConfigurations.get().getTestFiles().keySet();
+            Set<String> testFiles = AppConfigurations.get().getTestedViews().keySet();
             for(String testFile: testFiles){
 
-                String testToken = "Test.js";
-                String viewController = "/"+testFile.replace(testToken,".js");
-                String viewToken = "/views/";
-                String jsToken = ".js";
+                URL resource = requestContext.getServletContext().getResource(testFile);
+                String url = AppConfigurations.get().getTestedViews().get(testFile);
 
-                String prepend = "";
+                int slashIndex = url.indexOf('/');
+                String controller = url.substring(0,slashIndex);
+                String action = url.substring(slashIndex+1,url.length());
+
                 String append = "";
+                String prepend = "";
 
-                //This is not a view test file
-                if(viewController.indexOf("/views/")!=0)
-                    continue;
-
-                URL resource = requestContext.getServletContext().getResource(viewController);
                 if(resource!=null){
 
-                    String m = viewController.replace(viewToken,"").replace(jsToken,"");
-                    int firstIndex = m.indexOf('/');
-                    int lastIndex = m.lastIndexOf('/');
+                    String setControllerinfo = "\nHi.$nav.setNextControllerInfo(\""+controller+"\",\""+action+"\");";
+                    String setLoadedController = "\nHi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
 
-                    if(firstIndex==lastIndex){
-
-
-                        String controller = m.substring(0,firstIndex);
-                        String action = m.substring(firstIndex+1,m.length());
-
-                        String setControllerinfo = "\nHi.$nav.setNextControllerInfo(\""+controller+"\",\""+action+"\");";
-                        String setLoadedController = "\nHi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
-
-
-                        prepend = setControllerinfo;
-                        append =  setLoadedController;
-
-                    }
-
+                    prepend = setControllerinfo;
+                    append =  setLoadedController;
 
                     String viewControllerContent = Helper.readTextStreamToEnd(resource.openStream(),null);
                     hiForTests=hiForTests+prepend+"\n"+viewControllerContent+append;
 
                 }
 
-
             }
 
 
             Helper.echo(hiForTests,requestContext);
+
 
         }else{
 

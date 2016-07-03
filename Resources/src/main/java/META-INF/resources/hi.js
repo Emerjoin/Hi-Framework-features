@@ -1918,7 +1918,7 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
             if(typeof __.$onRedirectStart=="function"){
 
-                __.$onRedirectStart.call(__);
+                __.$onRedirectStart.call(__,route_object);
 
             }
 
@@ -2217,7 +2217,7 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
                     if(typeof __.$onRedirectFinish=="function"){
 
-                        __.$onRedirectFinish.call(__);
+                        __.$onRedirectFinish.call(__,route);
 
                     }
 
