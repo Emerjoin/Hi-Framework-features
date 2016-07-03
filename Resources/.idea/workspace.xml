@@ -7,16 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" afterPath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hiTest.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hiTest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" />
     </list>
     <ignored path="YayeeResources.iws" />
@@ -44,18 +40,8 @@
       <file leaf-file-name="hi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37679082">
-              <caret line="135" column="60" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frontier.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.111111">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.61174786">
+              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -861,12 +847,12 @@
       <workItem from="1466068376414" duration="5569000" />
       <workItem from="1466155146169" duration="866000" />
       <workItem from="1466185826752" duration="1155000" />
-      <workItem from="1467471653317" duration="5441000" />
+      <workItem from="1467471653317" duration="7746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324944000" />
+    <option name="totallyTimeSpent" value="327249000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1296,7 +1282,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.111111">
+        <state vertical-scroll-proportion="0.23638968">
           <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding />
         </state>
@@ -1304,8 +1290,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37679082">
-          <caret line="135" column="60" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.61174786">
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
           <folding />
         </state>
       </provider>

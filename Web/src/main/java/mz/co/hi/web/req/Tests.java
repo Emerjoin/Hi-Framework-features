@@ -53,8 +53,7 @@ public class Tests extends ReqHandler {
 
         }
 
-        //String bootstrapSnipet = "<script>angular.bootstrap(document,['hi']);</script>\n";
-        String bootstrapSnipet = "\n";
+        String bootstrapSnipet = "<script>Hi.$angular.run();</script><script>angular.bootstrap($(document),['hi']);</script>\n";
         String appendedScript = hi_test_js+bootstrapSnipet+scriptTags;
 
         testsHtmlContent = testsHtmlContent.replace(bodyClose,appendedScript+bodyClose+"\n");

@@ -112,6 +112,8 @@ Hi.$test.MockCall = function(){
             finally_backup(callback);
             promise._setResult(data);
 
+            return promise;
+
         };
 
         return promise;
@@ -127,10 +129,13 @@ Hi.$test.MockCall = function(){
             finally_backup(callback);
             promise._setException(error);
 
+            return promise;
+
         };
 
         return promise;
     };
+
 
 
     //TODO: Test other situations: overrequest, timeout, etc
@@ -178,6 +183,7 @@ Hi.$test.ViewTestPromise = function(path){
 
     this.build = function(){
 
+        Hi.$config.nav.changeLocation = false;
 
         if(!this.gettable)
             return false;
@@ -728,7 +734,6 @@ Hi.$angular.run = function(){
 
 
         modulesInjected.push('ng');
-        //modulesInjected.push('hi');
 
 
     }else{
@@ -742,34 +747,42 @@ Hi.$angular.run = function(){
 
         if(typeof sessionStorage!="undefined"){
 
-            var oldDeployId = false;
-            if(sessionStorage.hasOwnProperty("hiDeployId_"))
-                oldDeployId = sessionStorage["hiDeployId_"];
-            else
-                Hi.$ui.html.cache.destroy();
 
+            //Application is under test
+            if(typeof App=="undefined"){
 
-            if(oldDeployId){
-
-                //Not the same deploy Id
-                if(oldDeployId!=App.deployId)
-                    Hi.$ui.html.cache.destroy();
-
-            }
-
-            sessionStorage["hiDeployId_"] = App.deployId;
-
-            if(App.deployMode=="DEVELOPMENT")
                 Hi.$ui.html.cache.on = false;
 
+            }else {
+
+                var oldDeployId = false;
+                if (sessionStorage.hasOwnProperty("hiDeployId_"))
+                    oldDeployId = sessionStorage["hiDeployId_"];
+                else
+                    Hi.$ui.html.cache.destroy();
+
+
+                if (oldDeployId) {
+
+                    //Not the same deploy Id
+                    if (oldDeployId != App.deployId)
+                        Hi.$ui.html.cache.destroy();
+
+                }
+
+                sessionStorage["hiDeployId_"] = App.deployId;
+
+                if (App.deployMode == "DEVELOPMENT")
+                    Hi.$ui.html.cache.on = false;
+
+                Hi.setLanguage(appLang);
+
+            }
 
 
         }
 
-        Hi.setLanguage(appLang);
-
         Hi.$angular.$injector =  angular.injector(modulesInjected);
-
         Hi.$angular.$compile = $compile;
 
         __=$rootScope;
@@ -793,24 +806,32 @@ Hi.$angular.run = function(){
 
         }
 
-        if(typeof appRun=="function"){
 
-            Hi.$angular.$injector.invoke(appRun);
+
+        //App is not under tests
+        if(typeof App!="undefined") {
+
+            if (typeof appRun == "function") {
+
+                Hi.$angular.$injector.invoke(appRun);
+
+            }
+
+            if (typeof $startup != "function") {
+
+                throw new Error("$startup function is undefined");
+
+            }
+
+            //TODO: Review this code
+            setTimeout(function () {
+
+                $startup();
+
+            }, 5);
+
 
         }
-
-        if(typeof $startup!="function"){
-
-            throw new Error("$startup function is undefined");
-
-        }
-
-        //TODO: Review this code
-        setTimeout(function(){
-
-            $startup();
-
-        },5);
 
     });
 
@@ -929,6 +950,8 @@ Hi.$ui.html.cache.getStorageKey = function(){
 };
 
 Hi.$ui.html.cache.updateCache = function(cache){
+
+
 
     if(typeof localStorage!="undefined"&&typeof cache=="object"){
 
@@ -1116,8 +1139,6 @@ Hi.$ui.js.setViewController= function(controllerName, actionName, controller){
 
 
 Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,receptor,$embedScope,embedOptions){
-
-
 
     //Get the view controller
     var controller = Hi.$ui.js.getViewController(viewPath.controller,viewPath.action);
@@ -2040,8 +2061,9 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 //Gera a URL de uma rota
 Hi.$nav.getURL= function(route,covw) {
 
-    var app_context = App.context;
-    var route_url = App.base_url;
+    var route_url = "";
+    if(typeof App!="undefined")
+        route_url = App.base_url;
 
     if (route.controller && !route.controller) {
 
@@ -2753,6 +2775,8 @@ Array.prototype.removeVal = function(el){
 
 window.onpopstate = function(param){
 
+    if(typeof App=="undefined")
+        return;
 
     var the_base_url = App.base_url;//The base URL
 
