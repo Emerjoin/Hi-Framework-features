@@ -1833,7 +1833,6 @@ Hi.$nav.isGoingBack = false;
 Hi.$nav.namedRoutes={};
 
 
-//Registar uma nova rota
 Hi.$nav.newNamedRoute = function(name,object){
 
     if(!Hi.$nav.hasOwnProperty(name)){
@@ -1846,7 +1845,6 @@ Hi.$nav.newNamedRoute = function(name,object){
 };
 
 
-//Obtem a rota
 Hi.$nav.getNamedRoute = function(name){
 
     //O parametro eh uma string
@@ -1893,10 +1891,21 @@ Hi.$nav.getPreviousPath = function(url){
 
 
 
-//Direcciona o usuario para uma rota
+Hi.$nav.active = false;
 Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$embedScope,embedOptions){
 
-    //Hi.$nav.last = {name:route_name_or_object,params:params};
+    //There is an active request : just cancel it
+    if(Hi.$nav.active){
+
+        if(Hi.$nav.active.hasOwnProperty("abort")){
+
+            Hi.$nav.active.abort();
+            Hi.$nav.active = false;
+
+        }
+
+    }
+
     Hi.$nav.last = {name:route_name_or_object};
 
     var route_object = Hi.$nav.resolveRoute(route_name_or_object);
@@ -1965,6 +1974,13 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
         if(Hi.$ui.js.wasControllerLoaded(route_object.controller,route_object.action)){
 
             server_directives["Ignore-Js"] = 'true';
+
+        }
+
+
+        if(embed){
+
+            route_object.embed = true;
 
         }
 
@@ -2152,6 +2168,15 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
     if(route){
 
+        var storeRequest = true;
+
+        if(route.hasOwnProperty("embed")){
+
+            storeRequest = false;
+            delete route["dembed"];
+
+        }
+
         //Obtem a url da rota
         var route_url = Hi.$nav.getURL(route);
 
@@ -2198,7 +2223,20 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
                 }
 
-            }});
+            },
+
+            complete : function(){
+
+                Hi.$nav.active = false;
+            }
+
+        });
+
+        if(storeRequest){
+
+            Hi.$nav.active = request;
+
+        }
 
     }
 

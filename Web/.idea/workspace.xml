@@ -8,12 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />

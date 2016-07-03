@@ -8,12 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Tests.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +36,8 @@
       <file leaf-file-name="hi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61174786">
-              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.030086">
+              <caret line="2234" column="23" selection-start-line="2234" selection-start-column="11" selection-end-line="2234" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -60,8 +56,8 @@
       <file leaf-file-name="hi-config.xsd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.5">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+            <state vertical-scroll-proportion="-14.208333">
+              <caret line="138" column="22" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -115,8 +111,8 @@
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
+        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
       </list>
     </option>
@@ -847,12 +843,12 @@
       <workItem from="1466068376414" duration="5569000" />
       <workItem from="1466155146169" duration="866000" />
       <workItem from="1466185826752" duration="1155000" />
-      <workItem from="1467471653317" duration="7746000" />
+      <workItem from="1467471653317" duration="9221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327249000" />
+    <option name="totallyTimeSpent" value="328724000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1272,14 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5">
-          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23638968">
@@ -1288,10 +1276,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.208333">
+          <caret line="138" column="22" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61174786">
-          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.030086">
+          <caret line="2234" column="23" selection-start-line="2234" selection-start-column="11" selection-end-line="2234" selection-end-column="23" />
           <folding />
         </state>
       </provider>
