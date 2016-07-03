@@ -7,15 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/sections/FrontiersConfig.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/sections/FrontiersConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" afterPath="$PROJECT_DIR$/../HelloApp/web/WEB-INF/hi.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hiTest.js" afterPath="$PROJECT_DIR$/../HelloApp/web/views/Your-Greetings/hiTest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/mocks/newFrontierMocks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.js" afterPath="$PROJECT_DIR$/../HelloApp/web/webroot/tests/run.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/frontier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,24 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppConfigurations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="161" column="24" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
-              <folding>
-                <element signature="e#3474#3475#0" expanded="true" />
-                <element signature="e#3513#3514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FrontiersConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,21 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
+      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3296399">
-              <caret line="201" column="46" selection-start-line="201" selection-start-column="46" selection-end-line="201" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.6692607">
+              <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BeansCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java">
+      <file leaf-file-name="HiEcmaScript5.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="79" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
+              <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -115,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEndContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContextBackup.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/FrontiersContext.java" />
@@ -144,7 +132,6 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/meta/WebComponent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/validation/Assert.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Tunnings.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Misconfiguration.java" />
@@ -164,8 +151,10 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Bootstrap.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/Blank.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java" />
       </list>
     </option>
   </component>
@@ -300,6 +289,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="req" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1043,7 +1062,7 @@
       <workItem from="1466745495137" duration="887000" />
       <workItem from="1466973452550" duration="596000" />
       <workItem from="1467010087503" duration="23000" />
-      <workItem from="1467470250333" duration="10115000" />
+      <workItem from="1467470250333" duration="12998000" />
     </task>
     <servers />
   </component>
@@ -1077,7 +1096,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517456000" />
+    <option name="totallyTimeSpent" value="520339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1089,12 +1108,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="23" width="1431" height="868" extended-state="6" />
+    <frame x="8" y="23" width="1431" height="868" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51314145" sideWeight="0.48640916" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51314145" sideWeight="0.48640916" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
@@ -1204,13 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14957266">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1351,16 +1363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45783132">
@@ -1392,7 +1394,7 @@
         <state vertical-scroll-proportion="0.38910505">
           <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1410,8 +1412,8 @@
         <state vertical-scroll-proportion="0.4474708">
           <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="false" />
+            <element signature="e#854#855#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1457,7 +1459,7 @@
         <state vertical-scroll-proportion="0.38910505">
           <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1467,7 +1469,7 @@
         <state vertical-scroll-proportion="0.58365756">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1477,7 +1479,7 @@
         <state vertical-scroll-proportion="1.2723736">
           <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1487,7 +1489,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1529,8 +1531,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="161" column="24" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
           <folding>
-            <element signature="e#3474#3475#0" expanded="true" />
-            <element signature="e#3513#3514#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="false" />
+            <element signature="e#3513#3514#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1543,20 +1545,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3296399">
-          <caret line="201" column="46" selection-start-line="201" selection-start-column="46" selection-end-line="201" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6692607">
+          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
           <folding />
         </state>
       </provider>

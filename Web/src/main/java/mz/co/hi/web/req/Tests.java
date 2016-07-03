@@ -40,8 +40,6 @@ public class Tests extends ReqHandler {
 
         String hi_test_js = "<script src=\"hi-es5-tests.js\"></script>\n";
         String testsHtmlContent = Helper.readTextStreamToEnd(testsHtml.openStream(),null);
-        //String testsJsContent = Helper.readTextStreamToEnd(testsJs.openStream(),null);
-        String headClose = "</head>";
         String bodyClose = "</body>";
 
 
@@ -55,12 +53,11 @@ public class Tests extends ReqHandler {
 
         }
 
-        String bootstrapSnipet = "<script>angular.bootstrap(document,['hi']);</script>\n";
-        //String appendedScript = hi_test_js+"<script>"+testsJsContent+"</script>\n"+bootstrapSnipet+scriptTags;
+        //String bootstrapSnipet = "<script>angular.bootstrap(document,['hi']);</script>\n";
+        String bootstrapSnipet = "\n";
         String appendedScript = hi_test_js+bootstrapSnipet+scriptTags;
 
         testsHtmlContent = testsHtmlContent.replace(bodyClose,appendedScript+bodyClose+"\n");
-        //testsHtmlContent = testsHtmlContent.replace(bodyClose,scriptTags+"\n"+bodyClose);
 
         requestContext.echo(testsHtmlContent);
         return true;

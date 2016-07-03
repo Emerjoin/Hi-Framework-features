@@ -164,10 +164,12 @@ public class HiEcmaScript5 extends ReqHandler {
                 String prepend = "";
                 String append = "";
 
+                //This is not a view test file
+                if(viewController.indexOf("/views/")!=0)
+                    continue;
+
                 URL resource = requestContext.getServletContext().getResource(viewController);
                 if(resource!=null){
-
-
 
                     String m = viewController.replace(viewToken,"").replace(jsToken,"");
                     int firstIndex = m.indexOf('/');

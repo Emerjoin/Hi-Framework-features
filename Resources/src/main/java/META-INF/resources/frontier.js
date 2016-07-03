@@ -1,6 +1,6 @@
 
 
-    var promisse = new Hi.$frontiers.Promisse();
+    var promisse = new Hi.$frontiers.Promise();
 
 
     if($fiis.hasOwnProperty(_$fmut)){
@@ -28,7 +28,7 @@
                         pretendContinuation();
 
                     }else
-                        return new Hi.$frontiers.Promisse();
+                        return new Hi.$frontiers.Promise();
 
 
 
@@ -127,7 +127,7 @@
 
                     case 408: promisse._setTimedOut(); break;
 
-                    case 421: promisse._setInterruped(); break;
+                    case 421: promisse._setInterrupted(); break;
 
                     case 429: promisse._setOverRequest(); break;
 

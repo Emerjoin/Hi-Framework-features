@@ -98,93 +98,42 @@ Hi.$test = {};
 
 Hi.$test.fakeFrontierPromise = function(){
 
-    var PromiseClass = function(){
-
-        this.fail = function(error,timeout){
-
-            var promisse =  new Hi.$frontiers.Promisse();
-            promisse.catch = function(callback){
-
-                promisse.catchCallback = callback;
-
-
-                if(typeof timeout==="number"){
-
-
-                    if(timeout>0){
-
-                        setTimeout(function(){
-
-                            promisse.setFail(error);
-
-                        },timeout);
-
-                        return promisse;
-
-                    }
-
-
-                }
-
-
-                promisse.setFail(error);
-
-                return promisse;
-
-            };
-
-            return promisse;
-
-        };
-
-
-        this.return = function(data,timeout){
-
-            var promisse =  new Hi.$frontiers.Promisse();
-            promisse.return = function(callback){
-
-                promisse.returnCallback = callback;
-
-
-                if(typeof timeout==="number"){
-
-
-                    if(timeout>0){
-
-                        setTimeout(function(){
-
-                            promisse.setSuccess(data);
-
-                        },timeout);
-
-                        return promisse;
-
-                    }
-
-
-                }
-
-
-                promisse.setSuccess(data);
-
-
-                return promisse;
-
-            };
-
-            return promisse;
-
-        };
-
-    };
-
-    return new PromiseClass();
 
 };
 
-Hi.$test.MockFrontier = function(){
+Hi.$test.MockCall = function(){
+
+    this.success = function(data){
+
+        var promise = new Hi.$frontiers.Promise();
+        var finally_backup = promise.finally;
+        promise.finally = function(callback){
+
+            finally_backup(callback);
+            promise._setResult(data);
+
+        };
+
+        return promise;
+
+    };
+
+    this.error = function(error){
+
+        var promise = new Hi.$frontiers.Promise();
+        var finally_backup = promise.finally;
+        promise.finally = function(callback){
+
+            finally_backup(callback);
+            promise._setException(error);
+
+        };
+
+        return promise;
+    };
 
 
+    //TODO: Test other situations: overrequest, timeout, etc
 
 };
 
@@ -2381,7 +2330,7 @@ Hi.$nav.toSlashes = function(route){
  */
 
 Hi.$frontiers = {};
-Hi.$frontiers.Promisse = function(){
+Hi.$frontiers.Promise = function(){
 
     var setTo = {obj:false,prop:false,callback:false};
     var forbiddenCallback = undefined;
@@ -2561,7 +2510,7 @@ Hi.$frontiers.Promisse = function(){
 
     };
 
-    this._setInterruped = function(){
+    this._setInterrupted = function(){
 
         var gInterruptedHandler = getGlobalHandler("interrupted");
         var gErrorHandler = getGlobalHandler("catch");
