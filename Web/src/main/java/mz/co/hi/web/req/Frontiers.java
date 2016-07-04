@@ -14,13 +14,18 @@ import mz.co.hi.web.frontier.model.MethodParam;
 import mz.co.hi.web.mvc.HTMLizer;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validator;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Created by Mario Junior.
@@ -186,18 +191,39 @@ public class Frontiers extends ReqHandler {
 
                 servletContext.log("An error occurred during frontier method invocation <"+invokedClass+"."+invokedMethod+">",ex);//Log the error;
 
-                Gson gson = appContext.getGsonBuilder().create();
-                Map map = new HashMap<>();
 
-                Map exception = new HashMap<>();
-                exception.put("type",ex.getCause().getClass().getSimpleName());
-                map.put("$exception",exception);
+                if(ex instanceof ConstraintViolationException){
 
-                String resp = gson.toJson(map);
+
+                    ConstraintViolationException violationException = (ConstraintViolationException) ex;
+                    Set<ConstraintViolation<?>> violationSet = violationException.getConstraintViolations();
+                    String[] messages = new String[violationSet.size()];
+
+                    int i = 0;
+                    for(ConstraintViolation violation: violationSet){
+
+                        messages[i] = violation.getMessage();
+                        i++;
+
+                    }
+
+                    Map map = new HashMap<>();
+                    Map exception = new HashMap<>();
+                    exception.put("messages",messages);
+                    map.put("$exception",exception);
+
+                    Gson gson = appContext.getGsonBuilder().create();
+                    String resp = gson.toJson(map);
+                    requestContext.getResponse().setStatus(500);
+                    requestContext.getResponse().setContentType("text/json;charset=UTF8");
+                    requestContext.echo(resp);
+                    return true;
+
+                }
+
+
                 requestContext.getResponse().setStatus(500);
                 requestContext.getResponse().setContentType("text/json;charset=UTF8");
-                requestContext.echo(resp);
-
                 return true;
 
             }

@@ -71,5 +71,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:1.1" level="project" />
     <orderEntry type="library" name="Maven: xstream:xstream:1.1.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: xpp3:xpp3:1.1.3.4-RC8" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
   </component>
 </module>

@@ -1,12 +1,19 @@
 package mz.co.hi.web.frontier;
 
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.frontier.exceptions.FrontierInvocationFailedException;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
 
+import javax.enterprise.inject.spi.CDI;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validator;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Mario Junior.
@@ -29,10 +36,13 @@ public class FrontierInvoker {
 
     }
 
+
     public boolean invoke() throws Exception {
 
         MethodParam methodParams[] = method.getParams();
         Object[] invocationParams = new Object[params.size()];
+
+
 
         int i = 0;
         for(MethodParam methodParam: methodParams){
@@ -45,8 +55,29 @@ public class FrontierInvoker {
 
 
         Object refreshedObj = frontier.getObject();
-        returnedObject = method.getMethod().invoke(refreshedObj, invocationParams);
 
+        try {
+
+            returnedObject = method.getMethod().invoke(refreshedObj, invocationParams);
+
+
+        }catch (Exception ex){
+
+            if(ex instanceof InvocationTargetException){
+
+                Throwable throwable = ex.getCause();
+
+                if(throwable instanceof ConstraintViolationException){
+
+
+                    throw (ConstraintViolationException) throwable;
+
+
+                }
+
+            }
+
+        }
 
         return true;
     }

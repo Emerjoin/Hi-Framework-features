@@ -98,6 +98,17 @@
                 if(responseJSON.hasOwnProperty("$exception")){
 
                     exceptionType = responseJSON["$exception"];
+
+                    var translatedMessages = [];
+
+                    exceptionType.messages.forEach(function(item, index){
+
+                        translatedMessages[index] = __t(item);
+
+                    });
+
+                    exceptionType.messages = translatedMessages;
+
                     promisse._setException(exceptionType);
                     return;
 
