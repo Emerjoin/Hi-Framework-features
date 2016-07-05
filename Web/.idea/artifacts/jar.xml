@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="jar">
     <output-path>$PROJECT_DIR$/out/artifacts/jar</output-path>
-    <root id="archive" name="mz.co.hi.web.jar">
+    <root id="archive" name="mz.co.hi.web-1.0.beta.jar">
       <element id="module-output" name="Hi Framework core" />
       <element id="directory" name="META-INF">
         <element id="dir-copy" path="$PROJECT_DIR$/src/main/java/META-INF" />

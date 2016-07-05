@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hi.co.mz/xml/0.9"
-    xmlns:hi="http://hi.co.mz/xml/0.9" elementFormDefault="qualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hi.co.mz/XMLSchema"
+    xmlns:hi="http://hi.co.mz/XMLSchema" elementFormDefault="qualified">
 
     <xsd:complexType name="webType">
         <xsd:all maxOccurs="1" minOccurs="1">

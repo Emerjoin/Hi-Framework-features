@@ -5,84 +5,68 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>mz.hi.framework</groupId>
-    <artifactId>hi-core</artifactId>
-    <version>0.9</version>
+    <artifactId>hi-web</artifactId>
+    <version>1.0-beta-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Hi Framework core</name>
+    <name>Hi Framework Web</name>
 
     <dependencies>
+
+        <dependency>
+            <groupId>mz.hi.framework</groupId>
+            <artifactId>hi-resources</artifactId>
+            <version>1.0-beta-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.6.2</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>org.clapper</groupId>
             <artifactId>javautil</artifactId>
             <version>3.1.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-client-api</artifactId>
-            <version>1.1</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <version>1.2</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
-        <!-- http://mvnrepository.com/artifact/org.reflections/reflections-maven -->
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections-maven</artifactId>
             <version>0.9.8</version>
+            <scope>compile</scope>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>5.2.4.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator-cdi</artifactId>
-            <version>5.2.4.Final</version>
-        </dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>1.1.0.Final</version>
+            <scope>compile</scope>
         </dependency>
-
-
 
     </dependencies>
 
