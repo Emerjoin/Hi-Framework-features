@@ -4,16 +4,12 @@ import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
+import mz.co.hi.web.meta.RestrictAccess;
 
-import javax.enterprise.inject.spi.CDI;
-import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import javax.validation.Validator;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Mario Junior.
@@ -33,6 +29,48 @@ public class FrontierInvoker {
         this.frontier = frontierClass;
         this.method = method;
         this.params = params;
+
+    }
+
+
+    private boolean checkPermission(RestrictAccess restrictAccess){
+
+        boolean allowed = true;
+
+        for(String role : restrictAccess.value()){
+            System.out.println("Role : "+role);
+            if(!requestContext.getRequest().isUserInRole(role)){
+                allowed = false;
+                break;
+            }
+
+        }
+
+
+        return allowed;
+
+    }
+
+    public boolean userHasPermission(){
+
+        boolean accessGranted = true;
+
+        Annotation annotationClazz = frontier.getObject().getClass().getAnnotation(RestrictAccess.class);
+        if(annotationClazz!=null){
+
+            if(!checkPermission((RestrictAccess) annotationClazz))
+                return false;
+
+        }
+
+
+        Annotation annotationMethod = method.getMethod().getAnnotation(RestrictAccess.class);
+        if(annotationMethod!=null)
+            accessGranted = checkPermission((RestrictAccess) annotationMethod);
+
+
+        return accessGranted;
+
 
     }
 

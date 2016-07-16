@@ -7,24 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/hi-resources-1.0.beta.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/hi-resources-1.0.beta.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/resources/EmptyClass.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/resources/EmptyClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" afterPath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/sections/WebConfig.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/sections/WebConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/NoCDIScopeException.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/exceptions/NoCDIScopeException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/artifacts/jar.xml" afterPath="$PROJECT_DIR$/../Web/.idea/artifacts/jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/pom.xml" afterPath="$PROJECT_DIR$/../Web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/exceptions/NoCDIScopeException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
     </list>
     <ignored path="YayeeResources.iws" />
@@ -52,8 +36,8 @@
       <file leaf-file-name="hi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3323782">
-              <caret line="1319" column="57" selection-start-line="1319" selection-start-column="40" selection-end-line="1319" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.41833812">
+              <caret line="1323" column="9" selection-start-line="1323" selection-start-column="9" selection-end-line="1323" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -874,12 +858,12 @@
       <workItem from="1467727295359" duration="1102000" />
       <workItem from="1467739890748" duration="1543000" />
       <workItem from="1468688181234" duration="534000" />
-      <workItem from="1468690032340" duration="1865000" />
+      <workItem from="1468690032340" duration="2897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338874000" />
+    <option name="totallyTimeSpent" value="339906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1314,8 +1298,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3323782">
-          <caret line="1319" column="57" selection-start-line="1319" selection-start-column="40" selection-end-line="1319" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.41833812">
+          <caret line="1323" column="9" selection-start-line="1323" selection-start-column="9" selection-end-line="1323" selection-end-column="9" />
           <folding />
         </state>
       </provider>

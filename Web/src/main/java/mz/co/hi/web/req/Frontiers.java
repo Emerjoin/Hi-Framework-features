@@ -49,6 +49,10 @@ public class Frontiers extends ReqHandler {
     private ServletContext servletContext;
 
 
+    @Inject
+    private RequestContext requestContext;
+
+
     public static void addFrontier(FrontierClass frontierClass){
 
         frontiersMap.put(frontierClass.getSimpleName(),frontierClass);
@@ -86,7 +90,6 @@ public class Frontiers extends ReqHandler {
             return null;
 
         }
-
 
         Map map =  new HashMap();
         Gson gson = appContext.getGsonBuilder().create();
@@ -182,8 +185,15 @@ public class Frontiers extends ReqHandler {
 
             boolean invoked_successfully = false;
 
-
             try {
+
+
+                if(!frontierInvoker.userHasPermission()){
+
+                    requestContext.getResponse().sendError(403);
+                    return true;
+
+                }
 
                 invoked_successfully = frontierInvoker.invoke();
 

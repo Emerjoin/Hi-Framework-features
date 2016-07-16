@@ -69,7 +69,6 @@ public class MVC extends ReqHandler{
         requestContext.getData().put("actionU",action);
         action = getActionMethodFromURLPart(action);
 
-        System.out.println("MVC Attempt : "+action+"/"+controller);
 
         Class controllerClass= ClassLoader.getInstance().findController(controller);
         if(controllerClass==null){
