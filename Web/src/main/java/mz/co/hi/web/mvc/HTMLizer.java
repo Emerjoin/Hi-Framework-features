@@ -357,6 +357,9 @@ public class HTMLizer {
 
         }
 
+        Map route = new HashMap();
+        route.put("controller", requestContext.getData().get("controllerU").toString());
+        route.put("action", requestContext.getData().get("actionU").toString());
 
         /* AJAX REQUEST */
         if(requestContext.hasAjaxHeader()) {
@@ -374,9 +377,6 @@ public class HTMLizer {
 
 
 
-            Map route = new HashMap();
-            route.put("controller", requestContext.getData().get("controllerU").toString());
-            route.put("action", requestContext.getData().get("actionU").toString());
 
 
             Map map = new HashMap();
@@ -439,13 +439,13 @@ public class HTMLizer {
 
             viewData.put("$root",$templateDataMap);
 
-
         }
 
 
 
 
         /* NORMAL REQUEST */
+        viewData.put("$route",route);
         String loaderJavascript = makeJavascript(getLoaderJavascript(frontEnd));
 
         if(loadedJSContent==null) {

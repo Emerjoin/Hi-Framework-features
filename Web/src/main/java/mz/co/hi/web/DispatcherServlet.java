@@ -293,39 +293,6 @@ public class DispatcherServlet extends HttpServlet {
     }
 
 
-    private String getURLController(String clazz){
-
-        char[] alphabet = new char[]{'A','B','C','D','E','F','G','H','I','J',
-                'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-
-        StringBuilder alphabetStr = new StringBuilder();
-        alphabetStr.append(alphabet);
-
-        char[] controllerChars = clazz.toCharArray();
-
-        StringBuilder urlController = new StringBuilder();
-        urlController.append(controllerChars[0]);
-
-
-        for(int i=1;i<controllerChars.length;i++){
-
-            StringBuilder stringBuilder = new StringBuilder();
-            char character = controllerChars[i];
-            stringBuilder.append(character);
-
-            //It is a capital character
-            if(alphabetStr.indexOf(stringBuilder.toString())!=-1)
-                urlController.append('-');
-
-
-            urlController.append(character);
-
-        }
-
-        return urlController.toString();
-
-
-    }
 
     private void findTestedActions(){
 
@@ -342,7 +309,7 @@ public class DispatcherServlet extends HttpServlet {
 
             String methodName = method.getName();
             Class<?> controllerClazz =  method.getDeclaringClass();
-            String controllerUrlName = getURLController(controllerClazz.getSimpleName());
+            String controllerUrlName = MVC.getURLController(controllerClazz.getSimpleName());
 
             String testedViewPath = "/views/"+controllerUrlName+"/"+methodName+".js";
             AppConfigurations.get().getTestedViews().put(testedViewPath,controllerUrlName+"/"+methodName);
@@ -426,8 +393,14 @@ public class DispatcherServlet extends HttpServlet {
 
         if(routeURL.trim().length()==0){
 
-            response.sendRedirect(AppConfigurations.get().getWelcomeUrl());
-            return null;
+            if(AppConfigurations.get().getWelcomeUrl()!=null) {
+
+                response.sendRedirect(AppConfigurations.get().getWelcomeUrl());
+
+                return null;
+
+            }
+
 
         }
 

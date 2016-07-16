@@ -28,6 +28,9 @@ public class MVC extends ReqHandler{
     @Inject
     private AppContext appContext;
 
+    private static char[] alphabet = new char[]{'A','B','C','D','E','F','G','H','I','J',
+            'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
     private static HashMap<String,String> templates = new HashMap<String, String>();
 
     public static void storeTemplate(String name,String content){
@@ -60,11 +63,13 @@ public class MVC extends ReqHandler{
 
         String controller = mvcUrl.substring(0,indexSlash);
         requestContext.getData().put("controllerU",controller);
-        controller = controller.replace("-","");
+        controller = getControllerClassFromURLPart(controller);
 
         String action = mvcUrl.substring(indexSlash+1,mvcUrl.length());
         requestContext.getData().put("actionU",action);
-        action = action.replace("-","_");
+        action = getActionMethodFromURLPart(action);
+
+        System.out.println("MVC Attempt : "+action+"/"+controller);
 
         Class controllerClass= ClassLoader.getInstance().findController(controller);
         if(controllerClass==null){
@@ -185,6 +190,93 @@ public class MVC extends ReqHandler{
 
         }
 
+
+
+    }
+
+
+
+    private static String noHyphens(String urlToken){
+
+        if(urlToken==null)
+            return null;
+
+        char[] tokenChars = urlToken.toCharArray();
+        StringBuilder hyphenLessToken = new StringBuilder();
+
+        boolean capitalizeNext=false;
+
+        for(char character:  tokenChars){
+
+            if(capitalizeNext==true) {
+                hyphenLessToken.append(Character.toUpperCase(character));
+                capitalizeNext = false;
+                continue;
+            }
+
+
+
+            if(character=='-') {
+
+                capitalizeNext = true;
+                continue;
+
+            }
+
+
+            hyphenLessToken.append(character);
+
+
+        }
+
+
+        return hyphenLessToken.toString();
+
+    }
+
+    public static String getControllerClassFromURLPart(String urlPart){
+
+         String capitalized = urlPart.substring(0,1).toLowerCase()
+                 +urlPart.substring(1,urlPart.length());
+
+        return noHyphens(capitalized);
+
+    }
+
+    public static String getActionMethodFromURLPart(String urlPart){
+
+        return noHyphens(urlPart);
+
+    }
+
+
+    public static String getURLController(String clazz){
+
+        StringBuilder alphabetStr = new StringBuilder();
+        alphabetStr.append(alphabet);
+
+        char[] controllerChars = clazz.toCharArray();
+
+        StringBuilder urlController = new StringBuilder();
+        urlController.append(controllerChars[0]);
+
+
+        for(int i=1;i<controllerChars.length;i++){
+
+            StringBuilder stringBuilder = new StringBuilder();
+            char character = controllerChars[i];
+            stringBuilder.append(character);
+
+            //It is a capital character
+            if(alphabetStr.indexOf(stringBuilder.toString())!=-1)
+                urlController.append('-');
+
+
+            urlController.append(character);
+
+        }
+
+        return urlController.toString().toLowerCase();
 
 
     }

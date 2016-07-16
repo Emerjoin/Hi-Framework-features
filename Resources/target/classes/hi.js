@@ -292,6 +292,7 @@ Hi.$angular.directives.aload = function(){
 
                 }
 
+                console.log("loader path : "+loader);
 
                 //Mostra o loader
                 $(element).attr('src',loader);
@@ -1221,7 +1222,7 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     //PreLoad on template
     if(__.hasOwnProperty("$onPreLoad")){
 
-        if(typeof __.$onPreLoad == "function") {
+        if(typeof __.$onPreLoad=="function") {
 
             var newMarkup = __.$onPreLoad.call(__,viewScope.$route, viewScope, markup);
             if (typeof newMarkup != "undefined") {
@@ -2047,7 +2048,6 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
             var viewPath =  Hi.$nav.getViewPath(controller,action);//New
 
             context_variables.$route = route_object;
-
             var generated = Hi.$ui.js.createViewScope(viewPath,context_variables,markup,embed,false,$embedScope,embedOptions);
 
             if(embed){

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>mz.hi.framework</groupId>
+  <artifactId>hi-resources</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-beta-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160705174250</lastUpdated>
+  </versioning>
+</metadata>
