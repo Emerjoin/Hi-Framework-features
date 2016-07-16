@@ -4,7 +4,7 @@ import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
-import mz.co.hi.web.meta.RestrictAccess;
+import mz.co.hi.web.meta.Granted;
 
 import javax.validation.ConstraintViolationException;
 import java.lang.annotation.Annotation;
@@ -34,11 +34,11 @@ public class FrontierInvoker {
 
 
 
-    private boolean checkPermission(RestrictAccess restrictAccess){
+    private boolean checkPermission(Granted granted){
 
         boolean allowed = false;
 
-        for(String role : restrictAccess.value()){
+        for(String role : granted.value()){
 
             if(requestContext.getRequest().isUserInRole(role)){
 
@@ -58,18 +58,18 @@ public class FrontierInvoker {
 
         boolean accessGranted = true;
 
-        Annotation annotationClazz = frontier.getObject().getClass().getAnnotation(RestrictAccess.class);
+        Annotation annotationClazz = frontier.getObject().getClass().getAnnotation(Granted.class);
         if(annotationClazz!=null){
 
-            if(!checkPermission((RestrictAccess) annotationClazz))
+            if(!checkPermission((Granted) annotationClazz))
                 return false;
 
         }
 
 
-        Annotation annotationMethod = method.getMethod().getAnnotation(RestrictAccess.class);
+        Annotation annotationMethod = method.getMethod().getAnnotation(Granted.class);
         if(annotationMethod!=null)
-            accessGranted = checkPermission((RestrictAccess) annotationMethod);
+            accessGranted = checkPermission((Granted) annotationMethod);
 
 
         return accessGranted;
