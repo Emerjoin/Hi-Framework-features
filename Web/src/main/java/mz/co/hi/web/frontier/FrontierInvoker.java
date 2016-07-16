@@ -5,6 +5,7 @@ import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
 import mz.co.hi.web.frontier.model.MethodParam;
 import mz.co.hi.web.meta.Granted;
+import mz.co.hi.web.req.ReqHandler;
 
 import javax.validation.ConstraintViolationException;
 import java.lang.annotation.Annotation;
@@ -29,51 +30,6 @@ public class FrontierInvoker {
         this.frontier = frontierClass;
         this.method = method;
         this.params = params;
-
-    }
-
-
-
-    private boolean checkPermission(Granted granted){
-
-        boolean allowed = false;
-
-        for(String role : granted.value()){
-
-            if(requestContext.getRequest().isUserInRole(role)){
-
-                allowed = true;
-                break;
-
-            }
-
-        }
-
-
-        return allowed;
-
-    }
-
-    public boolean userHasPermission(){
-
-        boolean accessGranted = true;
-
-        Annotation annotationClazz = frontier.getObject().getClass().getAnnotation(Granted.class);
-        if(annotationClazz!=null){
-
-            if(!checkPermission((Granted) annotationClazz))
-                return false;
-
-        }
-
-
-        Annotation annotationMethod = method.getMethod().getAnnotation(Granted.class);
-        if(annotationMethod!=null)
-            accessGranted = checkPermission((Granted) annotationMethod);
-
-
-        return accessGranted;
-
 
     }
 

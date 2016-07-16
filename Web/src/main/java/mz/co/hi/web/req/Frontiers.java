@@ -181,7 +181,7 @@ public class Frontiers extends ReqHandler {
             try {
 
 
-                if(!frontierInvoker.userHasPermission()){
+                if(!ReqHandler.userHasPermission(frontierClass.getObject().getClass(),frontierMethod.getMethod(),requestContext)){
 
                     requestContext.getResponse().sendError(403);
                     return true;

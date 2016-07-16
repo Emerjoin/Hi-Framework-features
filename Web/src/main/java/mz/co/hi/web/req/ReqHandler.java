@@ -1,11 +1,13 @@
 package mz.co.hi.web.req;
 
 import mz.co.hi.web.RequestContext;
+import mz.co.hi.web.meta.Granted;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -107,6 +109,69 @@ public abstract class ReqHandler {
         String url = request.getRequestURI().replace(request.getContextPath()+"/","");
         return url;
 
+
+    }
+
+
+    private static boolean checkPermission(Granted granted,RequestContext requestContext){
+
+        if(granted.value().length==0)
+            return true;
+
+        boolean allowed = false;
+
+        for(String role : granted.value()){
+
+            if(requestContext.getRequest().isUserInRole(role)){
+
+                allowed = true;
+                break;
+
+            }
+
+        }
+
+
+        return allowed;
+
+    }
+
+
+    protected static boolean userHasPermission(Class clazz,RequestContext requestContext){
+
+        boolean accessGranted = true;
+
+        Annotation annotationClazz = clazz.getAnnotation(Granted.class);
+        if(annotationClazz!=null){
+
+            return checkPermission((Granted) annotationClazz,requestContext);
+
+        }
+
+        return accessGranted;
+
+    }
+
+    protected static boolean userHasPermission(Method method,RequestContext requestContext){
+
+        boolean accessGranted = true;
+
+        Annotation annotationMethod = method.getAnnotation(Granted.class);
+        if(annotationMethod!=null){
+
+            return checkPermission((Granted) annotationMethod,requestContext);
+
+
+        }
+
+        return accessGranted;
+
+    }
+
+    protected static boolean userHasPermission(Class clazz, Method method, RequestContext requestContext){
+
+
+        return userHasPermission(clazz,requestContext)&&userHasPermission(method,requestContext);
 
     }
 

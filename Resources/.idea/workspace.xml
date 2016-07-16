@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/meta/RestrictAccess.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/FrontierInvoker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Frontiers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqHandler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/ReqHandler.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />

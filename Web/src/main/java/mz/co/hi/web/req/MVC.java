@@ -138,12 +138,27 @@ public class MVC extends ReqHandler{
 
             }
 
+
+            if(!ReqHandler.userHasPermission(controller,actionMethod,requestContext)){
+
+                try {
+
+                    requestContext.getResponse().sendError(403);
+
+                }catch (Exception ex){
+
+                    requestContext.getServletContext().log("Failed no send 403 error",ex);
+                    return false;
+
+                }
+
+            }
+
             actionMethod.setAccessible(true);
 
             Object instance = null;
 
             HiCDI.shouldHaveCDIScope(controller);
-
 
             try {
 
@@ -162,9 +177,6 @@ public class MVC extends ReqHandler{
 
 
 
-
-
-
             if(withParams)
                 actionMethod.invoke(instance,getValues(requestContext.getRequest()));
             else
@@ -176,7 +188,7 @@ public class MVC extends ReqHandler{
 
             return false;
 
-        }catch (InvocationTargetException e2) {
+        }catch (InvocationTargetException e2 ) {
 
             e2.printStackTrace();
             throw new ServletException("Exception thrown while invoking action <" + action + "> on controller <" + controller.getCanonicalName() + ">", e2);
@@ -185,10 +197,9 @@ public class MVC extends ReqHandler{
         }catch (IllegalAccessException e3){
 
             e3.printStackTrace();
-            throw new ServletException("Could not access contructor of Controller <"+controller.getCanonicalName()+">",e3);
+            throw new ServletException("Could not access constructor of Controller <"+controller.getCanonicalName()+">",e3);
 
         }
-
 
 
     }
