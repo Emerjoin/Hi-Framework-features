@@ -27,10 +27,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-/**
- * Created by Mario Junior.
- */
-
 @HandleRequests(regexp = "f.m.call/[$_A-Za-z0-9]+/[$_A-Za-z0-9]+", supportPostMethod = true)
 @ApplicationScoped
 public class Frontiers extends ReqHandler {
@@ -40,14 +36,11 @@ public class Frontiers extends ReqHandler {
     @Inject
     private AppContext appContext;
 
-
     @Inject
     private FrontEnd frontEnd;
 
-
     @Inject
     private ServletContext servletContext;
-
 
     @Inject
     private RequestContext requestContext;

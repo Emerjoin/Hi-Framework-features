@@ -33,15 +33,18 @@ public class FrontierInvoker {
     }
 
 
+
     private boolean checkPermission(RestrictAccess restrictAccess){
 
-        boolean allowed = true;
+        boolean allowed = false;
 
         for(String role : restrictAccess.value()){
-            System.out.println("Role : "+role);
-            if(!requestContext.getRequest().isUserInRole(role)){
-                allowed = false;
+
+            if(requestContext.getRequest().isUserInRole(role)){
+
+                allowed = true;
                 break;
+
             }
 
         }
