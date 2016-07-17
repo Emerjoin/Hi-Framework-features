@@ -3,7 +3,7 @@ package mz.co.hi.web.req;
 
 import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.mvc.ClassLoader;
+import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.mvc.HTMLizer;
 
@@ -70,7 +70,7 @@ public class MVC extends ReqHandler{
         action = getActionMethodFromURLPart(action);
 
 
-        Class controllerClass= ClassLoader.getInstance().findController(controller);
+        Class controllerClass= ControllersMapper.getInstance().findController(controller);
         if(controllerClass==null){
 
             return false;
@@ -259,6 +259,11 @@ public class MVC extends ReqHandler{
 
     }
 
+    public static String getURLAction(String method){
+
+        return getURLController(method);
+
+    }
 
     public static String getURLController(String clazz){
 

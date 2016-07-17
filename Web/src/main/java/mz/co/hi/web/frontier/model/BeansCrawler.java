@@ -115,11 +115,15 @@ public class BeansCrawler {
 
                     }
 
+
+                    //Why obligate the frontiers to return Maps?
+                    /*
                     if(method.getReturnType()!=Map.class){
+
 
                         continue;
 
-                    }
+                    }*/
 
                     String methodName = method.getName();
 

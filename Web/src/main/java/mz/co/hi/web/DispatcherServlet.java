@@ -10,8 +10,11 @@ import mz.co.hi.web.frontier.model.BeansCrawler;
 import mz.co.hi.web.meta.Frontier;
 import mz.co.hi.web.meta.Tested;
 import mz.co.hi.web.meta.WebComponent;
+import mz.co.hi.web.mvc.Controller;
+import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
+import org.jboss.jandex.*;
 import org.reflections.Reflections;
 import org.reflections.scanners.MethodAnnotationsScanner;
 import org.reflections.scanners.TypeAnnotationsScanner;
@@ -25,18 +28,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.ValidatorFactory;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
@@ -58,6 +55,8 @@ public class DispatcherServlet extends HttpServlet {
     protected static  String DEPLOY_ID="";
 
     private HashMap<String,String> matchedUrls = new HashMap();
+
+    private static boolean initialized = false;
 
     public DispatcherServlet(){
 
@@ -191,72 +190,117 @@ public class DispatcherServlet extends HttpServlet {
 
 
 
+
+
     private void generateFrontiers() throws ServletException {
 
-            List beansList = new ArrayList();
+        List beansList = new ArrayList();
+        this.getServletContext().log("Looking for frontiers...");
 
-            this.getServletContext().log("Looking for frontiers...");
+        Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
+        if(indexSet==null)
+            return;
 
-            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
-                    .addClassLoader(this.getClass().getClassLoader())
-                    .setScanners(new TypeAnnotationsScanner());
+        for(Index index: indexSet){
 
-            for(String pkg : AppConfigurations.get().getFrontierPackages())
-                configurationBuilder.addUrls(ClasspathHelper.forPackage(pkg));
+            List<AnnotationInstance> instanceList = index.getAnnotations(DotName.createSimple(Frontier.class.getCanonicalName()));
 
-            org.reflections.Reflections reflections = new Reflections(configurationBuilder);
-            Set<Class<?>> frontierClasses  = reflections.getTypesAnnotatedWith(Frontier.class);
-            this.getServletContext().log("Frontier classes found using reflections : "+frontierClasses.size());
+            for(AnnotationInstance an: instanceList){
 
+                Class fClazz = null;
 
-            for(Class clazz : frontierClasses)
-                beansList.add(clazz);
+                try {
 
+                    fClazz = Class.forName(an.target().asClass().name().toString());
+                    System.out.println("Frontier class detected : " + fClazz.getCanonicalName());
+                    beansList.add(fClazz);
 
+                }catch (Exception ex){
 
-            FrontierClass[] beanClasses = BeansCrawler.getInstance().crawl(beansList);
+                    continue;
 
-            if(beanClasses==null){
+                }
 
-                System.out.println("No frontier found. Check if Hi annotations processor is configured.");
-                return;
 
             }
 
 
-            System.out.println("Generating client-side code for frontiers...");
-            Scripter scripter = new Scripter();
 
-            for(FrontierClass beanClass : beanClasses){
+        }
 
-                Frontiers.addFrontier(beanClass);
-                String frontier_script = scripter.generate(beanClass);
-                frontiersScript +="\n"+frontier_script;
+        FrontierClass[] beanClasses = BeansCrawler.getInstance().crawl(beansList);
 
-            }
+
+        System.out.println("Generating client-side code for frontiers...");
+        Scripter scripter = new Scripter();
+
+        for(FrontierClass beanClass : beanClasses){
+
+            Frontiers.addFrontier(beanClass);
+            String frontier_script = scripter.generate(beanClass);
+            frontiersScript +="\n"+frontier_script;
+
+        }
 
 
     }
 
 
     public void init() throws ServletException{
-        super.init();
 
-        org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
-                .addClassLoader(this.getClass().getClassLoader())
-                .setScanners(new TypeAnnotationsScanner())
-                .setUrls(ClasspathHelper.forPackage("mz.co.hi.web.config.sections"))
-        );
+        if(initialized){
 
-        Set<Class<?>> configuratorsClasses  = reflections.getTypesAnnotatedWith(ConfigSection.class);
+            System.out.println("---avoid double initialization");
+            return;
+
+        }
+
+        initialized = true;
+
+        System.out.println("---Initializing Hi-Framework servlet...");
+
+        Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
+        Set<Class<?>> configSections = new HashSet<>();
+
+        if(indexSet!=null) {
+
+            for (Index index : indexSet) {
+
+                List<AnnotationInstance> instances =
+                        index.getAnnotations(DotName.createSimple(ConfigSection.class.getCanonicalName()));
+
+                for (AnnotationInstance an : instances) {
+
+
+                    String className = an.target().asClass().name().toString();
+                    System.out.println("Config section class : "+className);
+
+                    try {
+
+                        Class<?> clazz = Class.forName(className);
+                        configSections.add(clazz);
+
+                    } catch (Exception ex) {
+
+                        continue;
+
+                    }
+
+
+                }
+
+            }
+
+        }
 
         Bootstrap bootstrap = new Bootstrap();
-        bootstrap.load(this.getServletContext(),configuratorsClasses);
+        bootstrap.load(this.getServletContext(),configSections);
 
         readLibScript();
         readJavascriptInit();
         readLoaderScript();
         readGenericFrontier();
+        findControllersAndMap();
         generateFrontiers();
         findAndLoadComponents();
         findTestedActions();
@@ -276,6 +320,8 @@ public class DispatcherServlet extends HttpServlet {
 
         DEPLOY_ID = String.valueOf(new Date().getTime());
 
+        System.out.println("---Finished Hi-Framework servlet initialization...");
+
     }
 
 
@@ -293,98 +339,164 @@ public class DispatcherServlet extends HttpServlet {
     }
 
 
+    private void findTestedAControllerActions(Index index){
 
-    private void findTestedActions(){
+        List<AnnotationInstance> instances = index.getAnnotations(DotName.createSimple(Tested.class.getCanonicalName()));
+        for(AnnotationInstance an : instances){
 
-        ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
-                .addClassLoader(this.getClass().getClassLoader())
-                .setScanners(new MethodAnnotationsScanner());
-            configurationBuilder.addUrls(ClasspathHelper.forPackage(AppConfigurations.get().getControllersPackageName()));
+            MethodInfo methodInfo =  an.target().asMethod();
+            String actionURL = MVC.getActionMethodFromURLPart(methodInfo.name());
+            String controllerURL = MVC.getURLController(methodInfo.declaringClass().simpleName());
 
-        org.reflections.Reflections reflections = new Reflections(configurationBuilder);
-        Set<Method> methodsAnnotatedWith  = reflections.getMethodsAnnotatedWith(Tested.class);
+            System.out.println("Tested controller action detected : "+controllerURL+"/"+actionURL);
 
-
-        for(Method method :methodsAnnotatedWith){
-
-            String methodName = method.getName();
-            Class<?> controllerClazz =  method.getDeclaringClass();
-            String controllerUrlName = MVC.getURLController(controllerClazz.getSimpleName());
-
-            String testedViewPath = "/views/"+controllerUrlName+"/"+methodName+".js";
-            AppConfigurations.get().getTestedViews().put(testedViewPath,controllerUrlName+"/"+methodName);
-
-            String viewTestPath1 = "/webroot/tests/views/"+controllerUrlName+"/"+methodName+"Test.js";
+            String testedViewPath = "/views/"+controllerURL+"/"+actionURL+".js";
+            AppConfigurations.get().getTestedViews().put(testedViewPath,controllerURL+"/"+actionURL);
+            String viewTestPath1 = "/webroot/tests/views/"+controllerURL+"/"+actionURL+"Test.js";
 
             AppConfigurations.get().getTestFiles().put(viewTestPath1,true);
 
         }
 
-
-
-
     }
 
+    private void findTestedActions(){
 
-    private void findControllers(){
+        Set<URL> classes = BootstrapUtils.getClassFiles(getServletContext());
+        Indexer indexer = new Indexer();
 
-        //TODO: Implement
-
-    }
-
-    private void findFrontiers(){
-
-        //TODO: Implement
-
-    }
-
-    private void findAndLoadComponents() throws ServletException{
-
-        org.reflections.Reflections reflections = new Reflections( new ConfigurationBuilder()
-                .addClassLoader(this.getClass().getClassLoader())
-                .setScanners(new TypeAnnotationsScanner())
-                .setUrls(ClasspathHelper.forPackage("mz.co.hi.web.component"))
-        );
-
-        Set<Class<?>> classes = reflections.getTypesAnnotatedWith(WebComponent.class);
-        for(Class<?> componentClass : classes){
-
-            String scriptName = componentClass.getSimpleName().toLowerCase();
-            String minifiedScriptName = componentClass.getSimpleName().toLowerCase()+".min";
-
-            URL componentScript =  null;
+        for(URL clazzUrl : classes){
 
             try {
-
-                if (AppConfigurations.get().underDevelopment())
-                    componentScript = getServletContext().getResource("/" + scriptName + ".js");
-                else
-                    componentScript = getServletContext().getResource("/" + minifiedScriptName + ".js");
-
-            }catch (MalformedURLException ex){
-
-                throw new HiException("Invalid component name : "+componentClass.getSimpleName(),ex);
-
-            }
-
-            if(componentScript==null)
-                continue;
-
-            try {
-
-                componentsScript+=Helper.readTextStreamToEnd(componentScript.openStream(), null);
-                getServletContext().log(componentClass.getSimpleName()+" Web component loaded");
+                indexer.index(clazzUrl.openStream());
 
             }catch (Exception ex){
 
-                throw new HiException("Could not read component script : "+componentClass.getSimpleName(),ex);
+                getServletContext().log("Failed to index the class file <"+clazzUrl.toString()+"> using Jandex",ex);
+            }
+
+        }
+
+        findTestedAControllerActions(indexer.complete());
+
+        Set<URL> libraries = BootstrapUtils.getLibraries(getServletContext());
+        for(URL libUrl: libraries){
+
+            try {
+                File file = new File(libUrl.toURI());
+                Index index = JarIndexer.createJarIndex(file, indexer, true, false, false).getIndex();
+                findTestedAControllerActions(index);
+
+            }catch (Exception ex){
+
+                getServletContext().log("Failed to index <"+libUrl.toString()+"> using Jandex",ex);
+
+            }
+
+        }
+
+
+    }
+
+
+    private void findControllersAndMap() throws HiException{
+
+       Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
+       if(indexSet==null)
+            return;
+
+       for(Index index : indexSet){
+
+           Collection<ClassInfo> classInfos =
+                   index.getAllKnownSubclasses(DotName.createSimple(Controller.class.getCanonicalName()));
+
+
+           for(ClassInfo classInfo : classInfos){
+
+               DotName dotName = classInfo.asClass().name();
+
+
+               try {
+
+                   Class controllerClazz = Class.forName(dotName.toString());
+                   System.out.println("Controller class mapped : "+controllerClazz.getCanonicalName());
+                   ControllersMapper.map(controllerClazz);
+
+               }catch (ClassNotFoundException ex){
+
+                   continue;
+
+               }
+
+           }
+
+       }
+
+    }
+
+
+    private void findAndLoadComponents() throws ServletException{
+
+        Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
+        if(indexSet==null)
+            return;
+
+        for(Index index : indexSet){
+
+            List<AnnotationInstance> instances = index.
+                    getAnnotations(DotName.createSimple(WebComponent.class.getCanonicalName()));
+
+            for(AnnotationInstance an: instances){
+
+                Class componentClass = null;
+
+                try {
+
+                    componentClass = Class.forName(an.target().asClass().toString());
+
+                }catch (ClassNotFoundException ex){
+
+                    continue;
+
+                }
+
+                String scriptName = componentClass.getSimpleName().toLowerCase();
+                String minifiedScriptName = componentClass.getSimpleName().toLowerCase()+".min";
+
+                URL componentScript =  null;
+
+                try {
+
+                    if (AppConfigurations.get().underDevelopment())
+                        componentScript = getServletContext().getResource("/" + scriptName + ".js");
+                    else
+                        componentScript = getServletContext().getResource("/" + minifiedScriptName + ".js");
+
+                }catch (MalformedURLException ex){
+
+                    throw new HiException("Invalid component name : "+componentClass.getSimpleName(),ex);
+
+                }
+
+                if(componentScript==null)
+                    continue;
+
+                try {
+
+                    componentsScript+=Helper.readTextStreamToEnd(componentScript.openStream(), null);
+                    getServletContext().log(componentClass.getSimpleName()+" Web component loaded");
+
+                }catch (Exception ex){
+
+                    throw new HiException("Could not read component script : "+componentClass.getSimpleName(),ex);
+
+                }
+
 
             }
 
 
         }
-
-
 
     }
 

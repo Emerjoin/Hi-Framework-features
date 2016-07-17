@@ -22,8 +22,6 @@ public class WebConfig implements Configurator {
 
         //Template and MVC Configurations
         org.w3c.dom.Element webElement = (org.w3c.dom.Element) docElement.getElementsByTagName("web").item(0);
-        org.w3c.dom.Element controllersPackageElement = (org.w3c.dom.Element) webElement.getElementsByTagName("controllers-package").item(0);
-
 
         NodeList viewsDirectoryNodes = webElement.getElementsByTagName("views-directory");
         if(viewsDirectoryNodes.getLength()>0){
@@ -50,8 +48,6 @@ public class WebConfig implements Configurator {
 
 
 
-        String controllersPackage = controllersPackageElement.getTextContent();
-
         org.w3c.dom.Element templateElement = (org.w3c.dom.Element) webElement.getElementsByTagName("templates").item(0);
         NodeList templatesList = templateElement.getElementsByTagName("template");
 
@@ -63,7 +59,6 @@ public class WebConfig implements Configurator {
 
         }
 
-        configs.setControllersPackageName(controllersPackage);
 
         configs.setTemplates(templates);
 

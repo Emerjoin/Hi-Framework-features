@@ -12,7 +12,6 @@ import java.util.Map;
  */
 public class AppConfigurations {
 
-    private String controllersPackageName;
     private String viewsDirectory;
     private String welcomeUrl;
     private String templates[];
@@ -77,14 +76,6 @@ public class AppConfigurations {
 
     }
 
-
-    public String getControllersPackageName() {
-        return controllersPackageName;
-    }
-
-    public void setControllersPackageName(String controllersPackageName) {
-        this.controllersPackageName = controllersPackageName;
-    }
 
     public String getViewsDirectory() {
         return viewsDirectory;
