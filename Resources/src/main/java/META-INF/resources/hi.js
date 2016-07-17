@@ -1988,8 +1988,15 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
             if(server_response.response!=200){
 
-                console.error("Request to server returned error");
-                //TODO: Implement handler
+                if(typeof server_response=="string"){
+
+                    document.write(server_response);
+                    return;
+
+
+                }
+
+                throw new Error("Request to server returned a strange result");
                 return;
 
             }

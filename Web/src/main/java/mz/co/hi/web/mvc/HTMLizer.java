@@ -52,12 +52,13 @@ public class HTMLizer {
 
     private RequestContext requestContext = null;
 
+    private ActiveUser activeUser = null;
 
 
     public HTMLizer(){
 
-        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
-        this.requestContext = requestContext;
+        activeUser = CDI.current().select(ActiveUser.class).get();
+        this.requestContext = CDI.current().select(RequestContext.class).get();
 
     }
 
@@ -263,6 +264,7 @@ public class HTMLizer {
                 .add("simple_base_url", requestContext.getBaseURL().replace(http,"").replace(https,""))
                 .add("deployId",appContext.getDeployId())
                 .add("deployMode",appContext.getDeployMode().toString())
+                .add("csrfToken",activeUser.getCsrfToken())
                 .build();
 
         return app;

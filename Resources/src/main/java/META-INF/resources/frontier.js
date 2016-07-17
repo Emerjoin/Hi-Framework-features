@@ -46,7 +46,7 @@
 
         method:"POST",
         url : $functionUrl,
-        //headers : $headers,
+        headers : {csrfToken:App.csrfToken},
         data: JSON.stringify(params),
         dataType:"json",
 

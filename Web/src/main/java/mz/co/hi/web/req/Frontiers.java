@@ -1,6 +1,7 @@
 package mz.co.hi.web.req;
 
 import com.google.gson.*;
+import mz.co.hi.web.ActiveUser;
 import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.AppContext;
@@ -45,6 +46,8 @@ public class Frontiers extends ReqHandler {
     @Inject
     private RequestContext requestContext;
 
+    @Inject
+    private ActiveUser activeUser;
 
     public static void addFrontier(FrontierClass frontierClass){
 
@@ -147,6 +150,9 @@ public class Frontiers extends ReqHandler {
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
 
+        if(!isAuthenticRequest(requestContext))
+            return false;
+
         String[] frontierPair = getFrontierPair(requestContext);
 
         String invokedClass = frontierPair[0];
@@ -179,6 +185,7 @@ public class Frontiers extends ReqHandler {
             boolean invoked_successfully = false;
 
             try {
+
 
 
                 if(!ReqHandler.userHasPermission(frontierClass.getObject().getClass(),frontierMethod.getMethod(),requestContext)){
@@ -279,4 +286,15 @@ public class Frontiers extends ReqHandler {
         return false;
 
     }
+
+    private boolean isAuthenticRequest(RequestContext requestContext){
+
+        String token = requestContext.getRequest().getHeader("csrfToken");
+        if(token==null)
+            return false;
+
+        return token.equals(activeUser.getCsrfToken());
+
+    }
+
 }
