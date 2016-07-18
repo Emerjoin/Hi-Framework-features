@@ -7,27 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/ControllersMapper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/mvc/ClassLoader.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/hi-resources-1.0.beta.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/hi-resources-1.0.beta.jar" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_3_3_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" afterPath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations$DeploymentMode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/sections/WebConfig.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/config/sections/WebConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/frontier/model/BeansCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/MVC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Assets.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Assets.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/Hi Framework core.iml" afterPath="$PROJECT_DIR$/../Web/Hi Framework core.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/pom.xml" afterPath="$PROJECT_DIR$/../Web/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/frontier/model/BeansCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/MVC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -886,12 +882,12 @@
       <workItem from="1467727295359" duration="1102000" />
       <workItem from="1467739890748" duration="1543000" />
       <workItem from="1468688181234" duration="534000" />
-      <workItem from="1468690032340" duration="5483000" />
+      <workItem from="1468690032340" duration="6304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342492000" />
+    <option name="totallyTimeSpent" value="343313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

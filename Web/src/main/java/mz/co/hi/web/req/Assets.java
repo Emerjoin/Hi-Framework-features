@@ -3,6 +3,7 @@ package mz.co.hi.web.req;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.Tunnings;
+import org.apache.tika.Tika;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -198,7 +199,9 @@ public class Assets extends ReqHandler {
 
             }
 
-            String mime = getMime2(assetUrl);
+
+            Tika tika = new Tika();
+            String mime = tika.detect(assetURL);
 
             if(mime==null){
 
@@ -246,12 +249,6 @@ public class Assets extends ReqHandler {
 
     }
 
-
-    private static String getMime2(String filename){
-
-        return org.clapper.util.misc.MIMETypeUtil.MIMETypeForFileName(filename);
-
-    }
 
 
 

@@ -56,6 +56,19 @@ public class BootstrapUtils {
 
                     try {
 
+
+                        String urlStr = classURL.toString();
+                        if(urlStr.length()<=6)
+                            continue;
+
+                        String extension = urlStr.substring(urlStr.length()-6,urlStr.length());
+
+
+                        if(!extension.equals(".class"))
+                            continue;
+
+
+
                         indexer.index(classURL.openStream());
 
                     }catch (Exception ex){
@@ -76,6 +89,16 @@ public class BootstrapUtils {
                 for(URL libURL : libraries){
 
                     try {
+
+
+                        String urlStr = libURL.toString();
+                        if(urlStr.length()<=4)
+                            continue;
+
+                        String extension = urlStr.substring(urlStr.length()-4,urlStr.length());
+
+                        if(!extension.equals(".jar"))
+                            continue;
 
                         File file = new File(libURL.toURI());
                         Index index = JarIndexer.createJarIndex(file, indexer, true, true, false).getIndex();

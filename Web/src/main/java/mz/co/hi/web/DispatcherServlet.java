@@ -15,11 +15,6 @@ import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
 import org.jboss.jandex.*;
-import org.reflections.Reflections;
-import org.reflections.scanners.MethodAnnotationsScanner;
-import org.reflections.scanners.TypeAnnotationsScanner;
-import org.reflections.util.ClasspathHelper;
-import org.reflections.util.ConfigurationBuilder;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletException;
