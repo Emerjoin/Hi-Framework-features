@@ -57,7 +57,6 @@ public class HTMLizer {
 
     public HTMLizer(){
 
-        activeUser = CDI.current().select(ActiveUser.class).get();
         this.requestContext = CDI.current().select(RequestContext.class).get();
 
     }
@@ -253,6 +252,8 @@ public class HTMLizer {
     }
 
     private JsonObject getAppData(){
+
+        activeUser = CDI.current().select(ActiveUser.class).get();
 
         CharSequence http = "http://";
         CharSequence https = "https://";
