@@ -14,7 +14,6 @@ import java.util.Map;
 public class ActiveUser implements Serializable {
 
     private String csrfToken = "";
-    private Map<String,Object> data = new HashMap<>();
 
     public ActiveUser(){
 
@@ -48,14 +47,10 @@ public class ActiveUser implements Serializable {
     }
 
     public String getCsrfToken() {
+
         return csrfToken;
-    }
-
-
-    public Map<String, Object> getData() {
-
-        return data;
 
     }
+
 
 }
