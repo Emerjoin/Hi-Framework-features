@@ -18,7 +18,7 @@ import java.util.Map;
 
 
 @RequestScoped
-public class RequestContext implements Serializable {
+public class RequestContext {
 
     @Inject
     private HttpServletRequest request = null;
@@ -32,11 +32,7 @@ public class RequestContext implements Serializable {
     private String url = null;
     private String routeUrl;
 
-    @Inject
-    private HttpSession httpSession = null;
-
     private OutputStream outputStream = null;
-
 
     public String getUsername(){
 
@@ -114,11 +110,6 @@ public class RequestContext implements Serializable {
         this.routeUrl = r;
 
     }
-
-    public HttpSession getSession() {
-        return httpSession;
-    }
-
 
     public String getUrl() {
         return url;

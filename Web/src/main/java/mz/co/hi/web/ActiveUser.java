@@ -15,6 +15,8 @@ public class ActiveUser implements Serializable {
 
     private String csrfToken = "";
 
+    private HashMap<String,Object> data = new HashMap<>();
+
     public ActiveUser(){
 
         //Generate token here
@@ -52,5 +54,33 @@ public class ActiveUser implements Serializable {
 
     }
 
+    public HashMap<String, Object> getData() {
+        return data;
+    }
 
+    public void setData(HashMap<String, Object> data) {
+        this.data = data;
+    }
+
+    public Object getProperty(String name){
+
+        return data.get(name);
+
+    }
+
+    public Object getProperty(String name,Object defaultValue){
+
+        Object value = data.get(name);
+        if(value==null)
+            return defaultValue;
+
+        return value;
+
+    }
+
+    public void setProperty(String name, Object value){
+
+        data.put(name,value);
+
+    }
 }

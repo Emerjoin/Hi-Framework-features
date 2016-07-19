@@ -1,8 +1,6 @@
 package mz.co.hi.web;
 
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.req.Frontiers;
-
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -20,7 +18,7 @@ public class FrontEnd {
     private HttpServletRequest httpServletRequest;
 
     @Inject
-    private HttpSession httpSession;
+    private ActiveUser activeUser;
 
     private String template;
     private String language;
@@ -36,7 +34,6 @@ public class FrontEnd {
 
 
 
-
     }
 
 
@@ -45,20 +42,20 @@ public class FrontEnd {
 
         this.language = AppConfigurations.get().getDefaultLanguage();
 
-        Object templateObject = httpSession.getAttribute(TEMPLATE_SESSION_VARIABLE);
+        Object templateObject = activeUser.getProperty(TEMPLATE_SESSION_VARIABLE);
         if(templateObject==null){
 
             template="index.html";
-            httpSession.setAttribute(TEMPLATE_SESSION_VARIABLE,template);
+            activeUser.getProperty(TEMPLATE_SESSION_VARIABLE,template);
 
         }else template = templateObject.toString();
 
 
-        Object langObject = httpSession.getAttribute(LANGUAGE_SESSION_VARIABLE);
+        Object langObject = activeUser.getProperty(LANGUAGE_SESSION_VARIABLE);
         if(langObject==null){
 
             language = AppConfigurations.get().getDefaultLanguage();
-            httpSession.setAttribute(LANGUAGE_SESSION_VARIABLE,language);
+            activeUser.setProperty(LANGUAGE_SESSION_VARIABLE,language);
 
         }else language = langObject.toString();
 
@@ -155,7 +152,7 @@ public class FrontEnd {
 
         this.language = name;
 
-        httpSession.setAttribute(LANGUAGE_SESSION_VARIABLE,this.language);
+        activeUser.setProperty(LANGUAGE_SESSION_VARIABLE,this.language);
 
         //Set reload command if this method is invoked on an ajax request
         if(isRequestAjax()||isFrontierRequest())
@@ -169,7 +166,7 @@ public class FrontEnd {
 
         this.template = template;
 
-        httpSession.setAttribute(TEMPLATE_SESSION_VARIABLE,this.template);
+        activeUser.setProperty(TEMPLATE_SESSION_VARIABLE,this.template);
 
         //Reload command if this method is invoked on an ajax request
         if(isRequestAjax()||isFrontierRequest())

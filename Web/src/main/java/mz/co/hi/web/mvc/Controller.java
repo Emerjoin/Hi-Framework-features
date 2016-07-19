@@ -22,8 +22,7 @@ import java.util.Map;
 /**
  * Created by Mario Junior.
  */
-public class Controller implements Serializable {
-
+public class Controller {
 
     public static final String VIEW_DATA_KEY ="dataJson";
     //private RequestContext requestContext;

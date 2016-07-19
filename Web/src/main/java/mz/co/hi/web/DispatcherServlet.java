@@ -199,7 +199,6 @@ public class DispatcherServlet extends HttpServlet {
         for(Index index: indexSet){
 
             List<AnnotationInstance> instanceList = index.getAnnotations(DotName.createSimple(Frontier.class.getCanonicalName()));
-
             for(AnnotationInstance an: instanceList){
 
                 Class fClazz = null;
@@ -212,6 +211,7 @@ public class DispatcherServlet extends HttpServlet {
 
                 }catch (Exception ex){
 
+                    getServletContext().log("Error while attempting to register a frontier class",ex);
                     continue;
 
                 }
