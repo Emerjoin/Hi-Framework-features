@@ -264,6 +264,8 @@ public class DispatcherServlet extends HttpServlet {
 
         if(indexSet!=null) {
 
+            System.out.println("ConfigSection Class name : "+ConfigSection.class.getCanonicalName());
+
             for (Index index : indexSet) {
 
                 List<AnnotationInstance> instances =
@@ -295,6 +297,9 @@ public class DispatcherServlet extends HttpServlet {
 
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.load(this.getServletContext(),configSections);
+
+
+
 
         readLibScript();
         readJavascriptInit();

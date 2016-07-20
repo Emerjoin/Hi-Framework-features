@@ -6,6 +6,7 @@ import org.jboss.jandex.JarIndexer;
 
 import javax.servlet.ServletContext;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
@@ -40,8 +41,10 @@ public class BootstrapUtils {
     }
 
 
-
     public static Set<Index> getIndexes(ServletContext servletContext){
+
+        //if(true)
+        //return new HashSet<>();
 
         if(indexSet==null){
 
@@ -66,8 +69,6 @@ public class BootstrapUtils {
 
                         if(!extension.equals(".class"))
                             continue;
-
-
 
                         indexer.index(classURL.openStream());
 
@@ -100,9 +101,22 @@ public class BootstrapUtils {
                         if(!extension.equals(".jar"))
                             continue;
 
-                        File file = new File(libURL.getFile());
-                        Index index = JarIndexer.createJarIndex(file, indexer, true, true, false).getIndex();
+                        File realFile = new File(libURL.getFile());
+                        File tempFile = File.createTempFile(realFile.getName(),"jandex");
+                        Index index = JarIndexer.createJarIndex(realFile, indexer,tempFile,false, false, false).getIndex();
                         indexSet.add(index);
+
+                        try {
+
+                            tempFile.delete();
+
+
+                        }catch (Exception ex){
+
+                            ex.printStackTrace();
+
+                        }
+
 
                     }catch (Exception ex){
 

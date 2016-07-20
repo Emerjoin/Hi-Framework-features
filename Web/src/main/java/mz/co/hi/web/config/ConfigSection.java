@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface ConfigSection {
 
-    public String[] tags();
+    String[] tags();
 
 }
