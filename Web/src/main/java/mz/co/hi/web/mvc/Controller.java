@@ -118,7 +118,7 @@ public class Controller {
 
         }catch (Exception ex){
 
-            throw new NoSuchViewException(controllerName,actionName);
+            throw new NoSuchViewException(controllerName,actionName,viewFile);
 
         }
 
@@ -178,9 +178,9 @@ public class Controller {
         }
 
 
-        if(viewResource==null){
+        if(viewJsResource==null){
 
-            throw new NoSuchViewException(controllerName,actionName);
+            throw new NoSuchViewException(controllerName,actionName,viewJsfile);
 
         }
 

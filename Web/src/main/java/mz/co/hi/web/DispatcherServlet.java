@@ -3,6 +3,8 @@ package mz.co.hi.web;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.Bootstrap;
 import mz.co.hi.web.config.ConfigSection;
+import mz.co.hi.web.config.Tunnings;
+import mz.co.hi.web.config.sections.*;
 import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
@@ -23,6 +25,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -254,6 +257,8 @@ public class DispatcherServlet extends HttpServlet {
 
         System.out.println("---Initializing Hi-Framework servlet...");
 
+
+
         Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
         Set<Class<?>> configSections = new HashSet<>();
 
@@ -266,17 +271,17 @@ public class DispatcherServlet extends HttpServlet {
 
                 for (AnnotationInstance an : instances) {
 
-
                     String className = an.target().asClass().name().toString();
-                    System.out.println("Config section class : "+className);
+                    System.out.println("Loading config section class : "+className);
 
                     try {
 
-                        Class<?> clazz = Class.forName(className);
+                        Class<?> clazz  = this.getClass().getClassLoader().loadClass(className);
                         configSections.add(clazz);
 
                     } catch (Exception ex) {
 
+                        getServletContext().log("Error initializing config section",ex);
                         continue;
 
                     }
@@ -357,39 +362,13 @@ public class DispatcherServlet extends HttpServlet {
 
     private void findTestedActions(){
 
-        Set<URL> classes = BootstrapUtils.getClassFiles(getServletContext());
-        Indexer indexer = new Indexer();
+        Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
 
-        for(URL clazzUrl : classes){
+        for(Index index : indexSet){
 
-            try {
-                indexer.index(clazzUrl.openStream());
-
-            }catch (Exception ex){
-
-                getServletContext().log("Failed to index the class file <"+clazzUrl.toString()+"> using Jandex",ex);
-            }
+            findTestedAControllerActions(index);
 
         }
-
-        findTestedAControllerActions(indexer.complete());
-
-        Set<URL> libraries = BootstrapUtils.getLibraries(getServletContext());
-        for(URL libUrl: libraries){
-
-            try {
-                File file = new File(libUrl.toURI());
-                Index index = JarIndexer.createJarIndex(file, indexer, true, false, false).getIndex();
-                findTestedAControllerActions(index);
-
-            }catch (Exception ex){
-
-                getServletContext().log("Failed to index <"+libUrl.toString()+"> using Jandex",ex);
-
-            }
-
-        }
-
 
     }
 
@@ -413,12 +392,14 @@ public class DispatcherServlet extends HttpServlet {
 
                try {
 
+                   System.out.println("Mapping controller class : "+dotName.toString());
                    Class controllerClazz = Class.forName(dotName.toString());
-                   System.out.println("Controller class mapped : "+controllerClazz.getCanonicalName());
+
                    ControllersMapper.map(controllerClazz);
 
                }catch (ClassNotFoundException ex){
 
+                   getServletContext().log("Error mapping controller class",ex);
                    continue;
 
                }
@@ -447,6 +428,7 @@ public class DispatcherServlet extends HttpServlet {
 
                 try {
 
+                    System.out.println("Loading web component : "+an.target().asClass().name().toString());
                     componentClass = Class.forName(an.target().asClass().toString());
 
                 }catch (ClassNotFoundException ex){

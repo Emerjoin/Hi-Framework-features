@@ -8,8 +8,8 @@ public class NoSuchViewException extends MvcException {
     private String controller;
     private String view;
 
-    public NoSuchViewException(String controller,String view){
-        super("Could not find the view file <"+view+"> for controller <"+controller+">");
+    public NoSuchViewException(String controller,String view,String path){
+        super("Could not find the view file <"+view+"> for controller <"+controller+"> : "+path);
         this.controller = controller;
         this.view = view;
 

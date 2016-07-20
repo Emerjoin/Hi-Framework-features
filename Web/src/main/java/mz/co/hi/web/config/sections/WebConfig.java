@@ -4,6 +4,7 @@ import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.BadConfigException;
 import mz.co.hi.web.config.ConfigSection;
 import mz.co.hi.web.config.Configurator;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -47,17 +48,25 @@ public class WebConfig implements Configurator {
         }
 
 
+        NodeList templatesNodes = webElement.getElementsByTagName("templates");
 
-        org.w3c.dom.Element templateElement = (org.w3c.dom.Element) webElement.getElementsByTagName("templates").item(0);
-        NodeList templatesList = templateElement.getElementsByTagName("template");
+        String[] templates = null;
 
-        String[] templates = new String[templatesList.getLength()];
+        if(templatesNodes.getLength()>0){
 
-        for(int i=0;i<templatesList.getLength();i++){
+            org.w3c.dom.Element templateElement = (Element) templatesNodes.item(0);
+            NodeList templatesList = templateElement.getElementsByTagName("template");
 
-            templates[i] = templatesList.item(i).getTextContent();
+            templates = new String[templatesList.getLength()+1];
+            templates[0]= "index";
 
-        }
+            for(int i=0;i<templatesList.getLength();i++){
+
+                templates[i] = templatesList.item(i+1).getTextContent();
+
+            }
+
+        }else templates=new String[]{"index"};
 
 
         configs.setTemplates(templates);

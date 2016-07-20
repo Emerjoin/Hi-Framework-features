@@ -73,7 +73,7 @@ public class BootstrapUtils {
 
                     }catch (Exception ex){
 
-                        servletContext.log("Failed to index the class file <"+classURL.toString()+"> using Jandex",ex);
+                        continue;
 
                     }
 
@@ -100,13 +100,13 @@ public class BootstrapUtils {
                         if(!extension.equals(".jar"))
                             continue;
 
-                        File file = new File(libURL.toURI());
+                        File file = new File(libURL.getFile());
                         Index index = JarIndexer.createJarIndex(file, indexer, true, true, false).getIndex();
                         indexSet.add(index);
 
                     }catch (Exception ex){
 
-                        servletContext.log("Failed to index <"+libURL.toString()+"> using Jandex",ex);
+                        continue;
 
                     }
 

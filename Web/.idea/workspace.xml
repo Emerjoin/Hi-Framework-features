@@ -7,17 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/out/artifacts/jar/hi-resources-1.0.beta.jar" afterPath="$PROJECT_DIR$/../Resources/out/artifacts/jar/hi-resources-1.0.beta.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/ActiveUser.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/ActiveUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/FrontEnd.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/FrontEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/RequestContext.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/RequestContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/Controller.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/mvc/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/BootstrapUtils.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/BootstrapUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/DispatcherServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/AppConfigurations.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/sections/WebConfig.class" afterPath="$PROJECT_DIR$/target/classes/mz/co/hi/web/config/sections/WebConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/ActiveUser.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/ActiveUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" afterPath="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" />
     </list>
     <ignored path="Yayee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,43 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FrontEnd.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/Helper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HtmlFileServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/HtmlFileServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41597795">
-              <caret line="213" column="96" selection-start-line="213" selection-start-column="96" selection-end-line="213" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="370" column="9" selection-start-line="370" selection-start-column="9" selection-end-line="370" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,36 +64,98 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BootstrapUtils.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="182" column="78" selection-start-line="182" selection-start-column="78" selection-end-line="182" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoSuchViewException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="95" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.875">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BootstrapUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="77" selection-start-line="63" selection-start-column="77" selection-end-line="63" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.61752987">
+              <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HTMLizer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java">
+      <file leaf-file-name="HiEcmaScript5.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActiveUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/ActiveUser.java">
+      <file leaf-file-name="FrontiersConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppConfigurations.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.2222223">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
               <folding>
-                <element signature="e#1360#1361#0" expanded="true" />
-                <element signature="e#1387#1388#0" expanded="true" />
-                <element signature="e#1444#1445#0" expanded="true" />
-                <element signature="e#1476#1477#0" expanded="true" />
+                <element signature="e#1957#1958#0" expanded="true" />
+                <element signature="e#1989#1990#0" expanded="true" />
+                <element signature="e#2041#2042#0" expanded="true" />
+                <element signature="e#2083#2084#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigSection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigSection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="28" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/HiSmartException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/exceptions/TutorialException.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/HiCDI.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/frontier/Scripter.java" />
@@ -190,18 +223,19 @@
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ClassLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ControllersFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ControllersMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/MVC.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/Assets.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/RequestContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/ActiveUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/FrontEnd.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/HTMLizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java" />
       </list>
     </option>
   </component>
@@ -230,7 +264,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
+    <option name="x" value="9" />
     <option name="y" value="23" />
     <option name="width" value="1431" />
     <option name="height" value="873" />
@@ -261,7 +295,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -394,7 +427,101 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="req" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hi Framework Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sections" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,10 +564,15 @@
               <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1100,7 +1232,9 @@
       <workItem from="1467905315389" duration="311000" />
       <workItem from="1468557558322" duration="49232000" />
       <workItem from="1468850581740" duration="1433000" />
-      <workItem from="1468853022879" duration="9670000" />
+      <workItem from="1468853022879" duration="9783000" />
+      <workItem from="1468927944274" duration="652000" />
+      <workItem from="1468943286838" duration="9675000" />
     </task>
     <servers />
   </component>
@@ -1134,7 +1268,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="612786000" />
+    <option name="totallyTimeSpent" value="623226000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1146,7 +1280,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="23" width="1431" height="873" extended-state="0" />
+    <frame x="9" y="23" width="1431" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1160,7 +1294,7 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65890414" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.49427754" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32650447" sideWeight="0.49427754" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2577394" sideWeight="0.67469877" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1202,13 +1336,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebTunningConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38910505">
-          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/TestsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58365756">
@@ -1227,13 +1354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1289,20 +1409,6 @@
     <entry file="file://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.6.2/gson-2.6.2.pom">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/reflections/reflections-maven/0.9.8/reflections-maven-0.9.8.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar!/META-INF/maven/org.codehaus.plexus/plexus-container-default/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5103447">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1412,14 +1518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HandleRequests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1427,72 +1525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1128#1129#0" expanded="false" />
-            <element signature="e#1162#1163#0" expanded="false" />
-            <element signature="e#1760#1761#0" expanded="false" />
-            <element signature="e#1797#1798#0" expanded="false" />
-            <element signature="e#1857#1858#0" expanded="false" />
-            <element signature="e#1909#1910#0" expanded="false" />
-            <element signature="e#1947#1948#0" expanded="false" />
-            <element signature="e#1979#1980#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2073#2074#0" expanded="false" />
-            <element signature="e#2198#2199#0" expanded="false" />
-            <element signature="e#2242#2243#0" expanded="false" />
-            <element signature="e#2300#2301#0" expanded="false" />
-            <element signature="e#2339#2340#0" expanded="false" />
-            <element signature="e#2416#2417#0" expanded="false" />
-            <element signature="e#2472#2473#0" expanded="false" />
-            <element signature="e#2685#2686#0" expanded="false" />
-            <element signature="e#2716#2717#0" expanded="false" />
-            <element signature="e#2766#2767#0" expanded="false" />
-            <element signature="e#2806#2807#0" expanded="false" />
-            <element signature="e#2857#2858#0" expanded="false" />
-            <element signature="e#2889#2890#0" expanded="false" />
-            <element signature="e#2953#2954#0" expanded="false" />
-            <element signature="e#2995#2996#0" expanded="false" />
-            <element signature="e#3037#3038#0" expanded="false" />
-            <element signature="e#3075#3076#0" expanded="false" />
-            <element signature="e#3137#3138#0" expanded="false" />
-            <element signature="e#3191#3192#0" expanded="false" />
-            <element signature="e#3341#3342#0" expanded="false" />
-            <element signature="e#3380#3381#0" expanded="false" />
-            <element signature="e#3450#3451#0" expanded="false" />
-            <element signature="e#3506#3507#0" expanded="false" />
-            <element signature="e#3555#3556#0" expanded="false" />
-            <element signature="e#3592#3593#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/Bootstrap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1513,14 +1549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/ControllersMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1533,9 +1561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1543,7 +1568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,15 +1575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="77" selection-start-line="63" selection-start-column="77" selection-end-line="63" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,7 +1582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26859504">
           <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1583,7 +1597,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1591,7 +1607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2112676">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1599,7 +1614,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1608,10 +1625,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1444#1445#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="false" />
+            <element signature="e#1387#1388#0" expanded="false" />
+            <element signature="e#1444#1445#0" expanded="false" />
+            <element signature="e#1476#1477#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1621,7 +1638,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1613#1614#0" expanded="false" />
+            <element signature="e#1644#1645#0" expanded="false" />
+            <element signature="e#2892#2893#0" expanded="false" />
+            <element signature="e#2931#2932#0" expanded="false" />
+            <element signature="e#2967#2968#0" expanded="false" />
+            <element signature="e#3002#3003#0" expanded="false" />
+            <element signature="e#3055#3056#0" expanded="false" />
+            <element signature="e#3103#3104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1630,17 +1655,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/ConfigSection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.875">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/FrontiersConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/req/HiEcmaScript5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/sections/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/config/AppConfigurations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2222223">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#1989#1990#0" expanded="true" />
+            <element signature="e#2041#2042#0" expanded="true" />
+            <element signature="e#2083#2084#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/src.zip!/java/io/EOFException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35856575">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/DispatcherServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41597795">
-          <caret line="213" column="96" selection-start-line="213" selection-start-column="96" selection-end-line="213" selection-end-column="96" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="370" column="9" selection-start-line="370" selection-start-column="9" selection-end-line="370" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/exceptions/NoSuchViewException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="95" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/mvc/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="78" selection-start-line="182" selection-start-column="78" selection-end-line="182" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/web/BootstrapUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61752987">
+          <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

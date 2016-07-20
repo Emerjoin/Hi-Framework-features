@@ -14,7 +14,7 @@ public class AppConfigurations {
 
     private String viewsDirectory;
     private String welcomeUrl;
-    private String templates[];
+    private String templates[]={"index"};
     private UDetailsProvider uDetailsProvider;
     private List<String> frontiers = new ArrayList<>();
     private List<String> frontierPackages = new ArrayList<>();
