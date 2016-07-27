@@ -658,7 +658,11 @@ hiList.directive = function($compile,$parse){
 
         $scope.goToFirstPage = function(){
 
-            //TODO: Implement this function
+            if($scope.pages.length>0){
+
+                $scope.activatePage($scope.pages[0]);
+
+            }
 
         };
 
