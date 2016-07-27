@@ -664,7 +664,7 @@ hiList.directive = function($compile,$parse){
 
         $scope.getCurrentPage = function(){
 
-            //TODO: Implement this function
+            return $scope.activePage;
 
         };
 
