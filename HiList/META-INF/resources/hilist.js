@@ -732,7 +732,7 @@ hiList.directive = function($compile,$parse){
 
 
         //Item name
-        if(!attributes.hasOwnProperty("item"))
+        if(!attributes.hasOwnProperty("each"))
             throw new Error("The list element should have a <item> attribute that specifies the name to repeat");
 
         //Data source
@@ -773,7 +773,7 @@ hiList.directive = function($compile,$parse){
         //Set the data source function
         $scope.$ds = frontierMethod;
 
-        var eachItem = attributes.item;
+        var eachItem = attributes.each;
         var scopeParent = $scope.$parent;
         var listName = attributes.name;
         var listRepeatElement = attributes["repeatElement"];
