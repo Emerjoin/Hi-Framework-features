@@ -1,0 +1,4 @@
+25th July 2016
+-------------------
+
+1. Copy the contents of hilist.min.js to hilist.js : The test application is under development and not in production mode
