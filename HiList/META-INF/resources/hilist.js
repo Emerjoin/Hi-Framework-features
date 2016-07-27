@@ -639,24 +639,27 @@ hiList.directive = function($compile,$parse){
         $scope.refresh = function(){
 
             //TODO: Implement this function
+            $scope.activatePage($scope.activePage);
 
 
         };
 
         $scope.goToPage = function(number){
 
-            //TODO: Implement this function
+            //TODO: Implement this function : Imagine if the first page is not visible. How would the UI react?
 
 
         };
 
         $scope.goToLastPage = function() {
 
-            //TODO: Implement this function
+            //TODO: Implement this function : Imagine if the first page is not visible. How would the UI react?
 
         };
 
         $scope.goToFirstPage = function(){
+
+            //TODO: Imagine if the first page is not visible. How would the UI react?
 
             if($scope.pages.length>0){
 
@@ -674,18 +677,30 @@ hiList.directive = function($compile,$parse){
 
         $scope.goToNextPage = function(){
 
-            //TODO: Implement this function
+            if($scope.pages.length<2)
+                return;
+
+            var pageIndex = $scope.pages.indexOf($scope.activePage);
+            var lasPageIndex = $scope.pages[$scope.pages.length-1];
+            if(pageIndex>=lasPageIndex)
+                return;
+
+            $scope.activatePage($scope.activePage+1);
 
         };
 
         $scope.goToPreviousPage = function(){
 
-            //TODO: Implement this function
+            if($scope.pages.length<2)
+                return;
+
+            var pageIndex = $scope.pages.indexOf($scope.activePage);
+            if(pageIndex<1)
+                return;
+
+            $scope.activatePage($scope.activePage-1);
 
         };
-
-
-
 
 
         //Extension instances for this particular List
