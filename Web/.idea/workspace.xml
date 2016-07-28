@@ -7,19 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd80744-c0ac-445a-9491-d7fea59a3141" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/HiList.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/META-INF/resources/hilist.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/changes.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/extensions/bulk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/out/artifacts/ComponentDemo_jar/ComponentDemo.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/out/artifacts/jar/HiList.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/out/production/ComponentDemo/mz/co/hi/web/component/Component1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/out/production/HiList/mz/co/hi/web/component/DatasourceExample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/out/production/HiList/mz/co/hi/web/component/HiList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/src/mz/co/hi/web/component/DatasourceExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HiList/src/mz/co/hi/web/component/HiList.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/out/artifacts/jar/hi-resources-1.0.beta.jar" afterPath="$PROJECT_DIR$/../Resources/out/artifacts/jar/hi-resources-1.0.beta.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Resources/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/../Resources/src/main/java/META-INF/resources/hi-config.xsd" />
@@ -1143,7 +1130,7 @@
       <workItem from="1469007517063" duration="6236000" />
       <workItem from="1469437092591" duration="1162000" />
       <workItem from="1469623213399" duration="711000" />
-      <workItem from="1469717292661" duration="907000" />
+      <workItem from="1469717292661" duration="1046000" />
     </task>
     <servers />
   </component>
@@ -1177,7 +1164,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="633309000" />
+    <option name="totallyTimeSpent" value="633448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

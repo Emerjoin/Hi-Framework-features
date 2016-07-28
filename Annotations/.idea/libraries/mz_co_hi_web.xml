@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="mz.co.hi.web">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
