@@ -6,7 +6,6 @@ import org.jboss.jandex.JarIndexer;
 
 import javax.servlet.ServletContext;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
