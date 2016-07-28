@@ -454,6 +454,84 @@ hiList.directive = function($compile,$parse){
 
 
         };
+
+        $scope.$pages.notVisible = function(number){
+
+            var startIndex = 0;
+            var direction = 1;
+            var reverse = false;
+
+
+            var pageIndex = $scope.pages.indexOf(number);
+            var lastPageIndex = $scope.pages.length-1;
+            var maxTotalPages = $scope.maxVisiblePages;
+
+            if(pageIndex==0){
+
+                //First page : find the pages on its right
+                startIndex = pageIndex;
+                direction = 1;
+
+            }else{
+
+                if(pageIndex==lastPageIndex){
+
+                    //Last page : find the pages on its left
+                    startIndex = pageIndex;
+                    direction = 0;
+                    reverse = true;
+
+                }else{
+
+                    //A page in the middle
+
+                    //Pattern 1 : one page from the right and other from left
+                    if($scope.pages.indexOf(lastPageIndex)==-1){
+
+                        startIndex = pageIndex+1;
+                        direction = 0;
+                        reverse = true;
+
+                    }else{
+
+                        //Pattern 2 : one page from the left and others from the right
+                        startIndex = pageIndex-1;
+                        direction = 1;
+
+                    }
+
+                }
+
+            }
+
+
+            var totalPages = 0;
+            var thePages = [];
+            var currentPageIndex = startIndex;
+
+            while(totalPages<maxTotalPages){
+
+                if(currentPageIndex>lastPageIndex||currentPageIndex<0)
+                    break;
+
+                thePages.push($scope.pages[currentPageIndex]);
+
+                if(direction>0)
+                    currentPageIndex++;
+                else
+                    currentPageIndex--;
+
+                totalPages++;
+            }
+
+            if(reverse)
+                thePages.reverse();
+
+            $scope.pagesVisible = thePages;
+            $scope.$applyAsync();
+
+        };
+
         $scope.$processResult = function(result){
 
             if(typeof result!="object") {
@@ -514,28 +592,43 @@ hiList.directive = function($compile,$parse){
 
             }else{
 
-                //Apply the pages shift effect
-                var lastVisiblePageIndex = $scope.pagesVisible.indexOf($scope.pagesVisible[$scope.pagesVisible.length-1]);
-                var lastVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[$scope.pagesVisible.length-1]);
-                var firstVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[0]);
-                var lastGlobalPageIndex = $scope.pages.length-1;
 
-                var middleIndex = lastVisiblePageIndex/2;
                 var pageIndex = $scope.pagesVisible.indexOf(pNumber);
 
-                if(pageIndex>middleIndex) {
+                if(pageIndex==-1){
 
-                    //Scroll left
-                    $scope.$pages.left(pageIndex,lastVisiblePageIndex,lastGlobalPageIndex,lastVisiblePageGlobalIndex);
+                    //Page is not visible
+                    $scope.$pages.notVisible(pNumber);
 
-                }else if(pageIndex<middleIndex){
 
-                    //Scroll right
-                    $scope.$pages.right(pageIndex,lastVisiblePageIndex,firstVisiblePageGlobalIndex);
+                }else {
 
-                }else{
+                    //Page is visible
 
-                    //Dont move
+                    //Apply the pages shift effect
+                    var lastVisiblePageIndex = $scope.pagesVisible.indexOf($scope.pagesVisible[$scope.pagesVisible.length - 1]);
+                    var lastVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[$scope.pagesVisible.length - 1]);
+                    var firstVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[0]);
+                    var lastGlobalPageIndex = $scope.pages.length - 1;
+
+                    var middleIndex = lastVisiblePageIndex / 2;
+
+
+                    if (pageIndex > middleIndex) {
+
+                        //Scroll left
+                        $scope.$pages.left(pageIndex, lastVisiblePageIndex, lastGlobalPageIndex, lastVisiblePageGlobalIndex);
+
+                    } else if (pageIndex < middleIndex) {
+
+                        //Scroll right
+                        $scope.$pages.right(pageIndex, lastVisiblePageIndex, firstVisiblePageGlobalIndex);
+
+                    } else {
+
+                        //Dont move
+
+                    }
 
                 }
 
@@ -602,9 +695,6 @@ hiList.directive = function($compile,$parse){
 
                 }).catch(function(err){
 
-
-                    //TODO: Show the failure element : based on the list fail attribute
-
                     //Tell the extensions that the fetch failed
                     $scope.callExtensions("fetchFail",[$scope]);
                     $scope.pagesVisible = [];//No visible pages
@@ -638,7 +728,6 @@ hiList.directive = function($compile,$parse){
         //The public method
         $scope.refresh = function(){
 
-            //TODO: Implement this function
             $scope.activatePage($scope.activePage);
 
 
@@ -646,20 +735,29 @@ hiList.directive = function($compile,$parse){
 
         $scope.goToPage = function(number){
 
-            //TODO: Implement this function : Imagine if the first page is not visible. How would the UI react?
 
+            var pageIndex = $scope.pages.indexOf(number);
+
+            //Page is unknown
+            if(pageIndex==-1) {
+
+                throw new Error("Invalid page number : " + number + ".");
+            }
+
+            $scope.activatePage(number);
 
         };
 
         $scope.goToLastPage = function() {
 
-            //TODO: Implement this function : Imagine if the first page is not visible. How would the UI react?
+            if($scope.pages.length==0)
+                return;
+
+            this.goToPage($scope.pages[$scope.pages.length-1]);
 
         };
 
         $scope.goToFirstPage = function(){
-
-            //TODO: Imagine if the first page is not visible. How would the UI react?
 
             if($scope.pages.length>0){
 
