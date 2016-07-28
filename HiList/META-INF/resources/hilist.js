@@ -313,7 +313,57 @@ hiList.directive = function($compile,$parse){
 
         $scope.activatePage = function(page){
 
+
             $scope.activePage = page;
+
+            //here
+            var pNumber = $scope.activePage;
+
+            if(pNumber>1){
+
+
+                var pageIndex = $scope.pagesVisible.indexOf(pNumber);
+
+                if(pageIndex==-1){
+
+                    //Page is not visible
+                    $scope.$pages.notVisible(pNumber);
+
+
+                }else {
+
+                    //Page is visible
+
+                    //Apply the pages shift effect
+                    var lastVisiblePageIndex = $scope.pagesVisible.indexOf($scope.pagesVisible[$scope.pagesVisible.length - 1]);
+                    var lastVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[$scope.pagesVisible.length - 1]);
+                    var firstVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[0]);
+                    var lastGlobalPageIndex = $scope.pages.length - 1;
+
+                    var middleIndex = lastVisiblePageIndex / 2;
+
+
+                    if (pageIndex > middleIndex) {
+
+                        //Scroll left
+                        $scope.$pages.left(pageIndex, lastVisiblePageIndex, lastGlobalPageIndex, lastVisiblePageGlobalIndex);
+
+                    } else if (pageIndex < middleIndex) {
+
+                        //Scroll right
+                        $scope.$pages.right(pageIndex, lastVisiblePageIndex, firstVisiblePageGlobalIndex);
+
+                    } else {
+
+                        //Dont move
+
+                    }
+
+                }
+
+            }//-end here
+
+
             $scope.$doFilter(page);
 
         };
@@ -590,53 +640,13 @@ hiList.directive = function($compile,$parse){
             $scope.totalPages = result.totalPagesMatch;
             $scope.totalRowsMatch = result.totalRowsMatch;
 
+            //here
             var pNumber = $scope.activePage;
 
             if(pNumber==1){
 
                 $scope.$pages.createPagesList(result.totalPagesMatch);
-
-            }else{
-
-
-                var pageIndex = $scope.pagesVisible.indexOf(pNumber);
-
-                if(pageIndex==-1){
-
-                    //Page is not visible
-                    $scope.$pages.notVisible(pNumber);
-
-
-                }else {
-
-                    //Page is visible
-
-                    //Apply the pages shift effect
-                    var lastVisiblePageIndex = $scope.pagesVisible.indexOf($scope.pagesVisible[$scope.pagesVisible.length - 1]);
-                    var lastVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[$scope.pagesVisible.length - 1]);
-                    var firstVisiblePageGlobalIndex = $scope.pages.indexOf($scope.pagesVisible[0]);
-                    var lastGlobalPageIndex = $scope.pages.length - 1;
-
-                    var middleIndex = lastVisiblePageIndex / 2;
-
-
-                    if (pageIndex > middleIndex) {
-
-                        //Scroll left
-                        $scope.$pages.left(pageIndex, lastVisiblePageIndex, lastGlobalPageIndex, lastVisiblePageGlobalIndex);
-
-                    } else if (pageIndex < middleIndex) {
-
-                        //Scroll right
-                        $scope.$pages.right(pageIndex, lastVisiblePageIndex, firstVisiblePageGlobalIndex);
-
-                    } else {
-
-                        //Dont move
-
-                    }
-
-                }
+                $scope.activePage = 1;
 
             }
 
@@ -697,6 +707,7 @@ hiList.directive = function($compile,$parse){
 
 
                     $scope.$processResult(result);
+                    $scope.activePage = page;
 
 
                 }).catch(function(err){
