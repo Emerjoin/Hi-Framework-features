@@ -193,6 +193,12 @@ hiList.extend(function(extension){
 
             };
 
+            extension.apiSetup = function($scope, attrs){
+
+                //Add API methods
+
+            };
+
 
             return extension;
 
@@ -216,16 +222,16 @@ hiList.html.header =
 hiList.html.header ='<div></div>';
 
 hiList.html.footer =
-    '<nav class="col-md-12 col-lg-12 col-sm-12 text-center" ng-show="pagesVisible.length>1">'+
+    '<nav class="col-md-12 col-lg-12 col-sm-12 text-center" ng-show="!$empty">'+
     '<ul class="pagination">'+
     '<li>'+
-    '<a href="#" aria-label="Previous">'+
+    '<a  ng-click="goToPreviousPage()" href="#" aria-label="Previous">'+
     '<span aria-hidden="true"><b translate>Previous</b></span>'+
     '</a>'+
     '</li>'+
     '<li ng-class=\'{"active":activePage==page}\' ng-click="activatePage(page)" ng-repeat="page in pagesVisible"><a href="#">{{page}}</a></li>'+
     '<li>'+
-    '<a href="#" aria-label="Next">'+
+    '<a ng-click="goToNextPage()" href="#" aria-label="Next">'+
     '<span aria-hidden="true"><b translate>Next</b></span>'+
     '</a>'+
     '</li>'+
@@ -761,7 +767,7 @@ hiList.directive = function($compile,$parse){
 
             if($scope.pages.length>0){
 
-                $scope.activatePage($scope.pages[0]);
+                $scope.goToPage($scope.pages[0]);
 
             }
 
@@ -775,28 +781,21 @@ hiList.directive = function($compile,$parse){
 
         $scope.goToNextPage = function(){
 
-            if($scope.pages.length<2)
+            var nextPage = $scope.activePage+1;
+            if($scope.pages.indexOf(nextPage)==-1)
                 return;
 
-            var pageIndex = $scope.pages.indexOf($scope.activePage);
-            var lasPageIndex = $scope.pages[$scope.pages.length-1];
-            if(pageIndex>=lasPageIndex)
-                return;
-
-            $scope.activatePage($scope.activePage+1);
+            $scope.goToPage(nextPage);
 
         };
 
         $scope.goToPreviousPage = function(){
 
-            if($scope.pages.length<2)
+            var previousPage = $scope.activePage-1;
+            if($scope.pages.indexOf(previousPage)==-1)
                 return;
 
-            var pageIndex = $scope.pages.indexOf($scope.activePage);
-            if(pageIndex<1)
-                return;
-
-            $scope.activatePage($scope.activePage-1);
+            $scope.goToPage(previousPage);
 
         };
 
@@ -808,14 +807,22 @@ hiList.directive = function($compile,$parse){
         $scope.$bootExtensions = function(){
 
             //Load the extensions for this hiList instance
-            var props = Hi.$util.getKidProperties('plugin',attributes['$attr']);
-            if(props.length>0){
+            //var activatedExtensions = Hi.$util.getKidProperties('plug',attributes['$attr']);
+            var activatedExtensions = [];
+            if(attributes.hasOwnProperty("extensions")){
 
-                $scope.$extensionList = props;
+                var extensionsText = attributes["extensions"];
+                activatedExtensions = extensionsText.split(" ");
 
-                for(var index in props){
+            }
 
-                    var item = props[index];
+            if(activatedExtensions.length>0){
+
+                $scope.$extensionList = activatedExtensions;
+
+                for(var index in activatedExtensions){
+
+                    var item = activatedExtensions[index];
                     if(typeof item=="string"){
 
                         var extension  = hiList.getExtension(item);
@@ -824,8 +831,6 @@ hiList.directive = function($compile,$parse){
                     }
 
                 }
-
-
 
             }
 
@@ -981,20 +986,19 @@ hiList.directive = function($compile,$parse){
 
         var compile = $compile(angularElement,function(){
 
-            //TODO: Call the plugins to transform the scope
+
 
         });
 
         element.html(angularElement);
 
 
-
-
+        $scope.callExtensions("apiSetup",[$scope,attributes]);
 
         //Add the scope object to the its parent
         scopeParent[listName] = $scope;
 
-        //
+
         compile($scope);
 
 
