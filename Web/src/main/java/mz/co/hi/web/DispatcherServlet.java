@@ -351,7 +351,11 @@ public class DispatcherServlet extends HttpServlet {
 
             MethodInfo methodInfo =  an.target().asMethod();
             String actionURL = MVC.getActionMethodFromURLPart(methodInfo.name());
-            String controllerURL = MVC.getURLController(methodInfo.declaringClass().simpleName());
+
+
+            String canonicalName = methodInfo.declaringClass().name().toString();
+            String simpleName = canonicalName.substring(canonicalName.lastIndexOf('.')+1,canonicalName.length());
+            String controllerURL = MVC.getURLController(simpleName);
 
             System.out.println("Tested controller action detected : "+controllerURL+"/"+actionURL);
 
