@@ -1,0 +1,2 @@
+1. Ajax Request detention method : using now a custom header : fixes #61
+2. Issue #73 closed

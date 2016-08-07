@@ -413,10 +413,6 @@ public class HTMLizer {
 
         }
 
-
-
-
-
         if(requestContext.isUserLogged()){
 
             //Can only fetch data for logged user
