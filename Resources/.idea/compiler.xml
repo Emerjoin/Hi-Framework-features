@@ -27,7 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Hi Framework Resources" target="1.8" />
+      <module name="Hi Framework Resources" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

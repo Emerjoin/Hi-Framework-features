@@ -7,23 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c4847e-97ba-4df7-9de2-8f179411b124" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_3_3_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__asm_asm_commons_3_3_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__javax_mail_mail_1_4_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_clapper_javautil_3_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Web/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_6_4.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jar/hi-resources-1.0.beta.jar" afterPath="$PROJECT_DIR$/out/artifacts/jar/hi-resources-1.0.beta.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" afterPath="$PROJECT_DIR$/../Web/out/artifacts/jar/mz.co.hi.web-1.0.beta.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/DispatcherServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Assets.class" afterPath="$PROJECT_DIR$/../Web/target/classes/mz/co/hi/web/req/Assets.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hi Framework Resources.iml" afterPath="$PROJECT_DIR$/Hi Framework Resources.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" afterPath="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Web/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/Hi Framework core.iml" afterPath="$PROJECT_DIR$/../Web/Hi Framework core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/pom.xml" afterPath="$PROJECT_DIR$/../Web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/DispatcherServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" afterPath="$PROJECT_DIR$/../Web/src/main/java/mz/co/hi/web/req/Assets.java" />
     </list>
     <ignored path="YayeeResources.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hi.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.037037">
-              <caret line="1995" column="0" selection-start-line="1995" selection-start-column="0" selection-end-line="1995" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.15555556">
+              <caret line="2192" column="34" selection-start-line="2192" selection-start-column="26" selection-end-line="2192" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -61,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+              <caret line="48" column="15" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -77,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hi-config.xsd" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hi-config.xsd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11061947">
-              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,8 +84,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -144,10 +138,10 @@
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-tests.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd" />
+        <option value="$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -198,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,9 +327,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,7 +338,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -774,6 +768,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -883,11 +890,19 @@
       <workItem from="1467739890748" duration="1543000" />
       <workItem from="1468688181234" duration="534000" />
       <workItem from="1468690032340" duration="6304000" />
+      <workItem from="1468956268411" duration="150000" />
+      <workItem from="1468957190279" duration="102000" />
+      <workItem from="1468958219166" duration="181000" />
+      <workItem from="1468958424036" duration="42000" />
+      <workItem from="1468958474499" duration="24000" />
+      <workItem from="1469008099236" duration="73000" />
+      <workItem from="1469803526188" duration="1481000" />
+      <workItem from="1470600749766" duration="1016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="343313000" />
+    <option name="totallyTimeSpent" value="346382000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -899,18 +914,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="822" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="822" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25608012" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1280,10 +1295,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1296,18 +1319,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mz/co/hi/resources/EmptyClass.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.037037">
-          <caret line="1995" column="0" selection-start-line="1995" selection-start-column="0" selection-end-line="1995" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1315,15 +1330,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/frontier.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi-config.xsd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/resources/hi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11061947">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.15555556">
+          <caret line="2192" column="34" selection-start-line="2192" selection-start-column="26" selection-end-line="2192" selection-end-column="34" />
           <folding />
         </state>
       </provider>
