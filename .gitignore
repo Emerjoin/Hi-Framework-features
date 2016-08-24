@@ -1,3 +1,10 @@
 guide/
 HelloApp/
 .idea/
+Resources/.idea
+Resources/target
+Resources/out
+
+Web/.idea
+Web/target
+Web/out
