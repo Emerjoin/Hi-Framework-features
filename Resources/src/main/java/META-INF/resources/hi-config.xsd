@@ -6,8 +6,7 @@
         <xsd:all maxOccurs="1" minOccurs="1">
             <xsd:element type="xsd:string" name="views-directory" nillable="false" minOccurs="0" maxOccurs="1"/>
             <xsd:element type="xsd:string" name="welcome-url" nillable="false" minOccurs="0" maxOccurs="1"></xsd:element>
-            <xsd:element type="hi:templatesType" name="templates" nillable="false" minOccurs="1" maxOccurs="1"></xsd:element>
-
+            <xsd:element type="hi:templatesType" name="templates" nillable="false" minOccurs="0" maxOccurs="1"></xsd:element>
         </xsd:all>
     </xsd:complexType>
 
@@ -144,9 +143,8 @@
         <xsd:all>
             <xsd:element type="xsd:string" name="default-lang" nillable="false" maxOccurs="1" minOccurs="0"></xsd:element>
             <xsd:element type="hi:appModeType" name="deployment-mode" nillable="false" maxOccurs="1" minOccurs="0" ></xsd:element>
-            <xsd:element type="hi:webType" name="web" minOccurs="1" nillable="false" maxOccurs="1"></xsd:element>
+            <xsd:element type="hi:webType" name="web" minOccurs="0" nillable="false" maxOccurs="1"></xsd:element>
             <xsd:element type="hi:usersType" name="users" minOccurs="0" maxOccurs="1" nillable="false"></xsd:element>
-            <xsd:element type="hi:frontierPackagesType" name="frontier-packages" nillable="false" maxOccurs="1" minOccurs="0"></xsd:element>
             <xsd:element type="hi:tunningType" name="web-tunning" nillable="false" minOccurs="0" maxOccurs="1"></xsd:element>
         </xsd:all>
     </xsd:complexType>

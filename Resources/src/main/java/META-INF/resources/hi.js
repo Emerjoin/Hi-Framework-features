@@ -2190,6 +2190,7 @@ Hi.$nav.requestData = function(route,callback,server_directives){
         var server_response=false;
 
         var request_params = {};
+        server_directives.AJAX_MVC=1;
 
         if(server_directives){
 

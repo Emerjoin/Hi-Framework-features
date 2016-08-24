@@ -70,6 +70,10 @@ public class FrontierInvoker {
                     throw (ConstraintViolationException) throwable;
 
 
+                }else{
+
+                    throw ex;
+
                 }
 
             }

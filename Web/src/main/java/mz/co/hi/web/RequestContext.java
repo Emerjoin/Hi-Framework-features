@@ -160,7 +160,7 @@ public class RequestContext {
 
         }
 
-        return "XMLHttpRequest".equals(request.getHeader("X-Requested-With"));
+        return request.getHeader("AJAX_MVC")!=null;
 
     }
 
