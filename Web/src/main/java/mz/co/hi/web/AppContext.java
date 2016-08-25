@@ -2,7 +2,6 @@ package mz.co.hi.web;
 
 
 import com.google.gson.GsonBuilder;
-import com.sun.xml.ws.developer.Stateful;
 import mz.co.hi.web.config.AppConfigurations;
 
 import javax.annotation.PostConstruct;

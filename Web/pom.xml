@@ -6,7 +6,7 @@
 
     <groupId>mz.hi.framework</groupId>
     <artifactId>hi-web</artifactId>
-    <version>1.1-beta-SNAPSHOT</version>
+    <version>1.2-beta-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Hi Framework Web</name>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>mz.hi.framework</groupId>
             <artifactId>hi-resources</artifactId>
-            <version>1.0-beta-SNAPSHOT</version>
+            <version>1.1-beta-SNAPSHOT</version>
             <scope>compile</scope>
             <optional>false</optional>
         </dependency>

@@ -11,8 +11,6 @@ import mz.co.hi.web.mvc.exceptions.TemplateException;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
-import javax.json.Json;
-import javax.json.JsonObjectBuilder;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
@@ -38,11 +36,6 @@ public class Controller {
     }
 
 
-    public JsonObjectBuilder json(){
-
-        return Json.createObjectBuilder();
-
-    }
 
     /*
     public void setRequestContext(RequestContext requestContext){

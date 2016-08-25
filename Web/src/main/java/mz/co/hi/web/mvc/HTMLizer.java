@@ -2,6 +2,7 @@ package mz.co.hi.web.mvc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import mz.co.hi.web.*;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.config.AppConfigurations;
@@ -11,8 +12,6 @@ import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
 import mz.co.hi.web.mvc.exceptions.TemplateException;
 
 import javax.enterprise.inject.spi.CDI;
-import javax.json.Json;
-import javax.json.JsonObject;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
@@ -251,7 +250,7 @@ public class HTMLizer {
 
     }
 
-    private JsonObject getAppData(){
+    private String getAppData(){
 
         activeUser = CDI.current().select(ActiveUser.class).get();
 
@@ -260,15 +259,16 @@ public class HTMLizer {
 
         AppContext appContext = CDI.current().select(AppContext.class).get();
 
-        JsonObject app = Json.createObjectBuilder()
-                .add("base_url", requestContext.getBaseURL())
-                .add("simple_base_url", requestContext.getBaseURL().replace(http,"").replace(https,""))
-                .add("deployId",appContext.getDeployId())
-                .add("deployMode",appContext.getDeployMode().toString())
-                .add("csrfToken",activeUser.getCsrfToken())
-                .build();
+        Gson gson = new Gson();
 
-        return app;
+        Map map = new HashMap();
+        map.put("base_url", requestContext.getBaseURL());
+        map.put("simple_base_url", requestContext.getBaseURL().replace(http,"").replace(https,""));
+        map.put("deployId",appContext.getDeployId());
+        map.put("deployMode",appContext.getDeployMode().toString());
+        map.put("csrfToken",activeUser.getCsrfToken());
+
+        return   gson.toJson(map);
 
     }
 
