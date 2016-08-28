@@ -212,7 +212,7 @@
            }else{
 
                if(typeof argument!="function")
-                   nonUploadArgs[argIndex] = argument;
+                   nonUploadArgs["arg"+argIndex] = argument;
 
 
            }
