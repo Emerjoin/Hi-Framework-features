@@ -70,17 +70,52 @@ public class Frontiers extends ReqHandler {
     }
 
 
+    private Object getParamValue(String frontier,FrontierMethod frontierMethod, MethodParam methodParam,
+                                 Map<String,Object> uploadsMap,Map<String,Object> argsMap,
+                                 HttpServletRequest request) throws Exception{
+
+        Object paramValue = argsMap.get(methodParam.getName());
+        if(paramValue==null)
+            throw new MissingFrontierParamException(frontier,frontierMethod.getName(),methodParam.getName());
+
+        else{
+
+            if(paramValue instanceof String){
+
+                String strParamValue = (String) paramValue;
+
+                if(strParamValue.startsWith("$$$upload")){
+
+                    //Get the name of the upload group
+                    String uploadName = strParamValue.substring(strParamValue.indexOf(":")+1,strParamValue.length());
+
+                    //Get the total uploaded files
+
+                    //Fetch each of the uploaded files
+
+
+                    //Create the FileUpload object instances
+
+
+                }
+
+            }
+
+        }
+
+    }
+
+
     private Map matchParams(String frontier,FrontierMethod frontierMethod, RequestContext requestContext) throws MissingFrontierParamException, InvalidFrontierParamException {
 
         //TODO: Handle exceptions correctly
 
         HttpServletRequest req =  requestContext.getRequest();
 
-        //Upload files detected
+        //Invocation with files detected
         if(req.getContentType().contains("multipart/form-data")){
 
             try {
-
 
                 Part uploadsPart = req.getPart("$uploads");
                 Scanner uploadsScanner = new Scanner(uploadsPart.getInputStream(),"UTF-8");
@@ -96,13 +131,19 @@ public class Frontiers extends ReqHandler {
 
                 Gson gson = new Gson();
                 Map<String,Object> uploadsMap = gson.fromJson(uploadsJSONStringBuilder.toString(),Map.class);
-                System.out.println("Uploads Map");
-                System.out.println(uploadsMap.toString());
-
-
                 Map<String,Object> argsMaps = gson.fromJson(argsJSONStringBuilder.toString(),Map.class);
-                System.out.println("Args Map");
-                System.out.println(argsMaps);
+
+
+                MethodParam methodParams[] = frontierMethod.getParams();
+
+                for(MethodParam methodParam : methodParams){
+
+
+
+
+
+                }
+
 
 
             }catch (IOException | ServletException ex){
