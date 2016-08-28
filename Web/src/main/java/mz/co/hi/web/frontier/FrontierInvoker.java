@@ -45,7 +45,8 @@ public class FrontierInvoker {
         for(MethodParam methodParam: methodParams){
 
 
-            invocationParams[i] = params.get(methodParam.getName());
+            Object paramValue = params.get(methodParam.getName());
+            invocationParams[i] = paramValue;
             i++;
 
         }
@@ -70,13 +71,12 @@ public class FrontierInvoker {
                     throw (ConstraintViolationException) throwable;
 
 
-                }else{
-
-                    throw ex;
-
                 }
 
             }
+
+
+            throw ex;
 
         }
 

@@ -6,8 +6,9 @@ import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.frontier.*;
+import mz.co.hi.web.frontier.exceptions.FrontierCallException;
 import mz.co.hi.web.frontier.exceptions.InvalidFrontierParamException;
-import mz.co.hi.web.frontier.exceptions.MapConversionException;
+import mz.co.hi.web.frontier.exceptions.ResultConversionException;
 import mz.co.hi.web.frontier.exceptions.MissingFrontierParamException;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.FrontierMethod;
@@ -15,7 +16,6 @@ import mz.co.hi.web.frontier.model.MethodParam;
 import mz.co.hi.web.mvc.HTMLizer;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -23,12 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import javax.validation.Validator;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 @HandleRequests(regexp = "f.m.call/[$_A-Za-z0-9]+/[$_A-Za-z0-9]+", supportPostMethod = true)
 @ApplicationScoped
@@ -72,9 +68,12 @@ public class Frontiers extends ReqHandler {
 
     private Object getParamValue(String frontier,FrontierMethod frontierMethod, MethodParam methodParam,
                                  Map<String,Object> uploadsMap,Map<String,Object> argsMap,
-                                 HttpServletRequest request) throws Exception{
+                                 HttpServletRequest request) throws FrontierCallException{
+
+        //TODO: Throw frontier exception
 
         Object paramValue = argsMap.get(methodParam.getName());
+
         if(paramValue==null)
             throw new MissingFrontierParamException(frontier,frontierMethod.getName(),methodParam.getName());
 
@@ -90,12 +89,58 @@ public class Frontiers extends ReqHandler {
                     String uploadName = strParamValue.substring(strParamValue.indexOf(":")+1,strParamValue.length());
 
                     //Get the total uploaded files
+                    if(!uploadsMap.containsKey(uploadName))
+                        throw new FrontierCallException(frontier,methodParam.getName(),"The upload request data is corrupted");
+
+
+
+
+                    Double totalD = (Double) uploadsMap.get(uploadName);
+                    int total = totalD.intValue();
+
+                    if(total<1)
+                        throw new MissingFrontierParamException(frontier,frontierMethod.getName(),methodParam.getName());
+
+
+                    FileUpload[] files = new FileUpload[total];
 
                     //Fetch each of the uploaded files
+                    for(int i=0; i<total;i++){
+
+                        try {
+
+                            String partName = uploadName + "_file_" + i;
+                            Part part = request.getPart(partName);
+
+                            if (part == null)
+                                throw new FrontierCallException(frontier, methodParam.getName(), "The upload request data is corrupted");
 
 
-                    //Create the FileUpload object instances
 
+                            files[i] = new FileUpload(part);
+
+                        }catch (IOException | ServletException ex){
+
+                            throw new FrontierCallException(frontier, methodParam.getName(), "Failed to decode uploaded content",ex);
+                        }
+
+                    }
+
+                    if(methodParam.getType().isArray()){
+
+                        return files;
+
+                    }else{
+
+                        if(files.length>1){
+
+                            throw new FrontierCallException(frontier,methodParam.getName(),"One file expected. "+files.length+" uploaded files found");
+
+                        }
+
+                        return files[0];
+
+                    }
 
                 }
 
@@ -103,14 +148,15 @@ public class Frontiers extends ReqHandler {
 
         }
 
+        return paramValue;
+
     }
 
 
-    private Map matchParams(String frontier,FrontierMethod frontierMethod, RequestContext requestContext) throws MissingFrontierParamException, InvalidFrontierParamException {
-
-        //TODO: Handle exceptions correctly
+    private Map matchParams(String frontier,FrontierMethod frontierMethod, RequestContext requestContext) throws FrontierCallException {
 
         HttpServletRequest req =  requestContext.getRequest();
+        Map paramsMap =  new HashMap();
 
         //Invocation with files detected
         if(req.getContentType().contains("multipart/form-data")){
@@ -136,19 +182,14 @@ public class Frontiers extends ReqHandler {
 
                 MethodParam methodParams[] = frontierMethod.getParams();
 
-                for(MethodParam methodParam : methodParams){
+                for(MethodParam methodParam : methodParams)
+                    paramsMap.put(methodParam.getName(),getParamValue(frontier,frontierMethod,methodParam,uploadsMap,argsMaps,req));
 
-
-
-
-
-                }
-
-
+                 return paramsMap;
 
             }catch (IOException | ServletException ex){
 
-                ex.printStackTrace();
+                throw new FrontierCallException(frontier,frontierMethod.getName(),"Failed to read parameters of frontier call with files attached",ex);
 
             }
 
@@ -172,7 +213,6 @@ public class Frontiers extends ReqHandler {
 
         }
 
-        Map map =  new HashMap();
         Gson gson = appContext.getGsonBuilder().create();
 
         JsonElement jsonEl = new JsonParser().parse(stringBuilder.toString());
@@ -208,12 +248,12 @@ public class Frontiers extends ReqHandler {
 
             }
 
-            map.put(methodParam.getName(),paramValue);
+            paramsMap.put(methodParam.getName(),paramValue);
 
         }
 
 
-        return map;
+        return paramsMap;
 
     }
 
@@ -327,6 +367,7 @@ public class Frontiers extends ReqHandler {
 
             if(invoked_successfully){
 
+
                 try {
 
 
@@ -356,7 +397,7 @@ public class Frontiers extends ReqHandler {
 
                 }catch (Exception ex){
 
-                    throw new MapConversionException(frontierClass.getClassName(),frontierMethod.getName(),ex);
+                    throw new ResultConversionException(frontierClass.getClassName(),frontierMethod.getName(),ex);
 
                 }
 
