@@ -741,13 +741,19 @@ Hi.$angular.directives.ngUpload =  function($parse) {
 
             }
 
+            if(!attrs.hasOwnProperty("type"))
+                throw new Error("The type property is missing on the upload element with name '"+ name+"'");
 
-            if(attrs.hasOwnProperty("onSelect")){
+
+            if(attrs.type!=="file")
+                throw new Error("The upload element with name '"+name+"' must be of type \"file\"");
+
+
+            if(attrs.hasOwnProperty("onFiles")){
 
                 try{
 
-
-                    onUploadFunc = $parse(attrs["onSelect"]);
+                    onUploadFunc = $parse(attrs["onFiles"]);
 
                 }catch(err) {
 
