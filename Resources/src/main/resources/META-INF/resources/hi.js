@@ -692,11 +692,10 @@ Hi.$angular.directivesDefiner = function(angularModule){
  */
 Hi.$angular.directives.ngUpload =  function($parse) {
 
-
     //The upload class
     var Upload = function(name,files){
 
-        if(typeof name!=="string"||!Array.isArray(files))
+        if(typeof name!=="string"||typeof files!=="object")
             throw new Error("Invalid params supplied to Upload class constructor");
 
         this.name = name;
@@ -715,7 +714,7 @@ Hi.$angular.directives.ngUpload =  function($parse) {
 
         };
 
-        this.Size = function(){
+        this.length = function(){
 
             return this.files.length;
 
@@ -749,17 +748,9 @@ Hi.$angular.directives.ngUpload =  function($parse) {
                 throw new Error("The upload element with name '"+name+"' must be of type \"file\"");
 
 
-            if(attrs.hasOwnProperty("onFiles")){
+            if(attrs.hasOwnProperty("onfiles")){
 
-                try{
-
-                    onUploadFunc = $parse(attrs["onFiles"]);
-
-                }catch(err) {
-
-                    throw new Error("Failed to parse onSelect function. Make sure the function exist on the view scope");
-
-                }
+               onUploadFunc = $parse(attrs["onfiles"]);
 
             }
 
@@ -767,6 +758,8 @@ Hi.$angular.directives.ngUpload =  function($parse) {
             $(element).change(function(event){
 
                 var files = event.target.files;
+
+
                 var upload = new Upload(name,files);
                 setToScope(upload);
                 fireEvent(upload);
@@ -783,7 +776,7 @@ Hi.$angular.directives.ngUpload =  function($parse) {
 
             var fireEvent = function(up){
 
-                if(typeof onUploadFunc!="undefine")
+                if(typeof onUploadFunc!="undefined")
                     onUploadFunc(scope,{upload: up});
 
             };
