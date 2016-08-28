@@ -11,3 +11,4 @@ Resources/src/main/resources/
 Resources/src/test/
 Web/src/main/resources/
 Web/web/
+*.iml
