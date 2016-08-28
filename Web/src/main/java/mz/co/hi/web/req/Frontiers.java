@@ -19,6 +19,8 @@ import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Part;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
@@ -69,6 +71,48 @@ public class Frontiers extends ReqHandler {
 
 
     private Map matchParams(String frontier,FrontierMethod frontierMethod, RequestContext requestContext) throws MissingFrontierParamException, InvalidFrontierParamException {
+
+        //TODO: Handle exceptions correctly
+
+        HttpServletRequest req =  requestContext.getRequest();
+
+        //Upload files detected
+        if(req.getContentType().contains("multipart/form-data")){
+
+            try {
+
+
+                Part uploadsPart = req.getPart("$uploads");
+                Scanner uploadsScanner = new Scanner(uploadsPart.getInputStream(),"UTF-8");
+                StringBuilder uploadsJSONStringBuilder = new StringBuilder();
+                while (uploadsScanner.hasNextLine())
+                    uploadsJSONStringBuilder.append(uploadsScanner.nextLine());
+
+                Part argsPart = req.getPart("$args");
+                Scanner argsScanner = new Scanner(argsPart.getInputStream(),"UTF-8");
+                StringBuilder argsJSONStringBuilder = new StringBuilder();
+                while (argsScanner.hasNextLine())
+                    argsJSONStringBuilder.append(argsScanner.nextLine());
+
+                Gson gson = new Gson();
+                Map<String,Object> uploadsMap = gson.fromJson(uploadsJSONStringBuilder.toString(),Map.class);
+                System.out.println("Uploads Map");
+                System.out.println(uploadsMap.toString());
+
+
+                Map<String,Object> argsMaps = gson.fromJson(argsJSONStringBuilder.toString(),Map.class);
+                System.out.println("Args Map");
+                System.out.println(argsMaps);
+
+
+            }catch (IOException | ServletException ex){
+
+                ex.printStackTrace();
+
+            }
+
+        }
+
 
         StringBuilder stringBuilder = new StringBuilder();
 
