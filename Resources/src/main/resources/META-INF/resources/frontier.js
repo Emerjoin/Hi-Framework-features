@@ -201,6 +201,8 @@
 
                 var uploadName = argument.getName();
                 uploadArgs[uploadName] = argument.length();
+                nonUploadArgs[argIndex] ="$$$upload:"+uploadName;
+
                 var files = argument.getFiles();
 
                 for(var i=0;i<files.length;i++)
