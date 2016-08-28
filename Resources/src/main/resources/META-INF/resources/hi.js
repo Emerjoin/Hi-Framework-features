@@ -692,38 +692,6 @@ Hi.$angular.directivesDefiner = function(angularModule){
  */
 Hi.$angular.directives.ngUpload =  function($parse) {
 
-    //The upload class
-    var Upload = function(name,files){
-
-        if(typeof name!=="string"||typeof files!=="object")
-            throw new Error("Invalid params supplied to Upload class constructor");
-
-        this.name = name;
-        this.files = files;
-
-
-        this.getName = function(){
-
-            return this.name;
-
-        };
-
-        this.getFiles = function(){
-
-            return this.files;
-
-        };
-
-        this.length = function(){
-
-            return this.files.length;
-
-        }
-
-
-    };
-
-
     return {
 
         restrict: 'A',
@@ -2865,6 +2833,39 @@ Hi.$frontiers.Promise = function(){
  * Public API
  * -----------
  */
+
+//The upload class
+var Upload = function(name,files){
+
+    if(typeof name!=="string"||typeof files!=="object")
+        throw new Error("Invalid params supplied to Upload class constructor");
+
+    this.name = name;
+    this.files = files;
+
+
+    this.getName = function(){
+
+        return this.name;
+
+    };
+
+    this.getFiles = function(){
+
+        return this.files;
+
+    };
+
+    this.length = function(){
+
+        return this.files.length;
+
+    }
+
+
+};
+
+
 
 Hi.rootTemplate = function(properties){
 

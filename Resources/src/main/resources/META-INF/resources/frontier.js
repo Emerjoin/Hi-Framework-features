@@ -1,4 +1,23 @@
 
+   var withUploads = false;
+
+    //This frontier has arguments
+    if(arguments.length>0){
+
+        for(var index in arguments){
+
+            var argument = arguments[index];
+            if(Upload.prototype.isPrototypeOf(argument)){
+
+                withUploads = true;
+                break;
+
+            }
+
+        }
+
+    }
+
 
     var promisse = new Hi.$frontiers.Promise();
 
@@ -40,129 +59,173 @@
 
     }
 
+   var ajaxParams = {
+
+       success : function(data){
+
+           if(data.hasOwnProperty("$invoke")){
+
+               var cmdInvocations = data["$invoke"];
+               for(var cmdName in cmdInvocations){
+
+                   var cmdParams = cmdInvocations[cmdName];
+                   Hi.$ui.js.commands.run(cmdName,cmdParams);
 
 
-    var $req = $.ajax({
+               }
 
-        method:"POST",
-        url : $functionUrl,
-        headers : {csrfToken:App.csrfToken},
-        data: JSON.stringify(params),
-        dataType:"json",
+           }
 
-        success : function(data){
+           if(data.hasOwnProperty("$root")){
 
-            if(data.hasOwnProperty("$invoke")){
+               if(typeof __!="undefined"){
 
-                var cmdInvocations = data["$invoke"];
-                for(var cmdName in cmdInvocations){
+                   for(var key in data.$root){
 
-                    var cmdParams = cmdInvocations[cmdName];
-                    Hi.$ui.js.commands.run(cmdName,cmdParams);
+                       __[key] = data.$root[key];
 
+                   }
 
-                }
+                   __.$apply();
 
-            }
+               }
 
-            if(data.hasOwnProperty("$root")){
+           }
 
-                if(typeof __!="undefined"){
+           promisse._setResult(data.result);
 
-                    for(var key in data.$root){
+       },
 
-                        __[key] = data.$root[key];
+       error : function(jqXml, errText,httpError){
 
-                    }
-
-                    __.$apply();
-
-                }
-
-            }
-
-            promisse._setResult(data.result);
-
-        },
-
-        error : function(jqXml, errText,httpError){
-
-            var errorText = jqXml.responseText;
-            var exceptionType = undefined;
+           var errorText = jqXml.responseText;
+           var exceptionType = undefined;
 
 
-            try{
+           try{
 
 
-                var responseJSON = JSON.parse(errorText);
-                if(responseJSON.hasOwnProperty("$exception")){
+               var responseJSON = JSON.parse(errorText);
+               if(responseJSON.hasOwnProperty("$exception")){
 
-                    exceptionType = responseJSON["$exception"];
+                   exceptionType = responseJSON["$exception"];
 
-                    var translatedMessages = [];
+                   var translatedMessages = [];
 
-                    exceptionType.messages.forEach(function(item, index){
+                   exceptionType.messages.forEach(function(item, index){
 
-                        translatedMessages[index] = __t(item);
+                       translatedMessages[index] = __t(item);
 
-                    });
+                   });
 
-                    exceptionType.messages = translatedMessages;
+                   exceptionType.messages = translatedMessages;
 
-                    promisse._setException(exceptionType);
-                    return;
+                   promisse._setException(exceptionType);
+                   return;
 
-                }
+               }
 
-            }catch(err){
+           }catch(err){
 
 
 
-            }
+           }
 
 
-            //Request aborted
-            if(errText=="abort"){
+           //Request aborted
+           if(errText=="abort"){
 
-                return;
+               return;
 
-            }else if(errText=="timeout"){
+           }else if(errText=="timeout"){
 
-                promisse._setTimedOut();
+               promisse._setTimedOut();
 
-            }else{
+           }else{
 
-                switch(jqXml.status){
+               switch(jqXml.status){
 
-                    case 403: promisse._setForbidden(); break;
+                   case 403: promisse._setForbidden(); break;
 
-                    case 408: promisse._setTimedOut(); break;
+                   case 408: promisse._setTimedOut(); break;
 
-                    case 421: promisse._setInterrupted(); break;
+                   case 421: promisse._setInterrupted(); break;
 
-                    case 429: promisse._setOverRequest(); break;
+                   case 429: promisse._setOverRequest(); break;
 
-                    case   0: promisse._setOffline(); break;
+                   case   0: promisse._setOffline(); break;
 
-                    default : promisse._setException(500); break;
+                   default : promisse._setException(500); break;
 
-                }
+               }
 
-            }
-
-
-        },
-
-        complete: function(){
-
-            delete $fiis[_$fmut];
+           }
 
 
-        }
+       },
 
-        //,timeout: 0 TODO: Set the timeout according to Maximum expected call duration
+       complete: function(){
 
-    });
+           delete $fiis[_$fmut];
+
+
+       }
+
+       //,timeout: 0 TODO: Set the timeout according to Maximum expected call duration
+
+   };
+
+   ajaxParams.method = "POST";
+   ajaxParams.url = $functionUrl;
+   ajaxParams.headers = {csrfToken:App.csrfToken};
+   ajaxParams.dataType = "json";
+   ajaxParams.cache = false;
+
+   if(!withUploads){
+
+       ajaxParams.data = JSON.stringify(params);
+
+   }else{
+
+       var form = new FormData();
+
+       var nonUploadArgs = {};
+       var uploadArgs = {};
+
+       for(var argIndex in arguments){
+
+           var argument = arguments[argIndex];
+
+           //This is an upload argument
+           if(Upload.prototype.isPrototypeOf(argument)){
+
+                var uploadName = argument.getName();
+                uploadArgs[uploadName] = argument.length();
+                var files = argument.getFiles();
+
+                for(var i=0;i<files.length;i++)
+                    form.append(uploadName+"_file_"+i,files[i]);
+
+
+           }else{
+
+               if(typeof argument!="function")
+                   nonUploadArgs[argIndex] = argument;
+
+
+           }
+
+       }
+
+       form.append("$uploads",JSON.stringify(uploadArgs));
+       form.append("$args",JSON.stringify(nonUploadArgs));
+       ajaxParams.processData = false;
+       ajaxParams.contentType = false;
+       ajaxParams.data = form;
+
+   }
+
+    var $req = $.ajax(ajaxParams);
 
     promisse._setRequest($req);
 
