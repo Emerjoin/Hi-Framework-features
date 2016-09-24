@@ -21,7 +21,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-@HandleRequests(regexp = "[a-zA-Z-]{2,}\\/[a-zA-Z-]{2,}")
+//@HandleRequests(regexp = "[a-zA-Z-]{2,}\\/[a-zA-Z-]{2,}")
+@HandleRequests(regexp = "(([a-zA-Z-]{2,}\\/[a-zA-Z-]{2,})|([a-zA-Z-]{2,}))")
 @ApplicationScoped
 public class MVC extends ReqHandler{
 
@@ -30,7 +31,8 @@ public class MVC extends ReqHandler{
     @Inject
     private AppContext appContext;
 
-    private static char[] alphabet = new char[]{'A','B','C','D','E','F','G','H','I','J',
+    private static char[] alphabet = new char[]
+            {'A','B','C','D','E','F','G','H','I','J',
             'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
     private static HashMap<String,String> templates = new HashMap<String, String>();
@@ -63,11 +65,23 @@ public class MVC extends ReqHandler{
         String mvcUrl = requestContext.getRouteUrl();
         int indexSlash = mvcUrl.indexOf('/');
 
+        if(indexSlash==-1){
+
+            indexSlash = mvcUrl.length();
+
+        }
+
         String controller = mvcUrl.substring(0,indexSlash);
         requestContext.getData().put("controllerU",controller);
         controller = getControllerClassFromURLPart(controller);
 
-        String action = mvcUrl.substring(indexSlash+1,mvcUrl.length());
+
+        String action = null;
+        if(indexSlash==mvcUrl.length())
+            action = "index";
+        else
+            action = mvcUrl.substring(indexSlash+1,mvcUrl.length());
+
         requestContext.getData().put("actionU",action);
         action = getActionMethodFromURLPart(action);
 
@@ -91,7 +105,6 @@ public class MVC extends ReqHandler{
 
 
         return actionFound;
-
 
     }
 
@@ -165,10 +178,7 @@ public class MVC extends ReqHandler{
             try {
 
 
-                //TODO: Consider that CDI wont be present sometimes
-
                 instance = CDI.current().select(controller).get();
-
 
 
             }catch (Exception ex){
@@ -179,8 +189,6 @@ public class MVC extends ReqHandler{
 
 
             ControllerRequestInterception call = new ControllerRequestInterception();
-            //call.setActionName(action);
-            //call.setControllerName(controller.getSimpleName());
             call.setMethod(actionMethod);
             call.setClazz(controller);
             call.setBefore();
