@@ -1539,6 +1539,13 @@ Hi.$ui.js.commands.set('$url',function(data){
 
 });
 
+//Redirect the user ajaxically
+Hi.$ui.js.commands.set('$redirect',function(data){
+    console.log("redirect : "+JSON.stringify(data));
+    if(data.hasOwnProperty("url"))
+        Hi.redirect(data.url);
+
+});
 
 
 
@@ -2083,7 +2090,13 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
                 for(var cmdName in cmdInvocations){
 
                     var cmdParams = cmdInvocations[cmdName];
-                    Hi.$ui.js.commands.run(cmdName,cmdParams);
+
+                    //If the command returns true then this function returns
+                    if(Hi.$ui.js.commands.run(cmdName,cmdParams)){
+
+                        return null;
+
+                    }
 
 
                 }
