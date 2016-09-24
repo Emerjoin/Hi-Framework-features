@@ -116,6 +116,15 @@ public class FrontEnd {
 
     }
 
+    public void ajaxRedirect(String url){
+
+        Map map = new HashMap<>();
+        map.put("url",url);
+        invokeAfter("redirect",map);
+
+    }
+
+
     public boolean gotLaterInvocations() {
 
         return laterInvocations.size()>0;
