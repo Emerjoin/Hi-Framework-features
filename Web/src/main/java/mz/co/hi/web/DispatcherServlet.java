@@ -3,8 +3,9 @@ package mz.co.hi.web;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.Bootstrap;
 import mz.co.hi.web.config.ConfigSection;
-import mz.co.hi.web.config.Tunnings;
-import mz.co.hi.web.config.sections.*;
+import mz.co.hi.web.events.listeners.ControllerCallsListener;
+import mz.co.hi.web.events.listeners.FrontierCallsListener;
+import mz.co.hi.web.events.listeners.TemplateLoadListener;
 import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
@@ -18,6 +19,7 @@ import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
 import org.jboss.jandex.*;
 
+import javax.enterprise.inject.UnsatisfiedResolutionException;
 import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,13 +27,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.EOFException;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
@@ -55,6 +53,10 @@ public class DispatcherServlet extends HttpServlet {
     private HashMap<String,String> matchedUrls = new HashMap();
 
     private static boolean initialized = false;
+
+    public static TemplateLoadListener templateLoadListener = null;
+    public static ControllerCallsListener controllerCallsListener = null;
+    public static FrontierCallsListener frontierCallsListener = null;
 
     public DispatcherServlet(){
 
@@ -257,6 +259,53 @@ public class DispatcherServlet extends HttpServlet {
 
         System.out.println("---Initializing Hi-Framework servlet...");
 
+
+        try{
+
+            templateLoadListener = CDI.current().select(TemplateLoadListener.class).get();
+
+        }catch (UnsatisfiedResolutionException ex){
+
+            System.err.println("No implementation of the "+TemplateLoadListener.class.getSimpleName()+" interface found");
+
+        }catch (Exception ex){
+
+            getServletContext().log("Failed to lookup an implementation of the "+TemplateLoadListener.class.getSimpleName()+" interface",ex);
+            ex.printStackTrace();
+
+        }
+
+
+        try{
+
+            controllerCallsListener = CDI.current().select(ControllerCallsListener.class).get();
+
+        }catch (UnsatisfiedResolutionException ex){
+
+            System.err.println("No implementation of the "+ControllerCallsListener.class.getSimpleName()+" interface found");
+
+        }catch (Exception ex){
+
+            getServletContext().log("Failed to lookup an implementation of the "+ControllerCallsListener.class.getSimpleName()+" interface",ex);
+            ex.printStackTrace();
+
+        }
+
+
+        try{
+
+            frontierCallsListener = CDI.current().select(FrontierCallsListener.class).get();
+
+        }catch (UnsatisfiedResolutionException ex){
+
+            System.err.println("No implementation of the "+FrontierCallsListener.class.getSimpleName()+" interface found");
+
+        }catch (Exception ex){
+
+            getServletContext().log("Failed to lookup an implementation of the "+FrontierCallsListener.class.getSimpleName()+" interface",ex);
+            ex.printStackTrace();
+
+        }
 
 
         Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());

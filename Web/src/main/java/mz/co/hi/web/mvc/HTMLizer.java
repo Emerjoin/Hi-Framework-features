@@ -2,7 +2,6 @@ package mz.co.hi.web.mvc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import mz.co.hi.web.*;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.config.AppConfigurations;
@@ -339,7 +338,6 @@ public class HTMLizer {
         //Get the action to perform from the FrontEnd
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
 
-
         //Get the template
         String template = fetchTemplate(frontEnd);
         String loadedJSContent= DispatcherServlet.hiScript;
@@ -377,9 +375,6 @@ public class HTMLizer {
                 viewData.put(JS_INVOCABLES_KEY,actions);
 
             }
-
-
-
 
 
             Map map = new HashMap();

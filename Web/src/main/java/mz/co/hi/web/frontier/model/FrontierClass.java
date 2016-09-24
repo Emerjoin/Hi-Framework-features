@@ -70,6 +70,20 @@ public class FrontierClass {
         }
     }
 
+    public Class getFrontierClazz(){
+
+        try {
+
+            return Class.forName(className);
+
+        } catch (ClassNotFoundException e) {
+
+            return null;
+
+        }
+
+    }
+
 
 
 

@@ -1,10 +1,8 @@
 package mz.co.hi.web.req;
 
 import com.google.gson.*;
-import mz.co.hi.web.ActiveUser;
-import mz.co.hi.web.FrontEnd;
-import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.AppContext;
+import mz.co.hi.web.*;
+import mz.co.hi.web.events.args.FrontierRequestInterception;
 import mz.co.hi.web.frontier.*;
 import mz.co.hi.web.frontier.exceptions.FrontierCallException;
 import mz.co.hi.web.frontier.exceptions.InvalidFrontierParamException;
@@ -320,7 +318,20 @@ public class Frontiers extends ReqHandler {
 
                 }
 
+
+                FrontierRequestInterception req = new FrontierRequestInterception();
+                req.setBefore();
+                req.setMethod(frontierMethod.getMethod());
+                req.setClazz(frontierClass.getFrontierClazz());
+
+                if(DispatcherServlet.frontierCallsListener!=null)
+                    DispatcherServlet.frontierCallsListener.preFrontier(req);
+
                 invoked_successfully = frontierInvoker.invoke();
+
+                req.setAfter();
+                if(DispatcherServlet.frontierCallsListener!=null)
+                    DispatcherServlet.frontierCallsListener.postFrontier(req);
 
             }catch (Exception ex){
 

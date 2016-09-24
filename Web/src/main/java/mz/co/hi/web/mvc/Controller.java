@@ -1,5 +1,6 @@
 package mz.co.hi.web.mvc;
 
+import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
@@ -12,7 +13,6 @@ import mz.co.hi.web.mvc.exceptions.TemplateException;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import java.io.InputStream;
-import java.io.Serializable;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +23,6 @@ import java.util.Map;
 public class Controller {
 
     public static final String VIEW_DATA_KEY ="dataJson";
-    //private RequestContext requestContext;
 
     @Inject
     private HTMLizer htmLizer;
@@ -35,18 +34,6 @@ public class Controller {
 
     }
 
-
-
-    /*
-    public void setRequestContext(RequestContext requestContext){
-
-        this.requestContext = requestContext;
-
-    }
-
-    public RequestContext getRequestContext() {
-        return requestContext;
-    }*/
 
     public void redirect(String url){
 
@@ -75,6 +62,14 @@ public class Controller {
         String viewJsMinifiedfile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".min.js";
 
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
+
+        if(!requestContext.hasAjaxHeader()){
+
+            if(DispatcherServlet.templateLoadListener!=null)
+                DispatcherServlet.templateLoadListener.onTemplateLoad();
+
+
+        }
 
         if(values==null){
 

@@ -1,8 +1,10 @@
 package mz.co.hi.web.req;
 
 
+import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.RequestContext;
+import mz.co.hi.web.events.args.ControllerRequestInterception;
 import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.mvc.HTMLizer;
@@ -69,7 +71,6 @@ public class MVC extends ReqHandler{
         requestContext.getData().put("actionU",action);
         action = getActionMethodFromURLPart(action);
 
-
         Class controllerClass= ControllersMapper.getInstance().findController(controller);
         if(controllerClass==null){
 
@@ -124,6 +125,7 @@ public class MVC extends ReqHandler{
         try {
 
 
+
             Method actionMethod = null;
             boolean withParams = true;
 
@@ -176,11 +178,30 @@ public class MVC extends ReqHandler{
             }
 
 
+            ControllerRequestInterception call = new ControllerRequestInterception();
+            //call.setActionName(action);
+            //call.setControllerName(controller.getSimpleName());
+            call.setMethod(actionMethod);
+            call.setClazz(controller);
+            call.setBefore();
+
+
+            //Before action Listener
+            if(DispatcherServlet.controllerCallsListener!=null)
+                DispatcherServlet.controllerCallsListener.preAction(call);
+
 
             if(withParams)
                 actionMethod.invoke(instance,getValues(requestContext.getRequest()));
             else
                 actionMethod.invoke(instance);
+
+            //After action Listener
+            call.setAfter();
+            if(DispatcherServlet.controllerCallsListener!=null)
+                DispatcherServlet.controllerCallsListener.postAction(call);
+
+
 
             return true;
 
