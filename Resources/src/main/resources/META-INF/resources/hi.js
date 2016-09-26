@@ -630,7 +630,8 @@ Hi.$angular.directives.ajaxify = function(){
 
                 var event = 'click';
 
-                $(element).attr('href','');
+                $(element).attr('href','#');
+                $(element).removeAttr("href");
 
                 if(attrs.on){
 
