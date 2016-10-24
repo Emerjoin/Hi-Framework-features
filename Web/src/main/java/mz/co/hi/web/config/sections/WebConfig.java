@@ -57,12 +57,11 @@ public class WebConfig implements Configurator {
             org.w3c.dom.Element templateElement = (Element) templatesNodes.item(0);
             NodeList templatesList = templateElement.getElementsByTagName("template");
 
-            templates = new String[templatesList.getLength()+1];
-            templates[0]= "index";
+            templates = new String[templatesList.getLength()];
 
             for(int i=0;i<templatesList.getLength();i++){
 
-                templates[i] = templatesList.item(i+1).getTextContent();
+                templates[i] = templatesList.item(i).getTextContent();
 
             }
 
