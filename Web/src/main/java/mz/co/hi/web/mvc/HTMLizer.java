@@ -76,7 +76,7 @@ public class HTMLizer {
 
         try {
 
-            templateURL = requestContext.getServletContext().getResource("/" + templateName);
+            templateURL = requestContext.getServletContext().getResource("/" + templateName+".html");
 
         }catch (Exception ex){
 

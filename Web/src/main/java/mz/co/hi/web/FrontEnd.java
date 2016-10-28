@@ -45,7 +45,7 @@ public class FrontEnd {
         Object templateObject = activeUser.getProperty(TEMPLATE_SESSION_VARIABLE);
         if(templateObject==null){
 
-            template="index.html";
+            template="index";
             activeUser.getProperty(TEMPLATE_SESSION_VARIABLE,template);
 
         }else template = templateObject.toString();
