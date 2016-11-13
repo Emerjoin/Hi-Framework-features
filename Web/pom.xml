@@ -6,10 +6,28 @@
 
     <groupId>mz.hi.framework</groupId>
     <artifactId>hi-web</artifactId>
-    <version>1.4.0-beta-SNAPSHOT</version>
+    <version>1.4.1-beta-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Hi Framework Web</name>
+
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
 
     <dependencies>
 
