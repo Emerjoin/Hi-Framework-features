@@ -21,6 +21,8 @@ public class BootstrapUtils {
 
     private static Set<Index> indexSet = null;
 
+
+
     public static Set<URL> getLibraries(ServletContext context){
 
         if(libraries==null)
@@ -41,9 +43,6 @@ public class BootstrapUtils {
 
 
     public static Set<Index> getIndexes(ServletContext servletContext){
-
-        //if(true)
-        //return new HashSet<>();
 
         if(indexSet==null){
 

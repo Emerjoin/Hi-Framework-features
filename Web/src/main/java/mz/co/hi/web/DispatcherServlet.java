@@ -7,6 +7,7 @@ import mz.co.hi.web.events.listeners.ControllerCallsListener;
 import mz.co.hi.web.events.listeners.FrontierCallsListener;
 import mz.co.hi.web.events.listeners.TemplateLoadListener;
 import mz.co.hi.web.exceptions.HiException;
+import mz.co.hi.web.extension.BootExtension;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.frontier.model.BeansCrawler;
@@ -190,6 +191,26 @@ public class DispatcherServlet extends HttpServlet {
 
 
 
+    private void initBootExtensions(){
+
+        Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
+        if(indexSet==null)
+            return;
+
+
+        ServiceLoader<BootExtension> bootExtensions = ServiceLoader.load(BootExtension.class);
+        this.getServletContext().log("Initializing boot extensions...");
+
+        for(BootExtension extension : bootExtensions){
+
+            this.getServletContext().log("Calling boot extension : "+extension.getClass().getName());
+            extension.boot(indexSet);
+
+        }
+
+
+    }
+
 
 
     private void generateFrontiers() throws ServletException {
@@ -358,6 +379,7 @@ public class DispatcherServlet extends HttpServlet {
         generateFrontiers();
         findAndLoadComponents();
         findTestedActions();
+        initBootExtensions();
 
 
         if(AppConfigurations.get()!=null){
@@ -532,6 +554,7 @@ public class DispatcherServlet extends HttpServlet {
 
 
         }
+
 
     }
 
