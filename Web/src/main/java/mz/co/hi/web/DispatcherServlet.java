@@ -199,10 +199,21 @@ public class DispatcherServlet extends HttpServlet {
             return;
 
         Iterable<BootExtension> bootExtensions = BootManager.getExtensions();
-        this.getServletContext().log("Initializing boot extensions...");
+        System.out.println("Initializing boot extensions...");
 
-        for(BootExtension extension : bootExtensions)
-            extension.boot(indexSet);
+        for(BootExtension extension : bootExtensions) {
+
+            try {
+
+                extension.boot(indexSet);
+
+            }catch (Exception ex){
+
+                throw new HiException("Failed to initialize boot extension : "+extension.getClass().getCanonicalName(),ex);
+
+            }
+
+        }
 
 
     }

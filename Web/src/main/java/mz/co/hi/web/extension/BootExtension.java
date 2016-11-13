@@ -9,6 +9,6 @@ import java.util.Set;
  */
 public interface BootExtension {
 
-    public void boot(Set<Index> indexes);
+    public void boot(Set<Index> indexes) throws Exception;
 
 }
