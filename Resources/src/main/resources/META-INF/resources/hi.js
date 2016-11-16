@@ -434,7 +434,6 @@ Hi.$angular.directives.translate = function(){
 
                     if(typeof propValue == 'undefined' || typeof propValue != 'string'){
 
-                        console.log(attrs);
                         return;
 
                     }
@@ -504,9 +503,9 @@ Hi.$angular.directives.translate = function(){
  * Scoping: the scope created for the embedded view is schild of the active view's scope.
  *
  */
-Hi.$angular.directives.embed = function(){
+Hi.$angular.directives.embedded = function(){
 
-    //TODO: Prevent self embed
+    //TODO: Prevent self embedded
 
     return {
 
@@ -516,25 +515,32 @@ Hi.$angular.directives.embed = function(){
 
             var url = false;
 
+            if(!attrs.hasOwnProperty('name')){
+
+                throw new Error("No name attribute defined on embedded view element");
+
+            }
+
+
             if(attrs.hasOwnProperty('url')){
 
                 url = attrs.url;
 
             }else{
 
-                throw new Error("No url defined for emmbbeded view");
+                throw new Error("No url defined for embedded view");
 
             }
 
-            var embedOptions = {};
+            var embedOptions = {silentUrl:true};
 
             var silentUrlAttr="silent";
             if(attrs.hasOwnProperty(silentUrlAttr)){
 
                 embedOptions.silentUrl = $scope.$eval(attrs[silentUrlAttr]);
 
-
             }
+
 
             var getParamsAttr = "getparams";
             if(attrs.hasOwnProperty(getParamsAttr)){
@@ -581,8 +587,6 @@ Hi.$angular.directives.embed = function(){
             }
 
 
-
-
             //TODO: Validate another attributes
 
 
@@ -593,7 +597,7 @@ Hi.$angular.directives.embed = function(){
                 $scope.$applyAsync(function(){
 
 
-                    $(element).find(".embed-loader").hide();
+                    $(element).find(".embedded-loader").hide();
                     $(element).append(receptor.element);
 
 
@@ -1234,7 +1238,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     if(embedded){
 
-
         if(typeof $embedScope!="undefined"){
 
             viewScope = $embedScope.$new(false);
@@ -1271,6 +1274,7 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     //Inject the scope to the controller function
     var $injector = Hi.$angular.$injector;
     $injector.invoke(controller,false,{_:viewScope,__:__,$scope:viewScope,$rootScope:__,template:__});
+
 
     //Apply context variables
     Hi.$ui.js.setScopeProps(viewScope,context_variables);
@@ -1321,10 +1325,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     };
 
     if(receptor){
-
-
-
-
 
         if(embedOptions) {
 
@@ -1542,7 +1542,7 @@ Hi.$ui.js.commands.set('$url',function(data){
 
 //Redirect the user ajaxically
 Hi.$ui.js.commands.set('$redirect',function(data){
-    console.log("redirect : "+JSON.stringify(data));
+
     if(data.hasOwnProperty("url"))
         Hi.redirect(data.url);
 
@@ -2059,7 +2059,7 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
         if(embed){
 
-            route_object.embed = true;
+            route_object.embedded = true;
 
         }
 
@@ -2135,13 +2135,12 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
             var controller = route_object.controller;
             var action = route_object.action;
 
-
-            //Hi.Internal.setNextViewPath(module_name,controller,action); OLD
             var viewPath =  Hi.$nav.getViewPath(controller,action);//New
 
             context_variables.$route = route_object;
 
-            var generated = Hi.$ui.js.createViewScope(viewPath,context_variables,markup,embed,false,$embedScope,embedOptions);
+            var scopeReceptor = {};
+            var generated = Hi.$ui.js.createViewScope(viewPath,context_variables,markup,embed,scopeReceptor,$embedScope,embedOptions);
 
             if(embed){
 
@@ -2263,7 +2262,7 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
         var storeRequest = true;
 
-        if(route.hasOwnProperty("embed")){
+        if(route.hasOwnProperty("embedded")){
 
             storeRequest = false;
             delete route["dembed"];
@@ -2953,7 +2952,6 @@ window.onpopstate = function(param){
         if(param.state){
 
             var destination = the_requested_url.replace(App.base_url,"");
-            //console.log("state found for <"+destination+">");
             Hi.$nav.routeBack(destination);
 
         }
