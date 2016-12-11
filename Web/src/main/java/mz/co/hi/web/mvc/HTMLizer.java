@@ -334,6 +334,7 @@ public class HTMLizer {
     //TODO: WHat about debug messages
     public String process(Controller controller,boolean ignoreView) throws TemplateException, ConversionFailedException {
 
+        requestContext.getResponse().setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 
         //Get the action to perform from the FrontEnd
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
@@ -364,7 +365,6 @@ public class HTMLizer {
 
         /* AJAX REQUEST */
         if(requestContext.hasAjaxHeader()) {
-
 
             //Client-side invocations
             Map<String,Map> actions = frontEnd.getLaterInvocations();

@@ -5,7 +5,6 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
@@ -46,7 +45,7 @@ public class FrontEnd {
         if(templateObject==null){
 
             template="index";
-            activeUser.getProperty(TEMPLATE_SESSION_VARIABLE,template);
+            activeUser.setProperty(TEMPLATE_SESSION_VARIABLE,template);
 
         }else template = templateObject.toString();
 
@@ -101,9 +100,18 @@ public class FrontEnd {
     }
 
 
-    private void setReload(){
+    public void refresh(){
 
         invokeAfter("reload", Collections.emptyMap());
+
+    }
+
+    public void refresh(String url){
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("url",url);
+
+        invokeAfter("reload", map);
 
     }
 
@@ -140,7 +148,6 @@ public class FrontEnd {
     public boolean isFrontierRequest(){
 
         return httpServletRequest.getRequestURL().indexOf("f.m.call")!=-1;
-        //return httpServletRequest.getHeader(Frontiers.INVOKED_CLASS_HEADER)!=null;
 
     }
 
@@ -165,7 +172,7 @@ public class FrontEnd {
 
         //Set reload command if this method is invoked on an ajax request
         if(isRequestAjax()||isFrontierRequest())
-            setReload();
+            refresh();
 
 
 
@@ -173,20 +180,32 @@ public class FrontEnd {
 
     public void setTemplate(String template) {
 
+        String currentTemplate = activeUser.getProperty(TEMPLATE_SESSION_VARIABLE).toString();
+
+        //Same template
+        if(template.equals(currentTemplate)) {
+
+            System.out.println("Trying to set the same template name : "+template);
+            return;
+
+        }
+
+        System.out.println("Changing template "+currentTemplate+" => "+template);
+
         this.template = template;
 
         activeUser.setProperty(TEMPLATE_SESSION_VARIABLE,this.template);
 
         //Reload command if this method is invoked on an ajax request
         if(isRequestAjax()||isFrontierRequest())
-            setReload();
+            refresh(httpServletRequest.getRequestURI());
+
 
     }
 
     public boolean wasTemplateDataSet(){
 
         return templateData.size()>0;
-
 
     }
 

@@ -1231,7 +1231,7 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         throw new Error("Invalid view controller");
 
 
-    };
+    }
 
 
     var viewScope = false;
@@ -1324,7 +1324,8 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     };
 
-    if(receptor){
+    if(receptor && embedded){
+
 
         if(embedOptions) {
 
@@ -1348,8 +1349,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
             viewScope.$postLoad.call(viewScope);
 
         }
-
-
 
         //Change the Path
 
@@ -1376,8 +1375,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         return receptor;
 
     }
-
-
 
 
     var closePromise = {};
@@ -1456,7 +1453,9 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     //Close the active view first
     if(__.hasOwnProperty("$activeView")){
 
+
         if(typeof __.$activeView=="object"){
+
 
             //is close prevent active?
             if(__.$activeView.hasOwnProperty("$preventClose")&&__.$activeView.hasOwnProperty("$close")){
@@ -1474,7 +1473,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
 
             }else{
-
 
                 if(typeof __.$activeView.$close=="function"){
 
@@ -1523,9 +1521,18 @@ Hi.$ui.js.commands.set = function(key,callback){
 
 
 //Comando para recarregar a pagina
-Hi.$ui.js.commands.set('$reload',function(url){
+Hi.$ui.js.commands.set('$reload',function(data){
 
-  document.location.reload();
+  if(data.hasOwnProperty("url")){
+
+      document.location.replace(data.url);
+
+  }else{
+
+      document.location.reload();
+
+  }
+
   return true;
 
 });
@@ -1649,8 +1656,6 @@ Hi.$ui.js.component = function(name, directive){
     Hi.$angular.directives[name] = directive;
 
 };
-
-
 
 
 
@@ -2146,7 +2151,6 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
 
                 if(typeof callback=="function"){
-
 
                     callback.call({},generated);
 
@@ -2949,16 +2953,22 @@ window.onpopstate = function(param){
     //The base URL is the same
     if(the_requested_url.startsWith(the_base_url)){
 
-        if(param.state){
+        var lastChar = the_requested_url.charAt(the_requested_url.length-1);
 
-            var destination = the_requested_url.replace(App.base_url,"");
-            Hi.$nav.routeBack(destination);
+        if(lastChar=="#"){
+
+            return;
 
         }
 
-    }else{
+        //if(param.state){
 
-        //base url is different
+        var destination = the_requested_url.replace(App.base_url,"");
+        console.info("Destination route : "+destination);
+
+        Hi.$nav.routeBack(destination);
+
+       // }
 
     }
 

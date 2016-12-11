@@ -1,10 +1,7 @@
 package mz.co.hi.web.req;
 
-import mz.co.hi.web.AppContext;
-import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.Helper;
+import mz.co.hi.web.*;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -28,6 +25,11 @@ public class HiEcmaScript5 extends ReqHandler {
 
     private RequestContext requestContext = null;
     private static Map<String,String> templateControllers = new HashMap<String, String>();
+
+
+    @Inject
+    private ActiveUser activeUser;
+
 
     @Inject
     private AppContext appContext;
@@ -80,18 +82,14 @@ public class HiEcmaScript5 extends ReqHandler {
 
         this.requestContext = requestContext;
 
+
         String requestURL = requestContext.getRequest().getRequestURI().replace(requestContext.getRequest().getContextPath()+"/","");
         //Helper.echo(requestURL);
         int indexOfLastSlash = requestURL.lastIndexOf('/');
 
-        Map<String,Object> requestData = requestContext.getData();
-        String templateName = "index";
 
-        if(requestData.containsKey("template")){
 
-            templateName = requestData.get("template").toString();
-
-        }
+        String templateName = (String) activeUser.getProperty(FrontEnd.TEMPLATE_SESSION_VARIABLE,"index");
 
 
         String templateContent = "";
