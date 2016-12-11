@@ -34,7 +34,7 @@
         <dependency>
             <groupId>mz.hi.framework</groupId>
             <artifactId>hi-resources</artifactId>
-            <version>1.4.4-beta-SNAPSHOT</version>
+            <version>1.4.5-beta-SNAPSHOT</version>
             <scope>compile</scope>
             <optional>false</optional>
         </dependency>
