@@ -198,7 +198,7 @@ public class Frontiers extends ReqHandler {
 
         try {
 
-            Scanner scanner = new Scanner(requestContext.getRequest().getInputStream());
+            Scanner scanner = new Scanner(requestContext.getRequest().getInputStream(),"UTF-8");
             while (scanner.hasNextLine()) {
 
                 stringBuilder.append(scanner.nextLine());

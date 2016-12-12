@@ -6,7 +6,7 @@
 
     <groupId>mz.hi.framework</groupId>
     <artifactId>hi-web</artifactId>
-    <version>1.4.5-beta-SNAPSHOT</version>
+    <version>1.4.6-beta-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Hi Framework Web</name>
