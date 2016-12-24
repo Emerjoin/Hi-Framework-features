@@ -45,6 +45,10 @@ public class Frontiers extends ReqHandler {
     @Inject
     private ActiveUser activeUser;
 
+    private Gson gson = null;
+
+    { gson = new Gson(); }
+
     public static void addFrontier(FrontierClass frontierClass){
 
         frontiersMap.put(frontierClass.getSimpleName(),frontierClass);
@@ -75,9 +79,19 @@ public class Frontiers extends ReqHandler {
         if(paramValue==null)
             throw new MissingFrontierParamException(frontier,frontierMethod.getName(),methodParam.getName());
 
+
         else{
 
-            if(paramValue instanceof String){
+            if(!(methodParam.getType().isInstance(paramValue))&& paramValue instanceof Map){
+
+
+                //Object is not of the Expected type : force conversion
+                String paramJson = gson.toJson(paramValue);
+                paramValue = gson.fromJson(paramJson, methodParam.getType());
+
+
+
+            }else if(paramValue instanceof String){
 
                 String strParamValue = (String) paramValue;
 
@@ -183,6 +197,8 @@ public class Frontiers extends ReqHandler {
                 for(MethodParam methodParam : methodParams)
                     paramsMap.put(methodParam.getName(),getParamValue(frontier,frontierMethod,methodParam,uploadsMap,argsMaps,req));
 
+
+                System.out.println(paramsMap);
                  return paramsMap;
 
             }catch (IOException | ServletException ex){
