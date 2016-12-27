@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Views - Hi-Framework Docs</title>
+    <meta name="description" content="Hi-Framework" />
+    <meta name="author" content="Justin Walsh">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../themes/daux/img/favicon-blue.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='../themes/daux/css/theme.min.css' rel='stylesheet' type='text/css'><link href='../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="">
+    
+<div class="container-fluid fluid-height wrapper">
+    <div class="navbar navbar-static-top hidden-print">
+        <div class="container-fluid">
+            <a class="brand navbar-brand pull-left" href="../index.html">Hi-Framework Docs</a>
+
+    <div class="navbar-right navbar-form search">
+        <i class="glyphicon glyphicon-search search__icon">&nbsp;</i>
+        <input type="search" id="tipue_search_input" class="form-control search__field" placeholder="Search..." autocomplete="on" results=25 autosave=text_search>
+    </div>
+        </div>
+    </div>
+    <div class="row columns content">
+        <div class="left-column article-tree col-sm-3 hidden-print">
+            <!-- For Mobile -->
+            <div class="responsive-collapse">
+                <button type="button" class="btn btn-sidebar" id="menu-spinner-button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="sub-nav-collapse" class="sub-nav-collapse">
+                <!-- Navigation -->
+                <ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>Getting started</a><ul class='nav nav-list'><li class=''><a href="../Getting_started/Introduction.html">Introduction</a></li><li class=''><a href="../Getting_started/Application_structure_and_components.html">Application structure and components</a></li><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>The Hello World App</a><ul class='nav nav-list'><li class=''><a href="../Getting_started/The Hello_World_App/Preparing_the_environment.html">Preparing the environment</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_Hello_controller_and_world_view.html">Creating the Hello controller and world view</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_template.html">Creating the template</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_config_file.html">Creating the config file</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Testing_the_app.html">Testing the app</a></li></ul></li><li class=''><a href="../Getting_started/Navigation.html">Navigation</a></li><li class=''><a href="../Getting_started/Frontiers_basics.html">Frontiers basics</a></li></ul></li><li class='open has-children'><a href="../Core_Concepts/index.html" class="folder"><i class="arrow">&nbsp;</i>Core Concepts</a><ul class='nav nav-list'><li class=''><a href="../Core_Concepts/Controllers.html">Controllers</a></li><li class='active'><a href="../Core_Concepts/Views.html">Views</a></li><li class=''><a href="../Core_Concepts/Templates.html">Templates</a></li><li class=''><a href="../Core_Concepts/Frontiers.html">Frontiers</a></li></ul></li><li class=' has-children'><a href="../Advanced_Stuff/index.html" class="folder"><i class="arrow">&nbsp;</i>Advanced Stuff</a><ul class='nav nav-list'><li class=''><a href="../Advanced_Stuff/Files_Upload.html">Files Upload</a></li><li class=''><a href="../Advanced_Stuff/Hi_Server_Events_Tracer.html">Hi Server Events Tracer</a></li><li class=''><a href="../Advanced_Stuff/Internationalization.html">Internationalization</a></li><li class=''><a href="../Advanced_Stuff/FrontEnd_Class.html">FrontEnd Class</a></li><li class=''><a href="../Advanced_Stuff/Request_Context.html">Request Context</a></li><li class=''><a href="../Advanced_Stuff/App_Configurations.html">App Configurations</a></li></ul></li><li class=''><a href="../FAQS/index.html" class="folder"><i class="arrow">&nbsp;</i>FAQS</a><ul class='nav nav-list'></ul></li></ul>
+
+                <div class="sidebar-links">
+                    
+                        <!-- Links -->
+                        
+                        <div id="toggleCodeBlock">
+                                                    <a id="toggleCodeBlockBtn" href="#" onclick="toggleCodeBlocks();">Show Code Blocks Inline</a><br>
+                                                </div>
+
+                        <!-- Twitter -->
+                        
+                        <hr/>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right-column  content-area col-sm-9">
+
+            <div class="content-page">
+                                    <div id="tipue_search_content" style="display:none"></div>
+                
+                <div class="doc_content">
+                    <article>
+            <div class="page-header sub-header clearfix">
+            <h1>Views</h1>
+            <span style="float: left; font-size: 10px; color: gray;">
+                Thursday, July 21, 2016            </span>
+            <span style="float: right; font-size: 10px; color: gray;">
+                3:39 PM            </span>
+        </div>
+    
+    <p>A view is composed by two files: a html file and its correspondent javascript file.
+These two files should have the same name as the action that calls them, and they must be placed under the views directory, according to the following directories structure:</p>
+<pre><code> |-- Web
+        |-- views
+            |-- hello
+                |-- world.html
+                |-- world.js
+           
+</code></pre>
+<p>In the structure above, <strong>world.js</strong> and <strong>world.html</strong> represent our views. They are the base of our client-side, a eventListener and the markup.</p>
+<h3 id="page_worldjs">world.js</h3>
+<p><strong>BASIC STRUCTURE</strong></p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+
+}
+</code></pre>
+<p>The <strong>$scope</strong> variable represents your view scope. You can change the identifier to any word your wish(<em>But never double underscores &quot;__&quot;</em>). Me, I rather use an underscore &quot;_&quot;.</p>
+<p>This is the place you create your functions that should be executed uppon a call of some markup events like: <em>ng-click</em>, <em>ng-blur</em> and more...
+But those functions are not the only one that you can put here, you can create your own apart of any event and some functions are <strong>auto-called</strong>  by Hi-Framework to help you track some states in your application.</p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	//This function will be executed before the view is rendered
+	$scope.$preLoad = function(){
+	
+	}
+	
+	//This function will be executed after the view is rendered
+	$scope.$postLoad = function(){
+	
+	}
+	
+	//This function will be executed if you attemp to close your view
+	$scope.$close = function(){
+	
+	}
+	
+	//This function will be executed whenever you decide to invoke it :)
+	$scope.myFunction = function(){
+	
+	
+	}
+	
+
+});
+</code></pre>
+<h4 id="page_preLoad">$preLoad</h4>
+<p><strong>viewScope.$preLoad</strong> is a function called before your html view is rendered. If you have any need of tracking this state, you may put your instructions here.</p>
+<p>If you(for any crazy reason) wish to make some changes in your markup before you render it, you may do so buy returning the modified markup in this <strong>viewScope.$preLoad</strong> function.
+The markup of the view will be passed as a param to <strong>$preLoad</strong> function.</p>
+<p>See this example:</p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	//This function will be executed before the view is rendered
+	$scope.$preLoad = function(viewMarkup){
+	
+			//My instructions here...
+			
+			alert(viewMarkup); //Seeing the view's markup
+			
+			viewMarkup = &quot;&lt;h1&gt;Iam the new Markup!&lt;/h1&gt;&quot;; //modifying the markup
+			
+			return viewMarkup; //returning the modified markup
+	
+	}
+	
+	
+
+});
+</code></pre>
+<h4 id="page_postLoad">$postLoad</h4>
+<p>This function is called after your view is rendered. You should use this function to initialize scripts used in your view.</p>
+<p>Use it to do anything you wish to do after your view is loaded.</p>
+<p>See usages examples:</p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	//This function will be executed before the view is rendered
+	$scope.$preLoad = function(viewMarkup){
+	
+			//You can call frontiers here.. To get profile info 
+			
+			$('.datatable').datatable(); //initializing datatables
+			
+			$('.summernote').summernote(); //initializing summernote wysiwyg
+			
+			//Do as you wish
+	}
+	
+	
+
+});
+</code></pre>
+<h4 id="page_close">$close</h4>
+<p>When the user attempts to exit the view he's displaying, this function is invoked.</p>
+<p><strong>NOTE:</strong> WE DON'T CALL THIS EVENT WHEN THE USER RELOADS THE PAGE, CHANGES THE URL OR CLOSE THE BROWSER. Only when he attempts to exit using Hi redirect methods</p>
+<p>See examples:</p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	//This function will be executed if you attemp to close your view
+	$scope.$close = function(){
+		// Do anything!
+	}
+	
+	
+
+});
+</code></pre>
+<h5 id="page_preventClose">$preventClose</h5>
+<p><strong>$scope.$preventClose</strong> is used to tell the Hi-Framework to not start redirecting when a user exits a view.</p>
+<p>The default value for this variable is <strong>false</strong>. If you wish to stop a user from exiting a views(<em>may be to ask him if he's sure or to tell him to decide to save or not any data, or.. whatever you want</em>) you should set the value of this variable to <strong>true</strong>;</p>
+<p>See the Example:</p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	$scope.$preventClose = true;
+	
+	//This function will be executed if you attemp to close your view
+	$scope.$close = function(promisse){
+		r = confirm(&quot;Do you really want to exit???? &quot;);
+		if(r){
+			promisse.proceed();
+		}else{
+			//You do whatever you want! That view isn't going anywhere
+		}
+	}
+	
+	
+
+});
+</code></pre>
+<p>The <strong>promisse.proceed()</strong> instruction will tell Hi-Framework to go on closing the view.</p>
+<h3 id="page_worldhtml">world.html</h3>
+<p>This is your markup! Designers work here! Remeber, Just <strong>HTML</strong>, No expression language.</p>
+<p><strong>BASIC STRUCTURE</strong></p>
+<pre><code class="language-html">&lt;mytag&gt;&lt;/mytag&gt; //Nothing is really required! We just don't care!
+</code></pre>
+<h5 id="page_What_shouldnt_you_have_here">What shouldn't you have here?</h5>
+<ul>
+<li>You shouldn't include scripts, stylesheets or fonts (<em>Althought you can! it works!</em>)</li>
+</ul>
+<h5 id="page_What_should_you_put_here">What should you put here?</h5>
+<ul>
+<li>Your forms, images, videos, anything you what! This is where your application's user-interface leaves!</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-html">&lt;div&gt;
+	&lt;form&gt;
+		&lt;div class=&quot;panel-body p25 pb15&quot;&gt;
+			&lt;div class=&quot;section row&quot;&gt;
+				&lt;div class=&quot;col-md-6&quot;&gt;
+					&lt;label for=&quot;firstname&quot; class=&quot;field prepend-icon&quot;&gt;
+						&lt;input type=&quot;text&quot; name=&quot;firstname&quot; id=&quot;firstname&quot; class=&quot;gui-input&quot; placeholder=&quot;First name...&quot;&gt;
+						&lt;label for=&quot;firstname&quot; class=&quot;field-icon&quot;&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;
+						&lt;/label&gt;
+					&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;!-- end section --&gt;
+
+				&lt;div class=&quot;col-md-6&quot;&gt;
+					&lt;label for=&quot;lastname&quot; class=&quot;field prepend-icon&quot;&gt;
+						&lt;input type=&quot;text&quot; name=&quot;lastname&quot; id=&quot;lastname&quot; class=&quot;gui-input&quot; placeholder=&quot;Last name...&quot;&gt;
+						&lt;label for=&quot;lastname&quot; class=&quot;field-icon&quot;&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;
+						&lt;/label&gt;
+					&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;!-- end section --&gt;
+
+			&lt;/div&gt;
+			&lt;!-- end section row section --&gt;
+
+
+		&lt;/div&gt;
+		&lt;!-- end .form-body section --&gt;
+
+		&lt;div class=&quot;panel-footer hidden&quot;&gt;
+			&lt;button type=&quot;submit&quot; class=&quot;button btn-primary&quot;&gt;Post Comment&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;!-- end .form-footer section --&gt;
+	&lt;/form&gt;
+
+&lt;/div&gt; 
+</code></pre>
+<h4 id="page_Working_with_the_views_scope">Working with the view's scope</h4>
+<p>If your wish to use any data of your view's scope, you must use angular directives like:
+<em>ng-click,
+ng-repeat,
+ng-disabled,
+ng-change</em></p>
+<p>If you dig about Angular 1.x, you will find some other that I don't know about. Just dig!</p>
+<h5 id="page_Tips">Tips</h5>
+<ol>
+<li>use <strong>ng-submit</strong> to submit your forms</li>
+<li>use <strong>ng-repeat</strong> to reapeat your data</li>
+<li>use <strong>{{variableName}}</strong> to display the value of an variable</li>
+<li>do Not invoke $postLoad,$preLoad or $close from here. <strong>Do not invoke them at all</strong>. Hi will do That!</li>
+</ol>
+<h4 id="page_DEMOSTRATION">DEMOSTRATION</h4>
+<p>Look at these view files:</p>
+<h5 id="page_worldjs">world.js</h5>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	$scope.myCars = [{name:&quot;Lamborguine&quot;,owner:&quot;Milton&quot;},{name:&quot;Ferrari&quot;,owner:&quot;Zacarias&quot;},{name:&quot;Bugati&quot;,owner:&quot;Pedro&quot;}];
+	
+	$scope.theName = &quot;Hi-Framework&quot;;
+	
+	$scope.$postLoad = function(){
+		$scope.myValue = &quot;This One&quot;;
+	}
+	
+	$scope.saveInformation = function(){
+		alert('Information Saved friends!');	
+	}
+	
+});
+</code></pre>
+<h5 id="page_worldhtml">world.html</h5>
+<pre><code class="language-html">&lt;div class=&quot;content&quot;&gt;
+	
+	&lt;h1&gt;Now I will shou you how {{theName}} works! What Hi? -{{myValue}} &lt;/h1&gt;
+	
+	&lt;input type=&quot;text&quot; ng-model=&quot;myValue&quot;/&gt;
+	
+	&lt;ul&gt;
+		&lt;li ng-repeat=&quot;car in myCars&quot;&gt;{{car.name}} owned by &lt;b&gt;{{car.owner}}&lt;/b&gt; &lt;/li&gt;
+	&lt;ul&gt;
+	
+	&lt;button ng-click=&quot;saveInformation()&quot;&gt;Click here to save Nothing! (Cause this is a DEMO)&lt;/button&gt;
+
+&lt;/div&gt;
+</code></pre>
+<h4 id="page_Accecing_the_template_scope">Accecing the template scope</h4>
+<pre><code class="language-javascript">Hi.view(function($scope){
+	
+	
+	$scope.$postLoad = function(){
+	
+		alert(__.templateVariable);
+	}
+	
+	
+});
+</code></pre>
+<p>The double underscores &quot;__&quot;, allow you to access the template scope.</p>
+<h2 id="page_Embebed_views">Embebed views</h2>
+<p>This topic was assigned to &quot;Advanced Stuff&quot; section.</p>
+
+        <nav>
+        <ul class="pager">
+            <li><a href="../Core_Concepts/Controllers.html">Previous</a></li>            <li><a href="../Core_Concepts/Templates.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="../themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="../themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="../themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="../tipuesearch/tipuesearch_set.js"></script>
+        <script type="text/javascript" src="../tipuesearch/tipuesearch.min.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(document).ready(function() {
+                $('#tipue_search_input').tipuesearch({
+                    'show': 10,
+                    'mode': 'json',
+                    'base_url': '../'
+                });
+            });
+        </script>
+    
+</body>
+</html>

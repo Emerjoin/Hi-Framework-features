@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Hi-Framework Docs </title>
+    <meta name="description" content="Hi-Framework" />
+    <meta name="author" content="Justin Walsh">
+    <meta charset="UTF-8">
+    <link rel="icon" href="themes/daux/img/favicon-blue.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='themes/daux/css/theme.min.css' rel='stylesheet' type='text/css'><link href='themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="">
+    <div class="navbar navbar-static-top hidden-print">
+    <div class="container">
+        <a class="brand navbar-brand pull-left" href="index.html">Hi-Framework Docs</a>
+
+    <div class="navbar-right navbar-form search">
+        <i class="glyphicon glyphicon-search search__icon">&nbsp;</i>
+        <input type="search" id="tipue_search_input" class="form-control search__field" placeholder="Search..." autocomplete="on" results=25 autosave=text_search>
+    </div>
+    </div>
+</div>
+
+<div class="homepage-hero container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-sm-12">
+                <h2>Hi-Framework</h2>            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hero-buttons container-fluid">
+    <div class="container text-center">
+        <a href="Getting_started/Introduction.html" class="btn btn-primary btn-hero">View Documentation</a>        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="homepage-content container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                                    <div id="tipue_search_content" style="display:none"></div>
+                
+                <div class="doc_content">
+                    <h3 id="page_What_is_Hi_Framework">What is Hi-Framework?</h3>
+<p>An Ajax MVC Java EE Framework based on AngularJS</p>
+<br/>
+<br/>
+<p>Say &quot;Hello&quot; to your <strong>Client-Side</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="homepage-footer container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                            </div>
+            <div class="col-sm-5">
+                <div class="pull-right">
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+        <script type="text/javascript" src="tipuesearch/tipuesearch.min.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(document).ready(function() {
+                $('#tipue_search_input').tipuesearch({
+                    'show': 10,
+                    'mode': 'json',
+                    'base_url': ''
+                });
+            });
+        </script>
+    
+</body>
+</html>
