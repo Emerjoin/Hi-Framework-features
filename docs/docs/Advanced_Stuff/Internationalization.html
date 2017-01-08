@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Internationalization - Hi-Framework</title>
+    <meta name="description" content="Hi-Framework" />
+    <meta name="author" content="Justin Walsh">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../themes/daux/img/favicon-blue.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='../themes/daux/css/theme.min.css' rel='stylesheet' type='text/css'><link href='../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="">
+    
+<div class="container-fluid fluid-height wrapper">
+    <div class="navbar navbar-static-top hidden-print">
+        <div class="container-fluid">
+            <a class="brand navbar-brand pull-left" href="../index.html">Hi-Framework</a>
+
+    <div class="navbar-right navbar-form search">
+        <i class="glyphicon glyphicon-search search__icon">&nbsp;</i>
+        <input type="search" id="tipue_search_input" class="form-control search__field" placeholder="Search..." autocomplete="on" results=25 autosave=text_search>
+    </div>
+        </div>
+    </div>
+    <div class="row columns content">
+        <div class="left-column article-tree col-sm-3 hidden-print">
+            <!-- For Mobile -->
+            <div class="responsive-collapse">
+                <button type="button" class="btn btn-sidebar" id="menu-spinner-button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="sub-nav-collapse" class="sub-nav-collapse">
+                <!-- Navigation -->
+                <ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>Getting started</a><ul class='nav nav-list'><li class=''><a href="../Getting_started/Introduction.html">Introduction</a></li><li class=''><a href="../Getting_started/Application_structure_and_components.html">Application structure and components</a></li><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>The Hello World App</a><ul class='nav nav-list'><li class=''><a href="../Getting_started/The Hello_World_App/Preparing_the_environment.html">Preparing the environment</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_Hello_controller_and_world_view.html">Creating the Hello controller and world view</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_template.html">Creating the template</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_config_file.html">Creating the config file</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Testing_the_app.html">Testing the app</a></li></ul></li><li class=''><a href="../Getting_started/Navigation.html">Navigation</a></li><li class=''><a href="../Getting_started/Frontiers_basics.html">Frontiers basics</a></li></ul></li><li class=' has-children'><a href="../Core_Concepts/index.html" class="folder"><i class="arrow">&nbsp;</i>Core Concepts</a><ul class='nav nav-list'><li class=''><a href="../Core_Concepts/Controllers.html">Controllers</a></li><li class=''><a href="../Core_Concepts/Views.html">Views</a></li><li class=''><a href="../Core_Concepts/Templates.html">Templates</a></li><li class=''><a href="../Core_Concepts/Frontiers.html">Frontiers</a></li></ul></li><li class='open has-children'><a href="../Advanced_Stuff/index.html" class="folder"><i class="arrow">&nbsp;</i>Advanced Stuff</a><ul class='nav nav-list'><li class=''><a href="../Advanced_Stuff/Files_Upload.html">Files Upload</a></li><li class=''><a href="../Advanced_Stuff/Hi_Server_Events_Tracer.html">Hi Server Events Tracer</a></li><li class='active'><a href="../Advanced_Stuff/Internationalization.html">Internationalization</a></li><li class=''><a href="../Advanced_Stuff/FrontEnd_Class.html">FrontEnd Class</a></li><li class=''><a href="../Advanced_Stuff/Request_Context.html">Request Context</a></li><li class=''><a href="../Advanced_Stuff/App_Configurations.html">App Configurations</a></li></ul></li><li class=''><a href="../FAQS/index.html" class="folder"><i class="arrow">&nbsp;</i>FAQS</a><ul class='nav nav-list'></ul></li></ul>
+
+                <div class="sidebar-links">
+                    
+                        <!-- Links -->
+                        
+                        <div id="toggleCodeBlock">
+                                                    <a id="toggleCodeBlockBtn" href="#" onclick="toggleCodeBlocks();">Show Code Blocks Inline</a><br>
+                                                </div>
+
+                        <!-- Twitter -->
+                        
+                        <hr/>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right-column  content-area col-sm-9">
+
+            <div class="content-page">
+                                    <div id="tipue_search_content" style="display:none"></div>
+                
+                <div class="doc_content">
+                    <article>
+            <div class="page-header sub-header clearfix">
+            <h1>Internationalization</h1>
+            <span style="float: left; font-size: 10px; color: gray;">
+                Friday, December 2, 2016            </span>
+            <span style="float: right; font-size: 10px; color: gray;">
+                12:59 PM            </span>
+        </div>
+    
+    <h2 id="page_What_is_it">What is it?</h2>
+<p>It's a concept.
+It means adapting your Hi App to different languages.</p>
+<h2 id="page_How_does_i18nInternationalization_work_in_Hi">How does i18n(Internationalization) work in Hi?</h2>
+<p>Well, we assume you have a default language (This is the applications's main language!)</p>
+<p>Imagine you want to build an CRUD app. How will you label your &quot;save&quot; button?
+Will it be &quot;save&quot;,&quot;salvar&quot;,&quot;sparen&quot;,..??</p>
+<p>It will probably be your native language.</p>
+<h5 id="page_And_Then">And Then?</h5>
+<p>Then we give your conditions to translate the messages of your default languages.
+You don't have to create language codes here.
+Just use your language naturally.</p>
+<p>If you enjoy creating codes, we do not forbird it. It's possible.</p>
+<h2 id="page_How_to_start_Directory_Structure">How to start? (Directory Structure)</h2>
+<p>Remember your web directory structure?</p>
+<pre><code> |-- Web
+        |-- WEB-INF
+        |-- webroot    
+        |-- views
+        |-- templateName.html
+        |-- templateName.js
+           
+</code></pre>
+<p>Add a folder named <strong>i18n</strong></p>
+<pre><code>  |-- Web
+        |-- WEB-INF
+        |-- i18n    
+        |-- webroot
+        |-- views
+        |-- templateName.html
+        |-- templateName.js
+           
+</code></pre>
+<p>Inside i18n, you can put all of your translations. Let's assume your app has to be in portuguese and english.
+Since your default language is English(another assumption i'am making), you only need to have the translation to portuguese.</p>
+<pre><code> |-- Web
+        |-- WEB-INF
+        |-- i18n  
+            |-- pt.json
+        |-- views
+        |-- templateName.html
+        |-- templateName.js
+           
+</code></pre>
+<p>As you may have noticed above, translation files must be json's.</p>
+<p><strong>NOTE</strong>: if you  like to use language codes.. or you want some labels of the default language translated, you can create a file with that lannguage as well</p>
+<pre><code> |-- Web
+        |-- WEB-INF
+        |-- i18n  
+            |-- en.json
+            |-- pt.json
+        |-- views
+        |-- templateName.html
+        |-- templateName.js
+           
+</code></pre>
+<p>And to apply that language by default, just go to hi.xml and set the default language as in the example below:</p>
+<pre><code class="language-xml">&lt;app xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+     xmlns='http://hi.co.mz/XMLSchema'
+     xsi:schemaLocation='http://hi.co.mz/XMLSchema https://talk-code.github.io/releases/ns/hi-1.0.xsd'&gt;
+     
+     &lt;default-lang&gt;en&lt;/default-lang&gt;
+   
+&lt;/app&gt;
+</code></pre>
+<p>This configuartion tells Hi Framework to apply the language &quot;en&quot; with translations in file &quot;your-web-directory/i18n/en.json&quot;.</p>
+<h2 id="page_Translation_files_composition">Translation files composition</h2>
+<p>As I tould you before, translation files are JSON's.</p>
+<ul>
+<li>As the key, you have the label (In your default language)</li>
+<li>As the value, you  have the corresponding translation</li>
+</ul>
+<p>See example below:</p>
+<ul>
+<li>App default language: <strong>English</strong>
+</li>
+<li>Translating to: <strong>Portuguese</strong>
+</li>
+<li>Filename: <strong>pt.json</strong>
+</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;Previous&quot;:&quot;Anterior&quot;,
+    &quot;Next&quot;:&quot;Próximo&quot;
+}
+</code></pre>
+<h2 id="page_Markup_Translation">Markup Translation</h2>
+<p>We created an angular directive(translate) to help you translate your app.</p>
+<p>See the markup below:</p>
+<pre><code class="language-html">&lt;label&gt;Your name&lt;/label&gt;
+
+&lt;input type=&quot;text&quot; placeholder=&quot;Type your name..&quot; /&gt;
+
+</code></pre>
+<p>It changes to this:</p>
+<h4 id="page_MODE_1_Translating_labels_of_default_language">MODE 1 (Translating labels of default language)</h4>
+<pre><code class="language-html">&lt;label translate&gt;Your name&lt;/label&gt;
+
+&lt;input type=&quot;text&quot; placeholder=&quot;Type your name..&quot; translate-placeholder translate /&gt;
+
+</code></pre>
+<p>What happened here?</p>
+<p>when you put <strong>translate</strong> porperty in your element, Hi Framework looks for another porperty with a name starting with &quot;translate-&quot;.</p>
+<ul>
+<li>If it don't find it, It translates the inner HTML of your element.(case of element <strong>label</strong>)</li>
+<li>If it find's it, it translate watever porperty name come after the hyphen. In the example above, &quot;placeholder&quot; will be translated.</li>
+</ul>
+<p>Got it?</p>
+<p>So, how does the  translation file looks like?</p>
+<pre><code class="language-json">{
+    &quot;Your name&quot;:&quot;O seu nome&quot;,
+    &quot;Type your name..&quot;:&quot;Escreva o seu nome..&quot;
+}
+</code></pre>
+<h4 id="page_MODE_2_Using_translation_codes">MODE 2 (Using translation codes)</h4>
+<pre><code class="language-html">&lt;label translate=&quot;code-for-your-name&quot;&gt;Your name&lt;/label&gt;
+
+&lt;input type=&quot;text&quot; placeholder=&quot;Type your name..&quot; translate-placeholder translate=&quot;code-for-type-your-name&quot; /&gt;
+
+</code></pre>
+<p>WTF is this?</p>
+<p>Well, that are your codes mate.</p>
+<p>That way,  the translation file will look like:</p>
+<pre><code class="language-json">{
+    &quot;code-for-your-name&quot;:&quot;O seu nome&quot;,
+    &quot;code-for-type-your-name&quot;:&quot;Escreva o seu nome..&quot;
+}
+</code></pre>
+<p>Couldn't be simpler right?? I know! :)</p>
+<h2 id="page_Javascript_values_Translation">Javascript values Translation</h2>
+<p>We created this function __t();</p>
+<p>Yeah! two underscores + t.</p>
+<p>So wherever you are (in a $scope or not), it just works!</p>
+<p>See example:</p>
+<pre><code class="language-javascript">Hi.view(function($scope){
+    _.savePerson = function(){
+       alert(&quot;Person sucessfully saved!&quot;); //Simple alert  
+       alert(__t(&quot;Person sucessfully saved!&quot;)); //Translatable alert
+       alert(__t(&quot;Person sucessfully saved!&quot;,&quot;person-saved-message-code&quot;)); //Translatable alert with translation code
+     }  
+}
+
+</code></pre>
+<p>That's it..</p>
+<p>Oh! and you can also have something like this:</p>
+<pre><code class="language-html">&lt;div ng-show=&quot;isPersonSaved&quot;&gt;{{__t(&quot;Person sucessfully saved!&quot;)}}&lt;/div&gt;
+</code></pre>
+<p>That div will only appear when the value of the variable <strong>isPersonSaved</strong> is <strong>true</strong>. (But that's angular, not Hi)</p>
+<h2 id="page_Changing_the_language">Changing the language</h2>
+<p>Your app is running and you are seeing all content in just one language. You want to change the language to some other..
+Well, it's simple.</p>
+<p>This is done in the server side, you must have a <strong>controller action</strong> or a <strong>frontier method</strong> ready, in order to get this done.</p>
+<p>Go to your controller action/frontier method, and call the method <strong>setLanguage</strong> of <strong>mz.co.hi.web.FrontEnd</strong> as in the example.</p>
+<pre><code class="language-java">   frontEnd.setLanguage(&quot;pt&quot;);
+</code></pre>
+<p>With this instruction, Hi Framework will load translations of i18n/pt.json and apply in your application. (Hi reloads your application in this process)</p>
+
+        <nav>
+        <ul class="pager">
+            <li><a href="../Advanced_Stuff/Hi_Server_Events_Tracer.html">Previous</a></li>            <li><a href="../Advanced_Stuff/FrontEnd_Class.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="../themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="../themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="../themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="../tipuesearch/tipuesearch_set.js"></script>
+        <script type="text/javascript" src="../tipuesearch/tipuesearch.min.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(document).ready(function() {
+                $('#tipue_search_input').tipuesearch({
+                    'show': 10,
+                    'mode': 'json',
+                    'base_url': '../'
+                });
+            });
+        </script>
+    
+</body>
+</html>

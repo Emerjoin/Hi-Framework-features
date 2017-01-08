@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Application structure and components - Hi-Framework</title>
+    <meta name="description" content="Hi-Framework" />
+    <meta name="author" content="Justin Walsh">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../themes/daux/img/favicon-blue.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='../themes/daux/css/theme.min.css' rel='stylesheet' type='text/css'><link href='../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="">
+    
+<div class="container-fluid fluid-height wrapper">
+    <div class="navbar navbar-static-top hidden-print">
+        <div class="container-fluid">
+            <a class="brand navbar-brand pull-left" href="../index.html">Hi-Framework</a>
+
+    <div class="navbar-right navbar-form search">
+        <i class="glyphicon glyphicon-search search__icon">&nbsp;</i>
+        <input type="search" id="tipue_search_input" class="form-control search__field" placeholder="Search..." autocomplete="on" results=25 autosave=text_search>
+    </div>
+        </div>
+    </div>
+    <div class="row columns content">
+        <div class="left-column article-tree col-sm-3 hidden-print">
+            <!-- For Mobile -->
+            <div class="responsive-collapse">
+                <button type="button" class="btn btn-sidebar" id="menu-spinner-button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="sub-nav-collapse" class="sub-nav-collapse">
+                <!-- Navigation -->
+                <ul class='nav nav-list'><li class='open has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>Getting started</a><ul class='nav nav-list'><li class=''><a href="../Getting_started/Introduction.html">Introduction</a></li><li class='active'><a href="../Getting_started/Application_structure_and_components.html">Application structure and components</a></li><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>The Hello World App</a><ul class='nav nav-list'><li class=''><a href="../Getting_started/The Hello_World_App/Preparing_the_environment.html">Preparing the environment</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_Hello_controller_and_world_view.html">Creating the Hello controller and world view</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_template.html">Creating the template</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Creating_the_config_file.html">Creating the config file</a></li><li class=''><a href="../Getting_started/The Hello_World_App/Testing_the_app.html">Testing the app</a></li></ul></li><li class=''><a href="../Getting_started/Navigation.html">Navigation</a></li><li class=''><a href="../Getting_started/Frontiers_basics.html">Frontiers basics</a></li></ul></li><li class=' has-children'><a href="../Core_Concepts/index.html" class="folder"><i class="arrow">&nbsp;</i>Core Concepts</a><ul class='nav nav-list'><li class=''><a href="../Core_Concepts/Controllers.html">Controllers</a></li><li class=''><a href="../Core_Concepts/Views.html">Views</a></li><li class=''><a href="../Core_Concepts/Templates.html">Templates</a></li><li class=''><a href="../Core_Concepts/Frontiers.html">Frontiers</a></li></ul></li><li class=' has-children'><a href="../Advanced_Stuff/index.html" class="folder"><i class="arrow">&nbsp;</i>Advanced Stuff</a><ul class='nav nav-list'><li class=''><a href="../Advanced_Stuff/Files_Upload.html">Files Upload</a></li><li class=''><a href="../Advanced_Stuff/Hi_Server_Events_Tracer.html">Hi Server Events Tracer</a></li><li class=''><a href="../Advanced_Stuff/Internationalization.html">Internationalization</a></li><li class=''><a href="../Advanced_Stuff/FrontEnd_Class.html">FrontEnd Class</a></li><li class=''><a href="../Advanced_Stuff/Request_Context.html">Request Context</a></li><li class=''><a href="../Advanced_Stuff/App_Configurations.html">App Configurations</a></li></ul></li><li class=''><a href="../FAQS/index.html" class="folder"><i class="arrow">&nbsp;</i>FAQS</a><ul class='nav nav-list'></ul></li></ul>
+
+                <div class="sidebar-links">
+                    
+                        <!-- Links -->
+                        
+                        <div id="toggleCodeBlock">
+                                                    <a id="toggleCodeBlockBtn" href="#" onclick="toggleCodeBlocks();">Show Code Blocks Inline</a><br>
+                                                </div>
+
+                        <!-- Twitter -->
+                        
+                        <hr/>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right-column  content-area col-sm-9">
+
+            <div class="content-page">
+                                    <div id="tipue_search_content" style="display:none"></div>
+                
+                <div class="doc_content">
+                    <article>
+            <div class="page-header sub-header clearfix">
+            <h1>Application structure and components</h1>
+            <span style="float: left; font-size: 10px; color: gray;">
+                Wednesday, July 6, 2016            </span>
+            <span style="float: right; font-size: 10px; color: gray;">
+                2:55 PM            </span>
+        </div>
+    
+    <p>Hi-Framework is not concerned about how you manage your java source files. It is only concerned about the <strong>web</strong> directory.</p>
+<h3 id="page_The_web_directory_structure">The web directory structure</h3>
+<pre><code> |-- Web
+        |-- WEB-INF
+            |-- hi.xml
+        |-- webroot
+        |-- views
+        |-- templateName.html
+        |-- templateName.js
+           
+</code></pre>
+<p>If you are familiar with JavaEE web applications you might have noticed that Hi-framework does not change the structure, it just adds few directories and a configuration file within WEB-INF directory.
+Lets now understand the purpose of each file/directory.</p>
+<h3 id="page_WEB_INFhixml">WEB-INF/hi.xml</h3>
+<p>This is the framework configuration file. Your application is configured here.</p>
+<h3 id="page_webroot">webroot</h3>
+<p>This is the assets home. The directory holds scripts, stylesheets, images and all the files that should be publicly accessible.</p>
+<h3 id="page_views">views</h3>
+<p>This is where the view files live. A View is displayed uppon Controller invocation as stated by MVC pattern.</p>
+<h3 id="page_templateNamejs_and_templateNamehtml">templateName.js and templateName.html</h3>
+<p>This templateName.html file is the container within which the view files are displayed.
+The templateName.js listens some events that will be detailled later.</p>
+<p><strong>NOTE</strong>: You are completely free to add your own directories and files according to your needs, as long as the directory structure demanded by the framework remains in place.</p>
+
+        <nav>
+        <ul class="pager">
+            <li><a href="../Getting_started/Introduction.html">Previous</a></li>            <li><a href="../Getting_started/The Hello_World_App/Preparing_the_environment.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="../themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="../themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="../themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="../tipuesearch/tipuesearch_set.js"></script>
+        <script type="text/javascript" src="../tipuesearch/tipuesearch.min.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(document).ready(function() {
+                $('#tipue_search_input').tipuesearch({
+                    'show': 10,
+                    'mode': 'json',
+                    'base_url': '../'
+                });
+            });
+        </script>
+    
+</body>
+</html>
