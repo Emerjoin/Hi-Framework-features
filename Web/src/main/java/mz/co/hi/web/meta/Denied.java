@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Granted {
+public @interface Denied {
 
     public String[] value();
 

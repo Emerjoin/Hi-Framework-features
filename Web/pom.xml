@@ -6,7 +6,7 @@
 
     <groupId>mz.hi.framework</groupId>
     <artifactId>hi-web</artifactId>
-    <version>1.4.7-beta-SNAPSHOT</version>
+    <version>1.4.8-beta-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Hi Framework Web</name>
@@ -89,6 +89,13 @@
             <artifactId>tika-core</artifactId>
             <version>1.13</version>
         </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+
 
     </dependencies>
     

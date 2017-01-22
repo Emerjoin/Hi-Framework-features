@@ -154,16 +154,17 @@ public class MVC extends ReqHandler{
             }
 
 
-            if(!ReqHandler.userHasPermission(controller,actionMethod,requestContext)){
+            if(!ReqHandler.accessGranted(controller,actionMethod)){
 
                 try {
 
                     requestContext.getResponse().sendError(403);
+                    return true;
 
                 }catch (Exception ex){
 
-                    requestContext.getServletContext().log("Failed no send 403 error",ex);
-                    return false;
+                    requestContext.getServletContext().log("Failed no send 403 error code",ex);
+                    return true;
 
                 }
 

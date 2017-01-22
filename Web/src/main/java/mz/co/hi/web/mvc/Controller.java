@@ -9,6 +9,8 @@ import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MvcException;
 import mz.co.hi.web.mvc.exceptions.NoSuchViewException;
 import mz.co.hi.web.mvc.exceptions.TemplateException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
@@ -27,15 +29,10 @@ public class Controller {
     @Inject
     private HTMLizer htmLizer;
 
+    private static Logger _log = LoggerFactory.getLogger(Controller.class);
+
 
     public Controller(){
-
-
-
-    }
-
-
-    public void redirect(String url){
 
 
 
@@ -122,7 +119,6 @@ public class Controller {
 
             else{
 
-                //Try the minfied file
                 viewJsResource = requestContext.getServletContext().getResource(viewJsMinifiedfile);
 
                 if(viewJsResource==null){
@@ -138,9 +134,9 @@ public class Controller {
 
         }catch (Exception ex){
 
-            //TODO: Do something about it
+            _log.error(String.format("Failed to get the View JS Resource using: %s AND %s",viewJsfile,viewJsMinifiedfile),ex);
             ex.printStackTrace();
-
+            return;
         }
 
         if(requestContext.getRequest().getHeader("Ignore-Js")==null) {
@@ -156,7 +152,7 @@ public class Controller {
 
                 } catch (Exception ex) {
 
-                    //TODO: Do something about it
+                    _log.error(String.format("Failed to read the View JS Resource : %s",viewJsResource.getPath()),ex);
                     ex.printStackTrace();
 
                 }
@@ -184,7 +180,7 @@ public class Controller {
 
             }catch (Exception ex){
 
-                //TODO: Do something about it
+                _log.error(String.format("Failed to read the View HTML Resource : %s",viewResource.getPath()),ex);
                 ex.printStackTrace();
 
             }

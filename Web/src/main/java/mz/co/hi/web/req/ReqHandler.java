@@ -1,12 +1,18 @@
 package mz.co.hi.web.req;
 
+import mz.co.hi.web.AuthComponent;
 import mz.co.hi.web.RequestContext;
+import mz.co.hi.web.meta.Denied;
 import mz.co.hi.web.meta.Granted;
+import mz.co.hi.web.meta.RequirePermission;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +31,8 @@ public abstract class ReqHandler {
     private static List<ReqHandler> reqHandlers = new ArrayList<ReqHandler>();
     private static Map<String,ReqHandler> handlers = new HashMap();
     private static Map<ReqHandler,Class> handlersClasses = new HashMap();
+
+    private static Logger _log = LoggerFactory.getLogger("hi-web");
 
     public static void register(ReqHandler reqHandler,Class<? extends ReqHandler> clazz){
 
@@ -104,15 +112,6 @@ public abstract class ReqHandler {
 
     }
 
-    private static String getUsefullUrl(HttpServletRequest request){
-
-        String url = request.getRequestURI().replace(request.getContextPath()+"/","");
-        return url;
-
-
-    }
-
-
     private static boolean checkPermission(Granted granted,RequestContext requestContext){
 
         if(granted.value().length==0)
@@ -137,14 +136,55 @@ public abstract class ReqHandler {
     }
 
 
-    protected static boolean userHasPermission(Class clazz,RequestContext requestContext){
+    protected static boolean accessGranted(AnnotatedElement annotatedElement){
+
+        Annotation grantedAnnotation = annotatedElement.getAnnotation(Granted.class);
+        Annotation deniedAnnotation = annotatedElement.getAnnotation(Denied.class);
+        Annotation requirePermissionAnnotation = annotatedElement.getAnnotation(RequirePermission.class);
+
+        if(grantedAnnotation==null&&deniedAnnotation==null&&requirePermissionAnnotation==null)
+            return true;
+
+        return validateAccess(grantedAnnotation,deniedAnnotation,requirePermissionAnnotation);
+
+
+
+    }
+
+
+    private static boolean validateAccess(Annotation grantedAnnotation,
+                                   Annotation deniedAnnotation, Annotation requirePermissionAnnotation){
 
         boolean accessGranted = true;
 
-        Annotation annotationClazz = clazz.getAnnotation(Granted.class);
-        if(annotationClazz!=null){
+        AuthComponent authComponent = null;
 
-            return checkPermission((Granted) annotationClazz,requestContext);
+        try {
+
+            authComponent = CDI.current().select(AuthComponent.class).get();
+
+        }catch (Throwable ex){
+
+            _log.error(String.format("Failed to get a %s instance",AuthComponent.class.getSimpleName()),ex);
+            return accessGranted;
+
+        }
+
+        if(grantedAnnotation==null&&deniedAnnotation==null&&requirePermissionAnnotation==null)
+            return accessGranted;
+
+        if(grantedAnnotation!=null){
+
+            accessGranted =  authComponent.isUserInAnyOfThisRoles(((Granted) grantedAnnotation).value());
+
+        }else if(deniedAnnotation!=null){
+
+            accessGranted = !authComponent.isUserInAnyOfThisRoles(((Denied) deniedAnnotation).value());
+
+        }else if(requirePermissionAnnotation!=null){
+
+            accessGranted =  authComponent.doesUserHavePermission(
+                    ((RequirePermission) requirePermissionAnnotation).value());
 
         }
 
@@ -152,26 +192,10 @@ public abstract class ReqHandler {
 
     }
 
-    protected static boolean userHasPermission(Method method,RequestContext requestContext){
 
-        boolean accessGranted = true;
+    protected static boolean accessGranted(Class clazz, Method method){
 
-        Annotation annotationMethod = method.getAnnotation(Granted.class);
-        if(annotationMethod!=null){
-
-            return checkPermission((Granted) annotationMethod,requestContext);
-
-
-        }
-
-        return accessGranted;
-
-    }
-
-    protected static boolean userHasPermission(Class clazz, Method method, RequestContext requestContext){
-
-
-        return userHasPermission(clazz,requestContext)&&userHasPermission(method,requestContext);
+        return accessGranted(clazz)&& accessGranted(method);
 
     }
 

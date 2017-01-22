@@ -327,7 +327,7 @@ public class Frontiers extends ReqHandler {
 
 
 
-                if(!ReqHandler.userHasPermission(frontierClass.getObject().getClass(),frontierMethod.getMethod(),requestContext)){
+                if(!ReqHandler.accessGranted(frontierClass.getObject().getClass(),frontierMethod.getMethod())){
 
                     requestContext.getResponse().sendError(403);
                     return true;

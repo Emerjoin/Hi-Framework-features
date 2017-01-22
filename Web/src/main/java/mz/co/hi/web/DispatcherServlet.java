@@ -20,7 +20,10 @@ import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
 import mz.co.hi.web.req.*;
 import org.jboss.jandex.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.UnsatisfiedResolutionException;
 import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletException;
@@ -31,6 +34,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -59,6 +63,8 @@ public class DispatcherServlet extends HttpServlet {
     public static TemplateLoadListener templateLoadListener = null;
     public static ControllerCallsListener controllerCallsListener = null;
     public static FrontierCallsListener frontierCallsListener = null;
+
+    private static Logger _log = LoggerFactory.getLogger(DispatcherServlet.class);
 
     public DispatcherServlet(){
 
@@ -117,7 +123,7 @@ public class DispatcherServlet extends HttpServlet {
 
         try {
 
-            System.out.println("Reading client-side AJAX loader code file...");
+            _log.debug("Reading client-side AJAX loader code file...");
             URL res = this.getServletContext().getResource("/loader.js");
             if(res!=null){
 
@@ -142,7 +148,7 @@ public class DispatcherServlet extends HttpServlet {
 
         try {
 
-            System.out.println("Reading generic client-side (frontiers) code file...");
+           _log.debug("Reading generic client-side (frontiers) code file...");
             URL res = this.getServletContext().getResource("/frontier.js");
             if(res!=null){
 
@@ -172,7 +178,7 @@ public class DispatcherServlet extends HttpServlet {
             URL res = this.getServletContext().getResource("/run.js");
             if(res!=null){
 
-                System.out.println("Reading javascript configurations code file...");
+                _log.debug("Reading javascript configurations code file...");
 
                 InputStream inputStream = res.openStream();
                 String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
@@ -199,13 +205,14 @@ public class DispatcherServlet extends HttpServlet {
             return;
 
         Iterable<BootExtension> bootExtensions = BootManager.getExtensions();
-        System.out.println("Initializing boot extensions...");
+        _log.info("Initializing boot extensions...");
 
         for(BootExtension extension : bootExtensions) {
 
             try {
 
                 extension.boot(indexSet);
+                _log.info(String.format("Initializing boot extension : %s",extension.getClass().getCanonicalName()));
 
             }catch (Exception ex){
 
@@ -215,6 +222,7 @@ public class DispatcherServlet extends HttpServlet {
 
         }
 
+        _log.info("Finalized initialization of boot extensions.");
 
     }
 
@@ -223,7 +231,7 @@ public class DispatcherServlet extends HttpServlet {
     private void generateFrontiers() throws ServletException {
 
         List beansList = new ArrayList();
-        this.getServletContext().log("Looking for frontiers...");
+        _log.info("Looking for frontiers...");
 
         Set<Index> indexSet = BootstrapUtils.getIndexes(getServletContext());
         if(indexSet==null)
@@ -239,12 +247,13 @@ public class DispatcherServlet extends HttpServlet {
                 try {
 
                     fClazz = Class.forName(an.target().asClass().name().toString());
-                    System.out.println("Frontier class detected : " + fClazz.getCanonicalName());
+                    _log.info("Frontier class detected : " + fClazz.getCanonicalName());
                     beansList.add(fClazz);
 
                 }catch (Exception ex){
 
-                    getServletContext().log("Error while attempting to register a frontier class",ex);
+                    _log.error("Error while attempting to register the frontier class",ex);
+                    ex.printStackTrace();
                     continue;
 
                 }
@@ -259,7 +268,7 @@ public class DispatcherServlet extends HttpServlet {
         FrontierClass[] beanClasses = BeansCrawler.getInstance().crawl(beansList);
 
 
-        System.out.println("Generating client-side code for frontiers...");
+        _log.info("Generating client-side code for frontiers...");
         Scripter scripter = new Scripter();
 
         for(FrontierClass beanClass : beanClasses){
@@ -278,60 +287,69 @@ public class DispatcherServlet extends HttpServlet {
 
         if(initialized){
 
-            System.out.println("---avoid double initialization");
             return;
 
         }
 
         initialized = true;
 
-        System.out.println("---Initializing Hi-Framework servlet...");
-
+        _log.info("---Initializing Hi-Framework servlet...");
 
         try{
 
-            templateLoadListener = CDI.current().select(TemplateLoadListener.class).get();
+            Instance<TemplateLoadListener> loadListenerInstance = CDI.current().select(TemplateLoadListener.class);
+            if(loadListenerInstance.isUnsatisfied())
+                _log.warn(String.format("No implementation of %s found",TemplateLoadListener.class.getSimpleName()));
+            else {
+                templateLoadListener = loadListenerInstance.get();
+                _log.info(String.format("%s detected : %s",TemplateLoadListener.class.getSimpleName(),templateLoadListener.getClass().getCanonicalName()));
+            }
 
-        }catch (UnsatisfiedResolutionException ex){
+        }catch (Throwable ex){
 
-            System.err.println("No implementation of the "+TemplateLoadListener.class.getSimpleName()+" interface found");
+            _log.error(String.format("Failed to get a %s instance",TemplateLoadListener.class.getSimpleName()),ex);
 
-        }catch (Exception ex){
+        }
 
-            getServletContext().log("Failed to lookup an implementation of the "+TemplateLoadListener.class.getSimpleName()+" interface",ex);
-            ex.printStackTrace();
+        try{
+
+            Instance<ControllerCallsListener> controllerCallsListenerInstance =
+                    CDI.current().select(ControllerCallsListener.class);
+
+            if(controllerCallsListenerInstance.isUnsatisfied())
+                _log.warn(String.format("No implementation of %s found",ControllerCallsListener.class.getSimpleName()));
+            else {
+
+                controllerCallsListener = controllerCallsListenerInstance.get();
+                _log.info(String.format("%s detected : %s",ControllerCallsListener.class.getSimpleName(),controllerCallsListener.getClass().getCanonicalName()));
+
+            }
+
+        }catch (Throwable ex){
+
+            _log.error(String.format("Failed to get a %s instance",ControllerCallsListener.class.getSimpleName()),ex);
 
         }
 
 
         try{
 
-            controllerCallsListener = CDI.current().select(ControllerCallsListener.class).get();
 
-        }catch (UnsatisfiedResolutionException ex){
+            Instance<FrontierCallsListener> frontierCallsListenerInstance
+                    = CDI.current().select(FrontierCallsListener.class);
 
-            System.err.println("No implementation of the "+ControllerCallsListener.class.getSimpleName()+" interface found");
+            if(frontierCallsListenerInstance.isUnsatisfied())
+                _log.warn(String.format("No implementation of %s found",FrontierCallsListener.class.getSimpleName()));
+            else{
 
-        }catch (Exception ex){
+                frontierCallsListener = frontierCallsListenerInstance.get();
+                _log.info(String.format("%s detected : %s",FrontierCallsListener.class.getSimpleName(),frontierCallsListenerInstance.getClass().getCanonicalName()));
 
-            getServletContext().log("Failed to lookup an implementation of the "+ControllerCallsListener.class.getSimpleName()+" interface",ex);
-            ex.printStackTrace();
+            }
 
-        }
+        }catch (Throwable ex){
 
-
-        try{
-
-            frontierCallsListener = CDI.current().select(FrontierCallsListener.class).get();
-
-        }catch (UnsatisfiedResolutionException ex){
-
-            System.err.println("No implementation of the "+FrontierCallsListener.class.getSimpleName()+" interface found");
-
-        }catch (Exception ex){
-
-            getServletContext().log("Failed to lookup an implementation of the "+FrontierCallsListener.class.getSimpleName()+" interface",ex);
-            ex.printStackTrace();
+            _log.error(String.format("Failed to get a %s instance",FrontierCallsListener.class.getSimpleName()),ex);
 
         }
 
@@ -341,8 +359,6 @@ public class DispatcherServlet extends HttpServlet {
 
         if(indexSet!=null) {
 
-            System.out.println("ConfigSection Class name : "+ConfigSection.class.getCanonicalName());
-
             for (Index index : indexSet) {
 
                 List<AnnotationInstance> instances =
@@ -351,16 +367,16 @@ public class DispatcherServlet extends HttpServlet {
                 for (AnnotationInstance an : instances) {
 
                     String className = an.target().asClass().name().toString();
-                    System.out.println("Loading config section class : "+className);
+                    _log.info(String.format("Loading config section class : %s",className));
 
                     try {
 
                         Class<?> clazz  = this.getClass().getClassLoader().loadClass(className);
                         configSections.add(clazz);
 
-                    } catch (Exception ex) {
+                    } catch (Throwable ex) {
 
-                        getServletContext().log("Error initializing config section",ex);
+                        _log.error("Failed to load config section",ex);
                         continue;
 
                     }
@@ -375,9 +391,6 @@ public class DispatcherServlet extends HttpServlet {
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.load(this.getServletContext(),configSections);
 
-
-
-
         readLibScript();
         readJavascriptInit();
         readLoaderScript();
@@ -388,9 +401,7 @@ public class DispatcherServlet extends HttpServlet {
         findTestedActions();
         initBootExtensions();
 
-
         if(AppConfigurations.get()!=null){
-
             ReqHandler.register(CDI.current().select(MVC.class).get(),MVC.class);
             ReqHandler.register(CDI.current().select(Assets.class).get(),Assets.class);
             ReqHandler.register(CDI.current().select(HiEcmaScript5.class).get(),HiEcmaScript5.class);
@@ -398,12 +409,11 @@ public class DispatcherServlet extends HttpServlet {
             ReqHandler.register(CDI.current().select(Tests.class).get(),Tests.class);
             ReqHandler.register(CDI.current().select(TestFiles.class).get(),TestFiles.class);
             HiEcmaScript5.prepareTemplates(this.getServletContext());
-
         }
 
         DEPLOY_ID = String.valueOf(new Date().getTime());
 
-        System.out.println("---Finished Hi-Framework servlet initialization...");
+        _log.info("---Finished Hi-Framework servlet initialization...");
 
     }
 
