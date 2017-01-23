@@ -2,6 +2,8 @@ package mz.co.hi.web.config;
 
 import com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory;
 import mz.co.hi.web.exceptions.HiException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -23,6 +25,16 @@ import java.util.Set;
  */
 public final class Bootstrap {
 
+
+    public static String LOGGER=null;
+    private static Logger _log=null;
+
+    public static void setLogger(String name){
+
+        LOGGER = name;
+        _log = LoggerFactory.getLogger(Bootstrap.LOGGER);
+
+    }
 
     private Configurator getConfigurator(Class<? extends Configurator> clazz) throws HiException {
 
@@ -66,12 +78,12 @@ public final class Bootstrap {
             }
 
             if(elements.size()==0) {
-                servletContext.log("Configurator " + clazz.getCanonicalName() + " was skipped. No match for the defined tags");
+                _log.info("Configurator " + clazz.getCanonicalName() + " was skipped. No match for the defined tags");
                 continue;
             }
 
 
-            servletContext.log("Loading configurator " + clazz.getCanonicalName() + "...");
+            _log.info("Loading configurator " + clazz.getCanonicalName() + "...");
             configurator.doConfig(AppConfigurations.get(),elements,docElement);
 
         }
@@ -102,11 +114,11 @@ public final class Bootstrap {
         }
 
 
-        URL yayeeXml = null;
+        URL hiXML = null;
 
         try {
 
-            yayeeXml = servletContext.getResource("/WEB-INF/hi.xml");
+            hiXML = servletContext.getResource("/WEB-INF/hi.xml");
 
 
         }catch (Exception ex){
@@ -120,7 +132,7 @@ public final class Bootstrap {
 
         try {
 
-            xml = yayeeXml.openStream();
+            xml = hiXML.openStream();
 
         }catch (Exception ex){
 

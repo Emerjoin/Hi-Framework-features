@@ -1,5 +1,9 @@
 package mz.co.hi.web;
 
+import mz.co.hi.web.config.Bootstrap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.security.MessageDigest;
@@ -18,9 +22,9 @@ public class ActiveUser implements Serializable {
 
     private HashMap<String,Object> data = new HashMap<>();
 
-    public ActiveUser(){
+    private Logger _log = LoggerFactory.getLogger(Bootstrap.LOGGER);
 
-        //Generate token here
+    public ActiveUser(){
 
         try {
 
@@ -44,7 +48,7 @@ public class ActiveUser implements Serializable {
 
         }catch (Exception ex){
 
-            ex.printStackTrace();
+            _log.error("Failed to generate User's CSRF protection token",ex);
 
         }
     }

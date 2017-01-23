@@ -26,6 +26,8 @@ public class AppConfigurations {
 
     private DeploymentMode deploymentMode = DeploymentMode.DEVELOPMENT;
 
+
+
     public static enum DeploymentMode {
 
         DEVELOPMENT, PRODUCTION

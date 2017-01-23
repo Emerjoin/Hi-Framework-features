@@ -5,6 +5,7 @@ import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.config.Bootstrap;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MvcException;
 import mz.co.hi.web.mvc.exceptions.NoSuchViewException;
@@ -23,6 +24,7 @@ import java.util.Map;
  * Created by Mario Junior.
  */
 //TODO: JavaDoc
+//TODO: Refactor
 public class Controller {
 
     public static final String VIEW_DATA_KEY ="dataJson";
@@ -30,7 +32,7 @@ public class Controller {
     @Inject
     private HTMLizer htmLizer;
 
-    private static Logger _log = LoggerFactory.getLogger(Controller.class);
+    private static Logger _log = LoggerFactory.getLogger(Bootstrap.LOGGER);
 
 
     public Controller(){

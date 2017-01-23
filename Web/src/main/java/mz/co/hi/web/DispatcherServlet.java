@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.UnsatisfiedResolutionException;
 import javax.enterprise.inject.spi.CDI;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,7 +65,10 @@ public class DispatcherServlet extends HttpServlet {
     public static ControllerCallsListener controllerCallsListener = null;
     public static FrontierCallsListener frontierCallsListener = null;
 
-    private static Logger _log = LoggerFactory.getLogger(DispatcherServlet.class);
+    public static String LOGGER = "hi-web";
+    private static Logger _log = null;
+
+
 
     public DispatcherServlet(){
 
@@ -253,7 +257,6 @@ public class DispatcherServlet extends HttpServlet {
                 }catch (Exception ex){
 
                     _log.error("Error while attempting to register the frontier class",ex);
-                    ex.printStackTrace();
                     continue;
 
                 }
@@ -283,13 +286,27 @@ public class DispatcherServlet extends HttpServlet {
     }
 
 
-    public void init() throws ServletException{
+
+    //TODO: Refactor
+    public void init(ServletConfig config) throws ServletException{
 
         if(initialized){
 
             return;
 
         }
+
+
+        String logger = config.getInitParameter("logger");
+        if(logger==null)
+            logger = "hi-web";
+
+        Bootstrap.setLogger(logger);
+        _log = LoggerFactory.getLogger(logger);
+
+        //TODO: Use this to map exceptions to documentation links and display them when throwing exception
+        String documentationPath =  config.getInitParameter("docs");
+
 
         initialized = true;
 
@@ -415,8 +432,10 @@ public class DispatcherServlet extends HttpServlet {
 
         _log.info("---Finished Hi-Framework servlet initialization...");
 
-    }
 
+
+
+    }
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

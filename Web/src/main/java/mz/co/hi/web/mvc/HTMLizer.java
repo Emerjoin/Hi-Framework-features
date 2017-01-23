@@ -19,6 +19,7 @@ import java.util.Map;
 /**
  * Created by Mario Junior.
  */
+//TODO: Refactor
 public class HTMLizer {
 
     private static HTMLizer instance = null;
