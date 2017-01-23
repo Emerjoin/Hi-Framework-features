@@ -1,6 +1,5 @@
 package mz.co.hi.web.config;
 
-import mz.co.hi.web.users.UDetailsProvider;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +14,6 @@ public class AppConfigurations {
     private String viewsDirectory;
     private String welcomeUrl;
     private String templates[]={"index"};
-    private UDetailsProvider uDetailsProvider;
     private List<String> frontiers = new ArrayList<>();
     private List<String> frontierPackages = new ArrayList<>();
     private Tunnings tunnings = new Tunnings();
@@ -104,15 +102,6 @@ public class AppConfigurations {
         this.welcomeUrl = welcomeUrl;
     }
 
-
-
-    public UDetailsProvider getUserDetailsProvider() {
-        return uDetailsProvider;
-    }
-
-    public void setUserDetailsProvider(UDetailsProvider uDetailsProvider) {
-        this.uDetailsProvider = uDetailsProvider;
-    }
 
     public List<String> getFrontiers() {
 

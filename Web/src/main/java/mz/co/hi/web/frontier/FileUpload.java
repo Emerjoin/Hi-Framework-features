@@ -9,6 +9,7 @@ import java.io.InputStream;
 /**
  * @author Mário Júnior
  */
+//TODO: JavaDoc
 public class FileUpload {
 
     private Part part;

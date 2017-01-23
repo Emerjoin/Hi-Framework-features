@@ -3,6 +3,7 @@ package mz.co.hi.web.events.args;
 /**
  * @author Mário Júnior
  */
+//TODO: JavaDoc
 public abstract class Interception {
 
     private boolean after;

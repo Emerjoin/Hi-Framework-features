@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 /**
  * @author Mário Júnior
  */
+//TODO: JavaDoc
 @Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RequirePermission {

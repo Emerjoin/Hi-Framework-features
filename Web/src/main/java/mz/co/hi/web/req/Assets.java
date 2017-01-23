@@ -239,7 +239,7 @@ public class Assets extends ReqHandler {
             }
 
 
-        }catch (Exception ex){
+        }catch (Throwable ex){
 
             requestContext.getResponse().sendError(500);
 

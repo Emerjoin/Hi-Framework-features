@@ -1,7 +1,6 @@
 package mz.co.hi.web;
 
 
-import mz.co.hi.web.users.Sessions;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -17,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+//TODO: JavaDoc
 @RequestScoped
 public class RequestContext {
 
@@ -34,6 +34,8 @@ public class RequestContext {
 
     private OutputStream outputStream = null;
 
+    public static String AJAX_HEADER_KEY = "AJAX_MVC";
+
     public String getUsername(){
 
         return request.getRemoteUser();
@@ -45,12 +47,6 @@ public class RequestContext {
         System.out.println(~'g');
 
         return request.getRemoteUser()!=null;
-
-    }
-
-    public Map getUserDetails(){
-
-        return Sessions.getUserDetails(getUsername());
 
     }
 
@@ -81,15 +77,6 @@ public class RequestContext {
 
     }
 
-    /*
-    public RequestContext(HttpServletRequest request, HttpServletResponse response, ServletContext context, String routeUrl){
-
-        this.request = request;
-        this.response = response;
-        this.url = request.getRequestURI();
-        this.servletContext = context;
-        this.routeUrl = routeUrl;
-    }*/
 
     public RequestContext(){
 
@@ -160,7 +147,7 @@ public class RequestContext {
 
         }
 
-        return request.getHeader("AJAX_MVC")!=null;
+        return request.getHeader(AJAX_HEADER_KEY)!=null;
 
     }
 

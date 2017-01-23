@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
+//TODO: JavaDoc
 public @interface SingleCall {
 
     public enum  Detection {

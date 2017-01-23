@@ -78,7 +78,7 @@ public class DispatcherServlet extends HttpServlet {
         try {
 
 
-            System.out.println("Reading main client-side code file...");
+            _log.debug("Reading main client-side code file...");
             URL res = this.getServletContext().getResource("/hi.js");
             if(res!=null){
 
@@ -445,7 +445,7 @@ public class DispatcherServlet extends HttpServlet {
             String simpleName = canonicalName.substring(canonicalName.lastIndexOf('.')+1,canonicalName.length());
             String controllerURL = MVC.getURLController(simpleName);
 
-            System.out.println("Tested controller action detected : "+controllerURL+"/"+actionURL);
+            _log.info("Tested controller action detected : "+controllerURL+"/"+actionURL);
 
             String testedViewPath = "/views/"+controllerURL+"/"+actionURL+".js";
             AppConfigurations.get().getTestedViews().put(testedViewPath,controllerURL+"/"+actionURL);
@@ -489,14 +489,14 @@ public class DispatcherServlet extends HttpServlet {
 
                try {
 
-                   System.out.println("Mapping controller class : "+dotName.toString());
+                   _log.info("Mapping controller class : "+dotName.toString());
                    Class controllerClazz = Class.forName(dotName.toString());
 
                    ControllersMapper.map(controllerClazz);
 
                }catch (ClassNotFoundException ex){
 
-                   getServletContext().log("Error mapping controller class",ex);
+                   _log.error("Error mapping controller class",ex);
                    continue;
 
                }
@@ -525,7 +525,7 @@ public class DispatcherServlet extends HttpServlet {
 
                 try {
 
-                    System.out.println("Loading web component : "+an.target().asClass().name().toString());
+                    _log.info("Loading web component : "+an.target().asClass().name().toString());
                     componentClass = Class.forName(an.target().asClass().toString());
 
                 }catch (ClassNotFoundException ex){

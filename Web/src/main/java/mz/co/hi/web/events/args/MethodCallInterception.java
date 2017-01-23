@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 /**
  * @author Mário Júnior
  */
+//TODO: JavaDoc
 public abstract class MethodCallInterception extends Interception {
 
     private Class<? extends Controller> clazz = null;

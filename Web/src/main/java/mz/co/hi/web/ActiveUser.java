@@ -10,6 +10,7 @@ import java.util.Map;
 /**
  * @author Mário Júnior
  */
+//TODO: JavaDoc
 @SessionScoped
 public class ActiveUser implements Serializable {
 

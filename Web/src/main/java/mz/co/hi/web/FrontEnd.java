@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+//TODO: JavaDoc
 @RequestScoped
 public class FrontEnd {
 
@@ -141,7 +142,8 @@ public class FrontEnd {
 
     public boolean isRequestAjax(){
 
-        return "XMLHttpRequest".equals(httpServletRequest.getHeader("X-Requested-With"));
+        String headerValue = httpServletRequest.getHeader(RequestContext.AJAX_HEADER_KEY);
+        return headerValue!=null&&headerValue.equalsIgnoreCase("1");
 
     }
 

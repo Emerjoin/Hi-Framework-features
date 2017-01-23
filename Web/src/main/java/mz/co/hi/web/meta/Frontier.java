@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * This annotation is processed by Yayee annotations processor. Make sure the processor is correctly configured
  * in order to get the Frontiers working.
  */
-
+//TODO: JavaDoc
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Frontier {

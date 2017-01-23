@@ -414,23 +414,11 @@ public class HTMLizer {
 
             if(!viewData.containsKey(TEMPLATE_DATA_KEY)){
 
-                //TODO: Re-check this
                 viewData.put("$root", new HashMap<>());
 
             }
 
             Map $templateDataMap = (Map) viewData.get("$root");
-
-
-            if(AppConfigurations.get().getUserDetailsProvider()!=null){
-
-
-
-                $templateDataMap.put("$user", AppConfigurations.get().getUserDetailsProvider().
-                        getDetails(requestContext.getUsername()));
-
-            }
-
             viewData.put("$root",$templateDataMap);
 
         }

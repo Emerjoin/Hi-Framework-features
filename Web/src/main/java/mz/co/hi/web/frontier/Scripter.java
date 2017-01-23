@@ -142,7 +142,6 @@ public class Scripter {
         mirror.append("function "+signature+"{");
         mirror.append(data);
         mirror.append("var $functionUrl=App.base_url+\""+generateUrl(beanName,method.getName())+"\";");
-        //mirror.append("var $headers="+generateHeaders(beanName,method.getName())+";");
         mirror.append(DispatcherServlet.genericFrontierScript);
         mirror.append("};");
 
