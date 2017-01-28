@@ -1,4 +1,4 @@
-package mz.co.hi.web.extension;
+package mz.co.hi.web.boot;
 
 import mz.co.hi.web.exceptions.HiException;
 

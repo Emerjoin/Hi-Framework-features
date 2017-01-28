@@ -5,13 +5,13 @@ import com.google.gson.GsonBuilder;
 import mz.co.hi.web.*;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.internal.ES5Library;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MalMarkedTemplateException;
 import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
 import mz.co.hi.web.mvc.exceptions.TemplateException;
 
 import javax.enterprise.inject.spi.CDI;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,35 +19,18 @@ import java.util.Map;
 /**
  * Created by Mario Junior.
  */
-//TODO: Refactor
 public class HTMLizer {
 
     private static HTMLizer instance = null;
     private static final String PREPARE_NEXT_VIEW = "Hi.$ui.js.createViewScope(vpath,context_vars,viewToLoad.html,false,false,false,false);";
     private static final String RUN_APP = "Hi.$angular.run();";
-    private static final String BOOSTRAP_ANGULAR = "angular.bootstrap(document, [\"hi\"]);";
-    //private static final String VIEW_NG = "<div id='app-view' ng-controller=\"view_controller\"></div>";
+    private static final String BOOTSTRAP_ANGULAR = "angular.bootstrap(document, [\"hi\"]);";
     private static final String VIEW_NG = "<div id='app-view'></div>";
 
-    public static final String JS_INVOCABLES_KEY = "$invoke";
+    public static final String JS_INVOKABLES_KEY = "$invoke";
     public static final String TEMPLATE_DATA_KEY = "$root";
 
     private GsonBuilder gsonBuilder = null;
-
-    public void setGsonBuilder(GsonBuilder builder){
-
-        this.gsonBuilder = builder;
-
-    }
-
-
-
-    public static HTMLizer getInstance(){
-
-
-        return new HTMLizer();
-
-    }
 
     private RequestContext requestContext = null;
 
@@ -60,19 +43,9 @@ public class HTMLizer {
 
     }
 
-    public void setRequestContext(RequestContext requestContext){
-
-
-        this.requestContext = requestContext;
-
-    }
-
-
     private String fetchTemplate(FrontEnd frontEnd) throws TemplateException {
 
         String templateName = frontEnd.getTemplate();
-
-
         URL templateURL = null;
 
         try {
@@ -80,17 +53,11 @@ public class HTMLizer {
             templateURL = requestContext.getServletContext().getResource("/" + templateName+".html");
 
         }catch (Exception ex){
-
             throw new NoSuchTemplateException(templateName);
-
         }
 
-        if(templateURL==null){
-
+        if(templateURL==null)
             throw new NoSuchTemplateException(templateName);
-
-        }
-
 
         String templateFileContent = "";
 
@@ -99,107 +66,46 @@ public class HTMLizer {
             templateFileContent = Helper.readLines(templateURL.openStream(), null);
 
         }catch (Exception ex){
-
             throw new NoSuchTemplateException(templateName);
-
         }
+
+        validateTemplate(templateName,templateFileContent);
+        templateFileContent = AppConfigurations.get().getTunnings().applySmartCaching(templateFileContent);
+        return templateFileContent;
+
+    }
+
+    private void validateTemplate(String templateName, String templateFileContent) throws TemplateException {
 
         //Check the body tag, as its going to be replaced later in this same method
         int bodyCloseIndex = templateFileContent.indexOf("</body>");
-        if(bodyCloseIndex==-1){
-
+        if(bodyCloseIndex==-1)
             throw new MalMarkedTemplateException(templateName,"token </body> could not be found. Body tag might not be present.");
 
-        }
-
-
         int headCloseIndex = templateFileContent.indexOf("</head>");
-        if(headCloseIndex==-1){
-
+        if(headCloseIndex==-1)
             throw new MalMarkedTemplateException(templateName,"token </head> could not be found. Head tag might not be present");
-
-        }
 
         //Check the view_content div
         int viewContentDivByIdIndex = templateFileContent.indexOf("id=\"view_content\"");
         int viewContentDivByBrackets = templateFileContent.indexOf("{{view_content}}");
 
-        if(viewContentDivByIdIndex==-1){
-
+        if(viewContentDivByIdIndex==-1)
             throw new MalMarkedTemplateException(templateName,"no element with id property set to \"view_content\" could be found");
 
-        }
-
-        if(viewContentDivByBrackets==-1){
-
+        if(viewContentDivByBrackets==-1)
             throw new MalMarkedTemplateException(templateName,"token {{view_content}} could not be found.");
 
-
-        }
-
-
-        templateFileContent = AppConfigurations.get().getTunnings().applySmartCaching(templateFileContent);
-        return templateFileContent;
-
-
     }
 
-
-    private InputStream openLoaderJS(){
-
-        URL loaderJS = null;
-        InputStream inputStream = null;
-
-        try {
-
-            loaderJS = requestContext.getServletContext().getResource("/loader.js");
-
-        }catch (Exception ex){
-
-            //TODO: Do something about
-
-        }
-
-        if(loaderJS!=null){
-
-            try{
-
-                inputStream = loaderJS.openStream();
-
-            }catch (Exception ex){
-
-                //TODO: Do something about
-
-            }
-
-        }
-
-        return inputStream;
-
-    }
-
-
-
-    private String getNg(){
-
-        return  "<div id='app-view' ng-controller=\"view_controller\"></div>";
-
-    }
 
     private String javascriptVar(String name, String value){
 
-        if(name==null){
+        if(name==null)
+            throw new NullPointerException("Variable name argument is null");
 
-            return null;
-
-        }
-
-        if(name.trim().length()==0){
-
-            return null;
-
-        }
-
+        if(name.trim().length()==0)
+            throw new IllegalArgumentException("Variable name argument has an empty value");
 
         String declaration="var "+name+"="+value.toString()+";";
         return declaration;
@@ -219,15 +125,15 @@ public class HTMLizer {
     }
 
 
-    private String getInitSnnipet(){
+    private String getViewInitSnippet(){
 
-        //return getNextClosureInformation()+getNextViewPath()+getViewJs()+getControllerSetter();
-        return getNextClosureInformation()+getViewJs()+getControllerSetter();
+        return getNextClosureInformation()
+                + getViewJS()+getControllerSetter();
 
     }
 
 
-    private String getLoaderJavascript(FrontEnd frontEnd){
+    private String getLoaderScript(FrontEnd frontEnd){
 
         StringBuilder scriptBuilder = new StringBuilder();
         scriptBuilder.append(" var appLang = "+ frontEnd.getLangDictionary()+";");
@@ -240,9 +146,8 @@ public class HTMLizer {
         scriptBuilder.append("else window.onload = loadApp;");
         scriptBuilder.append(" }else{");
         scriptBuilder.append("if(typeof $ignition==\"function\"){");
-        scriptBuilder.append(getInitSnnipet());//New code
+        scriptBuilder.append(getViewInitSnippet());//New code
         scriptBuilder.append("angular.element(document).ready(function() {");
-        //scriptBuilder.append("angular.bootstrap(document, [\"hi\"]);");
         scriptBuilder.append("$ignition();");
         scriptBuilder.append("});}}");
         return scriptBuilder.toString();
@@ -287,7 +192,6 @@ public class HTMLizer {
 
         String controller = requestContext.getData().get("controllerU").toString();
         String action = requestContext.getData().get("actionU").toString();
-        //String functionInvocation = "Hi.Internal.setNextViewPath(false,\""+controller+"\",\""+action+"\");";
         String functionInvocation = "var vpath = Hi.$nav.getViewPath(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
@@ -297,64 +201,161 @@ public class HTMLizer {
     private String getControllerSetter(){
 
         String controller = requestContext.getData().get("controllerU").toString();
-
         String action = requestContext.getData().get("actionU").toString();
         String functionInvocation = "Hi.$ui.js.setLoadedController(\""+controller+"\",\""+action+"\");";
         return functionInvocation;
 
     }
 
-    private String getViewJs(){
+    private String getViewJS(){
 
-
-        if(!requestContext.getData().containsKey("view_js")){
-
+        if(!requestContext.getData().containsKey("view_js"))
             return "Hi.view(function(_){})";
 
-        }
-
-
-        String view = requestContext.getData().get("view_js").toString();
-
-        return view;
+        return requestContext.getData().get("view_js").toString();
 
     }
 
     private boolean ignoreView(){
 
-        return requestContext.getRequest().getHeader("Ignore-View")!=null;
+        return requestContext.getRequest()
+                .getHeader("Ignore-View")!=null;
 
     }
 
     private boolean ignoreJs(){
 
-        return requestContext.getRequest().getHeader("Ignore-Js")!=null;
+        return requestContext.getRequest()
+                .getHeader("Ignore-Js")!=null;
 
     }
 
-    //TODO: WHat about debug messages
+    private void sendToClient(String result){
+
+        requestContext.getResponse().setHeader("Cache-Control", "no-cache");
+        requestContext.getResponse().setContentType("text/html;charset=UTF8");
+        Helper.echo(result, requestContext);
+
+    }
+
+    private String ajaxProcess(FrontEnd frontEnd, String viewHTML,
+                               Map<String,Object> viewData,Map route,
+                               Controller controller) throws ConversionFailedException {
+
+        Map<String,Map> actions = frontEnd.getLaterInvocations();
+        if(!actions.isEmpty())
+            viewData.put(JS_INVOKABLES_KEY,actions);
+
+        Map map = new HashMap();
+
+        if(!ignoreView()) map.put("view", viewHTML);
+        if(!ignoreJs())   map.put("controller", getViewJS());
+        map.put("data", viewData);
+        map.put("route",route);
+        map.put("response", 200);
+
+        String resultResponse = null;
+        Gson gson = gsonBuilder.create();
+
+        try {
+
+            resultResponse = gson.toJson(map);
+
+        }catch (Exception ex){
+
+            String actionMethod = requestContext.getData().get("action").toString();
+            throw new ConversionFailedException(controller.getClass().getCanonicalName(),actionMethod,ex);
+
+        }
+
+        requestContext.getResponse().setContentType("text/json;charset=UTF8");
+        requestContext.echo(resultResponse);
+        return resultResponse;
+
+    }
+
+
+    private String normalProcess(FrontEnd frontEnd, String viewHTML,
+                               Map<String,Object> viewData,Map route,
+                               Controller controller, String loaderJSContent, String template) throws ConversionFailedException {
+
+        viewData.put("$route",route);
+        String loaderJavascript = makeJavascript(getLoaderScript(frontEnd));
+
+        if(loaderJSContent==null) loaderJSContent="<!--Empty loader-->";
+        else {
+            String tokenToReplace = "//_place_init_code_here";
+            String replacement = getViewInitSnippet();
+            loaderJSContent = loaderJSContent.replace(tokenToReplace,replacement);
+        }
+
+        template = transformHeadAndBody(template,loaderJavascript,loaderJSContent);
+        Gson gson = new GsonBuilder().create();
+        String viewDataStr = null;
+
+        try{
+
+            viewDataStr = gson.toJson(viewData);
+
+        }catch (Exception ex){
+            String actionMethod = requestContext.getData().get("action").toString();
+            throw new ConversionFailedException(controller.getClass().getCanonicalName(),actionMethod,ex);
+        }
+
+        Map html = new HashMap();
+        html.put("html",viewHTML);
+        String allJson = prepareIgnitionJS(viewDataStr,gson,html);
+
+        allJson+="\n"+VIEW_NG;
+        CharSequence toReplace = "{{view_content}}";
+        CharSequence replaceBy = allJson;
+        String processedResult =  template.replace(toReplace,replaceBy);
+
+        this.sendToClient(processedResult);
+        return processedResult;
+
+
+    }
+
+
+    private String prepareIgnitionJS(String viewDataStr, Gson gson, Map html){
+
+        String appVariable = makeJavascript(javascriptVar("App",getAppData().toString()));
+        String contextVarsVariable = makeJavascript(javascriptVar("context_vars",viewDataStr));
+        String startupScript = makeJavascript(makeFunction("$startup",getNextViewPath()+PREPARE_NEXT_VIEW));
+        String ignitionScript = makeJavascript(makeFunction("$ignition",RUN_APP+ BOOTSTRAP_ANGULAR));
+        String viewToLoadVariable = makeJavascript(javascriptVar("viewToLoad",gson.toJson(html)));
+        return appVariable+contextVarsVariable+viewToLoadVariable+startupScript+ignitionScript;
+
+    }
+
+    private String transformHeadAndBody(String template, String loaderJavascript, String loadedJSContent){
+
+        CharSequence bodyCloseTag = "</body>";
+        template = template.replace(bodyCloseTag,"</body>"+loaderJavascript);
+
+        CharSequence headCloseTag = "</head>";
+        CharSequence headClosedScript = "</head>"+makeJavascript(loadedJSContent);
+        template = template.replace(headCloseTag,headClosedScript);
+
+        return template;
+
+    }
+
     public String process(Controller controller,boolean ignoreView) throws TemplateException, ConversionFailedException {
 
         requestContext.getResponse().setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-
-        //Get the action to perform from the FrontEnd
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
+        ES5Library es5Lib = CDI.current().select(ES5Library.class).get();
 
-        //Get the template
         String template = fetchTemplate(frontEnd);
-        String loadedJSContent= DispatcherServlet.hiScript;
-
+        String loaderJSContent= es5Lib.getStaticHiJS();
 
         Map viewData = (Map) requestContext.getData().get(Controller.VIEW_DATA_KEY);
 
-
-
-        //TODO: Make sure its not null
         String viewHTML = null;
         if(requestContext.getData().containsKey("view_content")){
-
             viewHTML = requestContext.getData().get("view_content").toString();
-
             if(viewHTML!=null)
                 viewHTML = AppConfigurations.get().getTunnings().applySmartCaching(viewHTML);
 
@@ -365,152 +366,41 @@ public class HTMLizer {
         route.put("action", requestContext.getData().get("actionU").toString());
 
         /* AJAX REQUEST */
-        if(requestContext.hasAjaxHeader()) {
-
-            //Client-side invocations
-            Map<String,Map> actions = frontEnd.getLaterInvocations();
-
-            //Not Empty
-            if(!actions.isEmpty()){
-
-                viewData.put(JS_INVOCABLES_KEY,actions);
-
-            }
-
-
-            Map map = new HashMap();
-
-            if(!ignoreView()) map.put("view", viewHTML);
-            if(!ignoreJs())   map.put("controller", getViewJs());
-            map.put("data", viewData);
-            map.put("route",route);
-            map.put("response", 200);
-
-            String resultResponse = null;
-
-            Gson gson = gsonBuilder.create();
-
-            try {
-
-                resultResponse = gson.toJson(map);
-
-            }catch (Exception ex){
-
-                String actionMethod = requestContext.getData().get("action").toString();
-                throw new ConversionFailedException(controller.getClass().getCanonicalName(),actionMethod,ex);
-
-            }
-
-            requestContext.getResponse().setContentType("text/json;charset=UTF8");
-            requestContext.echo(resultResponse);
-
-            return resultResponse;
-
-
-        }
+        if(requestContext.hasAjaxHeader())
+            return ajaxProcess(frontEnd,viewHTML,viewData,route,controller);
 
         if(requestContext.isUserLogged()){
 
-            //Can only fetch data for logged user
-
-            if(!viewData.containsKey(TEMPLATE_DATA_KEY)){
-
+            if(!viewData.containsKey(TEMPLATE_DATA_KEY))
                 viewData.put("$root", new HashMap<>());
-
-            }
 
             Map $templateDataMap = (Map) viewData.get("$root");
             viewData.put("$root",$templateDataMap);
 
         }
 
-
-
-
         /* NORMAL REQUEST */
-        viewData.put("$route",route);
-        String loaderJavascript = makeJavascript(getLoaderJavascript(frontEnd));
-
-        if(loadedJSContent==null) {
-
-            loadedJSContent="<!--Empty loaded-->";
-
-        }else{
-
-            String tokenToReplace = "//_place_init_code_here";
-            String replacement = getInitSnnipet();
-            loadedJSContent = loadedJSContent.replace(tokenToReplace,replacement);
-        }
-
-
-        CharSequence bodyCloseTag = "</body>";
-        template = template.replace(bodyCloseTag,"</body>"+loaderJavascript);
-
-        CharSequence headCloseTag = "</head>";
-        CharSequence headClosedScript = "</head>"+makeJavascript(loadedJSContent);
-        template = template.replace(headCloseTag,headClosedScript);
-
-
-        Gson gson = new GsonBuilder().create();
-        String viewDataStr = null;
-
-        try{
-
-            viewDataStr = gson.toJson(viewData);
-
-        }catch (Exception ex){
-
-            String actionMethod = requestContext.getData().get("action").toString();
-            throw new ConversionFailedException(controller.getClass().getCanonicalName(),actionMethod,ex);
-
-        }
-
-
-        Map html = new HashMap();
-        html.put("html",viewHTML);
-
-        String appVariable = makeJavascript(javascriptVar("App",getAppData().toString()));
-        String contextVarsVariable = makeJavascript(javascriptVar("context_vars",viewDataStr));
-        String startupScript = makeJavascript(makeFunction("$startup",getNextViewPath()+PREPARE_NEXT_VIEW));
-        String ignitionScript = makeJavascript(makeFunction("$ignition",RUN_APP+BOOSTRAP_ANGULAR));
-        String viewToLoadVariable = makeJavascript(javascriptVar("viewToLoad",gson.toJson(html)));
-
-
-        String allJson = appVariable+contextVarsVariable+viewToLoadVariable+startupScript+ignitionScript;
-
-
-        allJson+="\n"+VIEW_NG;
-        CharSequence toReplace = "{{view_content}}";
-        CharSequence replaceBy = allJson;
-        String processedResult =  template.replace(toReplace,replaceBy);
-
-
-        this.filter(processedResult);
-        this.sendToClient(processedResult);
-
-        return processedResult;
-
+        return normalProcess(frontEnd,viewHTML,viewData,
+                route,controller,loaderJSContent,template);
 
     }
 
-    private void filter(String result){
+    public void setRequestContext(RequestContext requestContext){
 
-        result="<h1>Changed</h1>";
+        this.requestContext = requestContext;
+
+    }
+
+    public void setGsonBuilder(GsonBuilder builder){
+
+        this.gsonBuilder = builder;
 
     }
 
 
-    private void sendToClient(String result){
+    public static HTMLizer getInstance(){
 
-        requestContext.getResponse().setHeader("Cache-Control", "no-cache");
-        requestContext.getResponse().setContentType("text/html;charset=UTF8");
-        Helper.echo(result, requestContext);
-
-    }
-
-    private void applySmartCaching(String markup){
-
-
+        return new HTMLizer();
 
     }
 

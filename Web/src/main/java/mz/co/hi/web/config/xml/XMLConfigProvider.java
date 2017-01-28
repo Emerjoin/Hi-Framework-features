@@ -1,6 +1,7 @@
-package mz.co.hi.web.config;
+package mz.co.hi.web.config.xml;
 
 import com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory;
+import mz.co.hi.web.config.*;
 import mz.co.hi.web.exceptions.HiException;
 import org.jboss.jandex.AnnotationInstance;
 import org.jboss.jandex.DotName;

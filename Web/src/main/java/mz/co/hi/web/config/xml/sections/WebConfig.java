@@ -1,11 +1,10 @@
-package mz.co.hi.web.config.sections;
+package mz.co.hi.web.config.xml.sections;
 
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.BadConfigException;
-import mz.co.hi.web.config.ConfigSection;
 import mz.co.hi.web.config.Configurator;
+import mz.co.hi.web.config.xml.ConfigSection;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.util.Map;

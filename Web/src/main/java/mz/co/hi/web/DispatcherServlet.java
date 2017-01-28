@@ -2,16 +2,10 @@ package mz.co.hi.web;
 
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.ConfigProvider;
-import mz.co.hi.web.config.XMLConfigProvider;
-import mz.co.hi.web.events.listeners.ControllerCallsListener;
-import mz.co.hi.web.events.listeners.FrontierCallsListener;
-import mz.co.hi.web.events.listeners.TemplateLoadListener;
-import mz.co.hi.web.internal.BootAgent;
+import mz.co.hi.web.boot.BootAgent;
 import mz.co.hi.web.internal.Router;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.servlet.ServletConfig;
@@ -31,10 +25,6 @@ public class DispatcherServlet extends HttpServlet {
 
     private static boolean initialized = false;
 
-    public static TemplateLoadListener templateLoadListener = null;
-    public static ControllerCallsListener controllerCallsListener = null;
-    public static FrontierCallsListener frontierCallsListener = null;
-
     public static String LOGGER = "hi-web";
     private static Logger _log = null;
 
@@ -48,17 +38,7 @@ public class DispatcherServlet extends HttpServlet {
     @Inject
     private ConfigProvider configProvider;
 
-    public DispatcherServlet(){
-
-
-
-    }
-
-
-
-    //TODO: Refactor
     public void init(ServletConfig config) throws ServletException{
-
 
         //TODO: Use this to map exceptions to documentation links and display them when throwing exception
         String documentationPath =  config.getInitParameter("docs");

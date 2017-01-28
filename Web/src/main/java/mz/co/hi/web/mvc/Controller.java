@@ -5,7 +5,8 @@ import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.XMLConfigProvider;
+import mz.co.hi.web.config.xml.XMLConfigProvider;
+import mz.co.hi.web.events.TemplateLoadEvent;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MvcException;
 import mz.co.hi.web.mvc.exceptions.NoSuchViewException;
@@ -13,6 +14,7 @@ import mz.co.hi.web.mvc.exceptions.TemplateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.event.Event;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import java.io.InputStream;
@@ -32,14 +34,9 @@ public class Controller {
     @Inject
     private HTMLizer htmLizer;
 
+    private Event<TemplateLoadEvent> templateLoadEvent;
+
     private static Logger _log = LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
-
-
-    public Controller(){
-
-
-
-    }
 
 
     public void callView() throws MvcException {
@@ -63,13 +60,9 @@ public class Controller {
 
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
 
-        if(!requestContext.hasAjaxHeader()){
+        if(!requestContext.hasAjaxHeader())
+            templateLoadEvent.fire(new TemplateLoadEvent());
 
-            if(DispatcherServlet.templateLoadListener!=null)
-                DispatcherServlet.templateLoadListener.onTemplateLoad();
-
-
-        }
 
         if(values==null){
 
@@ -109,8 +102,6 @@ public class Controller {
             throw new NoSuchViewException(controllerName,actionName,viewFile);
 
         }
-
-
 
         try{
 

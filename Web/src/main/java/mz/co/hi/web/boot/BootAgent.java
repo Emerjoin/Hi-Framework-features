@@ -1,11 +1,13 @@
-package mz.co.hi.web.internal;
+package mz.co.hi.web.boot;
 
 import mz.co.hi.web.BootstrapUtils;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.ConfigProvider;
 import mz.co.hi.web.exceptions.HiException;
-import mz.co.hi.web.extension.BootExtension;
-import mz.co.hi.web.extension.BootManager;
+import mz.co.hi.web.boot.BootExtension;
+import mz.co.hi.web.boot.BootManager;
+import mz.co.hi.web.internal.ES5Library;
+import mz.co.hi.web.internal.Router;
 import mz.co.hi.web.meta.Tested;
 import mz.co.hi.web.mvc.Controller;
 import mz.co.hi.web.mvc.ControllersMapper;

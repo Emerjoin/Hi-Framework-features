@@ -407,7 +407,7 @@ public class FrontiersReqHandler extends ReqHandler {
 
                     if(frontEnd.gotLaterInvocations()) {
 
-                        map.put(HTMLizer.JS_INVOCABLES_KEY, frontEnd.getLaterInvocations());
+                        map.put(HTMLizer.JS_INVOKABLES_KEY, frontEnd.getLaterInvocations());
 
                     }
 

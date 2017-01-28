@@ -1,4 +1,4 @@
-package mz.co.hi.web.config;
+package mz.co.hi.web.config.xml;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

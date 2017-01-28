@@ -2,7 +2,7 @@ package mz.co.hi.web.req;
 
 import mz.co.hi.web.AuthComponent;
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.config.XMLConfigProvider;
+import mz.co.hi.web.config.xml.XMLConfigProvider;
 import mz.co.hi.web.meta.Denied;
 import mz.co.hi.web.meta.Granted;
 import mz.co.hi.web.meta.RequirePermission;

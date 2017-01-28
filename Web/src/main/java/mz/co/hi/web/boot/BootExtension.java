@@ -1,4 +1,4 @@
-package mz.co.hi.web.extension;
+package mz.co.hi.web.boot;
 
 import org.jboss.jandex.Index;
 

@@ -1,6 +1,6 @@
 package mz.co.hi.web;
 
-import mz.co.hi.web.config.XMLConfigProvider;
+import mz.co.hi.web.config.xml.XMLConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
