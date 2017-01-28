@@ -24,19 +24,7 @@ import java.util.Set;
 @ApplicationScoped
 public class ES5ReqHandler extends ReqHandler {
 
-    private RequestContext requestContext = null;
     private static Map<String,String> templateControllers = new HashMap<String, String>();
-
-    @Inject
-    private ActiveUser activeUser;
-
-    @Inject
-    private AppContext appContext;
-
-    @Inject
-    private ES5Library es5;
-
-
     public static void prepareTemplates(ServletContext context) throws HiException{
 
         AppConfigurations appConfigurations = AppConfigurations.get();
@@ -71,6 +59,19 @@ public class ES5ReqHandler extends ReqHandler {
         }
 
     }
+
+
+    private RequestContext requestContext = null;
+
+    @Inject
+    private ActiveUser activeUser;
+
+    @Inject
+    private AppContext appContext;
+
+    @Inject
+    private ES5Library es5;
+
 
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
