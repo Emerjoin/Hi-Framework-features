@@ -155,12 +155,9 @@ public class HTMLizer {
     private String getAppData(){
 
         activeUser = CDI.current().select(ActiveUser.class).get();
-
         CharSequence http = "http://";
         CharSequence https = "https://";
-
         AppContext appContext = CDI.current().select(AppContext.class).get();
-
         Gson gson = new Gson();
 
         Map map = new HashMap();
@@ -170,7 +167,7 @@ public class HTMLizer {
         map.put("deployMode",appContext.getDeployMode().toString());
         map.put("csrfToken",activeUser.getCsrfToken());
 
-        return   gson.toJson(map);
+        return gson.toJson(map);
 
     }
 
@@ -272,9 +269,9 @@ public class HTMLizer {
     }
 
 
-    private String normalProcess(FrontEnd frontEnd, String viewHTML,
-                               Map<String,Object> viewData,Map route,
-                               Controller controller, String loaderJSContent, String template) throws ConversionFailedException {
+    private String normalProcess(FrontEnd frontEnd, String viewHTML, Map<String,Object> viewData,
+                                 Map route, Controller controller, String loaderJSContent,
+                                 String template) throws ConversionFailedException {
 
         viewData.put("$route",route);
         String loaderJavascript = makeJavascript(getLoaderScript(frontEnd));
