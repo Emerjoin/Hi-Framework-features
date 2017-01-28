@@ -21,15 +21,9 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-//@HandleRequests(regexp = "[a-zA-Z-]{2,}\\/[a-zA-Z-]{2,}")
 @HandleRequests(regexp = "(([a-zA-Z-]{2,}\\/[a-zA-Z-]{2,})|([a-zA-Z-]{2,}))")
 @ApplicationScoped
 public class MVC extends ReqHandler{
-
-    private RequestContext requestContext = null;
-
-    @Inject
-    private AppContext appContext;
 
     private static char[] alphabet = new char[]
             {'A','B','C','D','E','F','G','H','I','J',
@@ -43,70 +37,70 @@ public class MVC extends ReqHandler{
 
     }
 
-    @Produces
-    public HTMLizer getHTMLizer(){
-
-        HTMLizer htmLizer = HTMLizer.getInstance();
-        htmLizer.setGsonBuilder(appContext.getGsonBuilder());
-        return htmLizer;
-
-    }
-
     public static String getTemplate(String name){
 
         return templates.get(name);
 
     }
 
-    public boolean handle(RequestContext requestContext) throws ServletException, IOException {
-        this.requestContext = requestContext;
+    public static String getControllerClassFromURLPart(String urlPart){
 
+        String capitalized = urlPart.substring(0,1).toLowerCase()
+                +urlPart.substring(1,urlPart.length());
 
-        String mvcUrl = requestContext.getRouteUrl();
-        int indexSlash = mvcUrl.indexOf('/');
-
-        if(indexSlash==-1){
-
-            indexSlash = mvcUrl.length();
-
-        }
-
-        String controller = mvcUrl.substring(0,indexSlash);
-        requestContext.getData().put("controllerU",controller);
-        controller = getControllerClassFromURLPart(controller);
-
-
-        String action = null;
-        if(indexSlash==mvcUrl.length())
-            action = "index";
-        else
-            action = mvcUrl.substring(indexSlash+1,mvcUrl.length());
-
-        requestContext.getData().put("actionU",action);
-        action = getActionMethodFromURLPart(action);
-
-        Class controllerClass= ControllersMapper.getInstance().findController(controller);
-        if(controllerClass==null){
-
-            return false;
-
-        }
-
-        boolean actionFound = false;
-
-        requestContext.getData().put("action",action);
-        requestContext.getData().put("controller",controller);
-
-        if(controllerClass!=null){
-
-            actionFound = callAction(action,controllerClass, requestContext);
-
-        }
-
-
-        return actionFound;
+        return noHyphens(capitalized);
 
     }
+
+    public static String getActionMethodFromURLPart(String urlPart){
+
+        return noHyphens(urlPart);
+
+    }
+
+    public static String getURLAction(String method){
+
+        return getURLController(method);
+
+    }
+
+    public static String getURLController(String clazz){
+
+        StringBuilder alphabetStr = new StringBuilder();
+        alphabetStr.append(alphabet);
+
+        char[] controllerChars = clazz.toCharArray();
+
+        StringBuilder urlController = new StringBuilder();
+        urlController.append(controllerChars[0]);
+
+
+        for(int i=1;i<controllerChars.length;i++){
+
+            StringBuilder stringBuilder = new StringBuilder();
+            char character = controllerChars[i];
+            stringBuilder.append(character);
+
+            //It is a capital character
+            if(alphabetStr.indexOf(stringBuilder.toString())!=-1)
+                urlController.append('-');
+
+
+            urlController.append(character);
+
+        }
+
+        return urlController.toString().toLowerCase();
+
+
+    }
+
+
+
+    private RequestContext requestContext = null;
+
+    @Inject
+    private AppContext appContext;
 
 
     private Map getValues(HttpServletRequest request){
@@ -274,56 +268,67 @@ public class MVC extends ReqHandler{
 
     }
 
-    public static String getControllerClassFromURLPart(String urlPart){
 
-         String capitalized = urlPart.substring(0,1).toLowerCase()
-                 +urlPart.substring(1,urlPart.length());
+    @Produces
+    public HTMLizer getHTMLizer(){
 
-        return noHyphens(capitalized);
-
-    }
-
-    public static String getActionMethodFromURLPart(String urlPart){
-
-        return noHyphens(urlPart);
+        HTMLizer htmLizer = HTMLizer.getInstance();
+        htmLizer.setGsonBuilder(appContext.getGsonBuilder());
+        return htmLizer;
 
     }
 
-    public static String getURLAction(String method){
 
-        return getURLController(method);
-
-    }
-
-    public static String getURLController(String clazz){
-
-        StringBuilder alphabetStr = new StringBuilder();
-        alphabetStr.append(alphabet);
-
-        char[] controllerChars = clazz.toCharArray();
-
-        StringBuilder urlController = new StringBuilder();
-        urlController.append(controllerChars[0]);
+    public boolean handle(RequestContext requestContext) throws ServletException, IOException {
+        this.requestContext = requestContext;
 
 
-        for(int i=1;i<controllerChars.length;i++){
+        String mvcUrl = requestContext.getRouteUrl();
+        int indexSlash = mvcUrl.indexOf('/');
 
-            StringBuilder stringBuilder = new StringBuilder();
-            char character = controllerChars[i];
-            stringBuilder.append(character);
+        if(indexSlash==-1){
 
-            //It is a capital character
-            if(alphabetStr.indexOf(stringBuilder.toString())!=-1)
-                urlController.append('-');
-
-
-            urlController.append(character);
+            indexSlash = mvcUrl.length();
 
         }
 
-        return urlController.toString().toLowerCase();
+        String controller = mvcUrl.substring(0,indexSlash);
+        requestContext.getData().put("controllerU",controller);
+        controller = getControllerClassFromURLPart(controller);
 
+
+        String action = null;
+        if(indexSlash==mvcUrl.length())
+            action = "index";
+        else
+            action = mvcUrl.substring(indexSlash+1,mvcUrl.length());
+
+        requestContext.getData().put("actionU",action);
+        action = getActionMethodFromURLPart(action);
+
+        Class controllerClass= ControllersMapper.getInstance().findController(controller);
+        if(controllerClass==null){
+
+            return false;
+
+        }
+
+        boolean actionFound = false;
+
+        requestContext.getData().put("action",action);
+        requestContext.getData().put("controller",controller);
+
+        if(controllerClass!=null){
+
+            actionFound = callAction(action,controllerClass, requestContext);
+
+        }
+
+
+        return actionFound;
 
     }
+
+
 
 }

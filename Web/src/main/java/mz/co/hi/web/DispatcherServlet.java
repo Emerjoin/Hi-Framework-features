@@ -6,6 +6,8 @@ import mz.co.hi.web.config.ConfigSection;
 import mz.co.hi.web.events.listeners.ControllerCallsListener;
 import mz.co.hi.web.events.listeners.FrontierCallsListener;
 import mz.co.hi.web.events.listeners.TemplateLoadListener;
+import mz.co.hi.web.internal.BootAgent;
+import mz.co.hi.web.internal.Router;
 import mz.co.hi.web.req.*;
 import org.jboss.jandex.*;
 import org.slf4j.Logger;
@@ -13,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.CDI;
+import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,8 +32,6 @@ import java.util.*;
 @WebServlet(urlPatterns = "/*",name = "HiServlet",loadOnStartup = 1)
 public class DispatcherServlet extends HttpServlet {
 
-    private HashMap<String,String> matchedUrls = new HashMap();
-
     private static boolean initialized = false;
 
     public static TemplateLoadListener templateLoadListener = null;
@@ -41,19 +42,17 @@ public class DispatcherServlet extends HttpServlet {
     private static Logger _log = null;
 
 
+    @Inject
+    private BootAgent bootAgent;
+
+    @Inject
+    private Router router;
 
     public DispatcherServlet(){
 
 
 
     }
-
-
-
-
-
-
-
 
 
 
@@ -80,7 +79,7 @@ public class DispatcherServlet extends HttpServlet {
 
         initialized = true;
 
-        _log.info("---Initializing Hi-Framework servlet...");
+        _log.info("---Booting Hi-Framework...");
 
         try{
 
@@ -141,29 +140,9 @@ public class DispatcherServlet extends HttpServlet {
         }
 
 
-        readLibScript();
-        readJavascriptInit();
-        readLoaderScript();
-        readGenericFrontier();
-        findControllersAndMap();
-        generateFrontiers();
-        findAndLoadComponents();
-        findTestedActions();
-        initBootExtensions();
+        bootAgent.init(getServletContext(),getServletConfig());
 
-        if(AppConfigurations.get()!=null){
-            ReqHandler.register(CDI.current().select(MVC.class).get(),MVC.class);
-            ReqHandler.register(CDI.current().select(Assets.class).get(),Assets.class);
-            ReqHandler.register(CDI.current().select(HiEcmaScript5.class).get(),HiEcmaScript5.class);
-            ReqHandler.register(CDI.current().select(Frontiers.class).get(),Frontiers.class);
-            ReqHandler.register(CDI.current().select(Tests.class).get(),Tests.class);
-            ReqHandler.register(CDI.current().select(TestFiles.class).get(),TestFiles.class);
-            HiEcmaScript5.prepareTemplates(this.getServletContext());
-        }
-
-        DEPLOY_ID = String.valueOf(new Date().getTime());
-
-        _log.info("---Finished Hi-Framework servlet initialization...");
+        _log.info("---Boot complete...");
 
 
 
@@ -235,93 +214,12 @@ public class DispatcherServlet extends HttpServlet {
         RequestContext requestContext = CDI.current().select(RequestContext.class).get();
         requestContext.setRouteUrl(routeURL);
         requestContext.setResponse(response);
-
-        boolean handled = false;
-
-        if(wasPreviouslyMatched(routeURL)){
-
-            ReqHandler reqHandler = ReqHandler.getHandler(getPreviouslyMatchedHandler(routeURL));
-            reqHandler.handle(requestContext);
-            return;
-
-        }
-
-
-        ReqHandler[] reqHandlers  = ReqHandler.getAllHandlers();
-        for(ReqHandler reqHandler : reqHandlers){
-
-            try {
-
-                Class handlerClazz = ReqHandler.getHandlerClass(reqHandler);
-                if (ReqHandler.matches(requestContext, handlerClazz,isPost)){
-                    handled = reqHandler.handle(requestContext);
-
-                    if(handled){
-
-                        storeMatchedUrl(routeURL,handlerClazz);
-
-                        break;
-
-                    }
-
-                }
-
-            }catch (ServletException ex){
-
-                requestContext.getResponse().sendError(500);
-                throw ex;
-
-            }
-
-        }
-
-        if(!handled){
-
-            requestContext.getResponse().sendError(404);
-
-        }
-
+        router.doRoute(requestContext,routeURL);
 
     }
 
 
-    private  boolean wasPreviouslyMatched(String route){
 
-        boolean wasIt = false;
-
-        synchronized (matchedUrls){
-
-            wasIt = matchedUrls.containsKey(route);
-
-        }
-
-        return wasIt;
-
-    }
-
-    private synchronized String getPreviouslyMatchedHandler(String route){
-
-        String previousHandler = null;
-
-        synchronized (matchedUrls){
-
-            previousHandler = matchedUrls.get(route);
-
-        }
-
-        return previousHandler;
-
-    }
-
-    private synchronized void storeMatchedUrl(String routeURL, Class<? extends ReqHandler> clazz){
-
-        synchronized (matchedUrls){
-
-            matchedUrls.put(routeURL,clazz.getCanonicalName());
-
-        }
-
-    }
 
 
 

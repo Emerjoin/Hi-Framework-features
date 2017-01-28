@@ -15,6 +15,8 @@ import org.jboss.jandex.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import java.util.Collection;
@@ -27,7 +29,8 @@ import java.util.Set;
  * From loading the configuration file to the generation of frontiers code.
  * @author Mário Júnior
  */
-public class HiStartupAgent {
+@ApplicationScoped
+public class BootAgent {
 
     //TODO: Set deployId
     //TODO: Call BootStrap to load configurations
@@ -39,25 +42,21 @@ public class HiStartupAgent {
     //TODO: Initilialize Boot extensions
     //TODO: Set global listeners
 
-    private static HiStartupAgent instance = null;
-
-    public static HiStartupAgent getInstance(){
-
-        if(instance!=null)
-            return instance;
-
-        instance = new HiStartupAgent();
-        return instance;
-
-    }
-
-    private HiStartupAgent(){}
 
     private ServletContext servletContext = null;
     private ServletConfig servletConfig = null;
     private String loggerName = null;
     private Logger _log = null;
     private String deployId ="";
+
+    @Inject
+    private ES5Library scriptLibrary;
+
+    @Inject
+    private Router router;
+
+
+    public BootAgent(){}
 
     private void initBootExtensions() throws HiException {
 
@@ -133,13 +132,13 @@ public class HiStartupAgent {
 
         for(Index index : indexSet){
 
-            findTestedAControllerActions(index);
+            $findTestedAControllerActions(index);
 
         }
 
     }
 
-    private void findTestedAControllerActions(Index index){
+    private void $findTestedAControllerActions(Index index){
 
         List<AnnotationInstance> instances = index.getAnnotations(DotName.createSimple(Tested.class.getCanonicalName()));
         for(AnnotationInstance an : instances){
@@ -166,7 +165,7 @@ public class HiStartupAgent {
 
     private void loadConfigs() throws HiException{
 
-
+        //TODO: Abstract the configurations provider : Can be an XML file or anything else (this will ease unit testing: no xml required)
         Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
         Set<Class<?>> configSections = new HashSet<>();
 
@@ -193,18 +192,12 @@ public class HiStartupAgent {
                         continue;
 
                     }
-
-
                 }
-
             }
-
         }
 
         ConfigurationsAgent configurationsAgent = new ConfigurationsAgent();
         configurationsAgent.load(servletContext,configSections);
-
-
     }
 
 
@@ -214,6 +207,8 @@ public class HiStartupAgent {
 
     }
 
+
+
     public void init(ServletContext context, ServletConfig config) throws HiException{
 
         this.servletContext = null;
@@ -221,8 +216,13 @@ public class HiStartupAgent {
 
         //TODO: Set logger name based in servletConfig
         _log = LoggerFactory.getLogger(loggerName);
-        loadConfigs();
-
+        makeDeployId(); //Set deploy Id
+        loadConfigs(); //Load App configurations
+        findControllersAndMap(); //Find all the controller and map them
+        findTestedActions(); //Find all the tested controllers actions //TODO: Make this bypassable via servlet config
+        scriptLibrary.init(servletContext);//Load scripts and generate frontiers
+        router.init(servletContext,servletConfig); //Register requests handlers
+        initBootExtensions(); //Load and execute boot extensions
 
     }
 
@@ -235,15 +235,11 @@ public class HiStartupAgent {
 
     }
 
-
     public String getDeployId(){
 
         return deployId;
 
     }
-
-
-
 
 
 }

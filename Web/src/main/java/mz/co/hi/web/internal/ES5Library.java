@@ -18,6 +18,7 @@ import org.jboss.jandex.Index;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import java.io.InputStream;
@@ -32,20 +33,10 @@ import java.util.Set;
  * to the internal components of the framework.
  * @author Mário Júnior
  */
+@ApplicationScoped
 public class ES5Library {
 
-    private static ES5Library instance;
 
-    public static ES5Library getInstance(){
-
-        if(instance!=null)
-            return instance;
-
-
-        instance = new ES5Library();
-        return instance;
-
-    }
 
     private String testsEcmaScript = "";
     private String frameworkLibEcmaScript = null;
@@ -59,9 +50,6 @@ public class ES5Library {
 
     private ServletContext servletContext = null;
     private static Logger _log = null;
-
-
-    private ES5Library(){}
 
 
     public void init(ServletContext context)throws HiException{
