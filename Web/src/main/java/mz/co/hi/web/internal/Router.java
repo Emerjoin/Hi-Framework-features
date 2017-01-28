@@ -27,7 +27,7 @@ public class Router {
         if(AppConfigurations.get()!=null){
 
             ReqHandler.register(CDI.current().select(MVCReqHandler.class).get(),MVCReqHandler.class);
-            ReqHandler.register(CDI.current().select(AssetsReqHandler.class).get(),AssetsReqHandler.class);
+            ReqHandler.register(CDI.current().select(WebrootReqHandler.class).get(),WebrootReqHandler.class);
             ReqHandler.register(CDI.current().select(ES5ReqHandler.class).get(),ES5ReqHandler.class);
             ReqHandler.register(CDI.current().select(FrontiersReqHandler.class).get(),FrontiersReqHandler.class);
             ReqHandler.register(CDI.current().select(TestsReqHandler.class).get(),TestsReqHandler.class);
