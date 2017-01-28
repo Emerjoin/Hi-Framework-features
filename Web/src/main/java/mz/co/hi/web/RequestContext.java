@@ -8,10 +8,8 @@ import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -166,7 +164,7 @@ public class RequestContext {
 
     public String readToEnd(InputStream inputStream){
 
-        return  Helper.readTextStreamToEnd(inputStream,this);
+        return  Helper.readLines(inputStream,this);
 
     }
 

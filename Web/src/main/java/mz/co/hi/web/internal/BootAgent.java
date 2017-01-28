@@ -10,7 +10,7 @@ import mz.co.hi.web.extension.BootManager;
 import mz.co.hi.web.meta.Tested;
 import mz.co.hi.web.mvc.Controller;
 import mz.co.hi.web.mvc.ControllersMapper;
-import mz.co.hi.web.req.MVC;
+import mz.co.hi.web.req.MVCReqHandler;
 import org.jboss.jandex.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -144,12 +144,12 @@ public class BootAgent {
         for(AnnotationInstance an : instances){
 
             MethodInfo methodInfo =  an.target().asMethod();
-            String actionURL = MVC.getActionMethodFromURLPart(methodInfo.name());
+            String actionURL = MVCReqHandler.getActionMethodFromURLPart(methodInfo.name());
 
 
             String canonicalName = methodInfo.declaringClass().name().toString();
             String simpleName = canonicalName.substring(canonicalName.lastIndexOf('.')+1,canonicalName.length());
-            String controllerURL = MVC.getURLController(simpleName);
+            String controllerURL = MVCReqHandler.getURLController(simpleName);
 
             _log.info("Tested controller action detected : "+controllerURL+"/"+actionURL);
 

@@ -23,7 +23,7 @@ import java.util.Map;
 
 @HandleRequests(regexp = "(([a-zA-Z-]{2,}\\/[a-zA-Z-]{2,})|([a-zA-Z-]{2,}))")
 @ApplicationScoped
-public class MVC extends ReqHandler{
+public class MVCReqHandler extends ReqHandler{
 
     private static char[] alphabet = new char[]
             {'A','B','C','D','E','F','G','H','I','J',

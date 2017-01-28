@@ -89,7 +89,7 @@ public class FrontEnd {
                 return dict;
 
 
-            dict = Helper.readTextStreamToEnd(resource.openStream(),null);
+            dict = Helper.readLines(resource.openStream(),null);
             return dict;
 
         }catch (Exception ex){

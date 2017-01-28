@@ -150,7 +150,7 @@ public class Controller {
                 try {
 
                     InputStream viewJsInputStream = viewJsResource.openStream();
-                    String viewJsContent = Helper.readTextStreamToEnd(viewJsInputStream,null);
+                    String viewJsContent = Helper.readLines(viewJsInputStream,null);
                     requestContext.getData().put("view_js", viewJsContent);
 
                 } catch (Exception ex) {
@@ -177,7 +177,7 @@ public class Controller {
             try {
 
                 InputStream viewInputStream = viewResource.openStream();
-                String viewContent = Helper.readTextStreamToEnd(viewInputStream, null);
+                String viewContent = Helper.readLines(viewInputStream, null);
                 requestContext.getData().put("view_content",viewContent);
 
 

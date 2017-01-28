@@ -25,16 +25,17 @@ public class Router {
     public void init(ServletContext context, ServletConfig config) throws HiException{
 
         if(AppConfigurations.get()!=null){
-            ReqHandler.register(CDI.current().select(MVC.class).get(),MVC.class);
-            ReqHandler.register(CDI.current().select(Assets.class).get(),Assets.class);
-            ReqHandler.register(CDI.current().select(HiEcmaScript5.class).get(),HiEcmaScript5.class);
-            ReqHandler.register(CDI.current().select(Frontiers.class).get(),Frontiers.class);
-            ReqHandler.register(CDI.current().select(Tests.class).get(),Tests.class);
-            ReqHandler.register(CDI.current().select(TestFiles.class).get(),TestFiles.class);
+
+            ReqHandler.register(CDI.current().select(MVCReqHandler.class).get(),MVCReqHandler.class);
+            ReqHandler.register(CDI.current().select(AssetsReqHandler.class).get(),AssetsReqHandler.class);
+            ReqHandler.register(CDI.current().select(ES5ReqHandler.class).get(),ES5ReqHandler.class);
+            ReqHandler.register(CDI.current().select(FrontiersReqHandler.class).get(),FrontiersReqHandler.class);
+            ReqHandler.register(CDI.current().select(TestsReqHandler.class).get(),TestsReqHandler.class);
+            ReqHandler.register(CDI.current().select(TestFilesReqHandler.class).get(),TestFilesReqHandler.class);
 
             try {
 
-                HiEcmaScript5.prepareTemplates(context);
+                ES5ReqHandler.prepareTemplates(context);
 
 
             }catch (ServletException ex){
@@ -84,7 +85,7 @@ public class Router {
 
     }
 
-    public void doRoute(RequestContext requestContext, String routeURL) throws ServletException{
+    public void doRoute(RequestContext requestContext, String routeURL, boolean isPost) throws ServletException, IOException{
 
         boolean handled = false;
 
@@ -131,8 +132,6 @@ public class Router {
             requestContext.getResponse().sendError(404);
 
         }
-
-
 
     }
 

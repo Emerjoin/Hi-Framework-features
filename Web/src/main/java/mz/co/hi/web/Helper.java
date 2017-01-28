@@ -11,9 +11,7 @@ import java.util.Scanner;
  */
 public class Helper {
 
-
-
-    public static String readTextStreamToEnd(InputStream inputStream,RequestContext requestContext){
+    public static String readLines(InputStream inputStream, RequestContext requestContext){
 
         if(inputStream==null){
 
@@ -79,29 +77,13 @@ public class Helper {
 
     public static void echo(String text,RequestContext requestContext){
 
-
         try {
-
 
             PrintWriter printWriter = requestContext.getResponse().getWriter();
             printWriter.write(text);
             printWriter.flush();
 
-            /*
-
-            //PrintWriter printWriter = ActiveRequest.getResponse().getWriter();
-            OutputStream outputStream = requestContext.getOutputStream();
-
-            PrintStream ps = new PrintStream(outputStream);
-            ps.write(text.getBytes("utf8"));
-            ps.flush();*/
-
-
-        }catch (Exception ex){
-
-            ex.printStackTrace();
-
-        }
+        }catch (Exception ex){  }
 
     }
 
@@ -114,17 +96,8 @@ public class Helper {
             printWriter.write(text+"\n");
             printWriter.flush();
 
-            /*
-            OutputStream outputStream = requestContext.getOutputStream();
-            PrintStream ps = new PrintStream(outputStream);
-            ps.println((text+"\n").getBytes("utf8"));
-            ps.flush();*/
 
-
-        }catch (Exception ex){
-
-
-        }
+        }catch (Exception ex){}
 
     }
 
@@ -146,8 +119,6 @@ public class Helper {
             for (int i = 0; i < byteData.length; i++) {
                 sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
             }
-
-            //System.out.println("Digest(in hex format):: " + sb.toString());
 
             //convert the byte to hex format method 2
             StringBuffer hexString = new StringBuffer();

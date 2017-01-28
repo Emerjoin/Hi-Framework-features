@@ -214,7 +214,7 @@ public class DispatcherServlet extends HttpServlet {
         RequestContext requestContext = CDI.current().select(RequestContext.class).get();
         requestContext.setRouteUrl(routeURL);
         requestContext.setResponse(response);
-        router.doRoute(requestContext,routeURL);
+        router.doRoute(requestContext,routeURL,isPost);
 
     }
 

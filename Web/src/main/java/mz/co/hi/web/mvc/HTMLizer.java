@@ -96,7 +96,7 @@ public class HTMLizer {
 
         try {
 
-            templateFileContent = Helper.readTextStreamToEnd(templateURL.openStream(), null);
+            templateFileContent = Helper.readLines(templateURL.openStream(), null);
 
         }catch (Exception ex){
 

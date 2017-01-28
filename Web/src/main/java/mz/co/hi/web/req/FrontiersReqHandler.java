@@ -26,7 +26,7 @@ import java.util.*;
 
 @HandleRequests(regexp = "f.m.call/[$_A-Za-z0-9]+/[$_A-Za-z0-9]+", supportPostMethod = true)
 @ApplicationScoped
-public class Frontiers extends ReqHandler {
+public class FrontiersReqHandler extends ReqHandler {
 
     private static Map<String,FrontierClass> frontiersMap = new HashMap();
 

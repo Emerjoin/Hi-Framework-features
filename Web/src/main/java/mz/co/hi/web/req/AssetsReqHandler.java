@@ -21,7 +21,7 @@ import java.util.List;
  */
 @HandleRequests(regexp = "(webroot[A-Za-z0-9_\\/.-]+[.][A-Za-z]{1,10}|[A-Za-z_\\/-]+\\/webroot[A-Za-z0-9_\\/.-]+[.][A-Za-z]{1,10})\\w+")
 @ApplicationScoped
-public class Assets extends ReqHandler {
+public class AssetsReqHandler extends ReqHandler {
 
 
     private RequestContext requestContext = null;
@@ -32,7 +32,7 @@ public class Assets extends ReqHandler {
     @Inject
     private mz.co.hi.web.AppContext appContext;
 
-    public Assets(){
+    public AssetsReqHandler(){
 
         List<Tunnings.CachedWebrootDirectory> list = AppConfigurations.get().getTunnings().getCachedWebrootDirectoryList();
         List<String> allSmartCached = AppConfigurations.get().getTunnings().getSmartCachedAssets();

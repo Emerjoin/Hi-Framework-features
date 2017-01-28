@@ -14,7 +14,7 @@ import java.net.URL;
  */
 @HandleRequests(regexp = "^\\$test\\/[A-Za-z0-9_\\/.-]+[.js]")
 @ApplicationScoped
-public class TestFiles extends ReqHandler {
+public class TestFilesReqHandler extends ReqHandler {
 
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {

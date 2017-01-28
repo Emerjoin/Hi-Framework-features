@@ -11,7 +11,7 @@ import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.meta.Frontier;
 import mz.co.hi.web.meta.WebComponent;
 import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
-import mz.co.hi.web.req.Frontiers;
+import mz.co.hi.web.req.FrontiersReqHandler;
 import org.jboss.jandex.AnnotationInstance;
 import org.jboss.jandex.DotName;
 import org.jboss.jandex.Index;
@@ -38,14 +38,14 @@ public class ES5Library {
 
 
 
-    private String testsEcmaScript = "";
-    private String frameworkLibEcmaScript = null;
-    private String hiScript = null;
-    private String genericFrontierScript = null;
-    private String javascriptConfigScript ="";
-    private String frontiersScript ="";
-    private String angularJsScript ="";
-    private String componentsScript="";
+    private String testsJS = "";
+    private String staticHiJS = null;
+    private String hiLoaderJS = null;
+    private String genericFrontierJS = null;
+    private String jsConfig ="";
+    private String frontierJS ="";
+    private String angularJS ="";
+    private String componentsJS ="";
 
 
     private ServletContext servletContext = null;
@@ -75,16 +75,16 @@ public class ES5Library {
             if(res!=null){
 
                 InputStream inputStream = res.openStream();
-                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                frameworkLibEcmaScript = scriptContent;
+                String scriptContent = Helper.readLines(inputStream,null);
+                staticHiJS = scriptContent;
             }
 
             res = servletContext.getResource("/hi-tests.js");
             if(res!=null){
 
                 InputStream inputStream = res.openStream();
-                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                testsEcmaScript = scriptContent;
+                String scriptContent = Helper.readLines(inputStream,null);
+                testsJS = scriptContent;
 
             }
 
@@ -92,8 +92,8 @@ public class ES5Library {
             if(res!=null){
 
                 InputStream inputStream = res.openStream();
-                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                angularJsScript = scriptContent;
+                String scriptContent = Helper.readLines(inputStream,null);
+                angularJS = scriptContent;
 
             }
 
@@ -115,8 +115,8 @@ public class ES5Library {
             if(res!=null){
 
                 InputStream inputStream = res.openStream();
-                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                hiScript = scriptContent;
+                String scriptContent = Helper.readLines(inputStream,null);
+                hiLoaderJS = scriptContent;
             }
 
         }catch (Exception ex){
@@ -135,8 +135,8 @@ public class ES5Library {
             if(res!=null){
                 _log.debug("Reading javascript configurations code file...");
                 InputStream inputStream = res.openStream();
-                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                javascriptConfigScript = scriptContent;
+                String scriptContent = Helper.readLines(inputStream,null);
+                jsConfig = scriptContent;
             }
 
         }catch (Exception ex){
@@ -156,8 +156,8 @@ public class ES5Library {
             if(res!=null){
 
                 InputStream inputStream = res.openStream();
-                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
-                genericFrontierScript = scriptContent;
+                String scriptContent = Helper.readLines(inputStream,null);
+                genericFrontierJS = scriptContent;
 
 
             }
@@ -227,7 +227,7 @@ public class ES5Library {
 
         try {
 
-            componentsScript+=Helper.readTextStreamToEnd(componentScript.openStream(), null);
+            componentsJS +=Helper.readLines(componentScript.openStream(), null);
             _log.info(componentClass.getSimpleName()+" Web component loaded");
 
         }catch (Exception ex){
@@ -285,9 +285,9 @@ public class ES5Library {
 
             for (FrontierClass beanClass : beanClasses) {
 
-                Frontiers.addFrontier(beanClass);
+                FrontiersReqHandler.addFrontier(beanClass);
                 String frontier_script = scripter.generate(beanClass);
-                frontiersScript += "\n" + frontier_script;
+                frontierJS += "\n" + frontier_script;
 
             }
 
@@ -300,5 +300,35 @@ public class ES5Library {
     }
 
 
+    public String getTestsJS() {
+        return testsJS;
+    }
 
+    public String getStaticHiJS() {
+        return staticHiJS;
+    }
+
+    public String getHiLoaderJS() {
+        return hiLoaderJS;
+    }
+
+    public String getGenericFrontierJS() {
+        return genericFrontierJS;
+    }
+
+    public String getJsConfig() {
+        return jsConfig;
+    }
+
+    public String getFrontierJS() {
+        return frontierJS;
+    }
+
+    public String getAngularJS() {
+        return angularJS;
+    }
+
+    public String getComponentsJS() {
+        return componentsJS;
+    }
 }

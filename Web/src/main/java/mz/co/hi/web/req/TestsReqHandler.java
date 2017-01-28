@@ -17,7 +17,7 @@ import java.util.Set;
  */
 @HandleRequests(regexp = "^test")
 @ApplicationScoped
-public class Tests extends ReqHandler {
+public class TestsReqHandler extends ReqHandler {
 
 
     @Override
@@ -39,7 +39,7 @@ public class Tests extends ReqHandler {
 
 
         String hi_test_js = "<script src=\"hi-es5-tests.js\"></script>\n";
-        String testsHtmlContent = Helper.readTextStreamToEnd(testsHtml.openStream(),null);
+        String testsHtmlContent = Helper.readLines(testsHtml.openStream(),null);
         String bodyClose = "</body>";
 
 
