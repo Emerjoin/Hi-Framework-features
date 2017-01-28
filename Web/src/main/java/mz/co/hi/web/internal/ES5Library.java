@@ -1,0 +1,316 @@
+package mz.co.hi.web.internal;
+
+import mz.co.hi.web.BootstrapUtils;
+import mz.co.hi.web.Helper;
+import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.config.ConfigurationsAgent;
+import mz.co.hi.web.exceptions.HiException;
+import mz.co.hi.web.frontier.Scripter;
+import mz.co.hi.web.frontier.model.FrontierBeansCrawler;
+import mz.co.hi.web.frontier.model.FrontierClass;
+import mz.co.hi.web.meta.Frontier;
+import mz.co.hi.web.meta.WebComponent;
+import mz.co.hi.web.mvc.exceptions.MissingResourcesLibException;
+import mz.co.hi.web.req.Frontiers;
+import org.jboss.jandex.AnnotationInstance;
+import org.jboss.jandex.DotName;
+import org.jboss.jandex.Index;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * This class is responsible for serving ES5 scripts
+ * to the internal components of the framework.
+ * @author Mário Júnior
+ */
+public class ES5Library {
+
+    private static ES5Library instance;
+
+    public static ES5Library getInstance(){
+
+        if(instance!=null)
+            return instance;
+
+
+        instance = new ES5Library();
+        return instance;
+
+    }
+
+    private String testsEcmaScript = "";
+    private String frameworkLibEcmaScript = null;
+    private String hiScript = null;
+    private String genericFrontierScript = null;
+    private String javascriptConfigScript ="";
+    private String frontiersScript ="";
+    private String angularJsScript ="";
+    private String componentsScript="";
+
+
+    private ServletContext servletContext = null;
+    private static Logger _log = null;
+
+
+    private ES5Library(){}
+
+
+    public void init(ServletContext context)throws HiException{
+
+        this.servletContext = context;
+        LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
+        loadMainLibraryJS();
+        loadRunJS();
+        loadAppLoaderJS();
+        loadGenericFrontierJS();
+        generateFrontiersJS();
+        findAndLoadComponents();
+
+    }
+
+
+    private void loadMainLibraryJS() throws MissingResourcesLibException {
+
+        try {
+
+            _log.debug("Reading main client-side code file...");
+            URL res = servletContext.getResource("/hi.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                frameworkLibEcmaScript = scriptContent;
+            }
+
+            res = servletContext.getResource("/hi-tests.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                testsEcmaScript = scriptContent;
+
+            }
+
+            res = servletContext.getResource("/angular.min.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                angularJsScript = scriptContent;
+
+            }
+
+        }catch (Exception ex){
+
+            throw new MissingResourcesLibException(ex);
+
+        }
+
+
+    }
+
+    private void loadAppLoaderJS() throws MissingResourcesLibException {
+
+        try {
+
+            _log.debug("Reading client-side AJAX loader code file...");
+            URL res = servletContext.getResource("/loader.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                hiScript = scriptContent;
+            }
+
+        }catch (Exception ex){
+
+            throw new MissingResourcesLibException(ex);
+
+        }
+
+    }
+
+    private void loadRunJS() throws MissingResourcesLibException {
+
+        try {
+
+            URL res = servletContext.getResource("/run.js");
+            if(res!=null){
+                _log.debug("Reading javascript configurations code file...");
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                javascriptConfigScript = scriptContent;
+            }
+
+        }catch (Exception ex){
+
+            throw new MissingResourcesLibException(ex);
+
+        }
+
+    }
+
+    private void loadGenericFrontierJS() throws MissingResourcesLibException {
+
+        try {
+
+            _log.debug("Reading generic client-side (frontiers) code file...");
+            URL res = servletContext.getResource("/frontier.js");
+            if(res!=null){
+
+                InputStream inputStream = res.openStream();
+                String scriptContent = Helper.readTextStreamToEnd(inputStream,null);
+                genericFrontierScript = scriptContent;
+
+
+            }
+
+        }catch (Exception ex){
+
+            throw new MissingResourcesLibException(ex);
+
+        }
+
+
+    }
+
+    private void findAndLoadComponents() throws HiException {
+
+        Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
+        if(indexSet==null)
+            return;
+
+        for(Index index : indexSet){
+
+            List<AnnotationInstance> instances = index.
+                    getAnnotations(DotName.createSimple(WebComponent.class.getCanonicalName()));
+
+            for(AnnotationInstance an: instances){
+
+                Class componentClass = null;
+                try {
+
+                    _log.info("Loading web component : "+an.target().asClass().name().toString());
+                    componentClass = Class.forName(an.target().asClass().toString());
+
+                }catch (ClassNotFoundException ex){
+
+                    continue;
+
+                }
+
+                String scriptName = componentClass.getSimpleName().toLowerCase();
+                String minifiedScriptName = componentClass.getSimpleName().toLowerCase()+".min";
+                loadComponentJS(componentClass,scriptName,minifiedScriptName);
+
+            }
+        }
+    }
+
+    private void loadComponentJS(Class componentClass, String scriptName,
+                                 String minifiedScriptName) throws HiException{
+
+        URL componentScript =  null;
+
+        try {
+
+            if (AppConfigurations.get().underDevelopment())
+                componentScript = servletContext.getResource("/" + scriptName + ".js");
+            else
+                componentScript = servletContext.getResource("/" + minifiedScriptName + ".js");
+
+        }catch (MalformedURLException ex){
+
+            throw new HiException("Invalid component name : "+componentClass.getSimpleName(),ex);
+
+        }
+
+        if(componentScript==null)
+            return;
+
+        try {
+
+            componentsScript+=Helper.readTextStreamToEnd(componentScript.openStream(), null);
+            _log.info(componentClass.getSimpleName()+" Web component loaded");
+
+        }catch (Exception ex){
+
+            throw new HiException("Could not read component script : "+componentClass.getSimpleName(),ex);
+
+        }
+
+    }
+
+    private void generateFrontiersJS() throws HiException {
+
+        List beansList = new ArrayList();
+        _log.info("Looking for frontiers...");
+
+        Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
+        if(indexSet==null)
+            return;
+
+        for(Index index: indexSet){
+
+            List<AnnotationInstance> instanceList = index.getAnnotations(DotName.createSimple(Frontier.class.getCanonicalName()));
+            for(AnnotationInstance an: instanceList){
+
+                Class fClazz = null;
+
+                try {
+
+                    fClazz = Class.forName(an.target().asClass().name().toString());
+                    _log.info("Frontier class detected : " + fClazz.getCanonicalName());
+                    beansList.add(fClazz);
+
+                }catch (Exception ex){
+
+                    _log.error("Error while attempting to register the frontier class",ex);
+                    continue;
+
+                }
+            }
+        }
+
+        generateFrontiers(beansList);
+
+    }
+
+    private void generateFrontiers(List beansList) throws HiException{
+
+        try {
+
+            FrontierClass[] beanClasses = FrontierBeansCrawler.getInstance().crawl(beansList);
+
+
+            _log.info("Generating client-side code for frontiers...");
+            Scripter scripter = new Scripter();
+
+            for (FrontierClass beanClass : beanClasses) {
+
+                Frontiers.addFrontier(beanClass);
+                String frontier_script = scripter.generate(beanClass);
+                frontiersScript += "\n" + frontier_script;
+
+            }
+
+        }catch (ServletException ex){
+
+            throw new HiException("Failed to crawl frontier beans",ex);
+
+        }
+
+    }
+
+
+
+}

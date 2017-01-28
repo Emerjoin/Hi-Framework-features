@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -139,8 +138,8 @@ public class HiEcmaScript5 extends ReqHandler {
             requestContext.getResponse().setHeader("Content-Type","text/javascript");
 
             String replaceble = "//{{config}}";
-            String hiJs = DispatcherServlet.hiLibScript;
-            String hiForTests = hiJs+DispatcherServlet.hiTestsScript;
+            String hiJs = DispatcherServlet.frameworkLibEcmaScript;
+            String hiForTests = hiJs+DispatcherServlet.testsEcmaScript;
 
 
             URL runResource = requestContext.getServletContext().getResource("/webroot/tests/run.js");
@@ -200,9 +199,9 @@ public class HiEcmaScript5 extends ReqHandler {
 
         String content = null;
 
-        if(DispatcherServlet.hiLibScript !=null){
+        if(DispatcherServlet.frameworkLibEcmaScript !=null){
 
-            content = DispatcherServlet.angularJsScript+DispatcherServlet.hiLibScript+DispatcherServlet.frontiersScript;
+            content = DispatcherServlet.angularJsScript+DispatcherServlet.frameworkLibEcmaScript +DispatcherServlet.frontiersScript;
 
         }else
 

@@ -2,7 +2,7 @@ package mz.co.hi.web.req;
 
 import mz.co.hi.web.AuthComponent;
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.config.Bootstrap;
+import mz.co.hi.web.config.ConfigurationsAgent;
 import mz.co.hi.web.meta.Denied;
 import mz.co.hi.web.meta.Granted;
 import mz.co.hi.web.meta.RequirePermission;
@@ -33,7 +33,7 @@ public abstract class ReqHandler {
     private static Map<String,ReqHandler> handlers = new HashMap();
     private static Map<ReqHandler,Class> handlersClasses = new HashMap();
 
-    private static Logger _log = LoggerFactory.getLogger(Bootstrap.LOGGER);
+    private static Logger _log = LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
 
     public static void register(ReqHandler reqHandler,Class<? extends ReqHandler> clazz){
 

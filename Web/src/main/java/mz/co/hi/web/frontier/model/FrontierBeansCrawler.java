@@ -3,7 +3,6 @@ package mz.co.hi.web.frontier.model;
 
 import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.meta.Frontier;
-import mz.co.hi.web.config.AppConfigurations;
 
 import javax.servlet.ServletException;
 import java.lang.annotation.Annotation;
@@ -18,9 +17,9 @@ import java.util.Map;
 /**
  * Created by Mario Junior.
  */
-public class BeansCrawler {
+public class FrontierBeansCrawler {
 
-    private static BeansCrawler instance = null;
+    private static FrontierBeansCrawler instance = null;
 
     private static Map<String,Boolean> ignoreMethods = new HashMap<String, Boolean>();
 
@@ -38,11 +37,11 @@ public class BeansCrawler {
     }
 
 
-    public static  BeansCrawler getInstance(){
+    public static FrontierBeansCrawler getInstance(){
 
         if(instance==null){
 
-            instance = new BeansCrawler();
+            instance = new FrontierBeansCrawler();
 
         }
 
@@ -50,7 +49,7 @@ public class BeansCrawler {
 
     }
 
-    private BeansCrawler(){
+    private FrontierBeansCrawler(){
 
 
 

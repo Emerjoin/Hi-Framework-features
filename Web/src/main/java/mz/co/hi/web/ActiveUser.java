@@ -1,6 +1,6 @@
 package mz.co.hi.web;
 
-import mz.co.hi.web.config.Bootstrap;
+import mz.co.hi.web.config.ConfigurationsAgent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Mário Júnior
@@ -22,7 +21,7 @@ public class ActiveUser implements Serializable {
 
     private HashMap<String,Object> data = new HashMap<>();
 
-    private Logger _log = LoggerFactory.getLogger(Bootstrap.LOGGER);
+    private Logger _log = LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
 
     public ActiveUser(){
 

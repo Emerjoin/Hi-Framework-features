@@ -23,7 +23,7 @@ import java.util.Set;
 /**
  * Created by Mario Junior.
  */
-public final class Bootstrap {
+public final class ConfigurationsAgent {
 
 
     public static String LOGGER=null;
@@ -32,7 +32,7 @@ public final class Bootstrap {
     public static void setLogger(String name){
 
         LOGGER = name;
-        _log = LoggerFactory.getLogger(Bootstrap.LOGGER);
+        _log = LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
 
     }
 
