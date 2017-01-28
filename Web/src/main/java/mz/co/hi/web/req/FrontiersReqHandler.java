@@ -2,7 +2,7 @@ package mz.co.hi.web.req;
 
 import com.google.gson.*;
 import mz.co.hi.web.*;
-import mz.co.hi.web.events.args.FrontierRequestInterception;
+import mz.co.hi.web.events.FrontierRequestEvent;
 import mz.co.hi.web.frontier.*;
 import mz.co.hi.web.frontier.exceptions.FrontierCallException;
 import mz.co.hi.web.frontier.exceptions.InvalidFrontierParamException;
@@ -335,7 +335,7 @@ public class FrontiersReqHandler extends ReqHandler {
                 }
 
 
-                FrontierRequestInterception req = new FrontierRequestInterception();
+                FrontierRequestEvent req = new FrontierRequestEvent();
                 req.setBefore();
                 req.setMethod(frontierMethod.getMethod());
                 req.setClazz(frontierClass.getFrontierClazz());

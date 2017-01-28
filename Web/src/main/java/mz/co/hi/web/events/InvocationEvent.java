@@ -1,20 +1,20 @@
-package mz.co.hi.web.events.args;
+package mz.co.hi.web.events;
 
 /**
  * @author Mário Júnior
  */
 //TODO: JavaDoc
-public abstract class Interception {
+public abstract class InvocationEvent extends HiEvent {
 
     private boolean after;
 
-    public Interception(boolean isAfter){
+    public InvocationEvent(boolean isAfter){
 
         this.after = isAfter;
 
     }
 
-    public Interception(){
+    public InvocationEvent(){
 
 
 

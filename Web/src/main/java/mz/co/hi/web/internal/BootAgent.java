@@ -2,8 +2,7 @@ package mz.co.hi.web.internal;
 
 import mz.co.hi.web.BootstrapUtils;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.ConfigSection;
-import mz.co.hi.web.config.ConfigurationsAgent;
+import mz.co.hi.web.config.ConfigProvider;
 import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.extension.BootExtension;
 import mz.co.hi.web.extension.BootManager;
@@ -13,39 +12,22 @@ import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.req.MVCReqHandler;
 import org.jboss.jandex.*;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * This class is responsible for performing initialization of a Hi-Application upon deployment.
- * From loading the configuration file to the generation of frontiers code.
  * @author Mário Júnior
  */
 @ApplicationScoped
 public class BootAgent {
 
-    //TODO: Set deployId
-    //TODO: Call BootStrap to load configurations
-    //TODO: Call ES5Library to load scripts and generate frontiers
-    //TODO: Call HiRouter and register all the available requests handlers
-    //TODO: Find controller and map
-    //TODO: Find frontier and map
-    //TODO: Find tested actions
-    //TODO: Initilialize Boot extensions
-    //TODO: Set global listeners
-
-
     private ServletContext servletContext = null;
     private ServletConfig servletConfig = null;
-    private String loggerName = null;
     private Logger _log = null;
     private String deployId ="";
 
@@ -54,6 +36,9 @@ public class BootAgent {
 
     @Inject
     private Router router;
+
+    @Inject
+    private ConfigProvider configProvider;
 
 
     public BootAgent(){}
@@ -130,15 +115,13 @@ public class BootAgent {
 
         Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
 
-        for(Index index : indexSet){
+        for(Index index : indexSet)
+            findTestedAControllerActions(index);
 
-            $findTestedAControllerActions(index);
-
-        }
 
     }
 
-    private void $findTestedAControllerActions(Index index){
+    private void findTestedAControllerActions(Index index){
 
         List<AnnotationInstance> instances = index.getAnnotations(DotName.createSimple(Tested.class.getCanonicalName()));
         for(AnnotationInstance an : instances){
@@ -165,45 +148,16 @@ public class BootAgent {
 
     private void loadConfigs() throws HiException{
 
-        //TODO: Abstract the configurations provider : Can be an XML file or anything else (this will ease unit testing: no xml required)
         Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
-        Set<Class<?>> configSections = new HashSet<>();
+        configProvider.load(servletContext,servletConfig,indexSet);
+        _log = configProvider.getLogger();
 
-        if(indexSet!=null) {
-
-            for (Index index : indexSet) {
-
-                List<AnnotationInstance> instances =
-                        index.getAnnotations(DotName.createSimple(ConfigSection.class.getCanonicalName()));
-
-                for (AnnotationInstance an : instances) {
-
-                    String className = an.target().asClass().name().toString();
-                    _log.info(String.format("Loading config section class : %s",className));
-
-                    try {
-
-                        Class<?> clazz  = this.getClass().getClassLoader().loadClass(className);
-                        configSections.add(clazz);
-
-                    } catch (Throwable ex) {
-
-                        _log.error("Failed to load config section",ex);
-                        continue;
-
-                    }
-                }
-            }
-        }
-
-        ConfigurationsAgent configurationsAgent = new ConfigurationsAgent();
-        configurationsAgent.load(servletContext,configSections);
     }
 
 
     private void makeDeployId(){
 
-        //TODO: Generate a Deployment Id
+        deployId = String.valueOf(Calendar.getInstance().getTimeInMillis());
 
     }
 
@@ -211,29 +165,19 @@ public class BootAgent {
 
     public void init(ServletContext context, ServletConfig config) throws HiException{
 
-        this.servletContext = null;
+        this.servletContext = context;
         this.servletConfig = config;
 
-        //TODO: Set logger name based in servletConfig
-        _log = LoggerFactory.getLogger(loggerName);
         makeDeployId(); //Set deploy Id
         loadConfigs(); //Load App configurations
         findControllersAndMap(); //Find all the controller and map them
-        findTestedActions(); //Find all the tested controllers actions //TODO: Make this bypassable via servlet config
+        findTestedActions(); //Find all the tested controllers actions
         scriptLibrary.init(servletContext);//Load scripts and generate frontiers
         router.init(servletContext,servletConfig); //Register requests handlers
         initBootExtensions(); //Load and execute boot extensions
 
     }
 
-
-
-    public String getLoggerName(){
-
-        //TODO: Implement
-        return null;
-
-    }
 
     public String getDeployId(){
 

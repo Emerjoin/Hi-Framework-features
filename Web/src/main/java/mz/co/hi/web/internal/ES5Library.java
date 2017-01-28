@@ -3,7 +3,7 @@ package mz.co.hi.web.internal;
 import mz.co.hi.web.BootstrapUtils;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.ConfigurationsAgent;
+import mz.co.hi.web.config.XMLConfigProvider;
 import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.frontier.Scripter;
 import mz.co.hi.web.frontier.model.FrontierBeansCrawler;
@@ -55,7 +55,7 @@ public class ES5Library {
     public void init(ServletContext context)throws HiException{
 
         this.servletContext = context;
-        LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
+        LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
         loadMainLibraryJS();
         loadRunJS();
         loadAppLoaderJS();

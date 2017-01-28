@@ -5,7 +5,7 @@ import mz.co.hi.web.FrontEnd;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.ConfigurationsAgent;
+import mz.co.hi.web.config.XMLConfigProvider;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MvcException;
 import mz.co.hi.web.mvc.exceptions.NoSuchViewException;
@@ -32,7 +32,7 @@ public class Controller {
     @Inject
     private HTMLizer htmLizer;
 
-    private static Logger _log = LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
+    private static Logger _log = LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
 
 
     public Controller(){

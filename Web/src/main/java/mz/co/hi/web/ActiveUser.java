@@ -1,6 +1,6 @@
 package mz.co.hi.web;
 
-import mz.co.hi.web.config.ConfigurationsAgent;
+import mz.co.hi.web.config.XMLConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,7 @@ public class ActiveUser implements Serializable {
 
     private HashMap<String,Object> data = new HashMap<>();
 
-    private Logger _log = LoggerFactory.getLogger(ConfigurationsAgent.LOGGER);
+    private Logger _log = LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
 
     public ActiveUser(){
 

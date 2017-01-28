@@ -4,7 +4,7 @@ package mz.co.hi.web.req;
 import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.RequestContext;
-import mz.co.hi.web.events.args.ControllerRequestInterception;
+import mz.co.hi.web.events.ControllerRequestEvent;
 import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.mvc.HTMLizer;
@@ -183,7 +183,7 @@ public class MVCReqHandler extends ReqHandler{
             }
 
 
-            ControllerRequestInterception call = new ControllerRequestInterception();
+            ControllerRequestEvent call = new ControllerRequestEvent();
             call.setMethod(actionMethod);
             call.setClazz(controller);
             call.setBefore();

@@ -54,7 +54,7 @@ public class AppConfigurations {
 
     private static AppConfigurations appConfigurations = null;
 
-    protected static void set(AppConfigurations config){
+    public static void set(AppConfigurations config){
 
         appConfigurations = config;
 

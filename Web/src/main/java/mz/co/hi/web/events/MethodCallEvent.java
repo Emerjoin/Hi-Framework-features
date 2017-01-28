@@ -1,6 +1,5 @@
-package mz.co.hi.web.events.args;
+package mz.co.hi.web.events;
 
-import mz.co.hi.web.events.args.Interception;
 import mz.co.hi.web.mvc.Controller;
 
 import java.lang.reflect.Method;
@@ -9,16 +8,16 @@ import java.lang.reflect.Method;
  * @author Mário Júnior
  */
 //TODO: JavaDoc
-public abstract class MethodCallInterception extends Interception {
+public abstract class MethodCallEvent extends InvocationEvent {
 
     private Class<? extends Controller> clazz = null;
     private Method method = null;
 
-    public MethodCallInterception(boolean isAfter) {
+    public MethodCallEvent(boolean isAfter) {
         super(isAfter);
     }
 
-    public MethodCallInterception(){
+    public MethodCallEvent(){
 
         super();
 
