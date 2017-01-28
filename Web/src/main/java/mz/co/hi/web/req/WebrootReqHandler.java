@@ -45,8 +45,6 @@ public class WebrootReqHandler extends ReqHandler {
         for(String smartCached : allSmartCached)
             smartCachedAssets.put(smartCached,true);
 
-
-
     }
 
     private long getCachePeriod(String url){
@@ -54,7 +52,6 @@ public class WebrootReqHandler extends ReqHandler {
         long value = -1;
 
         synchronized (cachingStatus){
-
             if(cachingStatus.containsKey(url))
                 value = cachingStatus.get(url);
 
@@ -77,7 +74,6 @@ public class WebrootReqHandler extends ReqHandler {
     private long getCacheFirstTime(String url){
 
         String folderName = getFolderName(url);
-
         if(folderName==null) {
 
             setCachePeriod(url, 0);
@@ -86,7 +82,6 @@ public class WebrootReqHandler extends ReqHandler {
         }
 
         long period = 0;
-
         if(staticCachingDefinitions.containsKey(folderName))
             period = staticCachingDefinitions.get(folderName);
 
@@ -102,7 +97,6 @@ public class WebrootReqHandler extends ReqHandler {
 
         CharSequence webrootPath = "webroot/";
         url = url.replace(webrootPath,"");
-
         if(url.length()<3)
             return null;
 
@@ -164,7 +158,6 @@ public class WebrootReqHandler extends ReqHandler {
         while (fileStream.available() > 0) {
 
             byte[] buffer = new byte[4048];
-
             if (fileStream.available() < 4048)
                 buffer = new byte[fileStream.available()];
 
