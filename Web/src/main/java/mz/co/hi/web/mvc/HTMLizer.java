@@ -31,11 +31,8 @@ public class HTMLizer {
     public static final String TEMPLATE_DATA_KEY = "$root";
 
     private GsonBuilder gsonBuilder = null;
-
     private RequestContext requestContext = null;
-
     private ActiveUser activeUser = null;
-
 
     public HTMLizer(){
 
