@@ -10,7 +10,7 @@ public class FrontierCallException extends HiException {
     private String frontierName;
     private String methodName;
 
-    public FrontierCallException(String frontier, String method, Exception ex){
+    public FrontierCallException(String frontier, String method, Throwable ex){
 
         super("An error occurred while calling the method <"+method+"> of frontier <"+frontier+">",ex);
         this.frontierName = frontier;
@@ -26,7 +26,7 @@ public class FrontierCallException extends HiException {
 
     }
 
-    public FrontierCallException(String frontier, String method, String msg, Exception ex){
+    public FrontierCallException(String frontier, String method, String msg, Throwable ex){
 
         super(msg,ex);
         this.frontierName = frontier;
