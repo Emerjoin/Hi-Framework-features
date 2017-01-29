@@ -5,11 +5,18 @@ import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.events.ControllerRequestEvent;
+import mz.co.hi.web.exceptions.HiException;
+import mz.co.hi.web.exceptions.NoCDIScopeException;
+import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.mvc.HTMLizer;
+import mz.co.hi.web.mvc.exceptions.MvcException;
+import org.slf4j.Logger;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.event.Event;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
@@ -47,7 +54,6 @@ public class MVCReqHandler extends ReqHandler{
 
         String capitalized = urlPart.substring(0,1).toLowerCase()
                 +urlPart.substring(1,urlPart.length());
-
         return noHyphens(capitalized);
 
     }
@@ -65,33 +71,26 @@ public class MVCReqHandler extends ReqHandler{
     }
 
     public static String getURLController(String clazz){
-
         StringBuilder alphabetStr = new StringBuilder();
         alphabetStr.append(alphabet);
-
         char[] controllerChars = clazz.toCharArray();
 
         StringBuilder urlController = new StringBuilder();
         urlController.append(controllerChars[0]);
-
 
         for(int i=1;i<controllerChars.length;i++){
 
             StringBuilder stringBuilder = new StringBuilder();
             char character = controllerChars[i];
             stringBuilder.append(character);
-
             //It is a capital character
             if(alphabetStr.indexOf(stringBuilder.toString())!=-1)
                 urlController.append('-');
-
-
             urlController.append(character);
 
         }
 
         return urlController.toString().toLowerCase();
-
 
     }
 
@@ -102,6 +101,9 @@ public class MVCReqHandler extends ReqHandler{
     @Inject
     private AppContext appContext;
 
+    private Event<ControllerRequestEvent> controllerRequestEvent;
+
+    private Logger log;
 
     private Map getValues(HttpServletRequest request){
 
@@ -109,18 +111,10 @@ public class MVCReqHandler extends ReqHandler{
         Map<String,String[]> map =  request.getParameterMap();
 
         for(String key : map.keySet()){
-
             String[] values = map.get(key);
-            if(values.length==1){
-
+            if(values.length==1)
                 finalValues.put(key,values[0]);
-
-            }else{
-
-                finalValues.put(key,values);
-
-            }
-
+            else finalValues.put(key,values);
         }
 
         return finalValues;
@@ -128,10 +122,7 @@ public class MVCReqHandler extends ReqHandler{
     }
 
     private boolean callAction(String action, Class controller,RequestContext requestContext) throws ServletException{
-
         try {
-
-
 
             Method actionMethod = null;
             boolean withParams = true;
@@ -147,7 +138,6 @@ public class MVCReqHandler extends ReqHandler{
 
             }
 
-
             if(!ReqHandler.accessGranted(controller,actionMethod)){
 
                 try {
@@ -155,79 +145,62 @@ public class MVCReqHandler extends ReqHandler{
                     requestContext.getResponse().sendError(403);
                     return true;
 
-                }catch (Exception ex){
-
-                    requestContext.getServletContext().log("Failed no send 403 error code",ex);
+                }catch (Throwable ex){
+                    log.error(String.format("Failed no send 403 error code for controller %s and action %s",
+                            controller.getCanonicalName(),action),ex);
                     return true;
-
                 }
 
             }
 
             actionMethod.setAccessible(true);
-
-            Object instance = null;
-
-            HiCDI.shouldHaveCDIScope(controller);
-
-            try {
-
-
-                instance = CDI.current().select(controller).get();
-
-
-            }catch (Exception ex){
-
-                throw new ServletException("Injection of controller <"+controller.getCanonicalName()+"> failed",ex);
-
-            }
-
-
-            ControllerRequestEvent call = new ControllerRequestEvent();
-            call.setMethod(actionMethod);
-            call.setClazz(controller);
-            call.setBefore();
-
-
-            //Before action Listener
-            if(DispatcherServlet.controllerCallsListener!=null)
-                DispatcherServlet.controllerCallsListener.preAction(call);
-
-
-            if(withParams)
-                actionMethod.invoke(instance,getValues(requestContext.getRequest()));
-            else
-                actionMethod.invoke(instance);
-
-            //After action Listener
-            call.setAfter();
-            if(DispatcherServlet.controllerCallsListener!=null)
-                DispatcherServlet.controllerCallsListener.postAction(call);
-
-
-
+            invokeControllerActionMethod(controller,actionMethod,withParams);
             return true;
 
         }catch (NoSuchMethodException ex){
-
             return false;
-
         }catch (InvocationTargetException e2 ) {
-
-            e2.printStackTrace();
-            throw new ServletException("Exception thrown while invoking action <" + action + "> on controller <" + controller.getCanonicalName() + ">", e2);
-
-
+            throw new MvcException("Exception thrown while invoking action <" + action + "> on controller <" + controller.getCanonicalName() + ">", e2);
         }catch (IllegalAccessException e3){
+            throw new MvcException("Could not access constructor of Controller <"+controller.getCanonicalName()+">",e3);
+        }
+    }
 
-            e3.printStackTrace();
-            throw new ServletException("Could not access constructor of Controller <"+controller.getCanonicalName()+">",e3);
+
+    private void invokeControllerActionMethod( Class controller, Method actionMethod,  boolean withParams)
+    throws InvocationTargetException, IllegalAccessException, HiException {
+
+        Object instance;
+        HiCDI.shouldHaveCDIScope(controller);
+
+        try {
+
+            instance = CDI.current().select(controller).get();
+
+        }catch (Throwable ex){
+
+            throw new MvcException("Injection of controller <"+controller.getCanonicalName()+"> failed",ex);
 
         }
 
+        ControllerRequestEvent call = new ControllerRequestEvent();
+        call.setMethod(actionMethod);
+        call.setClazz(controller);
+        call.setBefore();
+
+        //Before action Event
+        controllerRequestEvent.fire(call);
+
+        if(withParams)
+            actionMethod.invoke(instance,getValues(requestContext.getRequest()));
+        else
+            actionMethod.invoke(instance);
+
+        //After action Event
+        call.setAfter();
+        controllerRequestEvent.fire(call);
 
     }
-
 
 
     private static String noHyphens(String urlToken){
@@ -239,34 +212,33 @@ public class MVCReqHandler extends ReqHandler{
         StringBuilder hyphenLessToken = new StringBuilder();
 
         boolean capitalizeNext=false;
-
         for(char character:  tokenChars){
-
             if(capitalizeNext==true) {
                 hyphenLessToken.append(Character.toUpperCase(character));
                 capitalizeNext = false;
                 continue;
             }
 
-
-
             if(character=='-') {
-
                 capitalizeNext = true;
                 continue;
-
             }
 
-
             hyphenLessToken.append(character);
-
-
         }
-
 
         return hyphenLessToken.toString();
 
     }
+
+
+    @PostConstruct
+    private void ready(){
+
+        log = Logging.getInstance().getLogger();
+
+    }
+
 
 
     @Produces
@@ -282,22 +254,16 @@ public class MVCReqHandler extends ReqHandler{
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
         this.requestContext = requestContext;
 
-
         String mvcUrl = requestContext.getRouteUrl();
         int indexSlash = mvcUrl.indexOf('/');
-
-        if(indexSlash==-1){
-
+        if(indexSlash==-1)
             indexSlash = mvcUrl.length();
-
-        }
 
         String controller = mvcUrl.substring(0,indexSlash);
         requestContext.getData().put("controllerU",controller);
         controller = getControllerClassFromURLPart(controller);
 
-
-        String action = null;
+        String action;
         if(indexSlash==mvcUrl.length())
             action = "index";
         else
@@ -305,29 +271,22 @@ public class MVCReqHandler extends ReqHandler{
 
         requestContext.getData().put("actionU",action);
         action = getActionMethodFromURLPart(action);
-
         Class controllerClass= ControllersMapper.getInstance().findController(controller);
-        if(controllerClass==null){
-
+        if(controllerClass==null)
             return false;
-
-        }
 
         boolean actionFound = false;
 
         requestContext.getData().put("action",action);
         requestContext.getData().put("controller",controller);
 
-        if(controllerClass!=null){
-
+        if(controllerClass!=null)
             actionFound = callAction(action,controllerClass, requestContext);
-
-        }
-
 
         return actionFound;
 
     }
+
 
 
 
