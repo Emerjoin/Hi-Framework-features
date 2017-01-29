@@ -49,13 +49,12 @@ public class ES5Library {
 
 
     private ServletContext servletContext = null;
-    private static Logger _log = null;
+    private static Logger _log = Logging.getInstance().getLogger();
 
 
     public void init(ServletContext context)throws HiException{
 
         this.servletContext = context;
-        LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
         loadMainLibraryJS();
         loadRunJS();
         loadAppLoaderJS();

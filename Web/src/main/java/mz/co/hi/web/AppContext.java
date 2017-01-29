@@ -2,18 +2,17 @@ package mz.co.hi.web;
 
 
 import com.google.gson.GsonBuilder;
+import mz.co.hi.web.boot.BootAgent;
 import mz.co.hi.web.config.AppConfigurations;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.Serializable;
 
 @ApplicationScoped
 public class AppContext implements Serializable {
-
-    private GsonBuilder gsonBuilder = null;
-    private boolean changed = false;
 
     private static String assetVersionPrefix = ".vd3p1d";
 
@@ -23,6 +22,13 @@ public class AppContext implements Serializable {
 
     }
 
+
+    private GsonBuilder gsonBuilder = null;
+    private boolean changed = false;
+
+    @Inject
+    private BootAgent bootAgent;
+
     public String getAssetVersionToken(){
 
        return  assetVersionPrefix+String.valueOf(getDeployId());
@@ -31,7 +37,7 @@ public class AppContext implements Serializable {
 
     public String getDeployId(){
 
-        return DispatcherServlet.DEPLOY_ID;
+        return bootAgent.getDeployId();
 
     }
 

@@ -3,6 +3,7 @@ package mz.co.hi.web;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.ConfigProvider;
 import mz.co.hi.web.boot.BootAgent;
+import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.internal.Router;
 import org.slf4j.Logger;
 
@@ -26,8 +27,7 @@ public class DispatcherServlet extends HttpServlet {
     private static boolean initialized = false;
 
     public static String LOGGER = "hi-web";
-    private static Logger _log = null;
-
+    private static Logger _log = Logging.getInstance().getLogger();
 
     @Inject
     private BootAgent bootAgent;
@@ -40,13 +40,9 @@ public class DispatcherServlet extends HttpServlet {
 
     public void init(ServletConfig config) throws ServletException{
 
-        //TODO: Use this to map exceptions to documentation links and display them when throwing exception
-        String documentationPath =  config.getInitParameter("docs");
-
-        initialized = true;
+        _log.info("---Booting...");
         bootAgent.init(getServletContext(),getServletConfig());
-        configProvider.getLogger().info("---Boot complete...");
-
+        _log.info("---Boot complete!");
 
     }
 
@@ -65,17 +61,12 @@ public class DispatcherServlet extends HttpServlet {
 
     private String filterRouteURL(String routeURL,HttpServletResponse response) throws IOException {
 
-
         if(routeURL.trim().length()==0){
 
             if(AppConfigurations.get().getWelcomeUrl()!=null) {
-
                 response.sendRedirect(AppConfigurations.get().getWelcomeUrl());
-
                 return null;
-
             }
-
 
         }
 
@@ -94,17 +85,11 @@ public class DispatcherServlet extends HttpServlet {
     private void doHandle(HttpServletRequest request, HttpServletResponse response, boolean isPost) throws ServletException,IOException{
 
         HttpSession session = request.getSession();
-
-        //String url = getURL(request);
         String routeURL = getRouteURL(request);
 
-
         routeURL = filterRouteURL(routeURL,response);
-        if(routeURL==null){
-
+        if(routeURL==null)
             return;
-
-        }
 
         RequestContext requestContext = CDI.current().select(RequestContext.class).get();
         requestContext.setRouteUrl(routeURL);

@@ -7,6 +7,7 @@ import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.xml.XMLConfigProvider;
 import mz.co.hi.web.events.TemplateLoadEvent;
+import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MvcException;
 import mz.co.hi.web.mvc.exceptions.NoSuchViewException;
@@ -36,8 +37,7 @@ public class Controller {
 
     private Event<TemplateLoadEvent> templateLoadEvent;
 
-    private static Logger _log = LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
-
+    private static Logger _log = Logging.getInstance().getLogger();
 
     public void callView() throws MvcException {
 
