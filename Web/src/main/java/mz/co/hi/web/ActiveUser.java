@@ -19,9 +19,7 @@ import java.util.HashMap;
 public class ActiveUser implements Serializable {
 
     private String csrfToken = "";
-
     private HashMap<String,Object> data = new HashMap<>();
-
     private Logger _log = Logging.getInstance().getLogger();
 
     public ActiveUser(){
