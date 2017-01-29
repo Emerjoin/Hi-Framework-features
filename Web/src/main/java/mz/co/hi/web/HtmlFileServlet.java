@@ -13,6 +13,7 @@ import java.util.Scanner;
 /**
  * Created by Mario Junior.
  */
+@Deprecated
 public class HtmlFileServlet extends DispatcherServlet {
 
     private String html = null;

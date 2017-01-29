@@ -1,5 +1,9 @@
 package mz.co.hi.web;
 
+import mz.co.hi.web.internal.Logging;
+import org.omg.CORBA.PRIVATE_MEMBER;
+import org.slf4j.Logger;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -11,63 +15,37 @@ import java.util.Scanner;
  */
 public class Helper {
 
+    private static Logger log = Logging.getInstance().getLogger();
+
     public static String readLines(InputStream inputStream, RequestContext requestContext){
 
-        if(inputStream==null){
-
+        if(inputStream==null)
             return null;
-
-        }
 
         String text = "";
 
         try {
 
             Scanner scanner = new Scanner(inputStream,"utf8");
-
-            while (scanner.hasNextLine()) {
-
+            while (scanner.hasNextLine())
                 text +=scanner.nextLine()+"\n";
 
-            }
-
-
             if(requestContext!=null){
-
                 HttpServletResponse response = requestContext.getResponse();
                 response.setContentType("charset=UTF8");
                 requestContext.echo(text);
-
             }
 
-        }catch (Exception ex){
+        }catch (Throwable ex){
 
-            try {
-
-                if(requestContext !=null){
-
-                    ex.printStackTrace(requestContext.getResponse().getWriter());
-
-                }
-
-
-            }catch (Exception exx){
-
-
-
-            }
+            log.error("Failed to read lines",ex);
 
         }finally {
-
             try{
-
                 inputStream.close();
-
-            }catch (Exception ex){
-
-
+            }catch (Throwable ex){
+                log.error("Failed to close InputStream",ex);
             }
-
         }
 
         return text;
@@ -83,7 +61,9 @@ public class Helper {
             printWriter.write(text);
             printWriter.flush();
 
-        }catch (Exception ex){  }
+        }catch (Throwable ex){
+            log.error("Failed to write text content",ex);
+        }
 
     }
 
@@ -91,21 +71,17 @@ public class Helper {
 
         try {
 
-
             PrintWriter printWriter = requestContext.getResponse().getWriter();
             printWriter.write(text+"\n");
             printWriter.flush();
 
-
-        }catch (Exception ex){}
+        }catch (Throwable ex){
+            log.error("Failed to write text content",ex);
+        }
 
     }
 
     public static String md5(String text){
-
-        if(true)
-            return text;
-
 
         try {
 
@@ -116,9 +92,8 @@ public class Helper {
 
             //convert the byte to hex format method 1
             StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < byteData.length; i++) {
+            for (int i = 0; i < byteData.length; i++)
                 sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-            }
 
             //convert the byte to hex format method 2
             StringBuffer hexString = new StringBuffer();
@@ -128,12 +103,12 @@ public class Helper {
                 hexString.append(hex);
             }
 
-
             return hexString.toString();
 
 
-        }catch (Exception ex){
+        }catch (Throwable ex){
 
+            log.error("Md5 hash generation failed",ex);
             return text;
 
         }
