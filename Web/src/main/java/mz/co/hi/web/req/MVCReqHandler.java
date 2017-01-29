@@ -1,12 +1,9 @@
 package mz.co.hi.web.req;
 
-
-import mz.co.hi.web.DispatcherServlet;
 import mz.co.hi.web.HiCDI;
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.events.ControllerRequestEvent;
 import mz.co.hi.web.exceptions.HiException;
-import mz.co.hi.web.exceptions.NoCDIScopeException;
 import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.AppContext;
@@ -132,16 +129,13 @@ public class MVCReqHandler extends ReqHandler{
                 actionMethod = controller.getMethod(action, Map.class);
 
             }catch (Exception ex){
-
                 withParams = false;
                 actionMethod = controller.getMethod(action, null);
-
             }
 
             if(!ReqHandler.accessGranted(controller,actionMethod)){
 
                 try {
-
                     requestContext.getResponse().sendError(403);
                     return true;
 
