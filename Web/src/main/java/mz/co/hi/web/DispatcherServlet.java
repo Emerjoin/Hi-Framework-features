@@ -36,9 +36,9 @@ public class DispatcherServlet extends HttpServlet {
     @Inject
     private ConfigProvider configProvider;
 
-    public void init(ServletConfig config) throws ServletException{
+    public void init() throws ServletException{
 
-        _log.info("---Booting...");
+        _log.info("---Hi-Framework is Booting up...");
         bootAgent.init(getServletContext(),getServletConfig());
         _log.info("---Boot complete!");
 

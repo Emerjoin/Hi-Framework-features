@@ -59,13 +59,10 @@ public class FrontiersReqHandler extends ReqHandler {
     private ActiveUser activeUser;
     @Inject
     private Event<FrontierRequestEvent> frontierRequestEvent;
-
     @Inject
     private ConfigProvider configProvider;
-
     private Logger log = null;
     private Gson gson = null;
-
 
     { gson = new Gson(); }
 

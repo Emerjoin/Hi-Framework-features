@@ -98,6 +98,7 @@ public class MVCReqHandler extends ReqHandler{
     @Inject
     private AppContext appContext;
 
+    @Inject
     private Event<ControllerRequestEvent> controllerRequestEvent;
 
     private Logger log;

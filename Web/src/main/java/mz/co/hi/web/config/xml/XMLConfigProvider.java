@@ -14,6 +14,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.xml.parsers.ParserConfigurationException;
@@ -35,7 +36,8 @@ import java.util.Set;
 /**
  * Created by Mario Junior.
  */
-public final class XMLConfigProvider implements ConfigProvider {
+@ApplicationScoped
+public class XMLConfigProvider implements ConfigProvider {
 
     private String docsPath = null;
     private Logger _log = Logging.getInstance().getLogger();
