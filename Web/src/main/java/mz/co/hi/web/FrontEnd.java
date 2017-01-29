@@ -1,6 +1,9 @@
 package mz.co.hi.web;
 
 import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.internal.Logging;
+import org.slf4j.Logger;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -14,6 +17,12 @@ import java.util.Map;
 @RequestScoped
 public class FrontEnd {
 
+
+    public static String TEMPLATE_SESSION_VARIABLE ="$template_";
+    public static String LANGUAGE_SESSION_VARIABLE="$language_";
+
+    private Map<String,Map> laterInvocations = new HashMap<>();
+
     @Inject
     private HttpServletRequest httpServletRequest;
 
@@ -22,19 +31,10 @@ public class FrontEnd {
 
     private String template;
     private String language;
-
     private Map<String,Map> templateData = new HashMap<>();
 
-    public static String TEMPLATE_SESSION_VARIABLE ="$template_";
-    public static String LANGUAGE_SESSION_VARIABLE="$language_";
 
-    private Map<String,Map> laterInvocations = new HashMap<>();
-
-    public FrontEnd(){
-
-
-
-    }
+    private Logger log = Logging.getInstance().getLogger();
 
 
     @PostConstruct
@@ -44,7 +44,6 @@ public class FrontEnd {
 
         Object templateObject = activeUser.getProperty(TEMPLATE_SESSION_VARIABLE);
         if(templateObject==null){
-
             template="index";
             activeUser.setProperty(TEMPLATE_SESSION_VARIABLE,template);
 
@@ -53,7 +52,6 @@ public class FrontEnd {
 
         Object langObject = activeUser.getProperty(LANGUAGE_SESSION_VARIABLE);
         if(langObject==null){
-
             language = AppConfigurations.get().getDefaultLanguage();
             activeUser.setProperty(LANGUAGE_SESSION_VARIABLE,language);
 
@@ -62,43 +60,6 @@ public class FrontEnd {
 
     }
 
-
-
-    public String getLanguage() {
-        return language;
-    }
-
-
-    public String getTemplate() {
-
-        return template;
-
-    }
-
-
-    public String getLangDictionary(){
-
-        String dictPath = "/i18n/"+language+".json";
-        String dict = "{}";
-
-        try {
-
-
-            URL resource = httpServletRequest.getServletContext().getResource(dictPath);
-            if(resource==null)
-                return dict;
-
-
-            dict = Helper.readLines(resource.openStream(),null);
-            return dict;
-
-        }catch (Exception ex){
-
-            return dict;
-
-        }
-
-    }
 
 
     public void refresh(){
@@ -111,13 +72,9 @@ public class FrontEnd {
 
         Map<String,Object> map = new HashMap<>();
         map.put("url",url);
-
         invokeAfter("reload", map);
 
     }
-
-
-
 
     public void invokeAfter(String actionName, Map params) {
 
@@ -133,6 +90,64 @@ public class FrontEnd {
 
     }
 
+
+    public void setTemplateData(Map templateData) {
+        this.templateData = templateData;
+    }
+
+    public void setLanguage(String name){
+
+        this.language = name;
+        activeUser.setProperty(LANGUAGE_SESSION_VARIABLE,this.language);
+        //Set reload command if this method is invoked on an ajax request
+        if(isRequestAjax()||isFrontierRequest())
+            refresh();
+
+    }
+
+    public void setTemplate(String template) {
+
+        String currentTemplate = activeUser.getProperty(TEMPLATE_SESSION_VARIABLE).toString();
+
+        if(template.equals(currentTemplate)) {
+            log.warn(String.format("Trying to set the same template name : %s",template));
+            return;
+        }
+
+        log.debug(String.format("Changing template %s => %s",currentTemplate,template));
+        this.template = template;
+        activeUser.setProperty(TEMPLATE_SESSION_VARIABLE,this.template);
+
+        //Reload command if this method is invoked on an ajax request
+        if(isRequestAjax()||isFrontierRequest())
+            refresh(httpServletRequest.getRequestURI());
+
+
+    }
+
+    public boolean wasTemplateDataSet(){
+
+        return templateData.size()>0;
+
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String getTemplate() {
+
+        return template;
+
+    }
+
+
+    public Map<String,Map> getLaterInvocations() {
+        return laterInvocations;
+    }
+    public Map getTemplateData() {
+        return templateData;
+    }
 
     public boolean gotLaterInvocations() {
 
@@ -153,61 +168,23 @@ public class FrontEnd {
 
     }
 
+    public String getLangDictionary(){
+        String dictPath = "/i18n/"+language+".json";
+        String dict = "{}";
 
-    public Map<String,Map> getLaterInvocations() {
-        return laterInvocations;
-    }
+        try {
 
-    public Map getTemplateData() {
-        return templateData;
-    }
+            URL resource = httpServletRequest.getServletContext().getResource(dictPath);
+            if(resource==null)
+                return dict;
+            dict = Helper.readLines(resource.openStream(),null);
+            return dict;
 
-    public void setTemplateData(Map templateData) {
-        this.templateData = templateData;
-    }
+        }catch (Throwable ex){
 
-    public void setLanguage(String name){
-
-        this.language = name;
-
-        activeUser.setProperty(LANGUAGE_SESSION_VARIABLE,this.language);
-
-        //Set reload command if this method is invoked on an ajax request
-        if(isRequestAjax()||isFrontierRequest())
-            refresh();
-
-
-
-    }
-
-    public void setTemplate(String template) {
-
-        String currentTemplate = activeUser.getProperty(TEMPLATE_SESSION_VARIABLE).toString();
-
-        //Same template
-        if(template.equals(currentTemplate)) {
-
-            System.out.println("Trying to set the same template name : "+template);
-            return;
+            return dict;
 
         }
-
-        System.out.println("Changing template "+currentTemplate+" => "+template);
-
-        this.template = template;
-
-        activeUser.setProperty(TEMPLATE_SESSION_VARIABLE,this.template);
-
-        //Reload command if this method is invoked on an ajax request
-        if(isRequestAjax()||isFrontierRequest())
-            refresh(httpServletRequest.getRequestURI());
-
-
-    }
-
-    public boolean wasTemplateDataSet(){
-
-        return templateData.size()>0;
 
     }
 
