@@ -2,6 +2,9 @@ package mz.co.hi.web;
 
 
 
+import mz.co.hi.web.internal.Logging;
+import org.slf4j.Logger;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -18,70 +21,20 @@ import java.util.Map;
 @RequestScoped
 public class RequestContext {
 
+    public static String AJAX_HEADER_KEY = "AJAX_MVC";
+
     @Inject
     private HttpServletRequest request = null;
-
     private HttpServletResponse response = null;
 
     @Inject
     private ServletContext servletContext = null;
-
     private Map<String,Object> data = new HashMap<String, Object>();
     private String url = null;
     private String routeUrl;
 
     private OutputStream outputStream = null;
-
-    public static String AJAX_HEADER_KEY = "AJAX_MVC";
-
-    public String getUsername(){
-
-        return request.getRemoteUser();
-
-    }
-
-    public boolean isUserLogged(){
-
-        System.out.println(~'g');
-
-        return request.getRemoteUser()!=null;
-
-    }
-
-    public OutputStream getOutputStream(){
-
-        if(outputStream ==null){
-
-            try {
-
-                outputStream = response.getOutputStream();
-
-
-            }catch (Exception ex){
-
-
-
-            }
-
-        }
-
-        return outputStream;
-
-    }
-
-    public String getRouteUrl(){
-
-        return routeUrl;
-
-    }
-
-
-    public RequestContext(){
-
-
-
-    }
-
+    private Logger log = Logging.getInstance().getLogger();
 
     @PostConstruct
     private void getReady(){
@@ -96,56 +49,13 @@ public class RequestContext {
 
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public Map<String,Object> getData(){
-
-        return data;
-
-    }
-
     public void setUrl(String url) {
         this.url = url;
     }
 
-
-    public ServletContext getServletContext(){
-
-        return  servletContext;
-
-    }
-
-
-
     protected  void setResponse(HttpServletResponse response){
 
         this.response = response;
-
-    }
-
-    public  HttpServletRequest getRequest(){
-
-        return request;
-
-    }
-
-    public HttpServletResponse getResponse(){
-
-        return response;
-
-    }
-
-    public  boolean hasAjaxHeader(){
-
-        if(request==null){
-
-            return false;
-
-        }
-
-        return request.getHeader(AJAX_HEADER_KEY)!=null;
 
     }
 
@@ -177,4 +87,78 @@ public class RequestContext {
         return baseUrl;
 
     }
+
+    public String getUsername(){
+
+        return request.getRemoteUser();
+
+    }
+
+    public boolean isUserLogged(){
+
+        return request.getRemoteUser()!=null;
+
+    }
+
+    public OutputStream getOutputStream(){
+
+        if(outputStream ==null){
+            try {
+
+                outputStream = response.getOutputStream();
+
+            }catch (Throwable ex){
+                log.error("Failed to get the HttpServletResponse OutputStream",ex);
+            }
+        }
+
+        return outputStream;
+
+    }
+
+    public String getRouteUrl(){
+
+        return routeUrl;
+
+    }
+
+    public  HttpServletRequest getRequest(){
+
+        return request;
+
+    }
+
+    public HttpServletResponse getResponse(){
+
+        return response;
+
+    }
+
+    public  boolean hasAjaxHeader(){
+
+        if(request==null)
+            return false;
+        return request.getHeader(AJAX_HEADER_KEY)!=null;
+
+    }
+
+
+
+    public ServletContext getServletContext(){
+
+        return  servletContext;
+
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public Map<String,Object> getData(){
+
+        return data;
+
+    }
+
 }
