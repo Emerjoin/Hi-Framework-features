@@ -22,12 +22,14 @@ public class Logging {
 
     }
 
+
+    private String loggerName = "hi-web";
+
     private Logging(){ }
 
     public Logger getLogger(){
 
-        String name = CDI.current().select(ConfigProvider.class).get().getLoggerName();
-        return LoggerFactory.getLogger(name);
+        return LoggerFactory.getLogger(loggerName);
 
     }
 

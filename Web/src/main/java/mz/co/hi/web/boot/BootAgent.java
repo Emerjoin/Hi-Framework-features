@@ -7,6 +7,7 @@ import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.boot.BootExtension;
 import mz.co.hi.web.boot.BootManager;
 import mz.co.hi.web.internal.ES5Library;
+import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.internal.Router;
 import mz.co.hi.web.meta.Tested;
 import mz.co.hi.web.mvc.Controller;
@@ -30,7 +31,7 @@ public class BootAgent {
 
     private ServletContext servletContext = null;
     private ServletConfig servletConfig = null;
-    private Logger _log = null;
+    private Logger _log = Logging.getInstance().getLogger();
     private String deployId ="";
 
     @Inject
@@ -152,7 +153,6 @@ public class BootAgent {
 
         Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
         configProvider.load(servletContext,servletConfig,indexSet);
-        _log = configProvider.getLogger();
 
     }
 

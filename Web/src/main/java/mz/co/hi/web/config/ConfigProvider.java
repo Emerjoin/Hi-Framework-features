@@ -14,7 +14,6 @@ import java.util.Set;
 public interface ConfigProvider {
 
     public void load(ServletContext servletContext, ServletConfig config, Set<Index> index) throws HiException;
-    public String getLoggerName();
     public String getDocsPath();
     public AppConfigurations getAppConfigs();
 

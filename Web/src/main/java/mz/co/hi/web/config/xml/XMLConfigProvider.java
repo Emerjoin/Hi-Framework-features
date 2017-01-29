@@ -3,6 +3,7 @@ package mz.co.hi.web.config.xml;
 import com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory;
 import mz.co.hi.web.config.*;
 import mz.co.hi.web.exceptions.HiException;
+import mz.co.hi.web.internal.Logging;
 import org.jboss.jandex.AnnotationInstance;
 import org.jboss.jandex.DotName;
 import org.jboss.jandex.Index;
@@ -36,17 +37,8 @@ import java.util.Set;
  */
 public final class XMLConfigProvider implements ConfigProvider {
 
-    public static String LOGGER=null;
-    private static Logger _log=null;
-
-    public static void setLogger(String name){
-
-        LOGGER = name;
-        _log = LoggerFactory.getLogger(XMLConfigProvider.LOGGER);
-
-    }
-
-    private String logger ="hi-web";
+    private String docsPath = null;
+    private Logger _log = Logging.getInstance().getLogger();
 
     private Configurator getConfigurator(Class<? extends Configurator> clazz) throws HiException {
 
@@ -103,7 +95,6 @@ public final class XMLConfigProvider implements ConfigProvider {
     public void load(ServletContext servletContext, ServletConfig config, Set<Index> indexSet) throws HiException{
 
         Set<Class<?>> configurators  = getConfigurators(indexSet);
-
         Document document = loadDocument(servletContext);
         Element docElement = document.getDocumentElement();
 
@@ -140,12 +131,21 @@ public final class XMLConfigProvider implements ConfigProvider {
 
     }
 
-    @Override
-    public Logger getLogger() {
 
-        return LoggerFactory.getLogger(logger);
+    @Override
+    public String getDocsPath() {
+
+        return docsPath;
 
     }
+
+    @Override
+    public AppConfigurations getAppConfigs() {
+
+        return AppConfigurations.get();
+
+    }
+
 
 
     private Document loadDocument(ServletContext servletContext) throws HiException{
