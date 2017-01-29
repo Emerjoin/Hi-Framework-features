@@ -24,8 +24,6 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/*",name = "HiServlet",loadOnStartup = 1)
 public class DispatcherServlet extends HttpServlet {
 
-    private static boolean initialized = false;
-
     public static String LOGGER = "hi-web";
     private static Logger _log = Logging.getInstance().getLogger();
 
