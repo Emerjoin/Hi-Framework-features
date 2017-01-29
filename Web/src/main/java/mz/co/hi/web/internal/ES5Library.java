@@ -5,7 +5,7 @@ import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.xml.XMLConfigProvider;
 import mz.co.hi.web.exceptions.HiException;
-import mz.co.hi.web.frontier.Scripter;
+import mz.co.hi.web.frontier.FrontiersGenerator;
 import mz.co.hi.web.frontier.model.FrontierBeansCrawler;
 import mz.co.hi.web.frontier.model.FrontierClass;
 import mz.co.hi.web.meta.Frontier;
@@ -281,12 +281,12 @@ public class ES5Library {
 
 
             _log.info("Generating client-side code for frontiers...");
-            Scripter scripter = new Scripter();
+            FrontiersGenerator frontiersGenerator = new FrontiersGenerator();
 
             for (FrontierClass beanClass : beanClasses) {
 
                 FrontiersReqHandler.addFrontier(beanClass);
-                String frontier_script = scripter.generate(beanClass);
+                String frontier_script = frontiersGenerator.generate(beanClass);
                 frontierJS += "\n" + frontier_script;
 
             }
