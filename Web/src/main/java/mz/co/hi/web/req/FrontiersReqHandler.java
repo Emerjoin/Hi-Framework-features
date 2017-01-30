@@ -244,47 +244,6 @@ public class FrontiersReqHandler extends ReqHandler {
 
     }
 
-    @Override
-    public boolean handle(RequestContext requestContext) throws ServletException, IOException {
-        if(!isAuthenticRequest(requestContext))
-            return false;
-
-        String[] frontierPair = getFrontierPair(requestContext);
-        String invokedClass = frontierPair[0];
-        String invokedMethod = frontierPair[1];
-        if(invokedClass==null||invokedMethod==null)
-            return false;
-
-        if(!frontierExists(invokedClass))
-            return false;
-
-        FrontierClass frontierClass = getFrontier(invokedClass);
-        if(!frontierClass.hasMethod(invokedMethod))
-            return false;
-
-        FrontierMethod frontierMethod = frontierClass.getMethod(invokedMethod);
-        Map params = matchParams(invokedClass,frontierMethod, requestContext);
-        FrontierInvoker frontierInvoker = new FrontierInvoker(frontierClass,frontierMethod,params);
-        boolean invocationOK;
-
-        try {
-
-            if(!ReqHandler.accessGranted(frontierClass.getObject().getClass(),frontierMethod.getMethod())){
-                requestContext.getResponse().sendError(403);
-                return true;
-            }
-
-            invocationOK = executeFrontier(frontierInvoker,frontierMethod,frontierClass);
-
-        }catch (Exception ex){
-            return handleException(ex,invokedClass,invokedMethod);
-        }
-
-        if(invocationOK)
-            okInvocationResult(frontierInvoker,frontierClass,frontierMethod);
-
-        return invocationOK;
-    }
 
     private boolean executeFrontier(FrontierInvoker invoker, FrontierMethod method,
                                     FrontierClass clazz) throws Exception{
@@ -385,5 +344,48 @@ public class FrontiersReqHandler extends ReqHandler {
         log = Logging.getInstance().getLogger();
 
     }
+
+    @Override
+    public boolean handle(RequestContext requestContext) throws ServletException, IOException {
+        if(!isAuthenticRequest(requestContext))
+            return false;
+
+        String[] frontierPair = getFrontierPair(requestContext);
+        String invokedClass = frontierPair[0];
+        String invokedMethod = frontierPair[1];
+        if(invokedClass==null||invokedMethod==null)
+            return false;
+
+        if(!frontierExists(invokedClass))
+            return false;
+
+        FrontierClass frontierClass = getFrontier(invokedClass);
+        if(!frontierClass.hasMethod(invokedMethod))
+            return false;
+
+        FrontierMethod frontierMethod = frontierClass.getMethod(invokedMethod);
+        Map params = matchParams(invokedClass,frontierMethod, requestContext);
+        FrontierInvoker frontierInvoker = new FrontierInvoker(frontierClass,frontierMethod,params);
+        boolean invocationOK;
+
+        try {
+
+            if(!ReqHandler.accessGranted(frontierClass.getObject().getClass(),frontierMethod.getMethod())){
+                requestContext.getResponse().sendError(403);
+                return true;
+            }
+
+            invocationOK = executeFrontier(frontierInvoker,frontierMethod,frontierClass);
+
+        }catch (Exception ex){
+            return handleException(ex,invokedClass,invokedMethod);
+        }
+
+        if(invocationOK)
+            okInvocationResult(frontierInvoker,frontierClass,frontierMethod);
+
+        return invocationOK;
+    }
+
 
 }
