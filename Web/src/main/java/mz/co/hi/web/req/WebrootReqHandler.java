@@ -32,16 +32,12 @@ public class WebrootReqHandler extends ReqHandler {
     private mz.co.hi.web.AppContext appContext;
 
     public WebrootReqHandler(){
-
         List<Tunnings.CachedWebrootDirectory> list = AppConfigurations.get().getTunnings().getCachedWebrootDirectoryList();
         List<String> allSmartCached = AppConfigurations.get().getTunnings().getSmartCachedAssets();
-
         if(list.size()==0)
             return;
-
         for(Tunnings.CachedWebrootDirectory cachedWebrootDirectory: list)
             staticCachingDefinitions.put(cachedWebrootDirectory.name,cachedWebrootDirectory.time);
-
         for(String smartCached : allSmartCached)
             smartCachedAssets.put(smartCached,true);
 
