@@ -37,46 +37,6 @@ public class Controller {
 
     private static Logger _log = Logging.getInstance().getLogger();
 
-    public void callView() throws MvcException {
-
-        this.callView(null);
-
-    }
-
-
-    public void callView(Map values) throws NoSuchViewException, TemplateException, ConversionFailedException {
-        AppConfigurations config = AppConfigurations.get();
-        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
-
-        String actionName = requestContext.getData().get("actionU").toString();
-        String controllerName = requestContext.getData().get("controllerU").toString();
-        String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".html";
-        String viewJSFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".js";
-        String viewJSMiniFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".min.js";
-
-        FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
-        if(!requestContext.hasAjaxHeader())
-            templateLoadEvent.fire(new TemplateLoadEvent());
-
-        if(values==null)
-            values = new HashMap<>();
-        if(frontEnd.wasTemplateDataSet())
-            values.put("$root",frontEnd.getTemplateData());
-
-        requestContext.getData().put(VIEW_DATA_KEY,values);
-
-        //Do not need to load the view file
-        if(requestContext.getData().containsKey("ignore_view")){
-            htmLizer.process(this,true);
-            return;
-        }
-
-        prepareView(requestContext,controllerName,actionName,viewFile,viewJSFile,viewJSMiniFile);
-        htmLizer.setRequestContext(requestContext);
-        htmLizer.process(this,false);
-
-    }
-
     private void prepareView(RequestContext requestContext, String controllerName, String actionName,
                              String viewFile, String viewJsfile, String viewJsMinifiedfile) throws NoSuchViewException{
         URL viewResource = null;
@@ -150,5 +110,45 @@ public class Controller {
         }
 
     }
+
+    public void callView() throws MvcException {
+
+        this.callView(null);
+
+    }
+
+    public void callView(Map values) throws NoSuchViewException, TemplateException, ConversionFailedException {
+        AppConfigurations config = AppConfigurations.get();
+        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
+
+        String actionName = requestContext.getData().get("actionU").toString();
+        String controllerName = requestContext.getData().get("controllerU").toString();
+        String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".html";
+        String viewJSFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".js";
+        String viewJSMiniFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".min.js";
+
+        FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
+        if(!requestContext.hasAjaxHeader())
+            templateLoadEvent.fire(new TemplateLoadEvent());
+
+        if(values==null)
+            values = new HashMap<>();
+        if(frontEnd.wasTemplateDataSet())
+            values.put("$root",frontEnd.getTemplateData());
+
+        requestContext.getData().put(VIEW_DATA_KEY,values);
+
+        //Do not need to load the view file
+        if(requestContext.getData().containsKey("ignore_view")){
+            htmLizer.process(this,true);
+            return;
+        }
+
+        prepareView(requestContext,controllerName,actionName,viewFile,viewJSFile,viewJSMiniFile);
+        htmLizer.setRequestContext(requestContext);
+        htmLizer.process(this,false);
+
+    }
+
 
 }
