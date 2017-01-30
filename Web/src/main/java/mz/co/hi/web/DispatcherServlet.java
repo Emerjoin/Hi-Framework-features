@@ -36,27 +36,6 @@ public class DispatcherServlet extends HttpServlet {
     @Inject
     private ConfigProvider configProvider;
 
-    public void init() throws ServletException{
-
-        _log.info("---Hi-Framework is Booting up...");
-        bootAgent.init(getServletContext(),getServletConfig());
-        _log.info("---Boot complete!");
-
-    }
-
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
-        doHandle(request,response,true);
-
-    }
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        doHandle(request,response,false);
-
-    }
-
     private String filterRouteURL(String routeURL,HttpServletResponse response) throws IOException {
 
         if(routeURL.trim().length()==0){
@@ -93,6 +72,28 @@ public class DispatcherServlet extends HttpServlet {
         requestContext.setRouteUrl(routeURL);
         requestContext.setResponse(response);
         router.doRoute(requestContext,routeURL,isPost);
+
+    }
+
+
+    public void init() throws ServletException{
+
+        _log.info("---Hi-Framework is Booting up...");
+        bootAgent.init(getServletContext(),getServletConfig());
+        _log.info("---Boot complete!");
+
+    }
+
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+        doHandle(request,response,true);
+
+    }
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        doHandle(request,response,false);
 
     }
 
