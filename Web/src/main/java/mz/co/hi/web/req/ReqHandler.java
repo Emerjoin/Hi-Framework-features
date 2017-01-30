@@ -138,24 +138,9 @@ public abstract class ReqHandler {
     }
 
 
-    protected static boolean accessGranted(AnnotatedElement annotatedElement){
-
-        Annotation grantedAnnotation = annotatedElement.getAnnotation(Granted.class);
-        Annotation deniedAnnotation = annotatedElement.getAnnotation(Denied.class);
-        Annotation requirePermissionAnnotation = annotatedElement.getAnnotation(RequirePermission.class);
-
-        if(grantedAnnotation==null&&deniedAnnotation==null&&requirePermissionAnnotation==null)
-            return true;
-
-        return validateAccess(grantedAnnotation,deniedAnnotation,requirePermissionAnnotation);
-
-
-
-    }
-
 
     private static boolean validateAccess(Annotation grantedAnnotation,
-                                   Annotation deniedAnnotation, Annotation requirePermissionAnnotation){
+                                          Annotation deniedAnnotation, Annotation requirePermissionAnnotation){
 
         boolean accessGranted = true;
 
@@ -194,6 +179,20 @@ public abstract class ReqHandler {
 
     }
 
+    protected static boolean accessGranted(AnnotatedElement annotatedElement){
+
+        Annotation grantedAnnotation = annotatedElement.getAnnotation(Granted.class);
+        Annotation deniedAnnotation = annotatedElement.getAnnotation(Denied.class);
+        Annotation requirePermissionAnnotation = annotatedElement.getAnnotation(RequirePermission.class);
+
+        if(grantedAnnotation==null&&deniedAnnotation==null&&requirePermissionAnnotation==null)
+            return true;
+
+        return validateAccess(grantedAnnotation,deniedAnnotation,requirePermissionAnnotation);
+
+
+
+    }
 
     protected static boolean accessGranted(Class clazz, Method method){
 
