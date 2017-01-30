@@ -72,43 +72,6 @@ public class ES5ReqHandler extends ReqHandler {
     @Inject
     private ES5Library es5;
 
-
-    @Override
-    public boolean handle(RequestContext requestContext) throws ServletException, IOException {
-
-        this.requestContext = requestContext;
-
-        String requestURL = requestContext.getRequest().getRequestURI().replace(requestContext.getRequest().getContextPath() + "/", "");
-        int indexOfLastSlash = requestURL.lastIndexOf('/');
-
-        String templateName = (String) activeUser.getProperty(FrontEnd.TEMPLATE_SESSION_VARIABLE, "index");
-        String templateContent = "";
-
-        if (templateControllers.containsKey(templateName))
-            templateContent = templateControllers.get(templateName).toString();
-
-        if (indexOfLastSlash != -1)
-            requestURL = requestURL.substring(indexOfLastSlash + 1, requestURL.length());
-
-        String es5File = "hi-es5.js";
-        if (AppConfigurations.get().getDeploymentMode() != AppConfigurations.DeploymentMode.DEVELOPMENT)
-            es5File = "hi-es5" + appContext.getAssetVersionToken() + ".js";
-
-        if (requestURL.equals(es5File)){
-            es5File(templateContent);
-        }else if(requestURL.equals("hi-angular.js")){
-            requestContext.getResponse().setHeader("Content-Type","text/javascript");
-            Helper.echo(es5.getAngularJS(),requestContext);
-        }else if(requestURL.equals("hi-es5-tests.js")){
-            es5TestFiles();
-        }else{
-            return false;
-        }
-
-        return true;
-
-    }
-
     private void es5File(String templateContent){
 
         requestContext.getResponse().setHeader("Content-Type", "text/javascript");
@@ -193,6 +156,44 @@ public class ES5ReqHandler extends ReqHandler {
         return content;
 
     }
+
+    @Override
+    public boolean handle(RequestContext requestContext) throws ServletException, IOException {
+
+        this.requestContext = requestContext;
+
+        String requestURL = requestContext.getRequest().getRequestURI().replace(requestContext.getRequest().getContextPath() + "/", "");
+        int indexOfLastSlash = requestURL.lastIndexOf('/');
+
+        String templateName = (String) activeUser.getProperty(FrontEnd.TEMPLATE_SESSION_VARIABLE, "index");
+        String templateContent = "";
+
+        if (templateControllers.containsKey(templateName))
+            templateContent = templateControllers.get(templateName).toString();
+
+        if (indexOfLastSlash != -1)
+            requestURL = requestURL.substring(indexOfLastSlash + 1, requestURL.length());
+
+        String es5File = "hi-es5.js";
+        if (AppConfigurations.get().getDeploymentMode() != AppConfigurations.DeploymentMode.DEVELOPMENT)
+            es5File = "hi-es5" + appContext.getAssetVersionToken() + ".js";
+
+        if (requestURL.equals(es5File)){
+            es5File(templateContent);
+        }else if(requestURL.equals("hi-angular.js")){
+            requestContext.getResponse().setHeader("Content-Type","text/javascript");
+            Helper.echo(es5.getAngularJS(),requestContext);
+        }else if(requestURL.equals("hi-es5-tests.js")){
+            es5TestFiles();
+        }else{
+            return false;
+        }
+
+        return true;
+
+    }
+
+
 
 
 }
