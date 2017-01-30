@@ -264,7 +264,7 @@ public class FrontiersReqHandler extends ReqHandler {
 
         FrontierMethod frontierMethod = frontierClass.getMethod(invokedMethod);
         Map params = matchParams(invokedClass,frontierMethod, requestContext);
-        FrontierInvoker frontierInvoker = new FrontierInvoker(requestContext,frontierClass,frontierMethod,params);
+        FrontierInvoker frontierInvoker = new FrontierInvoker(frontierClass,frontierMethod,params);
         boolean invocationOK;
 
         try {

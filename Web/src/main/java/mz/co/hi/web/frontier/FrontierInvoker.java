@@ -17,16 +17,13 @@ import java.util.Map;
  */
 public class FrontierInvoker {
 
-
-    private RequestContext requestContext;
     private FrontierClass frontier;
     private FrontierMethod method;
     private Map params;
     private Object returnedObject;
 
-    public FrontierInvoker(RequestContext requestContext, FrontierClass frontierClass, FrontierMethod method, Map params){
+    public FrontierInvoker(FrontierClass frontierClass, FrontierMethod method, Map params){
 
-        this.requestContext = requestContext;
         this.frontier = frontierClass;
         this.method = method;
         this.params = params;
@@ -39,47 +36,29 @@ public class FrontierInvoker {
         MethodParam methodParams[] = method.getParams();
         Object[] invocationParams = new Object[params.size()];
 
-
-
         int i = 0;
         for(MethodParam methodParam: methodParams){
-
-
             Object paramValue = params.get(methodParam.getName());
             invocationParams[i] = paramValue;
             i++;
-
         }
 
-
         Object refreshedObj = frontier.getObject();
-
         try {
 
             returnedObject = method.getMethod().invoke(refreshedObj, invocationParams);
 
-
-        }catch (Exception ex){
+        }catch (Throwable ex){
 
             if(ex instanceof InvocationTargetException){
-
                 Throwable throwable = ex.getCause();
-
-                if(throwable instanceof ConstraintViolationException){
-
-
+                if(throwable instanceof ConstraintViolationException)
                     throw (ConstraintViolationException) throwable;
-
-
-                }
-
             }
-
 
             throw ex;
 
         }
-
         return true;
     }
 
