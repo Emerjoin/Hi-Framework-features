@@ -21,10 +21,8 @@ public class FileUpload {
     }
 
     public File saveToFolder(String path) throws IOException {
-
         String filePath = path+"/"+getUploadFileName();
         return saveAs(filePath);
-
     }
 
     public File saveAs(File file) throws IOException{
@@ -32,24 +30,17 @@ public class FileUpload {
         if(file.exists())
             throw new IllegalArgumentException("File "+file.getAbsolutePath()+" already exists");
 
-
-
         file.createNewFile();
         FileOutputStream fileOutputStream = new FileOutputStream(file);
-
         InputStream partInput = getPart().getInputStream();
         byte[] buffer = new byte[2048];
 
         while (partInput.available() > 0) {
-
             if (partInput.available() < buffer.length)
                 buffer = new byte[partInput.available()];
-
             int totalRead = partInput.read(buffer);
             fileOutputStream.write(buffer, 0, totalRead);
-
         }
-
 
         return file;
 
