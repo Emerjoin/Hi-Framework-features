@@ -1,5 +1,6 @@
 guide/
 HelloApp/
+HelloAppTx/
 .idea/
 Web/.idea
 Web/target
