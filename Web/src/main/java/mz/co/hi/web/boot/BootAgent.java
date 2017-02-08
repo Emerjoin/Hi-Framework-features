@@ -59,7 +59,7 @@ public class BootAgent {
 
             try {
 
-                extension.boot(indexSet);
+                extension.boot(indexSet,servletConfig);
                 _log.info(String.format("Initializing boot extension : %s",extension.getClass().getCanonicalName()));
 
             }catch (Exception ex){
