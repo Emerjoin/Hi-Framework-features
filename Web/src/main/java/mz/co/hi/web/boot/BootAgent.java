@@ -59,8 +59,8 @@ public class BootAgent {
 
             try {
 
-                extension.boot(indexSet,servletContext);
                 _log.info(String.format("Initializing boot extension : %s",extension.getClass().getCanonicalName()));
+                extension.boot(indexSet,servletContext);
 
             }catch (Exception ex){
 

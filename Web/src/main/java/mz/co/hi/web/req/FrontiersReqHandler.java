@@ -273,9 +273,20 @@ public class FrontiersReqHandler extends ReqHandler {
 
         requestContext.getResponse().setStatus(500);
         requestContext.getResponse().setContentType("text/json;charset=UTF8");
+        requestContext.echo(serializeException(ex));
         return true;
 
     }
+
+    private String serializeException(Exception ex){
+
+        Map exception = new HashMap<>();
+        exception.put("type",ex.getClass().getSimpleName());
+        exception.put("details",ex);
+        return gson.toJson(exception);
+
+    }
+
 
     private void handleConstraintViolation(ConstraintViolationException violationException){
 
@@ -289,12 +300,15 @@ public class FrontiersReqHandler extends ReqHandler {
         }
 
         Gson gson = appContext.getGsonBuilder().create();
-        Map map = new HashMap<>();
-        Map exception = new HashMap<>();
-        exception.put("messages",messages);
-        map.put("$exception",exception);
 
-        String resp = gson.toJson(map);
+        Map details = new HashMap<>();
+        details.put("messages",messages);
+
+        Map exception = new HashMap<>();
+        exception.put("type",ConstraintViolationException.class.getSimpleName());
+        exception.put("details",details);
+
+        String resp = gson.toJson(exception);
         requestContext.getResponse().setStatus(500);
         requestContext.getResponse().setContentType("text/json;charset=UTF8");
         requestContext.echo(resp);
