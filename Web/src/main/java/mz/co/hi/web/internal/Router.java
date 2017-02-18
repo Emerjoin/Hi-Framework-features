@@ -4,6 +4,7 @@ import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.exceptions.HiException;
 import mz.co.hi.web.req.*;
+import org.slf4j.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.spi.CDI;
@@ -21,6 +22,7 @@ public class Router {
 
 
     private HashMap<String,String> matchedUrls = new HashMap();
+    private static Logger _log = Logging.getInstance().getLogger();
 
     public void init(ServletContext context, ServletConfig config) throws HiException{
 
@@ -106,6 +108,7 @@ public class Router {
                 Class handlerClazz = ReqHandler.getHandlerClass(reqHandler);
 
                 if (ReqHandler.matches(requestContext, handlerClazz,isPost)){
+                    _log.debug("Request handler match : %s",reqHandler.getClass().getSimpleName());
                     handled = reqHandler.handle(requestContext);
 
                     if(handled){

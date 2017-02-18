@@ -5,6 +5,7 @@ import mz.co.hi.web.config.ConfigProvider;
 import mz.co.hi.web.boot.BootAgent;
 import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.internal.Router;
+import mz.co.hi.web.uti.Timing;
 import org.slf4j.Logger;
 
 import javax.enterprise.inject.spi.CDI;
@@ -18,13 +19,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+import static mz.co.hi.web.uti.Timing.*;
+
 /**
  * Created by Mario Junior.
  */
 @WebServlet(urlPatterns = "/*",name = "HiServlet",loadOnStartup = 1)
 public class DispatcherServlet extends HttpServlet {
 
-    public static String LOGGER = "hi-web";
     private static Logger _log = Logging.getInstance().getLogger();
 
     @Inject
@@ -61,17 +63,27 @@ public class DispatcherServlet extends HttpServlet {
 
     private void doHandle(HttpServletRequest request, HttpServletResponse response, boolean isPost) throws ServletException,IOException{
 
-        HttpSession session = request.getSession();
-        String routeURL = getRouteURL(request);
+        try {
 
-        routeURL = filterRouteURL(routeURL,response);
-        if(routeURL==null)
-            return;
+            tic();
 
-        RequestContext requestContext = CDI.current().select(RequestContext.class).get();
-        requestContext.setRouteUrl(routeURL);
-        requestContext.setResponse(response);
-        router.doRoute(requestContext,routeURL,isPost);
+            HttpSession session = request.getSession();
+            String routeURL = getRouteURL(request);
+
+            routeURL = filterRouteURL(routeURL, response);
+            if (routeURL == null)
+                return;
+
+            RequestContext requestContext = CDI.current().select(RequestContext.class).get();
+            requestContext.setRouteUrl(routeURL);
+            requestContext.setResponse(response);
+            router.doRoute(requestContext, routeURL, isPost);
+
+        }finally {
+
+            _log.debug(String.format("Request handled in %f milliseconds",toc()));
+
+        }
 
     }
 
