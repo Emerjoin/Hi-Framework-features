@@ -101,26 +101,12 @@
            var errorText = jqXml.responseText;
            var exceptionType = undefined;
 
-
            try{
 
-
                var responseJSON = JSON.parse(errorText);
-               if(responseJSON.hasOwnProperty("$exception")){
+               if(responseJSON.hasOwnProperty("type")&&responseJSON.hasOwnProperty("details")){
 
-                   exceptionType = responseJSON["$exception"];
-
-                   var translatedMessages = [];
-
-                   exceptionType.messages.forEach(function(item, index){
-
-                       translatedMessages[index] = __t(item);
-
-                   });
-
-                   exceptionType.messages = translatedMessages;
-
-                   promisse._setException(exceptionType);
+                   promisse._setException(responseJSON);
                    return;
 
                }
