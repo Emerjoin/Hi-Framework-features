@@ -27,6 +27,7 @@ import javax.servlet.http.Part;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 @HandleRequests(regexp = "f.m.call/[$_A-Za-z0-9]+/[$_A-Za-z0-9]+", supportPostMethod = true)
@@ -263,6 +264,9 @@ public class FrontiersReqHandler extends ReqHandler {
 
     private boolean handleException(Exception ex, String invokedClass, String invokedMethod ){
 
+        if(ex instanceof InvocationTargetException && ex.getCause() instanceof Exception)
+            ex = (Exception) ex.getCause();
+
         log.error("An error occurred during frontier method invocation <"+invokedClass+"."+invokedMethod+">",ex);
 
         if(ex instanceof ConstraintViolationException){
@@ -273,16 +277,27 @@ public class FrontiersReqHandler extends ReqHandler {
 
         requestContext.getResponse().setStatus(500);
         requestContext.getResponse().setContentType("text/json;charset=UTF8");
-        requestContext.echo(serializeException(ex));
+        requestContext.echo(serializeThrowable(ex));
         return true;
 
     }
 
-    private String serializeException(Exception ex){
+    private String serializeThrowable(Exception ex){
+
+        Throwable throwable = null;
+        if(ex instanceof InvocationTargetException)
+            throwable = ((InvocationTargetException)ex).getTargetException();
+        else throwable = ex;
 
         Map exception = new HashMap<>();
         exception.put("type",ex.getClass().getSimpleName());
-        exception.put("details",ex);
+
+        JsonObject jsonObject = gson.toJsonTree(throwable).getAsJsonObject();
+        jsonObject.remove("stackTrace");
+        jsonObject.remove("suppressedExceptions");
+        jsonObject.remove("target");
+        exception.put("details",jsonObject);
+
         return gson.toJson(exception);
 
     }
