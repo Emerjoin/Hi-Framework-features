@@ -18,7 +18,7 @@ public class Timing {
         long start_time = tickTime.get();
         tickTime.remove();
         long end_time = System.nanoTime();
-        return (end_time - start_time)/1e6;
+        return  (end_time - start_time)/1e6;
 
     }
 

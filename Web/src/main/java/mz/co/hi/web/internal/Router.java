@@ -108,7 +108,7 @@ public class Router {
                 Class handlerClazz = ReqHandler.getHandlerClass(reqHandler);
 
                 if (ReqHandler.matches(requestContext, handlerClazz,isPost)){
-                    _log.debug("Request handler match : %s",reqHandler.getClass().getSimpleName());
+                    _log.debug(String.format("Request handler match : %s",handlerClazz.getSimpleName()));
                     handled = reqHandler.handle(requestContext);
 
                     if(handled){
