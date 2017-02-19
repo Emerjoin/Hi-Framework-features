@@ -343,7 +343,7 @@ public class HTMLizer {
         ES5Library es5Lib = CDI.current().select(ES5Library.class).get();
 
         String template = fetchTemplate(frontEnd);
-        String loaderJSContent= es5Lib.getStaticHiJS();
+        String loaderJSContent= es5Lib.getHiLoaderJS();
 
         Map viewData = (Map) requestContext.getData().get(Controller.VIEW_DATA_KEY);
 
