@@ -99,6 +99,7 @@ Hi.$test = {};
 Hi.$test.fakeFrontierPromise = function(){
 
 
+
 };
 
 Hi.$test.MockCall = function(){
@@ -106,12 +107,9 @@ Hi.$test.MockCall = function(){
     this.success = function(data){
 
         var promise = new Hi.$frontiers.Promise();
-        var finally_backup = promise.finally;
-        promise.finally = function(callback){
+        promise.run = function(){
 
-            finally_backup(callback);
             promise._setResult(data);
-
             return promise;
 
         };
@@ -120,13 +118,12 @@ Hi.$test.MockCall = function(){
 
     };
 
+
     this.error = function(error){
 
         var promise = new Hi.$frontiers.Promise();
-        var finally_backup = promise.finally;
-        promise.finally = function(callback){
+        promise.run = function(){
 
-            finally_backup(callback);
             promise._setException(error);
 
             return promise;
@@ -136,11 +133,10 @@ Hi.$test.MockCall = function(){
         return promise;
     };
 
-
-
     //TODO: Test other situations: overrequest, timeout, etc
 
 };
+
 
 Hi.$test.MockTemplate = function(data){
 
@@ -2773,6 +2769,11 @@ Hi.$frontiers.Promise = function(){
         }
 
         return this;
+
+    };
+
+    this.run = function(){
+
 
     };
 
