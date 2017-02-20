@@ -1690,6 +1690,29 @@ Hi.$util.lcfirst = function(str){
 
 };
 
+
+Hi.$util.URLToJson = function(params){
+
+    var pairs = params.split("&");
+    var result = {};
+
+    for(var pairIndex in pairs){
+
+        var pair = pairs[pairIndex];
+        if(typeof pair!="string")
+            continue;
+
+        var eqIndex = pair.indexOf("=");
+        var paramName = pair.substring(0,eqIndex);
+        var paramValue = pair.substring(eqIndex+1,pair.length);
+        result[paramName] = paramValue;
+
+    }
+
+    return result;
+
+};
+
 Hi.$util.encodeGetParams = function(params){
 
     var params_uri = "";
@@ -2016,7 +2039,8 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
     //Path da View
     var clean_path = Hi.$nav.getURL(route_object);
-
+    console.log(route_object);
+    var cachingURL = Hi.$nav.getCachingURL(route_object);
 
     //Parametros get do request
     if(route_object.get){
@@ -2044,9 +2068,9 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
         var server_directives = {};
 
         //A view esta na cache
-        if(Hi.$ui.html.cache.stores(path)){
+        if(Hi.$ui.html.cache.stores(cachingURL)){
 
-            cached_view = Hi.$ui.html.cache.fetch(path);
+            cached_view = Hi.$ui.html.cache.fetch(cachingURL);
             server_directives = {'Ignore-View':'true'};
 
         }
@@ -2119,19 +2143,15 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
 
             //A view nao esta na cache
-            if(!Hi.$ui.html.cache.stores(clean_path)){
+            if(!Hi.$ui.html.cache.stores(cachingURL)){
 
-                Hi.$ui.html.cache.storeView(clean_path,markup);
+                Hi.$ui.html.cache.storeView(cachingURL,markup);
 
-            }
+            }else{
 
-            //A view esta na cache
-            if(Hi.$ui.html.cache.stores(clean_path)){
-
-                markup = Hi.$ui.html.cache.fetch(clean_path);
+                markup = Hi.$ui.html.cache.fetch(cachingURL);
 
             }
-
 
             var controller = route_object.controller;
             var action = route_object.action;
@@ -2209,6 +2229,49 @@ Hi.$nav.getURL= function(route,covw) {
 
 
     }
+
+
+    return route_url;
+
+};
+
+
+//Gera a URL de cacheamento de uma rota
+Hi.$nav.getCachingURL= function(route,covw) {
+
+    var route_url = "";
+    if(typeof App!="undefined")
+        route_url = App.base_url;
+
+    if (route.controller && !route.controller) {
+
+        route_url = route_url + route.controller + "/";
+
+    } else if (route.controller && !route.controller) {
+
+        route_url = route_url + route.controller + "/";
+
+    } else if (route.controller && route.controller) {
+
+        route_url = route_url + route.controller + "/";
+    }
+
+    if (route.action) {
+
+        route_url = route_url + route.action;
+    }
+
+    var getParams = {};
+    if(route.get)
+        getParams = Hi.$util.URLToJson(route.get);
+
+    if(getParams.hasOwnProperty("$")){
+
+        var viewMode = getParams["$"];
+        route_url = route_url +"-"+viewMode;
+
+    }
+
 
 
     return route_url;
