@@ -121,9 +121,23 @@ public class Controller {
         AppConfigurations config = AppConfigurations.get();
         RequestContext requestContext = CDI.current().select(RequestContext.class).get();
 
+
         String actionName = requestContext.getData().get("actionU").toString();
         String controllerName = requestContext.getData().get("controllerU").toString();
-        String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".html";
+
+        String presentationHtmlFile =actionName.toString();
+
+        String viewMode = requestContext.getRequest().getParameter("$");
+        boolean withViewMode = false;
+        if(viewMode!=null && viewMode.trim().length()>0){
+
+            presentationHtmlFile = presentationHtmlFile+"-"+viewMode;
+            withViewMode = true;
+            _log.debug(String.format("View mode %s was activated. Will use the %s presentation file",viewMode,presentationHtmlFile));
+
+        }
+
+        String viewFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+presentationHtmlFile+".html";
         String viewJSFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".js";
         String viewJSMiniFile = "/"+config.getViewsDirectory()+"/"+controllerName+"/"+actionName.toString()+".min.js";
 
@@ -140,13 +154,13 @@ public class Controller {
 
         //Do not need to load the view file
         if(requestContext.getData().containsKey("ignore_view")){
-            htmLizer.process(this,true);
+            htmLizer.process(this,true,withViewMode,viewMode);
             return;
         }
 
         prepareView(requestContext,controllerName,actionName,viewFile,viewJSFile,viewJSMiniFile);
         htmLizer.setRequestContext(requestContext);
-        htmLizer.process(this,false);
+        htmLizer.process(this,false,withViewMode,viewMode);
 
     }
 

@@ -336,7 +336,8 @@ public class HTMLizer {
 
     }
 
-    public String process(Controller controller,boolean ignoreView) throws TemplateException, ConversionFailedException {
+    public String process(Controller controller,boolean ignoreView,
+                          boolean withViewMode, String viewMode) throws TemplateException, ConversionFailedException {
 
         requestContext.getResponse().setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
@@ -358,6 +359,10 @@ public class HTMLizer {
         Map route = new HashMap();
         route.put("controller", requestContext.getData().get("controllerU").toString());
         route.put("action", requestContext.getData().get("actionU").toString());
+        if(withViewMode)
+            route.put("mode",viewMode);
+        else
+            route.put("mode",withViewMode);
 
         /* AJAX REQUEST */
         if(requestContext.hasAjaxHeader())
