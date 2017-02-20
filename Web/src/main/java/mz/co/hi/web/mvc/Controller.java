@@ -133,7 +133,6 @@ public class Controller {
 
             presentationHtmlFile = presentationHtmlFile+"-"+viewMode;
             withViewMode = true;
-            _log.debug(String.format("View mode %s was activated. Will use the %s presentation file",viewMode,presentationHtmlFile));
 
         }
 
