@@ -2039,7 +2039,6 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
     //Path da View
     var clean_path = Hi.$nav.getURL(route_object);
-    console.log(route_object);
     var cachingURL = Hi.$nav.getCachingURL(route_object);
 
     //Parametros get do request
