@@ -2267,7 +2267,7 @@ Hi.$nav.getCachingURL= function(route,covw) {
     if(getParams.hasOwnProperty("$")){
 
         var viewMode = getParams["$"];
-        route_url = route_url +"-"+viewMode;
+        route_url = route_url +"."+viewMode;
 
     }
 
