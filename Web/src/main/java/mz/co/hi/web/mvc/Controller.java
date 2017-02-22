@@ -131,7 +131,7 @@ public class Controller {
         boolean withViewMode = false;
         if(viewMode!=null && viewMode.trim().length()>0){
 
-            presentationHtmlFile = presentationHtmlFile+"-"+viewMode;
+            presentationHtmlFile = presentationHtmlFile+"."+viewMode;
             withViewMode = true;
 
         }
