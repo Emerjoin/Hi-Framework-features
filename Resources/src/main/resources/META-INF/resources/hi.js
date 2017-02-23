@@ -166,10 +166,12 @@ Hi.$test.ViewTestPromise = function(path){
 
     };
 
-
+    console.info("Preparing testing for view on path => ");
+    console.info(this.route);
 
     if(!(this.route.hasOwnProperty("controller")&&this.route.hasOwnProperty("action"))){
 
+        console.warn("No controller and action names detected. Suspending preparation")
         this.gettable = false;
 
     }
@@ -185,11 +187,15 @@ Hi.$test.ViewTestPromise = function(path){
             return false;
 
         var vpath = Hi.$nav.getViewPath(this.route.controller,this.route.action);
+        console.info("View path is => ");
+        console.info(vpath);
+
         Hi.$ui.js.createViewScope(vpath,{},this.viewHtml,false,this.receptor,false,undefined);
 
 
         if(!this.receptor.hasOwnProperty("scope")){
 
+            console.warn("No scope returned to receptor");
             return false;
 
         }
@@ -1320,9 +1326,9 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     };
 
-    if(receptor && embedded){
+    if(receptor || embedded){
 
-
+        //NOTE: if embedded is true, then receptor will also be true
         if(embedOptions) {
 
             if (typeof embedOptions.preEmbbed != "undefined" && typeof viewScope.$preEmbbed != "undefined") {
