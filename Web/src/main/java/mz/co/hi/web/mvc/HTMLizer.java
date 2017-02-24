@@ -5,12 +5,14 @@ import com.google.gson.GsonBuilder;
 import mz.co.hi.web.*;
 import mz.co.hi.web.AppContext;
 import mz.co.hi.web.config.AppConfigurations;
+import mz.co.hi.web.events.TemplateTransformEvent;
 import mz.co.hi.web.internal.ES5Library;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MalMarkedTemplateException;
 import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
 import mz.co.hi.web.mvc.exceptions.TemplateException;
 
+import javax.enterprise.event.Event;
 import javax.enterprise.inject.spi.CDI;
 import java.net.URL;
 import java.util.HashMap;
@@ -40,7 +42,7 @@ public class HTMLizer {
 
     }
 
-    private String fetchTemplate(FrontEnd frontEnd) throws TemplateException {
+    private String fetchTemplate(FrontEnd frontEnd, Event<TemplateTransformEvent> transformEvent) throws TemplateException {
 
         String templateName = frontEnd.getTemplate();
         URL templateURL = null;
@@ -67,7 +69,9 @@ public class HTMLizer {
         }
 
         validateTemplate(templateName,templateFileContent);
-        templateFileContent = AppConfigurations.get().getTunnings().applySmartCaching(templateFileContent);
+        TemplateTransformEvent templateTransformEvent = new TemplateTransformEvent(templateName,templateFileContent);
+        transformEvent.fire(templateTransformEvent);
+        templateFileContent = AppConfigurations.get().getTunnings().applySmartCaching(templateTransformEvent.getTemplate().getMarkup());
         return templateFileContent;
 
     }
@@ -336,14 +340,14 @@ public class HTMLizer {
 
     }
 
-    public String process(Controller controller,boolean ignoreView,
-                          boolean withViewMode, String viewMode) throws TemplateException, ConversionFailedException {
+    public String process(Controller controller, boolean ignoreView,
+                          boolean withViewMode, String viewMode, Event<TemplateTransformEvent> transformEvent) throws TemplateException, ConversionFailedException {
 
         requestContext.getResponse().setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         FrontEnd frontEnd = CDI.current().select(FrontEnd.class).get();
         ES5Library es5Lib = CDI.current().select(ES5Library.class).get();
 
-        String template = fetchTemplate(frontEnd);
+        String template = fetchTemplate(frontEnd,transformEvent);
         String loaderJSContent= es5Lib.getHiLoaderJS();
 
         Map viewData = (Map) requestContext.getData().get(Controller.VIEW_DATA_KEY);

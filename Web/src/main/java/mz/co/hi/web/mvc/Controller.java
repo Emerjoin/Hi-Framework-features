@@ -5,6 +5,7 @@ import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.Helper;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.events.TemplateLoadEvent;
+import mz.co.hi.web.events.TemplateTransformEvent;
 import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MvcException;
@@ -34,6 +35,9 @@ public class Controller {
 
     @Inject
     private Event<TemplateLoadEvent> templateLoadEvent;
+
+    @Inject
+    private Event<TemplateTransformEvent> templateTransformEvent;
 
     private static Logger _log = Logging.getInstance().getLogger();
 
@@ -153,13 +157,13 @@ public class Controller {
 
         //Do not need to load the view file
         if(requestContext.getData().containsKey("ignore_view")){
-            htmLizer.process(this,true,withViewMode,viewMode);
+            htmLizer.process(this,true,withViewMode,viewMode,templateTransformEvent);
             return;
         }
 
         prepareView(requestContext,controllerName,actionName,viewFile,viewJSFile,viewJSMiniFile);
         htmLizer.setRequestContext(requestContext);
-        htmLizer.process(this,false,withViewMode,viewMode);
+        htmLizer.process(this,false,withViewMode,viewMode,templateTransformEvent);
 
     }
 
