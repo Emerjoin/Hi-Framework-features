@@ -490,22 +490,16 @@ Hi.$angular.directives.translate = function(){
  * This directive uses 4 attribute to configure the embedded content
  * a) name - the name of the controller object to be created on the active View's scope
  *
- * b) url - the url to be processed
+ * b) view - static view embedding
  *
- * c) getParams - an angular expression that resolves to an object with properties to be processed
- *                as query strings. This attribute should not be used
- *                when the url contains query strings.
+ * c) onLoad - an angular expression that resolves to a function to be invoked while the embedded view is loaded
  *
- * d) preEmbed - an angular expression that resolves to an object to the passed as parameter
- *               when firing $preEmbed event on the embedded view's controller.
+ * d) onRead - an angular expression that resolves to a function to be invoked when the embedded view is fully loaded
  *
- * e) silent - this makes the embedded content to not change the current url displayed on the
- *             browser.
- *
- * Scoping: the scope created for the embedded view is schild of the active view's scope.
+ * Scoping: the scope created for the embedded view is child of the active view's scope.
  *
  */
-Hi.$angular.directives.embedded = function(){
+Hi.$angular.directives.view = function(){
 
     //TODO: Prevent self embedded
 
@@ -517,97 +511,89 @@ Hi.$angular.directives.embedded = function(){
 
             var url = false;
 
-            if(!attrs.hasOwnProperty('name')){
+            if(!attrs.hasOwnProperty('name'))
+                throw new Error("No name attribute defined on view element");
 
-                throw new Error("No name attribute defined on embedded view element");
+            if(attrs.hasOwnProperty('embed'))
+                url = attrs.embed;
 
-            }
+            var onLoadAttr = "onbusy";
+            var onLoad = false;
+            if(attrs.hasOwnProperty(onLoadAttr))
+                onLoad = attrs[onLoadAttr];
 
+            var onReadAttr = "onready";
+            var onReady = false;
+            if(attrs.hasOwnProperty(onReadAttr))
+                onReady = attrs[onReadAttr];
 
-            if(attrs.hasOwnProperty('url')){
-
-                url = attrs.url;
-
-            }else{
-
-                throw new Error("No url defined for embedded view");
-
-            }
-
-            var embedOptions = {silentUrl:true};
-
-            var silentUrlAttr="silent";
-            if(attrs.hasOwnProperty(silentUrlAttr)){
-
-                embedOptions.silentUrl = $scope.$eval(attrs[silentUrlAttr]);
-
-            }
+            var onErrorAttr = "onfail";
+            var onError = false;
+            if(attrs.hasOwnProperty(onErrorAttr))
+                onError = attrs[onErrorAttr];
 
 
-            var getParamsAttr = "getparams";
-            if(attrs.hasOwnProperty(getParamsAttr)){
+            var $doEmbed = function(url, sucess,err,load){
 
-                var getParams = $scope.$eval(attrs[getParamsAttr]);
+                if(typeof url !="string" || url.length<1)
+                    throw new Error("URL is now valid");
 
-                if(typeof getParams!="undefined"){
+                if(typeof load == "function")
+                    load.call($scope);
 
-                    getParams = JSON.parse(angular.toJson(getParams));
+                var embedOptions =  {};
+                embedOptions.onError = function(){
 
-                    var queryString="";
+                    if(typeof err =="function")
+                        err.call($scope);
 
-                    var paramIndex = 0;
-                    for(var getParamName in getParams){
+                };
 
-                        var getParamValue = getParams[getParamName];
+                try {
 
-                        if(paramIndex>0){
+                    Hi.$nav.navigateTo(url, false, true, function (receptor) {
 
-                            queryString=queryString+"&";
+                        receptor.scope.$embed = $doEmbed;
+                        $scope[attrs.name] = receptor.scope;
+                        $scope.$applyAsync(function () {
 
-                        }
+                            $(element).empty();
+                            $(element).append(receptor.element);
 
-                        queryString=queryString+getParamName+"="+getParamValue;
-                        paramIndex++;
+                            if(typeof sucess=="function")
+                                sucess.call();
 
-                    }
 
-                    url = url+"?"+queryString;
-                    url = url.replace(" ","%20");
+                        });
+
+                    }, $scope, embedOptions);
+
+                }catch(error){
+
+                    if(typeof err =="function")
+                        err.call($scope);
 
                 }
 
-            }
+            };
 
-            var preEmbbedAttr = "preembed";
-            if(attrs.hasOwnProperty(preEmbbedAttr)){
+            if(!url) $scope[attrs.name] = {$embed: $doEmbed};
+            else $doEmbed(url,function(){
 
+                if(typeof onReady == "string")
+                    $scope.$eval(onReady);
 
-                var preEmbbed = $scope.$eval(attrs[preEmbbedAttr]);
-                embedOptions.preEmbbed = preEmbbed;
+            },function(){
 
-
-            }
-
-
-            //TODO: Validate another attributes
+                if(typeof onError == "string")
+                    $scope.$eval(onError);
 
 
-            Hi.$nav.navigateTo(url,false,true,function(receptor){
+            },function(){
 
-
-                $scope[attrs.name] = receptor.scope;
-                $scope.$applyAsync(function(){
-
-
-                    $(element).find(".embedded-loader").hide();
-                    $(element).append(receptor.element);
-
-
-                });
-
-
-
-            },$scope,embedOptions);
+                if(typeof onLoad == "string")
+                    $scope.$eval(onLoad);
+            });
 
         }
 
@@ -1329,16 +1315,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
     if(receptor || embedded){
 
         //NOTE: if embedded is true, then receptor will also be true
-        if(embedOptions) {
-
-            if (typeof embedOptions.preEmbbed != "undefined" && typeof viewScope.$preEmbbed != "undefined") {
-
-                viewScope.$preEmbbed.call(viewScope, embedOptions.preEmbbed);
-
-            }
-        }
-
-
 
         receptor.element =compiledElement;
         receptor.scope = viewScope;
@@ -1356,15 +1332,8 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
         var setPageLocation = Hi.$config.nav.changeLocation;
 
-        if(typeof embedOptions!="undefined"){
-
-            if(embedOptions.silentUrl){
-
-                setPageLocation = false;
-
-            }
-
-        }
+        if(embedded)
+            setPageLocation = false;
 
 
         if(setPageLocation){
@@ -2098,15 +2067,23 @@ Hi.$nav.navigateTo = function(route_name_or_object,getParams,embed,callback,$emb
 
             if(server_response.response!=200){
 
-                if(typeof server_response=="string"){
+                if(typeof server_response=="string" && embed==false){
 
                     document.write(server_response);
                     return;
 
+                }
+
+                if(embed){
+
+                    if(typeof embedOptions.onError == "function")
+                        embedOptions.onError();
+
+                    return;
 
                 }
 
-                throw new Error("Request to server returned a strange result");
+                throw new Error("Request to server returned an unexpected result");
                 return;
 
             }
@@ -2351,6 +2328,8 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
         }
 
+        var errorStatus = false;
+
         //Efectua a requisicao GET
         var request = $.ajax({
 
@@ -2384,11 +2363,17 @@ Hi.$nav.requestData = function(route,callback,server_directives){
 
                 }
 
+                console.error("controller/action HTTP request failed : "+route_url);
+                errorStatus = jqXHR.responseText;
+
             },
 
             complete : function(){
 
                 Hi.$nav.active = false;
+                if(typeof errorStatus=="string")
+                    callback(errorStatus);
+
             }
 
         });
