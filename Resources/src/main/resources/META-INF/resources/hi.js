@@ -830,8 +830,6 @@ Hi.$angular.run = function(){
 
         }
 
-        console.info("Running Hi-Application");
-        console.info(modulesInjected);
         Hi.$angular.$injector =  angular.injector(modulesInjected);
         Hi.$angular.$compile = $compile;
 
