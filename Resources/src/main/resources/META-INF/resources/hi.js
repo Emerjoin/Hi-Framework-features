@@ -27,6 +27,20 @@ Hi.$config.nav.changeLocation = true;
 
 
 /**
+ * Hi-Framework Logging
+ * @type {boolean}
+ */
+Hi.$config.debugLogs = false;
+var Log = {};
+Log.debug = function(content){
+
+    if(Hi.$config.debugLogs)
+        console.error(content);
+
+};
+
+
+/**
  * Configurations related to what the user sees
  */
 Hi.$config.ui = {};
@@ -65,30 +79,6 @@ Hi.$nav = {};
  * Handles all other operations not handled on none of the previous packages
  */
 Hi.$util = {};
-
-
-/**
- *
- *
- */
-Hi.$log = {};
-Hi.$log.info = function(text){
-
-    //console.info(text);
-
-};
-
-Hi.$log.warn = function(text){
-
-    //console.warn(text);
-
-};
-
-Hi.$log.error = function(text){
-
-    //console.error(text);
-
-};
 
 /**
  * Contains logic that allows to test the Hi application
@@ -166,9 +156,6 @@ Hi.$test.ViewTestPromise = function(path){
 
     };
 
-    console.info("Preparing testing for view on path => ");
-    console.info(this.route);
-
     if(!(this.route.hasOwnProperty("controller")&&this.route.hasOwnProperty("action"))){
 
         console.warn("No controller and action names detected. Suspending preparation")
@@ -187,8 +174,6 @@ Hi.$test.ViewTestPromise = function(path){
             return false;
 
         var vpath = Hi.$nav.getViewPath(this.route.controller,this.route.action);
-        console.info("View path is => ");
-        console.info(vpath);
 
         Hi.$ui.js.createViewScope(vpath,{},this.viewHtml,false,this.receptor,false,undefined);
 
@@ -769,12 +754,12 @@ Hi.$angular.run = function(){
             if(Array.isArray(Hi.$config.angular.modules)){
 
                 modulesInjected = Hi.$config.angular.modules;
-                Hi.$log.info("Injecting the following modules to Hi Application : ");
-                Hi.$log.info(modulesInjected);
+                Log.debug("Injecting the following modules to Hi Application : ");
+                Log.debug(modulesInjected);
 
             }else{
 
-                Hi.$log.info("No modules to be injected to Hi Application");
+                Log.debug("No modules to be injected to Hi Application");
 
             }
 
@@ -784,7 +769,7 @@ Hi.$angular.run = function(){
 
             }else{
 
-                Hi.$log.info("No run function for Hi Application");
+                Log.debug("No run function for Hi Application");
 
             }
 
@@ -807,7 +792,6 @@ Hi.$angular.run = function(){
     }
 
     angularApp.run(function($rootScope,$compile){
-
 
         if(typeof sessionStorage!="undefined"){
 
@@ -846,6 +830,8 @@ Hi.$angular.run = function(){
 
         }
 
+        console.info("Running Hi-Application");
+        console.info(modulesInjected);
         Hi.$angular.$injector =  angular.injector(modulesInjected);
         Hi.$angular.$compile = $compile;
 
@@ -1041,7 +1027,7 @@ Hi.$ui.html.cache.getCache = function(){
 
             }catch (err){
 
-                Hi.$log.warn("There was an error when trying to parse views cache JSON");
+                Log.debug("There was an error when trying to parse views cache JSON");
 
             }
 
@@ -1088,7 +1074,7 @@ Hi.$ui.html.cache.storeView = function(path,markup){
     cache[Hi.$ui.html.cache.normalizePath(path)] = html;
     Hi.$ui.html.cache.updateCache(cache);
 
-    Hi.$log.info("Caching view of path <"+path+">");
+    Log.debug("Caching view of path <"+path+">");
 
 
 };
