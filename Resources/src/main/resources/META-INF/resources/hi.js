@@ -1368,7 +1368,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
         $("#view_content").html("");
         $("#view_content").append(compiledElement);
-        Hi.$ui.js.ajaxLoader.hide();
 
 
         //Change the path
