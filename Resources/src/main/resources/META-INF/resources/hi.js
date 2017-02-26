@@ -793,6 +793,10 @@ Hi.$angular.run = function(){
 
     angularApp.run(function($rootScope,$compile){
 
+        //Hooks-API is present
+        if(typeof AppHooks!="undefined")
+            AppHooks.fireBeforeRun();
+
         if(typeof sessionStorage!="undefined"){
 
 
