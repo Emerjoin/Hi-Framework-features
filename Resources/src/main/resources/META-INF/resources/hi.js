@@ -799,7 +799,6 @@ Hi.$angular.run = function(){
 
         if(typeof sessionStorage!="undefined"){
 
-
             //Application is under test
             if(typeof App=="undefined"){
 
@@ -1249,7 +1248,15 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     //Inject the scope to the controller function
     var $injector = Hi.$angular.$injector;
-    $injector.invoke(controller,false,{_:viewScope,__:__,$scope:viewScope,$rootScope:__,template:__});
+    var injectables = {_:viewScope,__:__,$scope:viewScope,$rootScope:__,template:__};
+
+    var route = viewPath.controller+"/"+viewPath.action;
+
+    //Hooks API is available
+    if(typeof AppHooks!="undefined")
+        AppHooks.fireBeforeView(route,viewScope,injectables);
+
+    $injector.invoke(controller,false,injectables);
 
 
     //Apply context variables
