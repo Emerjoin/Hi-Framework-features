@@ -6,5 +6,4 @@ Please read the documentation [here](https://emerjoin.github.io/Hi-Framework/doc
 
 
 #Changes-Log
-* Dynamic embedding support added
-* Template transformation support added
+* Hooks support added
