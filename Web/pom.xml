@@ -4,12 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>mz.hi.framework</groupId>
-    <artifactId>hi-web</artifactId>
-    <version>2.0.0-beta-SNAPSHOT</version>
+    <groupId>org.emerjoin</groupId>
+    <artifactId>Hi-Framework</artifactId>
+    <version>2.1.0-beta-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <name>Hi Framework Web</name>
 
 
     <build>
