@@ -1558,25 +1558,8 @@ Hi.$ui.js.setScopeProps = function(context,context_variables){
 
 };
 
-Hi.$ui.js.ajaxLoader = {};
-
-Hi.$ui.js.ajaxLoader.hide = function(){
-    
-    
-
-};
-
-
-
-Hi.$ui.js.ajaxLoader.show = function(){
-
-    
-
-};
-
 
 //I18n Support
-
 Hi.$ui.js.lang = {};
 Hi.$ui.js.lang.dict = {};
 Hi.$ui.js.lang.getItem = function(key,default_value){
