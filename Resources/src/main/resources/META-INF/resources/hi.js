@@ -786,14 +786,18 @@ Hi.$angular.run = function(){
     }
 
 
-    var angularApp = angular.module('hi', modulesInjected);
-    angularApp.config(function($provide,$compileProvider, $filterProvider){
-        
-        //Hooks-API is present
-        if(typeof AppHooks!="undefined")
-            AppHooks.fireBeforeRun($provide,$compileProvider,$filterProvider);
 
-    });
+
+
+    var angularApp = angular.module('hi', modulesInjected);
+    //Hooks-API is present
+    if(typeof AppHooks!="undefined")
+        AppHooks.fireBeforeRun(angularApp);
+
+    var appModule = angular.module("app",["ng"]);
+    if(typeof AppHooks!="undefined")
+        AppHooks.fireSetupApp(appModule);
+
 
     var directives = new Hi.$angular.directivesDefiner(angularApp);
     directives.define();
@@ -881,6 +885,7 @@ Hi.$angular.run = function(){
             //TODO: Review this code
             setTimeout(function () {
 
+                Hi.$angular.$injector =  angular.injector(["app"].concat(modulesInjected));
                 $startup();
 
             }, 5);
