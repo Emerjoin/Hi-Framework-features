@@ -12,6 +12,7 @@ public class HiCDI {
 
     public static void shouldHaveCDIScope(Class clazz) throws NoCDIScopeException{
 
+        //TODO: This shouldn't throw and exception because there might be custom scopes
         Annotation scope1 = clazz.getAnnotation(RequestScoped.class);
         Annotation scope2 = clazz.getAnnotation(ApplicationScoped.class);
         Annotation scope3 = clazz.getAnnotation(SessionScoped.class);

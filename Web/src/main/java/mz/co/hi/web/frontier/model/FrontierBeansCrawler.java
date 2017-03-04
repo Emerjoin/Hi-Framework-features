@@ -82,6 +82,9 @@ public class FrontierBeansCrawler {
             String simpleName = "";
 
             for (Class beanClass : beansList) {
+                if(beanClass.isInterface())
+                    continue;
+
                 String beanClassName = beanClass.getCanonicalName();
 
                 try {
