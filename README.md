@@ -6,5 +6,4 @@ Please read the documentation [here](https://emerjoin.github.io/Hi-Framework/doc
 
 
 #Changes-Log
-* beforeRun hook is now fired after angular injector instantiation
-* interfaces annotated with @Frontier are silently skipped during frontiers scanning phase
+* beforeRun hook now receives three arguments: $provide,$compileProvider, $filterProvider
