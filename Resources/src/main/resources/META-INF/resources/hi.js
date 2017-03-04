@@ -863,6 +863,7 @@ Hi.$angular.run = function(){
         }
 
 
+        Hi.$angular.$injector =  angular.injector(["app"].concat(modulesInjected));
 
         //App is not under tests
         if(typeof App!="undefined") {
@@ -882,7 +883,6 @@ Hi.$angular.run = function(){
             //TODO: Review this code
             setTimeout(function () {
 
-                Hi.$angular.$injector =  angular.injector(["app"].concat(modulesInjected));
                 $startup();
 
             }, 5);
