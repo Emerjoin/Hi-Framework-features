@@ -774,22 +774,30 @@ Hi.$angular.run = function(){
             }
 
 
-    var angularApp = angular.module('hi', modulesInjected);
-    var directives = new Hi.$angular.directivesDefiner(angularApp);
-    directives.define();
-
-
     if(Array.isArray(modulesInjected)){
 
-
-        modulesInjected.push('ng');
-
+        if(modulesInjected.indexOf("ng")==-1)
+            modulesInjected.push('ng');
 
     }else{
 
         throw new Error("Invalid value set for property Hi.$config.angular.modules");
 
     }
+
+
+    var angularApp = angular.module('hi', modulesInjected);
+    angularApp.config(function($provide,$compileProvider, $filterProvider){
+
+        //Hooks-API is present
+        if(typeof AppHooks!="undefined")
+            AppHooks.fireBeforeRun($provide,$compileProvider,$filterProvider);
+
+    });
+
+    var directives = new Hi.$angular.directivesDefiner(angularApp);
+    directives.define();
+
 
     angularApp.run(function($rootScope,$compile){
 
@@ -841,11 +849,6 @@ Hi.$angular.run = function(){
             __[propName] = propValue;
 
         }
-
-
-        //Hooks-API is present
-        if(typeof AppHooks!="undefined")
-            AppHooks.fireBeforeRun();
 
 
         if(__.hasOwnProperty("$init")){
