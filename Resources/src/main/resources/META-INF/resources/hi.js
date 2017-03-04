@@ -788,7 +788,7 @@ Hi.$angular.run = function(){
 
     var angularApp = angular.module('hi', modulesInjected);
     angularApp.config(function($provide,$compileProvider, $filterProvider){
-
+        
         //Hooks-API is present
         if(typeof AppHooks!="undefined")
             AppHooks.fireBeforeRun($provide,$compileProvider,$filterProvider);
