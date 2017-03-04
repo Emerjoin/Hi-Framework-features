@@ -5,10 +5,12 @@ HelloAppTx/
 Web/.idea
 Web/target
 Web/out
+Web/lib/*
 Resources/.idea
 Resources/target
 Resources/out
 Resources/src/test/
+Resources/lib/*
 Web/src/main/resources/
 Web/web/
 *.iml
