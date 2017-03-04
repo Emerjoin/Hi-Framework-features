@@ -6,4 +6,5 @@ Please read the documentation [here](https://emerjoin.github.io/Hi-Framework/doc
 
 
 #Changes-Log
-* beforeRun hook now receives three arguments: $provide,$compileProvider, $filterProvider
+* beforeRun hook now receives one argument according to Hi-Framework-Hooks-3.0.0
+* new hook support added : appSetup (according to Hi-Framework-Hooks-3.0.0)
