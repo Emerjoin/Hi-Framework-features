@@ -24,7 +24,7 @@ import static mz.co.hi.web.uti.Timing.*;
 /**
  * Created by Mario Junior.
  */
-@WebServlet(urlPatterns = "/*",name = "HiServlet",loadOnStartup = 1)
+@WebServlet(urlPatterns = "/*",name = "Hi-Framework-Dispatcher-Servlet",loadOnStartup = 1)
 public class DispatcherServlet extends HttpServlet {
 
     private static Logger _log = Logging.getInstance().getLogger();
@@ -108,9 +108,6 @@ public class DispatcherServlet extends HttpServlet {
         doHandle(request,response,false);
 
     }
-
-
-
 
 
 
