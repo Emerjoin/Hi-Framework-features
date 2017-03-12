@@ -34,7 +34,7 @@ public class RequestContext {
     private String routeUrl;
 
     private OutputStream outputStream = null;
-    private Logger log = Logging.getInstance().getLogger();
+    private Logger log = Logging.getInstance().getLogger(RequestContext.class);
 
     @PostConstruct
     private void getReady(){

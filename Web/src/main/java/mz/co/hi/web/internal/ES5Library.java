@@ -49,7 +49,7 @@ public class ES5Library {
 
 
     private ServletContext servletContext = null;
-    private static Logger _log = Logging.getInstance().getLogger();
+    private static Logger _log = Logging.getInstance().getLogger(ES5Library.class);
 
 
     public void init(ServletContext context)throws HiException{

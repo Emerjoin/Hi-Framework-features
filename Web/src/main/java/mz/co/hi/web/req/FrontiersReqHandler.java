@@ -370,7 +370,7 @@ public class FrontiersReqHandler extends ReqHandler {
     @PostConstruct
     private void handlerReady(){
 
-        log = Logging.getInstance().getLogger();
+        log = Logging.getInstance().getLogger(FrontiersReqHandler.class);
 
     }
 

@@ -120,6 +120,7 @@ public class MVCReqHandler extends ReqHandler{
     }
 
     private boolean callAction(String action, Class controller,RequestContext requestContext) throws ServletException{
+
         try {
 
             Method actionMethod = null;
@@ -230,7 +231,7 @@ public class MVCReqHandler extends ReqHandler{
     @PostConstruct
     private void ready(){
 
-        log = Logging.getInstance().getLogger();
+        log = Logging.getInstance().getLogger(MVCReqHandler.class);
 
     }
 

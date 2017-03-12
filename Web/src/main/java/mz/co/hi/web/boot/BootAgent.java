@@ -4,8 +4,6 @@ import mz.co.hi.web.BootstrapUtils;
 import mz.co.hi.web.config.AppConfigurations;
 import mz.co.hi.web.config.ConfigProvider;
 import mz.co.hi.web.exceptions.HiException;
-import mz.co.hi.web.boot.BootExtension;
-import mz.co.hi.web.boot.BootManager;
 import mz.co.hi.web.internal.ES5Library;
 import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.internal.Router;
@@ -150,6 +148,12 @@ public class BootAgent {
     }
 
     private void loadConfigs() throws HiException{
+
+        String disable_servlet_context_scanning = servletContext.getInitParameter("DISABLE_SERVLET_CONTEXT_SCANNING");
+        if(disable_servlet_context_scanning!=null
+                &&(disable_servlet_context_scanning.equals("1")||disable_servlet_context_scanning.toUpperCase().equals("TRUE")))
+            BootstrapUtils.DISABLE_SERVLET_CONTEXT_SCANNING = true;
+
 
         Set<Index> indexSet = BootstrapUtils.getIndexes(servletContext);
         configProvider.load(servletContext,servletConfig,indexSet);

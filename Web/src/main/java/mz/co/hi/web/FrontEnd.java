@@ -34,7 +34,7 @@ public class FrontEnd {
     private Map<String,Map> templateData = new HashMap<>();
 
 
-    private Logger log = Logging.getInstance().getLogger();
+    private Logger log = Logging.getInstance().getLogger(FrontEnd.class);
 
 
     @PostConstruct

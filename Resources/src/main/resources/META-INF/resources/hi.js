@@ -538,7 +538,10 @@ Hi.$angular.directives.view = function(){
 
                     Hi.$nav.navigateTo(url, false, true, function (receptor) {
 
+                        receptor.scope.$element = receptor.element;
                         receptor.scope.$embed = $doEmbed;
+
+
                         $scope[attrs.name] = receptor.scope;
                         $scope.$applyAsync(function () {
 
@@ -784,6 +787,9 @@ Hi.$angular.run = function(){
         throw new Error("Invalid value set for property Hi.$config.angular.modules");
 
     }
+
+    if(modulesInjected.length==0)
+        modulesInjected.push("ng");
 
 
     var angularApp = angular.module('hi', modulesInjected);
@@ -1313,7 +1319,7 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
 
     };
 
-    if(receptor || embedded){
+    if(receptor && embedded){
 
         //NOTE: if embedded is true, then receptor will also be true
 
@@ -1347,7 +1353,6 @@ Hi.$ui.js.createViewScope = function(viewPath,context_variables,markup,embedded,
         return receptor;
 
     }
-
 
     var closePromise = {};
     closePromise.proceed = function(){

@@ -36,7 +36,7 @@ public class HTMLizer {
     private RequestContext requestContext = null;
     private ActiveUser activeUser = null;
 
-    public HTMLizer(){
+    private HTMLizer(String args){
 
         this.requestContext = CDI.current().select(RequestContext.class).get();
 
@@ -403,7 +403,7 @@ public class HTMLizer {
 
     public static HTMLizer getInstance(){
 
-        return new HTMLizer();
+        return new HTMLizer(null);
 
     }
 

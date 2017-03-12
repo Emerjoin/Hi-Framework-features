@@ -22,7 +22,7 @@ public class FrontiersGenerator {
 
 
     private String genericFrontierJS;
-    private Logger log = Logging.getInstance().getLogger();
+    private Logger log = Logging.getInstance().getLogger(FrontiersGenerator.class);
 
     public FrontiersGenerator(){
 

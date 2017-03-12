@@ -33,4 +33,9 @@ public class Logging {
 
     }
 
+    public Logger getLogger(Class type){
+
+        return LoggerFactory.getLogger(type);
+
+    }
 }

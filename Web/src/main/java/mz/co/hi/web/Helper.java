@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Helper {
 
-    private static Logger log = Logging.getInstance().getLogger();
+    private static Logger log = Logging.getInstance().getLogger(Helper.class);
 
     public static String readLines(InputStream inputStream, RequestContext requestContext){
 

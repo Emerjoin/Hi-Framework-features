@@ -40,7 +40,7 @@ import java.util.Set;
 public class XMLConfigProvider implements ConfigProvider {
 
     private String docsPath = null;
-    private Logger _log = Logging.getInstance().getLogger();
+    private Logger _log = Logging.getInstance().getLogger(XMLConfigProvider.class);
 
     private Configurator getConfigurator(Class<? extends Configurator> clazz) throws HiException {
 
@@ -171,16 +171,16 @@ public class XMLConfigProvider implements ConfigProvider {
 
 
         URL hiXML = null;
+        BadConfigException badConfigException = new BadConfigException("Hi configuration file could not be found in path /WEB-INF/hi.xml. Application can't start successfully without this file");
 
         try {
 
             hiXML = servletContext.getResource("/WEB-INF/hi.xml");
 
-        }catch (MalformedURLException ex){
+        }catch (MalformedURLException ex){}
 
-            throw new BadConfigException("Hi configuration file could not be found in path /WEB-INF/hi.xml. Application can't start successfully without this file");
-
-        }
+        if(hiXML==null)
+            throw  badConfigException;
 
         InputStream xml = null;
 

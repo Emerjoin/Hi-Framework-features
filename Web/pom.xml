@@ -100,9 +100,9 @@
 
     <repositories>
         <repository>
-            <id>talk-code</id>
+            <id>Emerjoin</id>
             <name>maven-repo</name>
-            <url>https://github.com/talk-code/maven-repo/raw/master</url>
+            <url>https://github.com/Emerjoin/maven-repo/raw/master</url>
         </repository>
     </repositories>
     

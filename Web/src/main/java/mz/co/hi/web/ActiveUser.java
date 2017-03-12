@@ -20,7 +20,7 @@ public class ActiveUser implements Serializable {
 
     private String csrfToken = "";
     private HashMap<String,Object> data = new HashMap<>();
-    private Logger _log = Logging.getInstance().getLogger();
+    private Logger _log = Logging.getInstance().getLogger(ActiveUser.class);
 
     public ActiveUser(){
 

@@ -34,7 +34,7 @@ public abstract class ReqHandler {
     private static Map<String,ReqHandler> handlers = new HashMap();
     private static Map<ReqHandler,Class> handlersClasses = new HashMap();
 
-    private static Logger _log = Logging.getInstance().getLogger();
+    private static Logger _log = Logging.getInstance().getLogger(ReqHandler.class);
 
     public static void register(ReqHandler reqHandler,Class<? extends ReqHandler> clazz){
 

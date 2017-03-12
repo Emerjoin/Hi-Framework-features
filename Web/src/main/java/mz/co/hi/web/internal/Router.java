@@ -22,7 +22,7 @@ public class Router {
 
 
     private HashMap<String,String> matchedUrls = new HashMap();
-    private static Logger _log = Logging.getInstance().getLogger();
+    private static Logger _log = Logging.getInstance().getLogger(Router.class);
 
     public void init(ServletContext context, ServletConfig config) throws HiException{
 

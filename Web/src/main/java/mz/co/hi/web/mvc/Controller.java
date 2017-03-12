@@ -39,7 +39,7 @@ public class Controller {
     @Inject
     private Event<TemplateTransformEvent> templateTransformEvent;
 
-    private static Logger _log = Logging.getInstance().getLogger();
+    private static Logger _log = Logging.getInstance().getLogger(Controller.class);
 
     private void prepareView(RequestContext requestContext, String controllerName, String actionName,
                              String viewFile, String viewJsfile, String viewJsMinifiedfile) throws NoSuchViewException{
