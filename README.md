@@ -6,5 +6,9 @@ Please read the documentation [here](https://emerjoin.github.io/Hi-Framework/doc
 
 
 #Changes-Log
-* beforeRun hook now receives one argument according to Hi-Framework-Hooks-3.0.0
+* beforeRun hook now receives one argument (according to Hi-Framework-Hooks-3.0.0)
 * new hook support added : appSetup (according to Hi-Framework-Hooks-3.0.0)
+* Redirect not working: fixed
+* $element property added to the $scope of embedded views
+* ClassLoader based beans scanning implemented
+* optimizations to run with tomcat embedded
