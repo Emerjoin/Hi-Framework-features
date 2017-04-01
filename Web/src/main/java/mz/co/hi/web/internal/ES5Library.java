@@ -191,6 +191,7 @@ public class ES5Library {
 
                 }catch (ClassNotFoundException ex){
 
+                    _log.warn("Component class is missing : "+an.target().asClass().toString());
                     continue;
 
                 }
@@ -221,8 +222,13 @@ public class ES5Library {
 
         }
 
-        if(componentScript==null)
+        if(componentScript==null) {
+
+            _log.warn("Script for component "+componentClass.getSimpleName()+" could not be located using names : "
+                    +scriptName+", "+minifiedScriptName);
+
             return;
+        }
 
         try {
 

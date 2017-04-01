@@ -8,6 +8,7 @@ import mz.co.hi.web.internal.ES5Library;
 import mz.co.hi.web.internal.Logging;
 import mz.co.hi.web.internal.Router;
 import mz.co.hi.web.meta.Tested;
+import mz.co.hi.web.meta.WebComponent;
 import mz.co.hi.web.mvc.Controller;
 import mz.co.hi.web.mvc.ControllersMapper;
 import mz.co.hi.web.req.MVCReqHandler;
@@ -18,6 +19,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 
 /**
