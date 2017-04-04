@@ -2,8 +2,10 @@ package mz.co.hi.web.req;
 
 import mz.co.hi.web.RequestContext;
 import mz.co.hi.web.config.AppConfigurations;
-import mz.co.hi.web.config.Tunnings;
+import mz.co.hi.web.config.Tunings;
 import org.apache.tika.Tika;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -14,7 +16,6 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by Mario Junior.
@@ -24,121 +25,45 @@ import java.util.List;
 public class WebrootReqHandler extends ReqHandler {
 
     private RequestContext requestContext = null;
-    private HashMap<String,Long> staticCachingDefinitions = new HashMap<>();
-    private HashMap<String,Boolean> smartCachedAssets = new HashMap<>();
     private HashMap<String,Long> cachingStatus = new HashMap<>();
+
+    private static Logger _log = LoggerFactory.getLogger(WebrootReqHandler.class);
 
     @Inject
     private mz.co.hi.web.AppContext appContext;
 
-    public WebrootReqHandler(){
-        List<Tunnings.CachedWebrootDirectory> list = AppConfigurations.get().getTunnings().getCachedWebrootDirectoryList();
-        List<String> allSmartCached = AppConfigurations.get().getTunnings().getSmartCachedAssets();
-        if(list.size()==0)
-            return;
-        for(Tunnings.CachedWebrootDirectory cachedWebrootDirectory: list)
-            staticCachingDefinitions.put(cachedWebrootDirectory.name,cachedWebrootDirectory.time);
-        for(String smartCached : allSmartCached)
-            smartCachedAssets.put(smartCached,true);
-
-    }
-
-    private long getCachePeriod(String url){
-
-        long value = -1;
-
-        synchronized (cachingStatus){
-            if(cachingStatus.containsKey(url))
-                value = cachingStatus.get(url);
-
-        }
-
-        return value;
-
-    }
-
-    private void setCachePeriod(String url, long period){
-
-        synchronized (cachingStatus){
-
-            cachingStatus.put(url,period);
-
-        }
-
-    }
-
-    private long getCacheFirstTime(String url){
-
-        String folderName = getFolderName(url);
-        if(folderName==null) {
-
-            setCachePeriod(url, 0);
-            return 0;
-
-        }
-
-        long period = 0;
-        if(staticCachingDefinitions.containsKey(folderName))
-            period = staticCachingDefinitions.get(folderName);
-
-        setCachePeriod(url,period);
-        return period;
-
-    }
-
-    private String getFolderName(String url){
-
-        if(url==null)
-            throw new NullPointerException("Asset URL is null");
-
-        CharSequence webrootPath = "webroot/";
-        url = url.replace(webrootPath,"");
-        if(url.length()<3)
-            return null;
-
-        int slashIndex = url.indexOf('/');
-        if(slashIndex==-1)
-            return null;
-
-        String folderName = url.substring(0,slashIndex);
-        return folderName;
-
-    }
+    public WebrootReqHandler(){}
 
     private void avoidCaching(RequestContext requestContext){
-
         requestContext.getResponse()
                 .setHeader("Cache-Control", "no-cache");
-
     }
 
-    private void decideCaching(String assetUrl){
+    private String decideCaching(String assetUrl){
 
         if(AppConfigurations.get().getDeploymentMode()== AppConfigurations.DeploymentMode.DEVELOPMENT) {
             avoidCaching(requestContext);
-            return;
+            return assetUrl;
         }
 
-        Tunnings tunnings = AppConfigurations.get().getTunnings();
-        if(tunnings.isASmartCachedURL(assetUrl)) {
-            assetUrl = tunnings.getCleanAssetURL(assetUrl);
-            String assetCacheablePath = assetUrl.substring(assetUrl.indexOf('/')+1,assetUrl.length());
-            if(smartCachedAssets.containsKey(assetCacheablePath)){
-                tunnings.emmitSmartCachingHeaders(requestContext);
-                return;
-            }
+
+        Tunings tunings = AppConfigurations.get().getTunings();
+        Tunings.CachingDecision decision = tunings.decision(assetUrl);
+
+        if(decision.getMode()== Tunings.CachingMode.NoCaching) {
+            _log.debug("No caching : "+assetUrl);
+            avoidCaching(requestContext);
+            return assetUrl;
+
+        }else if(decision.getMode()== Tunings.CachingMode.FixedCaching){
+            _log.debug(String.format("Fixed caching for %d millis : %s ",decision.getTime(),decision.getResourcePath()));
+            tunings.emmitFixedCachingHeaders(decision,requestContext);
+            return decision.getResourcePath();
         }
 
-        long period = getCachePeriod(assetUrl);
-        //First time checking if file is cached
-        if (period == -1)
-            period = getCacheFirstTime(assetUrl);
-
-        //Cache the file
-        if (period > 0) {
-            requestContext.getResponse().setHeader("Pragma", "");
-            requestContext.getResponse().setHeader("Cache-Control", "public, max-age=" + period);
-        }else avoidCaching(requestContext);
+        _log.debug("Smart caching : "+assetUrl);
+        tunings.emmitSmartCachingHeaders(requestContext);
+        return decision.getResourcePath();
 
     }
 
@@ -177,11 +102,11 @@ public class WebrootReqHandler extends ReqHandler {
 
         try {
 
-            decideCaching(assetUrl);
+            assetUrl = decideCaching(assetUrl);
             URL assetURL = requestContext.getServletContext().getResource("/"+assetUrl);
 
             if(assetURL==null){
-                //TODO: Write a warning log
+                _log.warn("Web resource could not be located : "+assetUrl);
                 return false;
             }
 

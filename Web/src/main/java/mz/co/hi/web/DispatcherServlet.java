@@ -63,6 +63,8 @@ public class DispatcherServlet extends HttpServlet {
 
     private void doHandle(HttpServletRequest request, HttpServletResponse response, boolean isPost) throws ServletException,IOException{
 
+        int status = 200;
+
         try {
 
             tic();
@@ -77,11 +79,16 @@ public class DispatcherServlet extends HttpServlet {
             RequestContext requestContext = CDI.current().select(RequestContext.class).get();
             requestContext.setRouteUrl(routeURL);
             requestContext.setResponse(response);
-            router.doRoute(requestContext, routeURL, isPost);
+            status = router.doRoute(requestContext, routeURL, isPost);
+
+        }catch (ServletException | IOException ex){
+
+            status = 500;
+            throw ex;
 
         }finally {
 
-            _log.debug(String.format("Request handled in %f milliseconds",toc()));
+            _log.debug(String.format("(%d) @ %s  => took %f millisecs ",status,request.getRequestURI(),toc()));
 
         }
 

@@ -77,7 +77,7 @@ public class ES5ReqHandler extends ReqHandler {
         requestContext.getResponse().setHeader("Content-Type", "text/javascript");
 
         if(!AppConfigurations.get().underDevelopment())
-            AppConfigurations.get().getTunnings().emmitSmartCachingHeaders(requestContext);
+            AppConfigurations.get().getTunings().emmitSmartCachingHeaders(requestContext);
         else
             requestContext.getResponse().setHeader("Cache-Control", "no-cache");
 

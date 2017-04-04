@@ -16,7 +16,7 @@ public class AppConfigurations {
     private String templates[]={"index"};
     private List<String> frontiers = new ArrayList<>();
     private List<String> frontierPackages = new ArrayList<>();
-    private Tunnings tunnings = new Tunnings();
+    private Tunings tunings = new Tunings();
     private Map<String,Boolean> testFiles = new HashMap<>();
     private String defaultLanguage = "default";
 
@@ -117,12 +117,12 @@ public class AppConfigurations {
 
     }
 
-    public Tunnings getTunnings() {
-        return tunnings;
+    public Tunings getTunings() {
+        return tunings;
     }
 
-    public void setTunnings(Tunnings tunnings) {
-        this.tunnings = tunnings;
+    public void setTunings(Tunings tunings) {
+        this.tunings = tunings;
     }
 
 

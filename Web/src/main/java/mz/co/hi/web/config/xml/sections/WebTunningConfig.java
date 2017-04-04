@@ -15,8 +15,23 @@ import java.util.Map;
 @ConfigSection(tags = "web-tunning")
 public class WebTunningConfig implements Configurator{
 
+
+
+    private void readNoCachingHints(Element noCacheElement, AppConfigurations appConfigurations){
+
+        NodeList noCacheHintsList = noCacheElement.getElementsByTagName("no-cache-hint");
+        if(noCacheHintsList.getLength()==0)
+            return;
+
+        for(int i=0;i<noCacheHintsList.getLength();i++){
+            Element noCacheHintElement = (Element) noCacheHintsList.item(i);
+            appConfigurations.getTunings().addNoCachingHint(noCacheHintElement.getAttribute("folder-path"));
+        }
+
+    }
+
     private void readStaticFoldersCachingConfigs(Element staticFoldersCachingElement, AppConfigurations appConfigurations){
-        NodeList foldersHttpCacheList = staticFoldersCachingElement.getElementsByTagName("enabled");
+        NodeList foldersHttpCacheList = staticFoldersCachingElement.getElementsByTagName("cache");
         if(foldersHttpCacheList.getLength()==0)
             return;
 
@@ -24,7 +39,7 @@ public class WebTunningConfig implements Configurator{
             Element folderHttpCache = (Element) foldersHttpCacheList.item(i);
             int age = Integer.parseInt(folderHttpCache.getAttribute("age"));
             String ageUnit = folderHttpCache.getAttribute("age-unit");
-            String folderName = folderHttpCache.getAttribute("folder-name");
+            String folderName = folderHttpCache.getAttribute("folder-path");
 
             long hour_milliseconds = 3600000;
             long day_milliseconds = hour_milliseconds*24;
@@ -50,20 +65,20 @@ public class WebTunningConfig implements Configurator{
             long cache_time = millis_times_factor*age;
             if(cache_time==0)
                 continue;
-            appConfigurations.getTunnings().setCachedDirectory(folderName,cache_time);
+            appConfigurations.getTunings().enableFixedCaching(folderName,cache_time);
         }
     }
 
     private void readSmartTunningConfigs(Element smartAssetsCachingElement, AppConfigurations appConfigurations){
 
-        NodeList smartCachedNodeList =  smartAssetsCachingElement.getElementsByTagName("enabled");
+        NodeList smartCachedNodeList =  smartAssetsCachingElement.getElementsByTagName("if-path-starts-with");
         if(smartCachedNodeList.getLength()==0)
             return;
 
         for(int i=0;i<smartCachedNodeList.getLength();i++){
             Element element = (Element) smartCachedNodeList.item(i);
             String assetURI = element.getTextContent();
-            appConfigurations.getTunnings().enableSmartCaching(assetURI);
+            appConfigurations.getTunings().enableSmartCaching(assetURI);
         }
 
     }
@@ -85,12 +100,17 @@ public class WebTunningConfig implements Configurator{
                 readStaticFoldersCachingConfigs(staticFoldersCachingElement,configs);
             }
 
-            NodeList smartAssetsCachingNodesList = webrootElement.getElementsByTagName("assets-smart-caching");
+            NodeList smartAssetsCachingNodesList = webrootElement.getElementsByTagName("folders-smart-caching");
             if(smartAssetsCachingNodesList.getLength()>0){
                 Element smartAssetsCachingElement = (Element) smartAssetsCachingNodesList.item(0);
                 readSmartTunningConfigs(smartAssetsCachingElement,configs);
             }
 
+            NodeList noCachingControlNodesList = webrootElement.getElementsByTagName("no-caching-control");
+            if(noCachingControlNodesList.getLength()>0){
+                Element noCachingControlEment = (Element) noCachingControlNodesList.item(0);
+                readNoCachingHints(noCachingControlEment,configs);
+            }
 
     }
 

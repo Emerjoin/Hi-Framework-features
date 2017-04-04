@@ -87,7 +87,7 @@ public class Router {
 
     }
 
-    public void doRoute(RequestContext requestContext, String routeURL, boolean isPost) throws ServletException, IOException{
+    public int doRoute(RequestContext requestContext, String routeURL, boolean isPost) throws ServletException, IOException{
 
         boolean handled = false;
 
@@ -95,7 +95,7 @@ public class Router {
 
             ReqHandler reqHandler = ReqHandler.getHandler(getPreviouslyMatchedHandler(routeURL));
             reqHandler.handle(requestContext);
-            return;
+            return 200;
 
         }
 
@@ -108,7 +108,7 @@ public class Router {
                 Class handlerClazz = ReqHandler.getHandlerClass(reqHandler);
 
                 if (ReqHandler.matches(requestContext, handlerClazz,isPost)){
-                    _log.debug(String.format("Request handler match : %s",handlerClazz.getSimpleName()));
+                    //_log.debug(String.format("Request handler match : %s",handlerClazz.getSimpleName()));
                     handled = reqHandler.handle(requestContext);
 
                     if(handled){
@@ -126,6 +126,10 @@ public class Router {
                 requestContext.getResponse().sendError(500);
                 throw ex;
 
+            }catch (Exception ex){
+
+                requestContext.getResponse().sendError(500);
+                throw new ServletException(ex);
             }
 
         }
@@ -133,8 +137,11 @@ public class Router {
         if(!handled){
 
             requestContext.getResponse().sendError(404);
+            return 404;
 
         }
+
+        return 200;
 
     }
 

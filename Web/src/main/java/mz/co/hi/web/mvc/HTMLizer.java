@@ -15,6 +15,7 @@ import mz.co.hi.web.mvc.exceptions.TemplateException;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.spi.CDI;
 import java.net.URL;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +36,7 @@ public class HTMLizer {
     private GsonBuilder gsonBuilder = null;
     private RequestContext requestContext = null;
     private ActiveUser activeUser = null;
+    private Map<String,String> cachedTemplates = Collections.synchronizedMap(new HashMap<>());
 
     private HTMLizer(String args){
 
@@ -45,6 +47,7 @@ public class HTMLizer {
     private String fetchTemplate(FrontEnd frontEnd, Event<TemplateTransformEvent> transformEvent) throws TemplateException {
 
         String templateName = frontEnd.getTemplate();
+
         URL templateURL = null;
 
         try {
@@ -71,7 +74,9 @@ public class HTMLizer {
         validateTemplate(templateName,templateFileContent);
         TemplateTransformEvent templateTransformEvent = new TemplateTransformEvent(templateName,templateFileContent);
         transformEvent.fire(templateTransformEvent);
-        templateFileContent = AppConfigurations.get().getTunnings().applySmartCaching(templateTransformEvent.getTemplate().getMarkup());
+        templateFileContent = AppConfigurations.get().getTunings().applySmartCaching(templateTransformEvent.getTemplate().getMarkup(),false);
+
+
         return templateFileContent;
 
     }
@@ -356,7 +361,7 @@ public class HTMLizer {
         if(requestContext.getData().containsKey("view_content")){
             viewHTML = requestContext.getData().get("view_content").toString();
             if(viewHTML!=null)
-                viewHTML = AppConfigurations.get().getTunnings().applySmartCaching(viewHTML);
+                viewHTML = AppConfigurations.get().getTunings().applySmartCaching(viewHTML,true);
 
         }
 
