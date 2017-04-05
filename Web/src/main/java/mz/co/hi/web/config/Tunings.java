@@ -164,7 +164,13 @@ public class Tunings {
     private void cacheAttribute(String attr,Element element, AppContext appContext){
 
         String resourcePath = element.attr(attr);
+        if(resourcePath==null||resourcePath.isEmpty())
+            return;
+
         String cachedResourcePath = getCachedPath(resourcePath,appContext);
+        if(cachedResourcePath==null)
+            return;
+
         element.attr(attr,cachedResourcePath);
         smartlyCachedResources.put(cachedResourcePath,resourcePath);
 
@@ -173,6 +179,9 @@ public class Tunings {
     private String getCachedPath(String currentPath, AppContext appContext){
 
         int lastDotIndex = currentPath.lastIndexOf('.');
+        if(lastDotIndex==-1)
+            return null;
+
         return currentPath.substring(0,lastDotIndex)+appContext.getAssetVersionToken()
                 +currentPath.substring(lastDotIndex,currentPath.length());
 
