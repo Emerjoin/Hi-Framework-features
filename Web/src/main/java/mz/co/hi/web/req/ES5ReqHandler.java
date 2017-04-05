@@ -44,7 +44,9 @@ public class ES5ReqHandler extends ReqHandler {
                 MVCReqHandler.storeTemplate(template,templHTML);
 
                 String templtController = Helper.readLines(templateController.openStream(), null);
-                templateControllers.put(template, templtController);
+
+                if(!appConfigurations.underDevelopment())
+                    templateControllers.put(template, templtController);
 
             }catch (MalformedURLException e){
 
@@ -52,7 +54,7 @@ public class ES5ReqHandler extends ReqHandler {
 
             }catch (IOException ex){
 
-                throw new HiException("Template <"+template+"> HTML file or Controller could not be found. Make sure they both exist",ex);
+                throw new NoSuchTemplateException(template);
 
             }
 
@@ -157,6 +159,45 @@ public class ES5ReqHandler extends ReqHandler {
 
     }
 
+    private String fetchTemplateController(String name) throws HiException{
+
+        try {
+
+            URL templateURL = requestContext.getServletContext().getResource("/" + name + ".js");
+
+            if (templateURL == null) {
+                throw new NoSuchTemplateException(name);
+            }
+
+            String html = Helper.readLines(templateURL.openStream(), null);
+            return html;
+
+        }catch (MalformedURLException ex){
+
+            throw new HiException("Invalid template name <"+name+">",ex);
+
+        }catch (IOException ex){
+
+            throw new HiException(String.format("Failed to fetch with name %s",name),ex);
+
+        }
+
+    }
+
+    private String getTemplateController(String name) throws HiException{
+
+        if(AppConfigurations.get().underDevelopment())
+            return fetchTemplateController(name);
+
+        if(!templateControllers.containsKey(name))
+            throw new NoSuchTemplateException(name);
+
+
+        return templateControllers.get(name);
+
+    }
+
+
     @Override
     public boolean handle(RequestContext requestContext) throws ServletException, IOException {
 
@@ -166,10 +207,7 @@ public class ES5ReqHandler extends ReqHandler {
         int indexOfLastSlash = requestURL.lastIndexOf('/');
 
         String templateName = (String) activeUser.getProperty(FrontEnd.TEMPLATE_SESSION_VARIABLE, "index");
-        String templateContent = "";
-
-        if (templateControllers.containsKey(templateName))
-            templateContent = templateControllers.get(templateName).toString();
+        String templateContent = getTemplateController(templateName);
 
         if (indexOfLastSlash != -1)
             requestURL = requestURL.substring(indexOfLastSlash + 1, requestURL.length());
