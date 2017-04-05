@@ -372,6 +372,7 @@ public class HTMLizer {
         Map route = new HashMap();
         route.put("controller", requestContext.getData().get("controllerU").toString());
         route.put("action", requestContext.getData().get("actionU").toString());
+        
         if(withViewMode)
             route.put("mode",viewMode);
         else

@@ -21,6 +21,7 @@ public class Tunings {
     private List<String> smartCachingPaths = Collections.synchronizedList(new ArrayList<>());
     private List<String> noCachingHintPaths = Collections.synchronizedList(new ArrayList<>());
     private Map<String,String> smartlyCachedResources = Collections.synchronizedMap(new HashMap<>());
+    private Map<String,CachingDecision> decisionsMap =  Collections.synchronizedMap(new HashMap<>());
 
     private static Logger _log = LoggerFactory.getLogger(Tunings.class);
 
@@ -184,7 +185,11 @@ public class Tunings {
 
     public CachingDecision decision(String asset){
 
-        CachingDecision decision = new CachingDecision();
+        CachingDecision decision = decisionsMap.get(asset);
+        if(decision!=null)
+            return decision;
+
+        decision = new CachingDecision();
         decision.mode = CachingMode.NoCaching;
 
         boolean smartlyCached = isASmartCachedURL(asset);
@@ -193,17 +198,21 @@ public class Tunings {
         if(smartlyCached){
             decision.mode = CachingMode.SmartCaching;
             decision.resourcePath = smartlyCachedResources.get(asset);
+            decisionsMap.put(asset,decision);
             return decision;
         }
 
         //Check if its a fixed caching resource
         long fixedCachingTime = getFixedCachingTime(asset);
-        if(fixedCachingTime<1)
+        if(fixedCachingTime<1) {
+            decisionsMap.put(asset,decision);
             return decision;
+        }
 
         decision.mode = CachingMode.FixedCaching;
         decision.time = fixedCachingTime;
         decision.resourcePath = asset;
+        decisionsMap.put(asset,decision);
         return decision;
     }
 
@@ -213,22 +222,17 @@ public class Tunings {
         String secondaryPattern = assetURL.substring(0,assetURL.lastIndexOf("/")+1).replace("webroot/","");
 
         //No caching primary match
-        if(noCachingHintPaths.contains(primaryPattern)) {
+        if(noCachingHintPaths.contains(primaryPattern))
             return -1;
-        }
-
         //No caching secondary match
-        if(noCachingHintPaths.contains(secondaryPattern)) {
+        if(noCachingHintPaths.contains(secondaryPattern))
             return -1;
-        }
-
         String fixedCachingPath = assetURL.replace("webroot/","");
         fixedCachingPath = fixedCachingPath.substring(0,fixedCachingPath.lastIndexOf("/")+1);
 
         time = getTime4Path(fixedCachingPath);
         if(time>0)
             return time;
-
 
         while (fixedCachingPath.indexOf('/')!=-1){
 

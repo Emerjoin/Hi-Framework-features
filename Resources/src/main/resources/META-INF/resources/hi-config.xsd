@@ -102,11 +102,13 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:complexType name="smartCachingType">
+    <xsd:complexType name="foldersSmartCachingType">
         <xsd:sequence>
             <xsd:element type="hi:assetSmartCachingEnabled" minOccurs="1" maxOccurs="unbounded"  name="if-path-starts-with"></xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
+
 
     <xsd:complexType name="folderHttpCacheType">
         <xsd:attribute use="required" name="age-unit" type="hi:ageUnitsType"></xsd:attribute>
@@ -136,7 +138,7 @@
     <xsd:complexType name="webrootType">
         <xsd:all>
             <xsd:element name="folders-fixed-caching" type="hi:foldersCachingType" minOccurs="0" maxOccurs="1"></xsd:element>
-            <xsd:element name="folders-smart-caching" type="hi:smartCachingType" minOccurs="0" maxOccurs="1"></xsd:element>
+            <xsd:element name="folders-smart-caching" type="hi:foldersSmartCachingType" minOccurs="0" maxOccurs="1"></xsd:element>
             <xsd:element name="no-caching-control" type="hi:disabledCachingType" minOccurs="0" maxOccurs="1"  ></xsd:element>
         </xsd:all>
     </xsd:complexType>
