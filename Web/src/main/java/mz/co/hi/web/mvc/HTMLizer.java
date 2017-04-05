@@ -11,6 +11,8 @@ import mz.co.hi.web.mvc.exceptions.ConversionFailedException;
 import mz.co.hi.web.mvc.exceptions.MalMarkedTemplateException;
 import mz.co.hi.web.mvc.exceptions.NoSuchTemplateException;
 import mz.co.hi.web.mvc.exceptions.TemplateException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.spi.CDI;
@@ -37,6 +39,8 @@ public class HTMLizer {
     private RequestContext requestContext = null;
     private ActiveUser activeUser = null;
     private Map<String,String> cachedTemplates = Collections.synchronizedMap(new HashMap<>());
+
+    private static Logger _log = LoggerFactory.getLogger(HTMLizer.class);
 
     private HTMLizer(String args){
 
@@ -360,8 +364,8 @@ public class HTMLizer {
         String viewHTML = null;
         if(requestContext.getData().containsKey("view_content")){
             viewHTML = requestContext.getData().get("view_content").toString();
-            if(viewHTML!=null)
-                viewHTML = AppConfigurations.get().getTunings().applySmartCaching(viewHTML,true);
+            if(viewHTML!=null&&!AppConfigurations.get().underDevelopment())
+                viewHTML = AppConfigurations.get().getTunings().applySmartCaching(viewHTML, true);
 
         }
 

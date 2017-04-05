@@ -114,7 +114,7 @@ public class Tunings {
         else
             document = Jsoup.parse(markup.replace("hi-es5.js",getCachedPath("hi-es5.js",appContext)));
 
-        String imgFindFormat = "img[attr^=webroot/%s]";
+        String imgFindFormat = "img[src^=webroot/%s]";
         String scriptFindFormat = "script[src^=webroot/%s]";
         String styleFindFormat = "style[href^=webroot/%s]";
         String linkFindFormat = "a[href^=webroot/%s]";
