@@ -51,17 +51,20 @@ public class WebrootReqHandler extends ReqHandler {
         Tunings.CachingDecision decision = tunings.decision(assetUrl);
 
         if(decision.getMode()== Tunings.CachingMode.NoCaching) {
-            _log.debug("No caching : "+assetUrl);
+            if(_log.isDebugEnabled())
+                _log.debug("[No cache] : "+assetUrl);
             avoidCaching(requestContext);
             return assetUrl;
 
         }else if(decision.getMode()== Tunings.CachingMode.FixedCaching){
-            _log.debug(String.format("Fixed caching for %d millis : %s ",decision.getTime(),decision.getResourcePath()));
+            if(_log.isDebugEnabled())
+                _log.debug("[Fixed cache] : "+decision.getResourcePath());
             tunings.emmitFixedCachingHeaders(decision,requestContext);
             return decision.getResourcePath();
         }
 
-        _log.debug("Smart caching : "+assetUrl);
+        if(_log.isDebugEnabled())
+            _log.debug("[Smart cache] : "+assetUrl);
         tunings.emmitSmartCachingHeaders(requestContext);
         return decision.getResourcePath();
 

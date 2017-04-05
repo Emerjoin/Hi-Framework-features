@@ -118,6 +118,7 @@ public class Tunings {
         String scriptFindFormat = "script[src^=webroot/%s]";
         String styleFindFormat = "style[href^=webroot/%s]";
         String linkFindFormat = "a[href^=webroot/%s]";
+        String styleLinkFindFormat = "link[href^=webroot/%s]";
 
         String q = "";
 
@@ -132,6 +133,10 @@ public class Tunings {
             elements.forEach((el) -> cacheAttribute("src",el,appContext));
             //Find style elements
             q = String.format(styleFindFormat,cachedPath);
+            elements = document.select(q);
+            elements.forEach((el) -> cacheAttribute("href",el,appContext));
+            //Find style link elements
+            q = String.format(styleLinkFindFormat,cachedPath);
             elements = document.select(q);
             elements.forEach((el) -> cacheAttribute("href",el,appContext));
             //Find link elements

@@ -12,8 +12,8 @@ import java.util.Map;
 /**
  * @author Mário Júnior
  */
-@ConfigSection(tags = "web-tunning")
-public class WebTunningConfig implements Configurator{
+@ConfigSection(tags = "web-tuning")
+public class WebTuningConfig implements Configurator{
 
 
 
@@ -85,7 +85,7 @@ public class WebTunningConfig implements Configurator{
 
     @Override
     public void doConfig(AppConfigurations configs, Map<String, Element> elements, Element document) throws BadConfigException {
-            Element tunningElement = elements.get("web-tunning");
+            Element tunningElement = elements.get("web-tuning");
             NodeList webrootNodeList = tunningElement.getElementsByTagName("webroot");
             Element webrootElement = null;
 
