@@ -116,6 +116,8 @@ public class Tunings {
             document = Jsoup.parse(markup.replace("hi-es5.js",getCachedPath("hi-es5.js",appContext)));
 
         String imgFindFormat = "img[src^=webroot/%s]";
+        String imgAloadFindFormat = "img[aload^=webroot/%s]";
+        String imgErrFindFormat = "img[err^=webroot/%s]";
         String scriptFindFormat = "script[src^=webroot/%s]";
         String styleFindFormat = "style[href^=webroot/%s]";
         String linkFindFormat = "a[href^=webroot/%s]";
@@ -128,6 +130,14 @@ public class Tunings {
             q = String.format(imgFindFormat,cachedPath);
             Elements elements  =  document.select(q);
             elements.forEach((el) -> cacheAttribute("src",el,appContext));
+            //Find image aload elements
+            q = String.format(imgAloadFindFormat,cachedPath);
+            elements  =  document.select(q);
+            elements.forEach((el) -> cacheAttribute("aload",el,appContext));
+            //Find image err elements
+            q = String.format(imgAloadFindFormat,cachedPath);
+            elements  =  document.select(q);
+            elements.forEach((el) -> cacheAttribute("err",el,appContext));
             //Find script elements
             q = String.format(scriptFindFormat,cachedPath);
             elements = document.select(q);
